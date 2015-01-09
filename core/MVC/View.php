@@ -7,7 +7,6 @@ class View
 {
 	public static function make($value,$data=null)
 	{
-		
 		if(!is_null($data))
 		{
 			foreach ($data as $key => $value2) {
@@ -16,15 +15,21 @@ class View
 		}
 		//echo clientC::$id;
 		$name=str_replace('.', '/', $value);
-		//include 'app/views/'.$name.'.php';
-		$link='app/views/'.$name.'.php';
-		Templete::show($link,$data);
-		// } catch (Exception $e) {
-		// 	ExceptionDisplay::show($e);
-		// }
+		//
+		$link1='app/views/'.$name.'.php';
+		$link2='app/views/'.$name.'.tpl.php';
+		$link3='';
+		//
+		$tpl=false;
+		//
+		if(file_exists($link1)) { $link3=$link1; $tpl=false; }
+		else if(file_exists($link2)) { $link3=$link2; $tpl=true; }
+		else { $link3=$name; $tpl=false; }
 		
-		//if(file_exists($link)) Templete::show($link,$data);
-		//else throw new FiestaException("File inexiste", 1);
+		if($tpl)
+			Templete::show($link3,$data);
+		else
+			include($link3);
 		
 		
 	}
