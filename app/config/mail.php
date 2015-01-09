@@ -1,0 +1,80 @@
+<?php
+
+return array(
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SMTP Host Address
+	|--------------------------------------------------------------------------
+	| 
+	| Hena khask t7t l adresse dial server SMTP
+	| li ghadi tsift meno lmail dialk,par defaut derna 
+	| Mailgun
+	|
+	*/
+
+	'host' => "",
+
+	/*
+	|--------------------------------------------------------------------------
+	| SMTP Host Port
+	|--------------------------------------------------------------------------
+	|
+	| hna ghadi t7t l port dial SMTP dial serveur
+	| li ghadi tsiftmen l mail
+	| t9der koon 25 ola 465 ola 587
+	|
+	*/
+
+	'port' => 465,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Global "From" Address
+	|--------------------------------------------------------------------------
+	|
+	| hna ghadi t7t lmail li tsift meno lmail o
+	| nom dila l utilisateur
+	|
+	*/
+
+	'from' => array("adresse" => "", 'name' => ""),
+
+	/*
+	|--------------------------------------------------------------------------
+	| E-Mail Encryption Protocol
+	|--------------------------------------------------------------------------
+	|
+	| hna l cryptage dial l mail.
+	| tatkoonn : tls ola ssl
+	|
+	*/
+
+	'encryption' => 'ssl',
+
+	/*
+	|--------------------------------------------------------------------------
+	| SMTP Server Username
+	|--------------------------------------------------------------------------
+	|
+	| hna smya dial l utilisateur dial serveur
+	| SMTP
+	|
+	*/
+
+	'username' => "",
+
+	/*
+	|--------------------------------------------------------------------------
+	| SMTP Server Password
+	|--------------------------------------------------------------------------
+	|
+	| hna l mot de pass dial l utilisateur dial serveur
+	| SMTP
+	|
+	*/
+
+	'password' => "",
+
+);
