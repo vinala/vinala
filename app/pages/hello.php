@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500' rel='stylesheet' type='text/css'>
 	<?php 
 		Html::charset("Fiesta PHP Framework"); 
 		Html::title();
@@ -16,6 +17,10 @@
 			font-family:'Lato', sans-serif;
 			text-align:center;
 			color: #999;
+		}
+		h1
+		{
+			font-family: 'Ubuntu', sans-serif;
 		}
 
 		.welcome {
