@@ -14,7 +14,7 @@
 
 Routes::get("/",function()
 {
-	View::make('hello');
+	Page::put('hello');
 });
 
 
