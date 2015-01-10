@@ -31,6 +31,6 @@ class Url
 	{
 		self::$css=Config::get('app.url')."app/css/";
 		self::$js=Config::get('app.url')."app/js/";
-		self::$img=Config::get('app.url')."app/images/";
+		self::$img=Config::get('app.url')."app/res/images/";
 	}
 }
