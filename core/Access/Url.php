@@ -1,11 +1,16 @@
 <?php 
 
 
+
 /**
 * Url class
 */
 class Url
 {
+	public static $css;
+	public static $js;
+	public static $img;
+
 	public static function redirect($url)
 	{
 		$link="";
@@ -20,5 +25,12 @@ class Url
 		    echo $link;
 		}
 		header("location:".$link);
+	}
+
+	public static function ini()
+	{
+		self::$css=Config::get('app.url')."app/css/";
+		self::$js=Config::get('app.url')."app/js/";
+		self::$img=Config::get('app.url')."app/images/";
 	}
 }
