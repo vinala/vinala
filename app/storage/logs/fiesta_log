@@ -1,6 +1,0 @@
-[08-Jan-2015 12:49:33 Europe/Paris] ( Error 2) include(app/pages/hellod.php): failed to open stream: No such file or directory #bld(Fiesta report : C:\wamp2\www\fiesta\core\Hypertext\Pages.php in line 37)#/bld
-[08-Jan-2015 13:08:44 Europe/Paris] ( Error 2) include(app/pages/hellod.php): failed to open stream: No such file or directory #bld(Fiesta report : C:\wamp2\www\fiesta\core\Hypertext\Pages.php in line 37)#/bld
-[08-Jan-2015 14:05:00 Europe/Paris] ( Error 2) include(app/pages/hellod.php): failed to open stream: No such file or directory #bld(Fiesta report : C:\wamp2\www\fiesta\core\Hypertext\Pages.php in line 37)#/bld
-[08-Jan-2015 14:08:50 Europe/Paris] ( Error 8) Undefined variable: r #bld(Fiesta report : C:\wamp2\www\fiesta\app\Routes.php in line 17)#/bld
-[08-Jan-2015 15:36:02 Europe/Paris] ( Error 8) Undefined variable: r #bld(Fiesta report : C:\wamp2\www\fiesta\app\Routes.php in line 17)#/bld
-[08-Jan-2015 18:30:04 Europe/Paris] ( Error 8) Undefined variable: r #bld(Fiesta report : C:\wamp2\www\fiesta\app\Routes.php in line 17)#/bld
