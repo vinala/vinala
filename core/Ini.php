@@ -82,6 +82,7 @@ class App
 		//Config::ini($root);
 		
 			Sys::ini();
+			Url::ini();
 			Templete::ini();
 			//
 			Faker::ini();
