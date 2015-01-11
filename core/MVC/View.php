@@ -5,6 +5,8 @@
 */
 class View
 {
+	public static $showed;
+
 	public static function make($value,$data=null)
 	{
 		if(!is_null($data))
@@ -13,7 +15,7 @@ class View
 				$$key=$value2;
 			}
 		}
-		//echo clientC::$id;
+		//getFile
 		$name=str_replace('.', '/', $value);
 		//
 		$link1='app/views/'.$name.'.php';
@@ -24,12 +26,21 @@ class View
 		//
 		if(file_exists($link1)) { $link3=$link1; $tpl=false; }
 		else if(file_exists($link2)) { $link3=$link2; $tpl=true; }
-		else { $link3=$name; $tpl=false; }
+		else { throw new InvalidArgumentException("There is no view call $name"); }
 		
 		if($tpl)
+		{
+			self::$showed="tpl";
 			Templete::show($link3,$data);
+			
+
+		}
 		else
+		{
+			self::$showed="smpl";
 			include($link3);
+			
+		}
 		
 		
 	}
@@ -44,14 +55,35 @@ class View
 			}
 		}
 		//
-		/*$name_fgdfgdf=str_replace('.', '/', $value_DGFSrtfg5);
-		//return (include ('app/views/'.$name_fgdfgdf.'.php'));*/
-		//
-		//
 		ob_start();    // start output buffering
-		$link='app/views/'.$name_fgdfgdf.'.php';
-		//include('app/views/'.$name_fgdfgdf.'.php');
-		Templete::show($link,$data_kGdfgdf);
+		//get File
+		//
+		$name_fgdfgdf=str_replace('.', '/', $value_DGFSrtfg5);
+		//
+		$link1='app/views/'.$name_fgdfgdf.'.php';
+		$link2='app/views/'.$name_fgdfgdf.'.tpl.php';
+		$link3='';
+		//
+		$tpl=false;
+		//
+		if(file_exists($link1)) { $link3=$link1; $tpl=false; }
+		else if(file_exists($link2)) { $link3=$link2; $tpl=true; }
+		else { $link3=$name_fgdfgdf; $tpl=false; }
+		//
+		//Show the output
+		if($tpl)
+		{
+			self::$showed="tpl";
+			Templete::show($link3,$data_kGdfgdf);
+		}
+			
+		else
+		{
+			self::$showed="smpl";
+			include($link3);
+		}
+			
+		//
 		$returned_value = ob_get_contents();    // get contents from the buffer
 		ob_end_clean(); 
 		//
