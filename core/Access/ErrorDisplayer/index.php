@@ -17,6 +17,17 @@ header('Content-Type: text/html');
 	<style type="text/css">
 	body
 	{
+		text-align: inherit;
+	}
+	.main_cont
+	{
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		margin: 0;
+		padding: 0;
+		left: 0;
+		top: 0;
 		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 		font-size: 14px;
 		line-height: 1.42857143;
@@ -27,7 +38,7 @@ header('Content-Type: text/html');
 	}
 	.left-part
 	{
-		width: 75%;
+		width: 100%;
 		overflow-x: hidden;
 		height: 100%;
 		overflow-y: scroll;
@@ -295,11 +306,14 @@ header('Content-Type: text/html');
 		word-wrap: break-word;
 	}
 
+	
+
 
 
 </style>
 </head>
 <body>
+	<div class="main_cont">
 <div class="left-part">	
 	<?php 
 	$class="";
@@ -425,8 +439,12 @@ header('Content-Type: text/html');
 		<div class="code">
 		<?php 
 			$lines = file($error['file'],FILE_IGNORE_NEW_LINES);
-			$start=$error['line']-10;
-			$end=$error['line']+4;
+			if($error['line']>=10) $start=$error['line']-10;
+			else $start=1;
+
+			if(($error['line']+4)<=(count($lines)-1)) $end=$error['line']+4;
+			else $end=count($lines)-1;
+			//$end=$error['line']+4;
 			
 			//echo $lines[$error['line']];
 			for ($i=$start; $i < $end; $i++) {
@@ -617,7 +635,10 @@ header('Content-Type: text/html');
 
 <?php } ?>
 
-	</div></div></div><div class="right-part">
+	</div></div></div>
+
+	<?php if(false): ?>
+	<div class="right-part">
 	<div class="title">
 		<h1><center>Fiesta Errors Log</center></h1>
 	</div>
@@ -655,6 +676,8 @@ header('Content-Type: text/html');
 		} ?>
 
 	</div>
+</div>
+<?php endif; ?>
 </div>
 </body>
 <?php } else if(isset($ok) && !$ok) { ?>
