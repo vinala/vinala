@@ -7,6 +7,7 @@ class Templete
 {
 	public static $smarty;
 
+
 	public static function ini()
 	{
 		require_once 'core/Associates/Smarty/Smarty.class.php';
@@ -18,10 +19,6 @@ class Templete
 		//self::$smarty->caching = true;
 		//self::$smarty->cache_lifetime = 120;
 		//Smarty::muteExpectedErrors();
-		//
-
-		// self::$smarty->setTemplateDir('core/Associates/Smarty/caches');
-		// self::$smarty->setCompileDir('core/Associates/Smarty/compile');
 
 		self::$smarty->setTemplateDir('app/storage/view/compile');
 		self::$smarty->setCompileDir('app/storage/view/template');
@@ -34,6 +31,7 @@ class Templete
 			foreach ($data as $key => $value) 
 				{self::$smarty->assign($key, $value);}
 		//
+			
 		return self::$smarty->display($view);
 	}
 }
