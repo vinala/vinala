@@ -25,17 +25,7 @@ return array(
 	| 
 	*/
 
-	'msg' => "Ouhlala! il semble que quelque chose s'ait mal passé",
-
-	/*
-	|----------------------------------------------
-	| Errors color
-	|----------------------------------------------
-	| hana kola erreur 3ndo lon dialo
-	| 
-	*/
-
-	'color' => array(),
+	'msg' => "Ohlala! il semble que quelque chose s'ait mal passé",
 
 	/*
 	|----------------------------------------------
