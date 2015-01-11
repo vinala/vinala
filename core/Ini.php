@@ -16,25 +16,20 @@ class App
 
 	public static function run($p=null,$root=null,$routes=true,$session=true)
 	{
-
-		//ini_set("log_errors", 1);
-		//ini_set("error_log","app/storage/logs/fiesta_log");
-
-		require 'Access/ErrorHandler.php';
-		ErrorHandler::ini();
-
-		//ini_set("log_errors", 1);
-		/*ini_set("error_log","app/storage/logs/fiesta.log");
-		error_log( "ini" );*/
-
-		
+		ob_start();
 		//
 		self::$page=$p;
 		self::$root=$root;
 		if($session)session_start();
 		//
+		require 'Access/ErrorHandler.php';
 		require 'Config.php';
 		//
+		ini_set("log_errors", 1);
+		ini_set("error_log", Config::get("loggin.log"));
+		//
+		//if(Config::get('loggin.debug')) 
+			ErrorHandler::ini();
 		//
 		require 'MVC/Templete.php';
 		require 'Objects/Exception.php';
