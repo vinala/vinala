@@ -13,8 +13,8 @@
 
 
 Routes::get("/",function()
-{
-	Page::put('hello');
+{	
+	return View::make('hello');
 });
 
 
