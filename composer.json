@@ -1,5 +1,5 @@
 {
-	"name": "fiesta/fiesta-framework/",
+	"name": "fiesta/framework",
 	"description": "The Fiesta PHP Framework.",
 	"keywords": ["framework", "fiesta"],
 	"license": "MIT",
