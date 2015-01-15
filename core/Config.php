@@ -173,6 +173,7 @@ class Config
 				else if($val[1]=="encryption") $ret=$tbl['encryption'];
 				else if($val[1]=="username") $ret=$tbl['username'];
 				else if($val[1]=="password") $ret=$tbl['password'];
+				else if($val[1]=="subject") $ret=$tbl['subject'];
 				//
 				break;
 			case 'view':
@@ -195,7 +196,7 @@ class Config
 				if($val[1]=="debug") {$ret=$tbl['debug'];}
 				else if($val[1]=="msg") $ret=$tbl['msg'];
 				else if($val[1]=="log") $ret=$tbl['log'];
-				// else if($val[1]=="paginationSimpleNext") $ret=$tbl['paginationSimpleNext'];
+				
 				// else if($val[1]=="paginationSimplePrevious") $ret=$tbl['paginationSimplePrevious'];
 				break;
 			
