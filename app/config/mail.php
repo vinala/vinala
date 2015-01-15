@@ -77,4 +77,16 @@ return array(
 
 	'password' => "",
 
+	/*
+	|--------------------------------------------------------------------------
+	| E-mail default subject
+	|--------------------------------------------------------------------------
+	|
+	| hna l sujet par default dial les emails t9der tbdlo f l'envoid dial l 
+	| mail
+	|
+	*/
+
+	'subject' => "Fiesta",
+
 );
