@@ -1,6 +1,6 @@
 <?php 
 	include_once '../../../../../../core/Ini.php';
-	App::run(null,'../../../../../../',false);
+	App::run(null,'../../../../../../',false,true,false);
 	
 	//
 	$time2=date("Y/m/d H:i:s",time());
