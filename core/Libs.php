@@ -5,16 +5,22 @@
 */
 class Libs
 {
-	public static function css($file)
+	public static function css($file,$default)
 	{
 		if (strpos($file,'http://') !== false) {
 		    echo '<link rel="stylesheet" type="text/css" href="'.$file.'.css">';
 		}
 		else
 		{
-			$file=str_replace('.', '/', $file);
-			//
-			echo '<link rel="stylesheet" type="text/css" href="'.Sys::$app.'libs/css/'.$file.'.css">';
+			if($default)
+			{
+				$file=str_replace('.', '/', $file);
+				echo '<link rel="stylesheet" type="text/css" href="'.Sys::$app.'libs/css/'.$file.'.css">';
+			}
+			else
+			{
+				echo '<link rel="stylesheet" type="text/css" href="'.$file.'">';
+			}
 		}
 	}
 
@@ -25,9 +31,16 @@ class Libs
 		}
 		else
 		{
-			$file=str_replace('.', '/', $file);
-			//
-			echo '<script type="text/javascript"  src="'.Sys::$app.'libs/js/'.$file.'"></script>';
+			
+			if($default)
+			{
+				$file=str_replace('.', '/', $file);
+				echo '<script type="text/javascript"  src="'.Sys::$app.'libs/js/'.$file.'"></script>';
+			}
+			else
+			{
+				echo '<link rel="stylesheet" type="text/css" href="'.$file.'">';
+			}
 		}
 		
 	}
