@@ -5,7 +5,7 @@
 */
 class Libs
 {
-	public static function css($file,$default)
+	public static function css($file,$default=true)
 	{
 		if (strpos($file,'http://') !== false) {
 		    echo '<link rel="stylesheet" type="text/css" href="'.$file.'.css">';
