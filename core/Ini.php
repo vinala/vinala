@@ -64,7 +64,7 @@ class App
 		require 'Http/Error.php';
 		require 'Hypertext/Script.php';
 		require 'Http/Root.php';
-		require 'Mail.php';
+		require 'Mail_2.php';
 		require 'Objects/DataCollection.php';
 
 		//
