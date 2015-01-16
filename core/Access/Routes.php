@@ -18,6 +18,9 @@ class Routes
 	private static $s_uri='';
 	private static $s_callback='';
 
+	private static $current;
+
+
 	public static function get($uri='',$callback="")
 	{
 		if(is_callable($callback))
@@ -194,7 +197,9 @@ class Routes
 						// run the route callback
 						if($ok)
 						{
+							self::$current=$value;
 							call_user_func_array(self::$_callback[$key], $params);
+							
 						}
 
 						// ila returna l filter false
@@ -266,6 +271,7 @@ class Routes
 						// run the route callback
 						if($ok)
 						{
+							self::$current=$value;
 							call_user_func_array(self::$_callback[$key], $params);
 						}
 
@@ -505,6 +511,11 @@ class Routes
 		//
 		self::$_filters[$filter]=$call;
 		if(!is_null($falsecall)) self::$_falsecall[$filter]=$falsecall;
+	}
+
+	public static function current()
+	{
+		return self::$current;
 	}
 
 	
