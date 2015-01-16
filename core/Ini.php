@@ -14,7 +14,7 @@ class App
 	public static $root;
 	public static $Callbacks = array('before'=>null,'after'=>null);
 
-	public static function run($p=null,$root=null,$routes=true,$session=true)
+	public static function run($p=null,$root=null,$routes=true,$session=true,$whoops=true)
 	{
 		ob_start();
 		//
@@ -28,8 +28,7 @@ class App
 		ini_set("log_errors", 1);
 		ini_set("error_log", Config::get("loggin.log"));
 		//
-		//if(Config::get('loggin.debug')) 
-			ErrorHandler::ini();
+		if($whoops) ErrorHandler::ini(self::$root);
 		//
 		require 'MVC/Templete.php';
 		require 'Objects/Exception.php';
@@ -78,7 +77,7 @@ class App
 		
 			Sys::ini();
 			Url::ini();
-			Templete::ini();
+			Templete::ini(self::$root);
 			//
 			Faker::ini();
 			Links::ini();

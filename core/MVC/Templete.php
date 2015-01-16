@@ -8,9 +8,9 @@ class Templete
 	public static $smarty;
 
 
-	public static function ini()
+	public static function ini($root="")
 	{
-		require_once 'core/Associates/Smarty/Smarty.class.php';
+		require_once $root.'core/Associates/Smarty/Smarty.class.php';
 		//
 		self::$smarty=new Smarty;
 		//
