@@ -3,5 +3,4 @@
 	"description": "The Fiesta PHP Framework.",
 	"keywords": ["framework", "fiesta"],
 	"license": "MIT",
-	"type": "project",
 }
