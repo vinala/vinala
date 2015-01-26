@@ -3,7 +3,7 @@ Fiesta PHP Framework
 
 ## Installation
 
-Vous pouvez installer Fiesta via Composer en utilisent la commande create-projectdans votre terminal
+Vous pouvez installer Fiesta via Composer en utilisent la commande create-project dans votre terminal
 
 	composer create-project fiesta/fiesta --prefer-dist
 
