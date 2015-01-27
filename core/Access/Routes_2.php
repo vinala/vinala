@@ -101,12 +101,20 @@ class Routes_2
 						{
 							if(!empty($filtre))
 							{
-								//**************************************************************
-								$call=self::$_filters[self::$_request[$key]];
-								$ok=call_user_func($call);
-								if(!$ok) { $falseok=self::$_request[$key];  }
+								self::callFilter($filtre,$ok,$falseok);
 							}
 						}
+						// self::$_request[$key] => $filtre
+						else if(is_array($filtre))
+						{
+							if(!empty($filtre))
+							{
+								self::callFilters($filtre,$ok,$falseok);
+							}
+						}
+
+						// run the route callback
+						if($ok) { self::runRoute($value,$params); }
 					}
 
 				}
@@ -162,6 +170,28 @@ class Routes_2
 	public static function getFilterCallback($name)
 	{
 		return self::$filters[$name];
+	}
+
+	public static function callFilter($filtre,&$ok,&$falseok)
+	{
+		$call=self::$filters[$filtre];
+		$ok=call_user_func($call);
+		if(!$ok) { $falseok=$filtre;  }
+	}
+
+	public static function callFilters($filtre,&$ok,&$falseok)
+	{
+		foreach ($filtre as $key => $value) {
+			$call=self::$filters[$value];
+			$ok=call_user_func($call);
+			if(!$ok) { $falseok=$value; break; }
+		}
+	}
+
+	public static function runRoute($request,$params)
+	{
+		self::$current=$request["name"];
+		return call_user_func_array($request["callback"], $params);
 	}
 	
 }
