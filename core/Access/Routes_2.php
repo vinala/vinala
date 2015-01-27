@@ -6,6 +6,7 @@
 class Routes_2
 {
 	private static $requests=array();
+	private static $filters=array();
 
 	public static function get($uri,$callback)
 	{
@@ -60,20 +61,67 @@ class Routes_2
 		self::$requests[]=$r;
 	}
 
+	public static function newFilterString($route)
+	{
+		if(!empty($route["filtre"]))
+		{
+			$call=self::$_filters[self::$_request[$key]];
+			$ok=call_user_func($call);
+			if(!$ok) { $falseok=self::$_request[$key];  }
+		}
+	}
+
 	public static function run()
 	{
-		$url=self::CheckUrl();
+		$currentUrl=self::CheckUrl();
 		//
-		if(self::CheckMaintenance($url))
+		if(self::CheckMaintenance($currentUrl))
 		{
 			self::Replace();
 			//
 			$ok=false;
 			//
 			foreach (self::$requests as $value) {
-				
+				$requestsUrl=$value["url"];
+				if(preg_match("#^$requestsUrl$#", $currentUrl,$params))
+				{
+					if($value["methode"]=="post" && Res::isPost())
+					{
+						array_shift($params);
+						//
+						self::callBefore();
+						//
+						//new filter
+						$ok=true;
+						$falseok=null;
+						$oks=array();
+						//
+						$filter=$value["filtre"];
+						if(is_string($filtre))
+						{
+							if(!empty($filtre))
+							{
+								//**************************************************************
+								$call=self::$_filters[self::$_request[$key]];
+								$ok=call_user_func($call);
+								if(!$ok) { $falseok=self::$_request[$key];  }
+							}
+						}
+					}
+
+				}
 			}
 		}
+	}
+
+	public static function callBefore()
+	{
+		call_user_func(App::$Callbacks['before']);
+	}
+
+	public static function callAfter()
+	{
+		call_user_func(App::$Callbacks['after']);
 	}
 
 	public static function CheckUrl()
@@ -93,6 +141,27 @@ class Routes_2
 		for ($i=0; $i < count(self::$requests); $i++) 
 			if (strpos(self::$requests[$i]['uri'],'{}') !== false) 
 					self::$requests[$i]['uri']=str_replace('{}', '(.*)?', self::$requests[$i]['uri']); 
+	}
+
+	public static function addFilter($name,$callback,$falsecall=null)
+	{
+		$r = array(
+			'name' => $name,
+			'callback' => $callback,
+			'falsecall' => $falsecall
+			 );
+		self::$filters[$name]=$r;
+		//if(!is_null($falsecall)) self::$_falsecall[$filter]=$falsecall;
+	}
+
+	public static function filter($name,$callback,$falsecall=null)
+	{
+		addFilter($name,$callback,$falsecall);
+	}
+
+	public static function getFilterCallback($name)
+	{
+		return self::$filters[$name];
 	}
 	
 }
