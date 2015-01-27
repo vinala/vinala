@@ -12,6 +12,7 @@ class Routes
 	public static function get($uri,$callback)
 	{
 		if(is_callable($callback)) self::addCallableGet($uri,$callback);
+		else if(is_array($callback)) self::addFiltredGet($uri,$callback);
 
 	}
 
@@ -30,11 +31,11 @@ class Routes
 		return $value;
 	}
 
-	public static function addCallableGet($url,$callback)
+	protected static function addCallableGet($url,$callback)
 	{
 		$name=self::convert($url);
 		$r = array(
-			'name' => "$name" , 
+			'name' => $name ,
 			'url' => $url , 
 			'callback' => $callback,
 			'methode' => "get",
@@ -54,11 +55,12 @@ class Routes
 		self::$requests[]=$r;
 	}
 
-	public static function addFiltredGet($uri,$callback)
+	protected static function addFiltredGet($uri,$callback)
 	{
+		$name=self::convert($url);
 		$r = array(
-			'name' => "$uri" , 
-			'url' => "/".$uri , 
+			'name' => $name , 
+			'url' => $url , 
 			'callback' => $callback[1],
 			'methode' => "get",
 			"filtre" => $callback[0]
@@ -68,8 +70,8 @@ class Routes
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => "$uri"."/" , 
-			'url' => "/".$uri."/" , 
+			'name' => $name."/" , 
+			'url' => $url."/" , 
 			'callback' => $callback[1],
 			'methode' => "get",
 			"filtre" => $callback[0]
@@ -78,7 +80,7 @@ class Routes
 		self::$requests[]=$r;
 	}
 
-	public static function newFilterString($route)
+	protected static function newFilterString($route)
 	{
 		if(!empty($route["filtre"]))
 		{
@@ -100,17 +102,16 @@ class Routes
 			//
 			foreach (self::$requests as $value) {
 				$requestsUrl=$value["url"];
+				//
 				if(preg_match("#^$requestsUrl$#", $currentUrl,$params))
 				{
 					if($value["methode"]=="post" && Res::isPost())
 					{
-						echo "1";
 						$ok=exec($params,$value);
 						break;
 					}
 					else if($value["methode"]=="post" && !Res::isPost())
 					{
-						echo "2";
 						$ok=0;
 					}
 					else if($value["methode"]=="get")
@@ -122,8 +123,8 @@ class Routes
 				}
 			}
 			if($ok==0) 
-				Errors::r_404();
-				//echo "non";
+				//Errors::r_404();
+				echo "non";
 		}
 		else self::showMaintenance();
 	}
@@ -218,7 +219,7 @@ class Routes
 	protected static function callFilter($filtre,&$ok,&$falseok)
 	{
 		$call=self::$filters[$filtre];
-		$ok=call_user_func($call);
+		$ok=call_user_func($call['callback']);
 		if(!$ok) { $falseok=$filtre;  }
 	}
 
@@ -226,7 +227,7 @@ class Routes
 	{
 		foreach ($filtre as $key => $value) {
 			$call=self::$filters[$value];
-			$ok=call_user_func($call);
+			$ok=call_user_func($call['callback']);
 			if(!$ok) { $falseok=$value; break; }
 		}
 	}
