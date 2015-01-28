@@ -116,7 +116,7 @@ class Routes
 				{
 					if($value["methode"]=="post" && Res::isPost())
 					{
-						$ok=exec($params,$value);
+						$ok=self::exec($params,$value);
 						break;
 					}
 					else if($value["methode"]=="post" && !Res::isPost())
@@ -126,6 +126,17 @@ class Routes
 					else if($value["methode"]=="get")
 					{
 						$ok=self::exec($params,$value);
+						break;
+					}
+					else if($value["methode"]=="resource")
+					{
+						$ok=self::exec($params,$value);
+						break;
+					}
+					else if($value["methode"]=="object")
+					{
+						$ok=self::exec($params,$value);
+						//var_dump($value);
 						break;
 					}
 
@@ -264,39 +275,85 @@ class Routes
 
 	public static function resource($uri,$controller,$data=null)
 	{
-		self::addController($uri."",             $controller,"index");
-		self::addController($uri."/",            $controller,"index");
-		self::addController($uri."/index",       $controller,"index");
-		self::addController($uri."/index/",      $controller,"index");
+		$only=(isset($data['only']) && !empty($data['only']))?$data['only']:null;
+		$except=(isset($data['except']) && !empty($data['except']))?$data['except']:null;
+		$names=(isset($data['names']) && !empty($data['names']))?$data['names']:null;
 		//
-		self::addController($uri."/show/{}",     $controller,"show");
-		self::addController($uri."/show/{}/",    $controller,"show");
+		$routes=self::diffResource($only,$except);
 		//
-		self::addController($uri."/add",         $controller,"add");
-		self::addController($uri."/add/",        $controller,"add");
+		$index=isset($names['index'])?(!empty($names['index'])?$names['index']:"index"):"index";
+		$show=isset($names['show'])?(!empty($names['show'])?$names['show']:"show"):"show";
+		$add=isset($names['add'])?(!empty($names['add'])?$names['add']:"add"):"add";
+		$insert=isset($names['insert'])?(!empty($names['insert'])?$names['insert']:"insert"):"insert";
+		$edit=isset($names['edit'])?(!empty($names['edit'])?$names['edit']:"edit"):"edit";
+		$update=isset($names['update'])?(!empty($names['update'])?$names['update']:"update"):"update";
+		$delete=isset($names['delete'])?(!empty($names['delete'])?$names['delete']:"delete"):"delete";
 		//
-		self::addController($uri."/insert",      $controller,"insert");
-		self::addController($uri."/insert/",     $controller,"insert");
+		if(Table::contains($routes,"index"))
+		{
+			self::addController($uri."",                  $controller,"index");
+			self::addController($uri."/",                 $controller,"index");
+			self::addController($uri."/".$index."",       $controller,"index");
+			self::addController($uri."/".$index."/",      $controller,"index");
+		}
 		//
-		self::addController($uri."/edit/{}",     $controller,"edit");
-		self::addController($uri."/edit/{}/",    $controller,"edit");
+		if(Table::contains($routes,"show"))
+		{
+			self::addController($uri."/$show/{}",         $controller,"show");
+			self::addController($uri."/$show/{}/",        $controller,"show");
+		}
 		//
-		self::addController($uri."/update",      $controller,"update");
-		self::addController($uri."/update/",     $controller,"update");
-		self::addController($uri."/update/{}",   $controller,"update");
-		self::addController($uri."/update/{}/",  $controller,"update");
+		if(Table::contains($routes,"add"))
+		{
+			self::addController($uri."/$add",             $controller,"add");
+			self::addController($uri."/$add/",            $controller,"add");
+		}
 		//
-		self::addController($uri."/delete/{}",   $controller,"delete");
-		self::addController($uri."/delete/{}/",  $controller,"delete");
+		if(Table::contains($routes,"insert"))
+		{
+			self::addController($uri."/$insert",          $controller,"insert");
+			self::addController($uri."/$insert/",         $controller,"insert");
+		}
+		//
+		if(Table::contains($routes,"edit"))
+		{
+			self::addController($uri."/$edit/{}",         $controller,"edit");
+			self::addController($uri."/$edit/{}/",        $controller,"edit");
+		}
+		//
+		if(Table::contains($routes,"update"))
+		{
+			self::addController($uri."/$update",          $controller,"update");
+			self::addController($uri."/$update/",         $controller,"update");
+			self::addController($uri."/$update/{}",       $controller,"update",true);
+			self::addController($uri."/$update/{}/",      $controller,"update",true);
+		}
+		//
+		if(Table::contains($routes,"delete"))
+		{
+			self::addController($uri."/$delete/{}",       $controller,"delete");
+			self::addController($uri."/$delete/{}/",      $controller,"delete");
+		}
 	}
 
-	protected static function addController($url,$controller,$methode)
+	protected static function addController($url,$controller,$methode,$params=false)
 	{
+		if($methode=="show" || $methode=="edit" || $methode=="delete")
+			$callback=function($id) use ($controller,$methode){ $controller::$methode($id); };
+		else if($methode=="update")
+		{
+			if($params) $callback=function($id) use ($controller,$methode){ $controller::$methode($id); };
+			else $callback=function() use ($controller,$methode){ $controller::$methode(); };
+		}
+		else
+			$callback=function() use ($controller,$methode){ $controller::$methode(); };
+			
+
 		$name=self::convert($url);
 		$r = array(
 			'name' => $name ,
 			'url' => $url , 
-			'callback' => function() use ($controller){ $controller::$methode(); },
+			'callback' => $callback,
 			'methode' => "resource",
 			"filtre" => null,
 			'controller' => $controller
@@ -307,12 +364,42 @@ class Routes
 		$r = array(
 			'name' => "$name"."/" , 
 			'url' => $url."/" , 
-			'callback' => function() use ($controller){ $controller::$methode(); },
+			'callback' => $callback,
 			'methode' => "resource",
 			"filtre" => null,
 			'controller' => $controller
 			);
+		self::$requests[]=$r;
 		//
 	}
+
+	protected static function diffResource($only,$except)
+	{
+		$all = array('index','show','add','insert','edit','update','delete');
+		//
+		if(isset($except))
+		{
+			$i=0;
+			foreach ($all as  $value) 
+			{
+				if(Table::contains($except,$value)) unset($all[$i]);
+				$i++;
+			}
+		}
+		// 
+		if(isset($only))
+		{
+			foreach ($all as $key =>$value) 
+			{
+				$ext=false;
+				foreach ($only as  $value2) {
+					if($value==$value2) { $ext=true; break;}
+				}
+				if(!$ext) unset($all[$key]);
+			}
+		}
+		return $all;
+	}
+
 	
 }
