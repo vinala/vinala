@@ -39,7 +39,7 @@ return array(
 	| o men b3d smyt dossier li khedam fih
 	*/
 
-	'url'=>$_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"],
+	'url'=>App::root(),
 
 	/*
 	|----------------------------------------------
