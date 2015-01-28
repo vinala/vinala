@@ -9,16 +9,24 @@ class Routes
 	private static $filters=array();
 	private static $current=null;
 
-	public static function get($uri,$callback)
+	public static function get($uri,$callback,$subdomains=null)
 	{
-		if(is_callable($callback)) self::addCallable($uri,$callback,"get");
-		else if(is_array($callback)) self::addFiltred($uri,$callback,"get");
+		$domains = null;
+		if(!is_null($subdomains)) $domains = self::extractSubdomains($subdomains);
+		if(is_callable($callback)) self::addCallable($uri,$callback,"get",$domains);
+		else if(is_array($callback)) self::addFiltred($uri,$callback,"get",$domains);
 	}
 
 	public static function post($uri,$callback)
 	{
 		if(is_callable($callback)) self::addCallable($uri,$callback,"post");
 		else if(is_array($callback)) self::addFiltred($uri,$callback,"post");
+	}
+
+	protected static function extractSubdomains($subdomains)
+	{
+		$spliter=",";
+		return explode($spliter, $subdomains);
 	}
 
 	protected static function convert(&$url)
@@ -36,7 +44,7 @@ class Routes
 		return $value;
 	}
 
-	protected static function addCallable($url,$callback,$methode)
+	protected static function addCallable($url,$callback,$methode,$subdomain=null)
 	{
 		$name=self::convert($url);
 		$r = array(
@@ -45,6 +53,7 @@ class Routes
 			'callback' => $callback,
 			'methode' => $methode,
 			"filtre" => null,
+			"subdomain" => $subdomain,
 			'controller' => null
 			);
 		//
@@ -56,13 +65,14 @@ class Routes
 			'callback' => $callback,
 			'methode' => $methode,
 			"filtre" => null,
+			"subdomain" => $subdomain,
 			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
 	}
 
-	protected static function addFiltred($uri,$callback,$methode)
+	protected static function addFiltred($uri,$callback,$methode,$subdomain=null)
 	{
 		$name=self::convert($url);
 		$r = array(
@@ -71,6 +81,7 @@ class Routes
 			'callback' => $callback[1],
 			'methode' => $methode,
 			"filtre" => $callback[0],
+			"subdomain" => $subdomain,
 			'controller' => null
 			);
 
@@ -83,6 +94,7 @@ class Routes
 			'callback' => $callback[1],
 			'methode' => $methode,
 			"filtre" => $callback[0],
+			"subdomain" => $subdomain,
 			'controller' => null
 			);
 		//
@@ -99,6 +111,49 @@ class Routes
 		}
 	}
 
+	protected static function getSubDomain()
+	{
+		$domain=$_SERVER['SERVER_NAME'];
+	}
+
+	protected static function getDomain()
+	{
+		$domain=$_SERVER['SERVER_NAME'];
+		return $domain;
+	}
+
+	protected static function selectMethode($request,$params)
+	{
+		var_dump($request["subdomain"]);
+		//
+		if($request["methode"]=="post" && Res::isPost())
+		{
+			$ok=self::exec($params,$request);
+			break;
+		}
+		else if($request["methode"]=="post" && !Res::isPost())
+		{
+			$ok=0;
+		}
+		else if($request["methode"]=="get")
+		{
+			$ok=self::exec($params,$request);
+			break;
+		}
+		else if($request["methode"]=="resource")
+		{
+			$ok=self::exec($params,$request);
+			break;
+		}
+		else if($request["methode"]=="object")
+		{
+			$ok=self::exec($params,$request);
+			//var_dump($request);
+			break;
+		}
+		return $ok;
+	}
+
 	public static function run()
 	{
 		$currentUrl=self::CheckUrl();
@@ -111,33 +166,69 @@ class Routes
 			//
 			foreach (self::$requests as $value) {
 				$requestsUrl=$value["url"];
+				//var_dump($value);
 				//
 				if(preg_match("#^$requestsUrl$#", $currentUrl,$params))
 				{
-					if($value["methode"]=="post" && Res::isPost())
+					if(!is_null($value["subdomain"]))
 					{
-						$ok=self::exec($params,$value);
-						break;
+						if(Table::contains($value["subdomain"],self::getDomain()))
+							{
+								if($value["methode"]=="post" && Res::isPost())
+								{
+									$ok=self::exec($params,$value);
+									break;
+								}
+								else if($value["methode"]=="post" && !Res::isPost())
+								{
+									$ok=0;
+								}
+								else if($value["methode"]=="get")
+								{
+									$ok=self::exec($params,$value);
+									break;
+								}
+								else if($value["methode"]=="resource")
+								{
+									$ok=self::exec($params,$value);
+									break;
+								}
+								else if($value["methode"]=="object")
+								{
+									$ok=self::exec($params,$value);
+									//var_dump($value);
+									break;
+								}
+							}
+						else $ok=0;
 					}
-					else if($value["methode"]=="post" && !Res::isPost())
+					else
 					{
-						$ok=0;
-					}
-					else if($value["methode"]=="get")
-					{
-						$ok=self::exec($params,$value);
-						break;
-					}
-					else if($value["methode"]=="resource")
-					{
-						$ok=self::exec($params,$value);
-						break;
-					}
-					else if($value["methode"]=="object")
-					{
-						$ok=self::exec($params,$value);
-						//var_dump($value);
-						break;
+						if($value["methode"]=="post" && Res::isPost())
+						{
+							$ok=self::exec($params,$value);
+							break;
+						}
+						else if($value["methode"]=="post" && !Res::isPost())
+						{
+							$ok=0;
+						}
+						else if($value["methode"]=="get")
+						{
+							$ok=self::exec($params,$value);
+							break;
+						}
+						else if($value["methode"]=="resource")
+						{
+							$ok=self::exec($params,$value);
+							break;
+						}
+						else if($value["methode"]=="object")
+						{
+							$ok=self::exec($params,$value);
+							//var_dump($value);
+							break;
+						}
 					}
 
 				}
@@ -400,6 +491,7 @@ class Routes
 		}
 		return $all;
 	}
+
 
 	
 }
