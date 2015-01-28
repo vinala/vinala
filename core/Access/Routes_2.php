@@ -44,7 +44,8 @@ class Routes
 			'url' => $url , 
 			'callback' => $callback,
 			'methode' => $methode,
-			"filtre" => null
+			"filtre" => null,
+			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
@@ -54,7 +55,8 @@ class Routes
 			'url' => $url."/" , 
 			'callback' => $callback,
 			'methode' => $methode,
-			"filtre" => null
+			"filtre" => null,
+			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
@@ -68,7 +70,8 @@ class Routes
 			'url' => $url , 
 			'callback' => $callback[1],
 			'methode' => $methode,
-			"filtre" => $callback[0]
+			"filtre" => $callback[0],
+			'controller' => null
 			);
 
 		//
@@ -79,7 +82,8 @@ class Routes
 			'url' => $url."/" , 
 			'callback' => $callback[1],
 			'methode' => $methode,
-			"filtre" => $callback[0]
+			"filtre" => $callback[0],
+			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
@@ -256,6 +260,59 @@ class Routes
 	{
 		if(Config::get("maintenance.maintenanceEvent")=="string") echo Config::get("maintenance.maintenanceResponse");
 		else if(Config::get("maintenance.maintenanceEvent")=="link") Url::redirect(Config::get("maintenance.maintenanceResponse"));
+	}
+
+	public static function resource($uri,$controller,$data=null)
+	{
+		self::addController($uri."",             $controller,"index");
+		self::addController($uri."/",            $controller,"index");
+		self::addController($uri."/index",       $controller,"index");
+		self::addController($uri."/index/",      $controller,"index");
+		//
+		self::addController($uri."/show/{}",     $controller,"show");
+		self::addController($uri."/show/{}/",    $controller,"show");
+		//
+		self::addController($uri."/add",         $controller,"add");
+		self::addController($uri."/add/",        $controller,"add");
+		//
+		self::addController($uri."/insert",      $controller,"insert");
+		self::addController($uri."/insert/",     $controller,"insert");
+		//
+		self::addController($uri."/edit/{}",     $controller,"edit");
+		self::addController($uri."/edit/{}/",    $controller,"edit");
+		//
+		self::addController($uri."/update",      $controller,"update");
+		self::addController($uri."/update/",     $controller,"update");
+		self::addController($uri."/update/{}",   $controller,"update");
+		self::addController($uri."/update/{}/",  $controller,"update");
+		//
+		self::addController($uri."/delete/{}",   $controller,"delete");
+		self::addController($uri."/delete/{}/",  $controller,"delete");
+	}
+
+	protected static function addController($url,$controller,$methode)
+	{
+		$name=self::convert($url);
+		$r = array(
+			'name' => $name ,
+			'url' => $url , 
+			'callback' => function() use ($controller){ $controller::$methode(); },
+			'methode' => "resource",
+			"filtre" => null,
+			'controller' => $controller
+			);
+		//
+		self::$requests[]=$r;
+
+		$r = array(
+			'name' => "$name"."/" , 
+			'url' => $url."/" , 
+			'callback' => function() use ($controller){ $controller::$methode(); },
+			'methode' => "resource",
+			"filtre" => null,
+			'controller' => $controller
+			);
+		//
 	}
 	
 }

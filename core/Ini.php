@@ -153,6 +153,13 @@ class App
 	{
 		self::$Callbacks['after']=$fun;
 	}
+
+	public static function root()
+	{
+		$sub=$_SERVER["PHP_SELF"];
+		$r=explode("App.php", $sub);
+		return $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].$r[0];
+	}
 }
 
 
