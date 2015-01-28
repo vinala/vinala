@@ -11,9 +11,14 @@ class Routes
 
 	public static function get($uri,$callback)
 	{
-		if(is_callable($callback)) self::addCallableGet($uri,$callback);
-		else if(is_array($callback)) self::addFiltredGet($uri,$callback);
+		if(is_callable($callback)) self::addCallable($uri,$callback,"get");
+		else if(is_array($callback)) self::addFiltred($uri,$callback,"get");
+	}
 
+	public static function post($uri,$callback)
+	{
+		if(is_callable($callback)) self::addCallable($uri,$callback,"post");
+		else if(is_array($callback)) self::addFiltred($uri,$callback,"post");
 	}
 
 	protected static function convert(&$url)
@@ -31,14 +36,14 @@ class Routes
 		return $value;
 	}
 
-	protected static function addCallableGet($url,$callback)
+	protected static function addCallable($url,$callback,$methode)
 	{
 		$name=self::convert($url);
 		$r = array(
 			'name' => $name ,
 			'url' => $url , 
 			'callback' => $callback,
-			'methode' => "get",
+			'methode' => $methode,
 			"filtre" => null
 			);
 		//
@@ -48,21 +53,21 @@ class Routes
 			'name' => "$name"."/" , 
 			'url' => $url."/" , 
 			'callback' => $callback,
-			'methode' => "get",
+			'methode' => $methode,
 			"filtre" => null
 			);
 		//
 		self::$requests[]=$r;
 	}
 
-	protected static function addFiltredGet($uri,$callback)
+	protected static function addFiltred($uri,$callback,$methode)
 	{
 		$name=self::convert($url);
 		$r = array(
 			'name' => $name , 
 			'url' => $url , 
 			'callback' => $callback[1],
-			'methode' => "get",
+			'methode' => $methode,
 			"filtre" => $callback[0]
 			);
 
@@ -73,7 +78,7 @@ class Routes
 			'name' => $name."/" , 
 			'url' => $url."/" , 
 			'callback' => $callback[1],
-			'methode' => "get",
+			'methode' => $methode,
 			"filtre" => $callback[0]
 			);
 		//
