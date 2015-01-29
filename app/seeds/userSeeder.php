@@ -18,12 +18,9 @@ class UserSeeder extends Seeder
 	{
 		$data = array();
 		//
-		for ($i=0; $i < 50; $i++) { 
-			$datar=array('nom' => Faker::firstName() , 'mail' => Faker::Email(),'password'=> Faker::hash() ,'token'=> Faker::hash(),'rememberToken' =>  Faker::hash() );
-			Table::push($data,$datar);
-		}
-		
-
+		for ($i=0; $i < 50; $i++) 
+			Table::push($data , array('nom' => Faker::firstName() , 'mail' => Faker::Email(),'password'=> Faker::hash() ,'token'=> Faker::hash(),'rememberToken' =>  Faker::hash() ));
+		//
 		Schema::table($this->table)->insert($data);
 	}
 }
