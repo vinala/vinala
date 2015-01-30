@@ -20,7 +20,10 @@ class App
 		//
 		self::$page=$p;
 		self::$root=$root;
-		if($session)session_start();
+		//
+		//session
+		require 'Storage/Session.php';
+		if($session)Session::start();
 		//
 		require 'Access/ErrorHandler.php';
 		require 'Config.php';
@@ -33,7 +36,7 @@ class App
 		require 'MVC/Templete.php';
 		require 'Objects/Exception.php';
 		require 'Faker.php';
-		require 'Storage/Session.php';
+		
 		require 'Storage/Cookie.php';
 		require 'Access/Routes.php';
 		require 'Security/Auth.php';
