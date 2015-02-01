@@ -44,6 +44,33 @@ class Routes
 		return $value;
 	}
 
+	public static function convertParams($url)
+	{
+		$url2="";
+		$inner=false;
+		for ($i=0; $i < strlen($url); $i++) 
+		{ 
+			if(!$inner) 
+			{
+				if($url[$i]!="{") $url2.=$url[$i];
+				else
+				{
+					$url2.="{";
+					$inner=true;
+				}
+			}
+			else
+			{
+				if($url[$i]=="}")
+				{
+					$url2.="}";
+					$inner=false;
+				}
+			}
+		}
+		return $url2;
+	}
+
 	protected static function addCallable($url,$callback,$methode,$subdomain=null)
 	{
 		$name=self::convert($url);
@@ -160,6 +187,7 @@ class Routes
 		//
 		if(self::CheckMaintenance($currentUrl))
 		{
+			self::ReplaceParams();
 			self::Replace();
 			//
 			$ok=false;
@@ -304,6 +332,14 @@ class Routes
 		for ($i=0; $i < count(self::$requests); $i++) 
 			if (strpos(self::$requests[$i]['url'],'{}') !== false) 
 					self::$requests[$i]['url']=str_replace('{}', '(.*)?', self::$requests[$i]['url']); 
+	}
+
+	protected static function ReplaceParams()
+	{
+		for ($i=0; $i < count(self::$requests); $i++) 
+			self::$requests[$i]['url']=self::convertParams(self::$requests[$i]['url']);
+			//if (strpos(self::$requests[$i]['url'],'{}') !== false) 
+			//		self::$requests[$i]['url']=str_replace('{}', '(.*)?', self::$requests[$i]['url']); 
 	}
 
 	protected static function addFilter($name,$callback,$falsecall=null)

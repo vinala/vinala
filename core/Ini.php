@@ -38,7 +38,8 @@ class App
 		require 'Faker.php';
 		
 		require 'Storage/Cookie.php';
-		require 'Access/Routes.php';
+		//require 'Access/Routes.php';
+		require 'Access/Routes_2.php';
 		require 'Security/Auth.php';
 		require 'Objects/List.php';
 		require 'Database/Seeder.php';
