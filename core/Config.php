@@ -196,8 +196,12 @@ class Config
 				if($val[1]=="debug") {$ret=$tbl['debug'];}
 				else if($val[1]=="msg") $ret=$tbl['msg'];
 				else if($val[1]=="log") $ret=$tbl['log'];
-				
-				// else if($val[1]=="paginationSimplePrevious") $ret=$tbl['paginationSimplePrevious'];
+				break;
+
+			case 'error':
+				if(is_null(App::$root)) $tbl=(include 'app/config/errors.php');
+				else $tbl=(include App::$root.'app/config/errors.php');
+				$ret=$tbl[$val[1]];
 				break;
 			
 		}

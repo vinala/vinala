@@ -45,43 +45,80 @@ class Errors
 	//
 	public static function ini($root=null)
 	{
-		if(!empty($root)) $tbl=(include $root."app/Errors.php");
-		else $tbl=(include Sys::$root."app/Errors.php");
+		// if(!empty($root)) $tbl=(include $root."app/Errors.php");
+		// else $tbl=(include Sys::$root."app/Errors.php");
 		//
-		self::$r_400=$tbl["r_400"];
-		self::$r_401=$tbl["r_401"];
-		self::$r_402=$tbl["r_402"];
-		self::$r_403=$tbl["r_403"];
-		self::$r_404=$tbl["r_404"];
-		self::$r_405=$tbl["r_405"];
-		self::$r_406=$tbl["r_406"];
-		self::$r_407=$tbl["r_407"];
-		self::$r_408=$tbl["r_408"];
-		self::$r_409=$tbl["r_409"];
-		self::$r_410=$tbl["r_410"];
-		self::$r_411=$tbl["r_411"];
-		self::$r_412=$tbl["r_412"];
-		self::$r_413=$tbl["r_413"];
-		self::$r_414=$tbl["r_414"];
-		self::$r_415=$tbl["r_415"];
-		self::$r_416=$tbl["r_416"];
-		self::$r_417=$tbl["r_417"];
-		self::$r_418=$tbl["r_418"];
-		self::$r_422=$tbl["r_422"];
-		self::$r_423=$tbl["r_423"];
-		self::$r_424=$tbl["r_424"];
-		self::$r_425=$tbl["r_425"];
-		self::$r_426=$tbl["r_426"];
+
+		self::$r_400=Config::get("error.400");
+		self::$r_401=Config::get("error.401");
+		self::$r_402=Config::get("error.402");
+		self::$r_403=Config::get("error.403");
+		self::$r_404=Config::get("error.404");
+		self::$r_405=Config::get("error.405");
+		self::$r_406=Config::get("error.406");
+		self::$r_407=Config::get("error.407");
+		self::$r_408=Config::get("error.408");
+		self::$r_409=Config::get("error.409");
+		self::$r_410=Config::get("error.410");
+		self::$r_411=Config::get("error.411");
+		self::$r_412=Config::get("error.412");
+		self::$r_413=Config::get("error.413");
+		self::$r_414=Config::get("error.414");
+		self::$r_415=Config::get("error.415");
+		self::$r_416=Config::get("error.416");
+		self::$r_417=Config::get("error.417");
+		self::$r_418=Config::get("error.418");
+		self::$r_422=Config::get("error.422");
+		self::$r_423=Config::get("error.423");
+		self::$r_424=Config::get("error.424");
+		self::$r_425=Config::get("error.425");
+		self::$r_426=Config::get("error.426");
 		//
-		self::$r_500=$tbl["r_500"];
-		self::$r_501=$tbl["r_501"];
-		self::$r_502=$tbl["r_502"];
-		self::$r_503=$tbl["r_503"];
-		self::$r_504=$tbl["r_504"];
-		self::$r_505=$tbl["r_505"];
-		self::$r_507=$tbl["r_507"];
-		self::$r_509=$tbl["r_509"];
-		self::$r_db=$tbl["r_db"];
+		self::$r_500=Config::get("error.500");
+		self::$r_501=Config::get("error.501");
+		self::$r_502=Config::get("error.502");
+		self::$r_503=Config::get("error.503");
+		self::$r_504=Config::get("error.504");
+		self::$r_505=Config::get("error.505");
+		self::$r_507=Config::get("error.507");
+		self::$r_509=Config::get("error.509");
+		self::$r_db=Config::get("error.database");
+
+	// 	self::$r_400=$tbl["r_400"];
+	// 	self::$r_401=$tbl["r_401"];
+	// 	self::$r_402=$tbl["r_402"];
+	// 	self::$r_403=$tbl["r_403"];
+	// 	self::$r_404=$tbl["r_404"];
+	// 	self::$r_405=$tbl["r_405"];
+	// 	self::$r_406=$tbl["r_406"];
+	// 	self::$r_407=$tbl["r_407"];
+	// 	self::$r_408=$tbl["r_408"];
+	// 	self::$r_409=$tbl["r_409"];
+	// 	self::$r_410=$tbl["r_410"];
+	// 	self::$r_411=$tbl["r_411"];
+	// 	self::$r_412=$tbl["r_412"];
+	// 	self::$r_413=$tbl["r_413"];
+	// 	self::$r_414=$tbl["r_414"];
+	// 	self::$r_415=$tbl["r_415"];
+	// 	self::$r_416=$tbl["r_416"];
+	// 	self::$r_417=$tbl["r_417"];
+	// 	self::$r_418=$tbl["r_418"];
+	// 	self::$r_422=$tbl["r_422"];
+	// 	self::$r_423=$tbl["r_423"];
+	// 	self::$r_424=$tbl["r_424"];
+	// 	self::$r_425=$tbl["r_425"];
+	// 	self::$r_426=$tbl["r_426"];
+	// 	//
+	// 	self::$r_500=$tbl["r_500"];
+	// 	self::$r_501=$tbl["r_501"];
+	// 	self::$r_502=$tbl["r_502"];
+	// 	self::$r_503=$tbl["r_503"];
+	// 	self::$r_504=$tbl["r_504"];
+	// 	self::$r_505=$tbl["r_505"];
+	// 	self::$r_507=$tbl["r_507"];
+	// 	self::$r_509=$tbl["r_509"];
+	// 	self::$r_db=$tbl["r_db"];
+	// }
 	}
 
 	public static function r_db()

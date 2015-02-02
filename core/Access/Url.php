@@ -29,8 +29,8 @@ class Url
 
 	public static function ini()
 	{
-		self::$css=Config::get('app.url')."app/libs/css/";
-		self::$js=Config::get('app.url')."app/libs/js/";
-		self::$img=Config::get('app.url')."app/res/images/";
+		self::$css=Config::get('app.url')."app/resources/css/";
+		self::$js=Config::get('app.url')."app/resources/js/";
+		self::$img=Config::get('app.url')."app/resources/images/";
 	}
 }

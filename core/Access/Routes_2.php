@@ -262,8 +262,8 @@ class Routes
 				}
 			}
 			if($ok==0) 
-				//Errors::r_404();
-				echo "non";
+				Errors::r_404();
+				//echo "non";
 		}
 		else self::showMaintenance();
 	}
