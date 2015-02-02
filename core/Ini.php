@@ -27,6 +27,7 @@ class App
 		//
 		require 'Access/ErrorHandler.php';
 		require 'Config.php';
+		require 'Objects/Vars.php';
 		//
 		ini_set("log_errors", 1);
 		ini_set("error_log", Config::get("loggin.log"));
@@ -101,7 +102,7 @@ class App
 				foreach (glob($root."app/controllers/*.php") as $file) { include_once $file; }
 				//
 				//include the variables files
-				foreach (glob($root."app/vars/*.php") as $file) { include_once $file; }
+				// foreach (glob($root."app/vars/*.php") as $file) { include_once $file; }
 				//
 				//include the link files
 				foreach (glob($root."app/paths/*.php") as $file) { include_once $file; }
@@ -127,7 +128,7 @@ class App
 				foreach (glob("app/controllers/*.php") as $file) { include_once $file; }
 				//
 				//include the variables files
-				foreach (glob("app/vars/*.php") as $file) { include_once $file; }
+				// foreach (glob("app/vars/*.php") as $file) { include_once $file; }
 				//
 				//include the seeders files
 				foreach (glob("app/seeds/*.php") as $file) { include_once $file; }
