@@ -1,11 +1,8 @@
 <?php 
 
-/**
-* Class of varibales
+/*
+*  Custom variables
 */
-class Vars_sb
-{
-	//vars 
-	public static $test="abcd";
-	
-}
+return array(
+	'name' => "Youssef Had",
+	);
