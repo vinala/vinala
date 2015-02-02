@@ -15,9 +15,3 @@ Routes::get("/",function()
 {	
 	return View::make('hello');
 });
-
-
-
-
-
-

@@ -5,5 +5,5 @@
 */
 
 return array(
-	'test' => "test"
+	'root' => Config::get('app.url'),
 	);
