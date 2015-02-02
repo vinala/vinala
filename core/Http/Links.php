@@ -22,125 +22,40 @@ class Links
 			foreach ($tbl as $key => $value)
 			{
 				self::$bigOne[$key]=$value;
-				//self::$ext->$key=$value;
 			}
 		}
-
-		// for ext links
-		/*foreach (glob(Sys::$root."Fiesta/app/links/ext.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$ext->$key=$value;
-			}
-		}
-		// for Social links
-		foreach (glob(Sys::$root."Fiesta/app/links/social.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$social->$key=$value;
-			}
-		}
-		// for css links
-		foreach (glob(Sys::$root."Fiesta/app/links/css.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$css->$key=$value;
-			}
-		}
-		// for javascript links
-		foreach (glob(Sys::$root."Fiesta/app/links/javascript.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$js->$key=$value;
-			}
-		}
-		// for general links
-		foreach (glob(Sys::$root."Fiesta/app/links/main.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$gen->$key=$value;
-			}
-		}*/
 	}
-
-	/*public static function ini()
-	{ 
-		self::$ext = new self();
-		self::$social = new self();
-		self::$css = new self();
-		self::$js = new self();
-		self::$gen = new self();
-
-		// for ext links
-		foreach (glob(Sys::$root."Fiesta/app/links/ext.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$ext->$key=$value;
-			}
-		}
-		// for Social links
-		foreach (glob(Sys::$root."Fiesta/app/links/social.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$social->$key=$value;
-			}
-		}
-		// for css links
-		foreach (glob(Sys::$root."Fiesta/app/links/css.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$css->$key=$value;
-			}
-		}
-		// for javascript links
-		foreach (glob(Sys::$root."Fiesta/app/links/javascript.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$js->$key=$value;
-			}
-		}
-		// for general links
-		foreach (glob(Sys::$root."Fiesta/app/links/main.php") as $filename)
-		{
-			$tbl=(include $filename);
-			foreach ($tbl as $key => $value)
-			{
-				self::$bigOne[$key]=$value;
-				self::$gen->$key=$value;
-			}
-		}
-	}*/
 
 	public static function get($key)
 	{
 		return self::$bigOne[$key];
+	}
+
+	public static function in($key)
+	{
+		$url=explode('.', $key);
+		$k="";
+		$link="";
+		if(count($url)>=3)
+		{
+			$j=0;
+			for ($i=0; $i < count($url)-2 ; $i++) { 
+				$link.=$url[$i]."/";
+				$j=$i;
+			}
+			$j++;
+			$link.=$url[$j];
+			$k=$url[$j+1];
+		}
+		else
+		{
+			$link.=$url[0];
+			$k=$url[1];
+		}
+		
+		$files=include ("app/links/$link.php");
+		//
+		return $files[$k];
 	}
 
 	public static function popup($link='',$title="",$width=200,$height=100)

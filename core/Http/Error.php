@@ -84,41 +84,6 @@ class Errors
 		self::$r_509=Config::get("error.509");
 		self::$r_db=Config::get("error.database");
 
-	// 	self::$r_400=$tbl["r_400"];
-	// 	self::$r_401=$tbl["r_401"];
-	// 	self::$r_402=$tbl["r_402"];
-	// 	self::$r_403=$tbl["r_403"];
-	// 	self::$r_404=$tbl["r_404"];
-	// 	self::$r_405=$tbl["r_405"];
-	// 	self::$r_406=$tbl["r_406"];
-	// 	self::$r_407=$tbl["r_407"];
-	// 	self::$r_408=$tbl["r_408"];
-	// 	self::$r_409=$tbl["r_409"];
-	// 	self::$r_410=$tbl["r_410"];
-	// 	self::$r_411=$tbl["r_411"];
-	// 	self::$r_412=$tbl["r_412"];
-	// 	self::$r_413=$tbl["r_413"];
-	// 	self::$r_414=$tbl["r_414"];
-	// 	self::$r_415=$tbl["r_415"];
-	// 	self::$r_416=$tbl["r_416"];
-	// 	self::$r_417=$tbl["r_417"];
-	// 	self::$r_418=$tbl["r_418"];
-	// 	self::$r_422=$tbl["r_422"];
-	// 	self::$r_423=$tbl["r_423"];
-	// 	self::$r_424=$tbl["r_424"];
-	// 	self::$r_425=$tbl["r_425"];
-	// 	self::$r_426=$tbl["r_426"];
-	// 	//
-	// 	self::$r_500=$tbl["r_500"];
-	// 	self::$r_501=$tbl["r_501"];
-	// 	self::$r_502=$tbl["r_502"];
-	// 	self::$r_503=$tbl["r_503"];
-	// 	self::$r_504=$tbl["r_504"];
-	// 	self::$r_505=$tbl["r_505"];
-	// 	self::$r_507=$tbl["r_507"];
-	// 	self::$r_509=$tbl["r_509"];
-	// 	self::$r_db=$tbl["r_db"];
-	// }
 	}
 
 	public static function r_db()
