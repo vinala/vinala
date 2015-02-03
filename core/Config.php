@@ -13,8 +13,8 @@ class Config
 			//
 		switch ($val[0]) {
 			case 'database':
-				if(is_null(App::$root)) $tbl=(include 'app/config/database.php');
-				else $tbl=(include App::$root.'app/config/database.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/database.php');
+				else $tbl=(include App::$root.'../app/config/database.php');
 				//
 				if($val[1]=="default")
 				{
@@ -85,8 +85,8 @@ class Config
 				}
 				break;
 			case 'panel':
-				if(is_null(App::$root)) { $tbl=(include 'app/config/panel.php'); }
-				else { $tbl=(include App::$root.'app/config/panel.php'); }
+				if(is_null(App::$root)) { $tbl=(include '../app/config/panel.php'); }
+				else { $tbl=(include App::$root.'../app/config/panel.php'); }
 				//
 				if($val[1]=="route") $ret=$tbl['route'];
 				else if($val[1]=="password1") $ret=$tbl['password1'];
@@ -96,8 +96,8 @@ class Config
 				//
 				break;
 			case 'app':
-				if(is_null(App::$root)) $tbl=(include 'app/config/app.php');
-				else $tbl=(include App::$root.'app/config/app.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/app.php');
+				else $tbl=(include App::$root.'../app/config/app.php');
 				//
 				if($val[1]=="project") $ret=$tbl['project'];
 				else if($val[1]=="projectFolder") $ret=$tbl['projectFolder'];
@@ -105,11 +105,12 @@ class Config
 				else if($val[1]=="lang") $ret=$tbl['lang'];
 				else if($val[1]=="owner") $ret=$tbl['owner'];
 				else if($val[1]=="title") $ret=$tbl['title'];
+				else if($val[1]=="unrouted") $ret=$tbl['unrouted'];
 				//
 				break;
 			case 'license':
-				if(is_null(App::$root)) $tbl=(include 'app/config/license.php');
-				else $tbl=(include App::$root.'app/config/license.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/license.php');
+				else $tbl=(include App::$root.'../app/config/license.php');
 				//
 				if($val[1]=="authorized") $ret=$tbl['authorized'];
 				else if($val[1]=="pageblock") $ret=$tbl['pageblock'];
@@ -118,8 +119,8 @@ class Config
 				//
 				break;	
 			case 'maintenance':
-				if(is_null(App::$root)) $tbl=(include 'app/config/maintenance.php');
-				else $tbl=(include App::$root.'app/config/maintenance.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/maintenance.php');
+				else $tbl=(include App::$root.'../app/config/maintenance.php');
 				//
 				if($val[1]=="activate") $ret=$tbl['activate'];
 				else if($val[1]=="maintenanceEvent") $ret=$tbl['maintenanceEvent'];
@@ -128,24 +129,24 @@ class Config
 				//
 				break;		
 			case 'lang':
-				if(is_null(App::$root)) $tbl=(include 'app/config/lang.php');
-				else $tbl=(include App::$root.'app/config/lang.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/lang.php');
+				else $tbl=(include App::$root.'../app/config/lang.php');
 				//
 				if($val[1]=="default") $ret=$tbl['default'];
 				else if($val[1]=="cookie") $ret=$tbl['cookie'];
 				//
 				break;		
 			case 'security':
-				if(is_null(App::$root)) $tbl=(include 'app/config/security.php');
-				else $tbl=(include App::$root.'app/config/security.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/security.php');
+				else $tbl=(include App::$root.'../app/config/security.php');
 				//
 				if($val[1]=="key1") $ret=$tbl['key1'];
 				else if($val[1]=="key2") $ret=$tbl['key2'];
 				//
 				break;		
 			case 'auth':
-				if(is_null(App::$root)) $tbl=(include 'app/config/auth.php');
-				else $tbl=(include App::$root.'app/config/auth.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/auth.php');
+				else $tbl=(include App::$root.'../app/config/auth.php');
 				//
 				if($val[1]=="table") $ret=$tbl['table'];
 				else if($val[1]=="hashed_fields") $ret=$tbl['hashed_fields'];
@@ -156,8 +157,8 @@ class Config
 				//
 				break;		
 			case 'mail':
-				if(is_null(App::$root)) $tbl=(include 'app/config/mail.php');
-				else $tbl=(include App::$root.'app/config/mail.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/mail.php');
+				else $tbl=(include App::$root.'../app/config/mail.php');
 				//
 				if($val[1]=="host") $ret=$tbl['host'];
 				else if($val[1]=="port") $ret=$tbl['port'];
@@ -177,8 +178,8 @@ class Config
 				//
 				break;
 			case 'view':
-				if(is_null(App::$root)) $tbl=(include 'app/config/view.php');
-				else $tbl=(include App::$root.'app/config/view.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/view.php');
+				else $tbl=(include App::$root.'../app/config/view.php');
 				//
 				if($val[1]=="pagination_param") $ret=$tbl['pagination_param'];
 				else if($val[1]=="pagination_style") $ret=$tbl['pagination_style'];
@@ -190,8 +191,8 @@ class Config
 				break;
 
 			case 'loggin':
-				if(is_null(App::$root)) $tbl=(include 'app/config/loggin.php');
-				else $tbl=(include App::$root.'app/config/loggin.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/loggin.php');
+				else $tbl=(include App::$root.'../app/config/loggin.php');
 				//
 				if($val[1]=="debug") {$ret=$tbl['debug'];}
 				else if($val[1]=="msg") $ret=$tbl['msg'];
@@ -199,8 +200,8 @@ class Config
 				break;
 
 			case 'error':
-				if(is_null(App::$root)) $tbl=(include 'app/config/errors.php');
-				else $tbl=(include App::$root.'app/config/errors.php');
+				if(is_null(App::$root)) $tbl=(include '../app/config/errors.php');
+				else $tbl=(include App::$root.'../app/config/errors.php');
 				$ret=$tbl[$val[1]];
 				break;
 			

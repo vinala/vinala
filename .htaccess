@@ -1,69 +1,17 @@
-#----------------------------------------
-# Rewriting engin
-#----------------------------------------
-
+Options +FollowSymLinks
+#IndexIgnore */*
+# Turn on the RewriteEngine
 RewriteEngine On
-
-# Ila kenti khedam f serveur local khask 
-# tactiver RewriteBase ya3ni t7yed # men 
-# lbdiya dial la ligne o tkteb smya dial  
-# projet dial ola dial dossier li fih
-# l projet dialk ila kenti khedam remote
-# host ya3ni f serveur a distance bla ma 
-# t activiha
-#RewriteBase /nom_de_projet/
+#  Rules
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . public/index.php?$url=$1
+#RewriteRule ^(.+)$ public/index.php?url=$1 [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ public/index.php?url=$1 [QSA,L]
 
-
-RewriteRule ^(.+)$ App.php?url=$1 [QSA,L]
-RewriteRule ^(/)?$ App.php
-
-#----------------------------------------
-# Http Errors
-#----------------------------------------
-# Hna ghadi t7t les liens dial les erreurs
-# dial site khask t activer ligne o t3tih
-# lien dial l rederiction l page dial l erreur
-
-# Client Errors
-
-#ErrorDocument 400 {lien}
-#ErrorDocument 401 {lien}
-#ErrorDocument 402 {lien}
-#ErrorDocument 403 {lien}
-#ErrorDocument 404 {lien}
-#ErrorDocument 405 {lien}
-#ErrorDocument 406 {lien}
-#ErrorDocument 407 {lien}
-#ErrorDocument 408 {lien}
-#ErrorDocument 409 {lien}
-#ErrorDocument 410 {lien}
-#ErrorDocument 411 {lien}
-#ErrorDocument 412 {lien}
-#ErrorDocument 423 {lien}
-#ErrorDocument 414 {lien}
-#ErrorDocument 415 {lien}
-#ErrorDocument 416 {lien}
-#ErrorDocument 417 {lien}
-#ErrorDocument 418 {lien}
-#ErrorDocument 422 {lien}
-#ErrorDocument 423 {lien}
-#ErrorDocument 424 {lien}
-#ErrorDocument 425 {lien}
-#ErrorDocument 426 {lien}
-
-# Server Errors
-
-#ErrorDocument 500 {lien}
-#ErrorDocument 501 {lien}
-#ErrorDocument 502 {lien}
-#ErrorDocument 503 {lien}
-#ErrorDocument 504 {lien}
-#ErrorDocument 505 {lien}
-#ErrorDocument 507 {lien}
-#ErrorDocument 509 {lien}
-
-
-
+# Empty Url
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^/?$ public/index.php

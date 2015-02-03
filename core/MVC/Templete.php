@@ -10,7 +10,7 @@ class Templete
 
 	public static function ini($root="")
 	{
-		require_once $root.'core/Associates/Smarty/Smarty.class.php';
+		require_once $root.'../core/Associates/Smarty/Smarty.class.php';
 		//
 		self::$smarty=new Smarty;
 		//
@@ -20,8 +20,8 @@ class Templete
 		//self::$smarty->cache_lifetime = 120;
 		//Smarty::muteExpectedErrors();
 
-		self::$smarty->setTemplateDir('app/storage/view/compile');
-		self::$smarty->setCompileDir('app/storage/view/template');
+		self::$smarty->setTemplateDir('../app/storage/view/compile');
+		self::$smarty->setCompileDir('../app/storage/view/template');
 		//self::$smarty->setCacheDir('app/storage/view/cache');
 	}
 

@@ -2,6 +2,7 @@
 //session_start();
 //include_once '../Ini.php';
 //Ini::set();
+$rot="app/pages/panel";
 //
 if(isset($_POST['password_1']) && isset($_POST['password_2']) && !empty($_POST['password_1']) && !empty($_POST['password_1']))
 {
@@ -24,11 +25,15 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<?php 
-	Libs::js(Config::get("app.url")."app/pages/panel/js/ajax/ajax.js");
-	Libs::js(Config::get("app.url")."app/pages/panel/js/ajax/ajax.js");
-	Libs::css(Config::get("app.url")."app/pages/panel/css/me");
+	// Libs::js(Config::get("app.url")."app/pages/panel/js/ajax/ajax.js");
+	// Libs::js(Config::get("app.url")."app/pages/panel/js/ajax/ajax.js");
+	// Libs::css(Config::get("app.url")."app/pages/panel/css/me");
+	//
+	Libs::js("$rot/ajax/ajax.js",false);
+	Libs::js("$rot/js/ajax/ajax.js",false);
+	Libs::css("$rot/css/me.css",false);
 	?>
-	<link rel="icon" type="image/png" href="<?php echo $root; ?>images/fiesta_ico.ico">
+	<link rel="icon" type="image/png" href="<?php echo $rot; ?>/images/fiesta_ico.ico">
 	<script type="text/javascript">
 		
 	</script>
@@ -79,7 +84,7 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 </head>
 
 <body>
-<div class="main_back"></div>
+	<div class="main_back"></div>
 	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
         <div class="container">
           <div class="row vertical-offset-100">
@@ -87,7 +92,7 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
                 <div class="panel panel-default">
                    <div class="panel-heading" style="background:none;border:none">                                
                       <div class="row-fluid user-row header_pnl">
-	                     <img src="<?php echo $root; ?>images/fiesta_logo_absolute.png" class="img-responsive" alt="Conxole Admin" style="display:inline-block;width:100px;margin-right:10px"/>
+	                     <img src="<?php echo $rot; ?>/images/fiesta_logo_absolute.png" class="img-responsive" alt="Conxole Admin" style="display:inline-block;width:100px;margin-right:10px"/>
 	                     <div class="sep_titl"></div>
 	                     <span class="titl">Fiesta</span>
 	                  </div>
@@ -124,10 +129,10 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="<?php echo $root; ?>js/ajax/ajax.js"></script>
-	<script src="<?php echo $root; ?>js/me.js"></script>
-	<script src="<?php echo $root; ?>css/me.css"></script>
-	<link rel="icon" type="image/png" href="<?php echo $root; ?>images/fiesta_ico.ico">
+	<script src="<?php echo $rot; ?>/js/ajax/ajax.js"></script>
+	<script src="<?php echo $rot; ?>/js/me.js"></script>
+	<script src="<?php echo $rot; ?>/css/me.css"></script>
+	<link rel="icon" type="image/png" href="<?php echo $rot; ?>/images/fiesta_ico.ico">
 
 </head>
 
@@ -139,7 +144,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 
     <div id="content">
       <a class="navbar-brand" href="#" style="padding: 5px;color: white;">
-        <img alt="Brand" src="<?php echo $root; ?>images/fiesta_icon.png" style="width: 42px;display: inline-block;">
+        <img alt="Brand" src="<?php echo $rot; ?>/images/fiesta_icon.png" style="width: 42px;display: inline-block;">
         <span style="margin-left:10px;display: inline-block;color:white">Fiesta</span>
       </a>
       	<a href="?logout=1" class="btn btn-default navbar-btn" style="float:right">Déconnexion</a>
@@ -231,7 +236,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 
 
 					  ?>-->
-					  <?php foreach (glob("app/schemas/*.php") as $value) {
+					  <?php foreach (glob($rot."app/schemas/*.php") as $value) {
 					  	$r=explode('schemas/',$value);
 					  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 					  } ?>

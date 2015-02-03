@@ -13,7 +13,7 @@ return array(
 	| - /robots.txt
 	*/
 
-	'route'=>"/fiesta",
+	'route'=>"fiesta",
 
 
 	/*

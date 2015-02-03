@@ -383,34 +383,3 @@ class Model
 
 
 
-/**
-* Shutdown
-*/
-class Shutdown
-{
-	public static function go($db=false)
-	{
-		//
-		if($db) Database::exec("drop Database ".Config::get('database.database'));
-		//
-		// module
-		$dirPath=Sys::$root."Fiesta/";
-	    foreach (glob($dirPath."core/*.php") as $file) { unlink($file); }
-	    rmdir($dirPath."core");
-	    //
-	    //ini
-	    unlink($dirPath."Ini.php");
-	    //
-	    // module
-		$dirPath=Sys::$root."Fiesta/app/";
-	    foreach (glob($dirPath."models/*.php") as $file) { unlink($file); }
-	    rmdir($dirPath."models");
-	    //
-	    // module
-		$dirPath=Sys::$root."Fiesta/app/";
-	    foreach (glob($dirPath."views/*.php") as $file) { unlink($file); }
-	    rmdir($dirPath."views");
-
-	}
-}
-//

@@ -37,7 +37,8 @@ class Sys
 		
 		self::$root=$root;
 		self::$base=$base;
-		self::$app=Config::get('app.url')."app/";
+		//self::$app=Config::get('app.url')."app/";
+		self::$app=__DIR__."../app/";
 		//
 		self::$path="http://$_SERVER[HTTP_HOST]/";
 		//

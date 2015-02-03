@@ -28,7 +28,7 @@ class Vars
 			$k=$url[1];
 		}
 		
-		$files=include ("app/vars/$link.php");
+		$files=include ("../app/vars/$link.php");
 		//
 		return $files[$k];
 	}

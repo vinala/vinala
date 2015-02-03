@@ -53,7 +53,7 @@ class Lang
 		}
 
 		
-		foreach (glob("app/lang/".self::$lang."/*.php") as $filename)
+		foreach (glob("../app/lang/".self::$lang."/*.php") as $filename)
 		{
 			$tbl=(include $filename);
 			foreach ($tbl as $key => $value) {

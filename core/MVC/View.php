@@ -18,8 +18,8 @@ class View
 		//getFile
 		$name=str_replace('.', '/', $value);
 		//
-		$link1='app/views/'.$name.'.php';
-		$link2='app/views/'.$name.'.tpl.php';
+		$link1='../app/views/'.$name.'.php';
+		$link2='../app/views/'.$name.'.tpl.php';
 		$link3='';
 		//
 		$tpl=false;
@@ -60,8 +60,8 @@ class View
 		//
 		$name_fgdfgdf=str_replace('.', '/', $value_DGFSrtfg5);
 		//
-		$link1='app/views/'.$name_fgdfgdf.'.php';
-		$link2='app/views/'.$name_fgdfgdf.'.tpl.php';
+		$link1='../app/views/'.$name_fgdfgdf.'.php';
+		$link2='../app/views/'.$name_fgdfgdf.'.tpl.php';
 		$link3='';
 		//
 		$tpl=false;
