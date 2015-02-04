@@ -14,7 +14,7 @@ if(!file_exists($Root."../app/seeds/$nom.php"))
 		$txt.="\t/*\n\t* Name of DataTable\n\t*/\n\tpublic ".'$table="tbl_user";'."\n\n";
 
 		//run
-		$txt.="\t/*\n\t* Run the Database Seeder\n\t*/\n\tpublic function run()\n\t{\n\t\t".'$data = array(/* Table Data */);'."\n\t\t//\n\t\t".'Schema::table($this->table)->insert($data);'."\n\t}\n}";
+		$txt.="\t/*\n\t* Run the Database Seeder\n\t*/\n\tpublic function run()\n\t{\n\t\t".'$dataTable = array();'."\n\t\t//\n\t\t".'$dataTable[] = array(/* Data Fields */);'."\n\t\t//\n\t\t".'Schema::table($this->table)->insert($dataTable);'."\n\t}\n}";
 
 		
 
