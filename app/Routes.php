@@ -15,8 +15,3 @@ Routes::get("/",function()
 {	
 	return View::make('hello');
 });
-
-Routes::get("a",function()
-{	
-	echo "a";
-});
