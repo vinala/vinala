@@ -18,6 +18,7 @@ class Model
 	public $keys = array();
 	//
 	private $pagination_info=array();
+
 	/*public $keys2 = array();
 	public $values = array();*/
 
@@ -154,7 +155,7 @@ class Model
 	function rows()
 	{
 		$vars = array();
-		$default_keys = array('table','columns','keys','keys2','values','key');
+		$default_keys = array('table','columns','keys','keys2','values','key','pagination_info');
 		foreach (get_object_vars($this) as $key => $value) {
 			if(!in_array($key,$default_keys))
 			{
@@ -174,13 +175,13 @@ class Model
 		$sql="insert into ".$this->table." ";
 		//
 		$vars=$this->rows();
+		//var_dump($vars);
 		//
 		$c="(";
 		$v=" values(";
 		//
 		$i=0;
 		foreach ($vars as $key => $value) {
-
 			if($i==0) { $c.="".$key; $v.="'".$value."'"; }
 			else { $c.=",".$key; $v.=",'".$value."'"; }
 			$i++;
@@ -196,8 +197,6 @@ class Model
 
 	public function edit($where=null)
 	{
-		
-
 		//print_r(get_object_vars($this));
 
 		$sql="update ".$this->table." set ";
@@ -212,19 +211,15 @@ class Model
 				$vars[$key]=$value; //echo $key."<br>";
 			}
 		}
-		//echo "<br>";
-		//echo "<pre>";
-		//echo "</pre>";
 		//
-		//echo $sql."<br>";
 		$i=0;
 		$c="";
 		//
-		foreach ($vars as $key => $value) {
-
-		if($i==0) { $sql.="$key='$value'"; }
-		else { $sql.=",$key='$value'"; }
-		$i++;
+		foreach ($vars as $key => $value) 
+		{
+			if($i==0) { $sql.="$key='$value'"; }
+			else { $sql.=",$key='$value'"; }
+			$i++;
 		}
 
 
@@ -310,20 +305,17 @@ class Model
 	{
 		$r = array();
 		$this->pagination_info["activated"]=false;
-		/*$sql="select ".$this->keys[0]." from ".$this->table." where ".$key."='".$value."' ";
-		if(!empty($order_c)) $sql.=" order by ".$order_c." ".$order_mtd;
-		if(!empty($limit)) $sql.=" limit ".$limit;*/
+		//
 		$sql="select * from ".$this->table;
 		//echo $sql;
+		//
 		$var=Database::read($sql);
-
+		//
 		foreach ($var as $key => $value) {
-			//echo $value[0];
 				$o=new self($value[0],$this->table);
-				//print_r(get_object_vars($o));
 				array_push($r, $o);
 			}
-
+		//
 		return $r;
 	}
 
