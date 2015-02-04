@@ -89,6 +89,7 @@ class Config
 				else { $tbl=(include App::$root.'../app/config/panel.php'); }
 				//
 				if($val[1]=="route") $ret=$tbl['route'];
+				else if($val[1]=="folder") $ret=$tbl['folder'];
 				else if($val[1]=="password1") $ret=$tbl['password1'];
 				else if($val[1]=="password2") $ret=$tbl['password2'];
 				else if($val[1]=="mainColor") $ret=$tbl['mainColor'];

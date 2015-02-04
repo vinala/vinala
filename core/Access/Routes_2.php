@@ -554,5 +554,5 @@ class Routes
 
 Routes::get(Config::get('panel.route'),function()
 {
-	Page::put('panel.index');
+	include Config::get('panel.folder').'/home.php';
 });

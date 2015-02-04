@@ -23,14 +23,15 @@ class App
 		//
 		//session
 		require __DIR__.'/../core/Storage/Session.php';
-		if($session)Session::start();
+		if($session)Session::start(__DIR__.'/../app/storage/session');
 		//
 		require __DIR__.'/../core/Access/ErrorHandler.php';
 		require __DIR__.'/../core/Config.php';
 		require __DIR__.'/../core/Objects/Vars.php';
 		//
 		ini_set("log_errors", 1);
-		ini_set("error_log", Config::get("loggin.log"));
+		//ini_set("error_log", Config::get("loggin.log"));
+		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
 		//
 		if($whoops) ErrorHandler::ini(self::$root);
 		//
