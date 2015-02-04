@@ -11,22 +11,35 @@ class Sys
 	public static $app;
 	public static $libs;
 
-	/*public static function ini()
+	public static function ini()
 	{
 		$path="$_SERVER[REQUEST_URI]";
 		$paths=explode('/', $path);
-		$root="../";
+		$root="";
 		$base="";
-		//
-		for ($i=0; $i < count($paths)-2; $i++) { 
-			$root.="../";
-			$base.="../";
-		}
+		
 		self::$root=$root;
 		self::$base=$base;
+		self::$app="../app";
 		//
 		self::$path="http://$_SERVER[HTTP_HOST]/";
-	}*/
+	}
+}
+
+/**
+* System Class
+*/
+class Path
+{
+	public static $root;
+	public static $base;
+	public static $path;
+	//
+	public static $app;
+	public static $core;
+	public static $public;
+	//
+	public static $libs;
 
 	public static function ini()
 	{
@@ -37,11 +50,12 @@ class Sys
 		
 		self::$root=$root;
 		self::$base=$base;
-		//self::$app=Config::get('app.url')."app/";
-		self::$app=__DIR__."../app/";
+		//
+		self::$app="app";
+		self::$core="core";
+		self::$public="public";
 		//
 		self::$path="http://$_SERVER[HTTP_HOST]/";
-		//
-		//self::$rt_page=self::$root."app/pages/";
 	}
 }
+Path::ini();

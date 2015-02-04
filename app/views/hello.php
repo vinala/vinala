@@ -5,7 +5,7 @@
 	<?php 
 		Html::charset("Fiesta PHP Framework"); 
 		Html::title();
-		Html::favicon(Sys::$app."pages/panel/images/fiesta_ico.ico") ;
+		Html::favicon(Path::$public."/favicon.ico");
 	?>
 
 	<style>
