@@ -9,11 +9,24 @@ return array(
 	|----------------------------------------------
 	| hna route dial l panel
 	| route khas ikon diffrent 3la had les valeurs:
-	| /app - /core - /libs - /App.php - /readme.txt 
-	| - /robots.txt
+	| 
+	| 
 	*/
 
 	'route'=>"fiesta",
+
+	/*
+	|----------------------------------------------
+	| Panel Folder
+	|----------------------------------------------
+	| pour la securité dial l app dialk
+	| khask tbdel l nom dial dossier li fih l panel
+	| li kayn f 'public/panel'
+	| Le nom par défaut howa panel
+	| 
+	*/
+
+	'folder'=>"home",
 
 
 	/*
@@ -36,7 +49,7 @@ return array(
 	| hna bach t personnalizer l panel dialk
 	*/
 
-	'mainColor'=>"#1cb380",
+	'mainColor'=>"#038cde",
 	'tabsColor'=>"#0eb1fa",
 
 );
