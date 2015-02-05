@@ -42,6 +42,7 @@ class App
 		require __DIR__.'/../core/Storage/Cookie.php';
 		//require 'Access/Routes.php';
 		require __DIR__.'/../core/Access/Routes_2.php';
+		require __DIR__.'/../core/Storage/Storage.php';
 		require __DIR__.'/../core/Security/Auth.php';
 		require __DIR__.'/../core/Objects/List.php';
 		require __DIR__.'/../core/Database/Seeder.php';
