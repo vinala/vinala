@@ -47,7 +47,7 @@ class Storage
 	public static function createDisk($name)
 	{
 		$self=new self();
-		mkdir($self->basePath."/".$name, 0777, true);
+		if(!$self->checkDiskExiste($name)) mkdir($self->basePath."/".$name, 0777, true);
 		$self=new self($name);
 		return $self;
 	}
@@ -67,19 +67,89 @@ class Storage
 		fclose($myfile);
 	}
 
-	protected function existsNonStatic($name,$content)
+	protected function existsNonStatic($name)
 	{
-		$myfile = fopen($this->storagePath."/".$name, "w");
-		fwrite($myfile, $content);
-		fclose($myfile);
+		return file_exists($this->storagePath."/".$name);
 	}
 
 	protected static function existsStatic($name,$content)
 	{
 		$self=new self();
-		$myfile = fopen($self->storagePath."/".$name, "w");
-		fwrite($myfile, $content);
-		fclose($myfile);
+		return file_exists($self->storagePath."/".$name);
+	}
+
+	protected function getNonStatic($name)
+	{
+		return file_get_contents($this->storagePath."/".$name);
+	}
+
+	protected static function getStatic($name)
+	{
+		$self=new self();
+		return file_get_contents($self->storagePath."/".$name);
+	}
+
+	protected function prependNonStatic($name,$content)
+	{
+		if($this->exists($name))		
+		{
+			$oldContent=$this->get($name);	
+			$this->put($name,($content.$oldContent));	
+		}
+		else throw new InvalidArgumentException("There is no file calls $name to prepend");
+	}
+
+	protected static function prependStatic($name,$content)
+	{
+		$self=new self();
+		if($self->exists($name))
+		{
+			$oldContent=$self->get($name);
+			$self->put($name,($content.$oldContent));	
+		}
+		else throw new InvalidArgumentException("There is no file calls $name to prepend");
+	}
+
+	protected function appendNonStatic($name,$content)
+	{
+		if($this->exists($name))		
+		{
+			$oldContent=$this->get($name);	
+			$this->put($name,($oldContent.$content));	
+		}
+		else throw new InvalidArgumentException("There is no file calls $name to append");
+	}
+
+	protected static function appendStatic($name,$content)
+	{
+		$self=new self();
+		if($self->exists($name))
+		{
+			$oldContent=$self->get($name);
+			$self->put($name,($oldContent.$content));	
+		}
+		else throw new InvalidArgumentException("There is no file calls $name to append");
+	}
+
+	protected function sizeNonStatic($name,$content)
+	{
+		if($this->exists($name))		
+		{
+			$oldContent=$this->get($name)
+			$this->put($name,($oldContent.$content));	
+		}
+		else throw new InvalidArgumentException("There is no file calls $name to append");
+	}
+
+	protected static function sizeStatic($name,$content)
+	{
+		$self=new self();
+		if($self->exists($name))
+		{
+			$oldContent=$self->get($name);
+			$self->put($name,($oldContent.$content));	
+		}
+		else throw new InvalidArgumentException("There is no file calls $name to append");
 	}
 
 
@@ -88,6 +158,9 @@ class Storage
 	    switch ($name) {
 	    	case 'put': return call_user_func_array(array($this, "putNonStatic"), $args); break;
 	    	case 'exists': return call_user_func_array(array($this, "existsNonStatic"), $args); break;
+	    	case 'get': return call_user_func_array(array($this, "getNonStatic"), $args); break;
+	    	case 'prepend': return call_user_func_array(array($this, "prependNonStatic"), $args); break;
+	    	case 'append': return call_user_func_array(array($this, "appendNonStatic"), $args); break;
 	    }
 	}
 
@@ -96,6 +169,9 @@ class Storage
 	    switch ($name) {
 	    	case 'put': return call_user_func_array(array("Storage", "putStatic"), $args); break;
 	    	case 'exists': return call_user_func_array(array("Storage", "existsStatic"), $args); break;
+	    	case 'get': return call_user_func_array(array("Storage", "getStatic"), $args); break;
+	    	case 'prepend': return call_user_func_array(array("Storage", "prependStatic"), $args); break;
+	    	case 'append': return call_user_func_array(array("Storage", "appendStatic"), $args); break;
 	    }
 	}
 }
