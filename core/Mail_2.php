@@ -50,8 +50,8 @@ class Mail
 
 	public static function send($view,$array,$callback)
 	{
-		//include "core/Associates/PHPMailer/class.phpmailer.php";
-		include "core/Associates/SwiftMailer/vendor/autoload.php";
+		//include "../core/Associates/PHPMailer/class.phpmailer.php";
+		include "../core/Associates/SwiftMailer/vendor/autoload.php";
 		//
 		$selfmail=new self();
 		$callback($selfmail);

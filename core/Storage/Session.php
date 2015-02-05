@@ -5,10 +5,11 @@
 */
 class Session
 {
-	public static function start()
+	public static function start($link=null)
 	{
 		//ini_set('session.save_path', '/app/storage/seesion');
-		session_save_path ('app/storage/session');
+		session_save_path ($link);
+
 		session_start();
 	}
 

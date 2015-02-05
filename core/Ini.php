@@ -22,58 +22,59 @@ class App
 		self::$root=$root;
 		//
 		//session
-		require 'Storage/Session.php';
-		if($session)Session::start();
+		require __DIR__.'/../core/Storage/Session.php';
+		if($session)Session::start(__DIR__.'/../app/storage/session');
 		//
-		require 'Access/ErrorHandler.php';
-		require 'Config.php';
-		require 'Objects/Vars.php';
+		require __DIR__.'/../core/Access/ErrorHandler.php';
+		require __DIR__.'/../core/Config.php';
+		require __DIR__.'/../core/Objects/Vars.php';
 		//
 		ini_set("log_errors", 1);
-		ini_set("error_log", Config::get("loggin.log"));
+		//ini_set("error_log", Config::get("loggin.log"));
+		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
 		//
 		if($whoops) ErrorHandler::ini(self::$root);
 		//
-		require 'MVC/Templete.php';
-		require 'Objects/Exception.php';
-		require 'Faker.php';
+		require __DIR__.'/../core/MVC/Templete.php';
+		require __DIR__.'/../core/Objects/Exception.php';
+		require __DIR__.'/../core/Faker.php';
 		
-		require 'Storage/Cookie.php';
+		require __DIR__.'/../core/Storage/Cookie.php';
 		//require 'Access/Routes.php';
-		require 'Access/Routes_2.php';
-		require 'Security/Auth.php';
-		require 'Objects/List.php';
-		require 'Database/Seeder.php';
-		require 'Access/Url.php';
-		require 'Hypertext/Pages.php';
-		require 'Database/Database.php';
-		require 'Objects/Sys.php';
-		require 'Http/Links.php';
-		require 'Objects/Base.php';
-		require 'Libs.php';
-		require 'Hypertext/Res.php';
-		require 'Hypertext/Input.php';
-		require 'License.php';
-		require 'Hypertext/Cookie.php';
-		require 'Lang.php';
-		require 'Hypertext/HTML.php';
-		require 'Database/Schema.php';
-		require 'Database/Migration.php';
-		require 'Security/Encrypt.php';
-		require 'Security.php';
-		require 'MVC/Model.php';
-		require 'MVC/View.php';
-		require 'Bootstrap.php';
-		require 'MVC/Controller.php';
-		require 'Http/Error.php';
-		require 'Hypertext/Script.php';
-		require 'Http/Root.php';
-		require 'Mail_2.php';
-		require 'Objects/DataCollection.php';
+		require __DIR__.'/../core/Access/Routes_2.php';
+		require __DIR__.'/../core/Security/Auth.php';
+		require __DIR__.'/../core/Objects/List.php';
+		require __DIR__.'/../core/Database/Seeder.php';
+		require __DIR__.'/../core/Access/Url.php';
+		require __DIR__.'/../core/Hypertext/Pages.php';
+		require __DIR__.'/../core/Database/Database.php';
+		require __DIR__.'/../core/Objects/Sys.php';
+		require __DIR__.'/../core/Http/Links.php';
+		require __DIR__.'/../core/Objects/Base.php';
+		require __DIR__.'/../core/Libs.php';
+		require __DIR__.'/../core/Hypertext/Res.php';
+		require __DIR__.'/../core/Hypertext/Input.php';
+		require __DIR__.'/../core/License.php';
+		require __DIR__.'/../core/Hypertext/Cookie.php';
+		require __DIR__.'/../core/Lang.php';
+		require __DIR__.'/../core/Hypertext/HTML.php';
+		require __DIR__.'/../core/Database/Schema.php';
+		require __DIR__.'/../core/Database/Migration.php';
+		require __DIR__.'/../core/Security/Encrypt.php';
+		require __DIR__.'/../core/Security.php';
+		require __DIR__.'/../core/MVC/Model.php';
+		require __DIR__.'/../core/MVC/View.php';
+		require __DIR__.'/../core/Bootstrap.php';
+		require __DIR__.'/../core/MVC/Controller.php';
+		require __DIR__.'/../core/Http/Error.php';
+		require __DIR__.'/../core/Hypertext/Script.php';
+		require __DIR__.'/../core/Http/Root.php';
+		require __DIR__.'/../core/Mail_2.php';
+		require __DIR__.'/../core/Objects/DataCollection.php';
 
 		//
 		// Database files
-		require 'Database/DBTable.php';
+		require __DIR__.'/../core/Database/DBTable.php';
 		//
 		// Associates
 		//require 'Storage/Session.php';
@@ -96,51 +97,51 @@ class App
 			//
 			if($root!=null)
 			{		
-				foreach (glob($root."app/models/*.php") as $file) { include_once $file; }
+				foreach (glob($root."../app/models/*.php") as $file) { include_once $file; }
 				//
 				//include the controllers files
-				foreach (glob($root."app/controllers/*.php") as $file) { include_once $file; }
+				foreach (glob($root."../app/controllers/*.php") as $file) { include_once $file; }
 				//
 				//include the variables files
 				// foreach (glob($root."app/vars/*.php") as $file) { include_once $file; }
 				//
 				//include the link files
-				foreach (glob($root."app/paths/*.php") as $file) { include_once $file; }
+				foreach (glob($root."../app/paths/*.php") as $file) { include_once $file; }
 				//
 				//include the seeders files
-				foreach (glob($root."app/seeds/*.php") as $file) { include_once $file; }
+				foreach (glob($root."../app/seeds/*.php") as $file) { include_once $file; }
 				//
-				include_once $root."app/Filters.php";
+				include_once $root."../app/Filters.php";
 				//include for routes
 				//ErrorHandler::run();
 				//
 				if($routes)
 				{
-					include_once $root."app/Routes.php";
+					include_once $root."../app/Routes.php";
 					Routes::run();
 				} 
 			}
 			else
 			{		
-				foreach (glob("app/models/*.php") as $file) { include_once $file; }
+				foreach (glob("../app/models/*.php") as $file) { include_once $file; }
 				//
 				//include the controllers files
-				foreach (glob("app/controllers/*.php") as $file) { include_once $file; }
+				foreach (glob("../app/controllers/*.php") as $file) { include_once $file; }
 				//
 				//include the variables files
 				// foreach (glob("app/vars/*.php") as $file) { include_once $file; }
 				//
 				//include the seeders files
-				foreach (glob("app/seeds/*.php") as $file) { include_once $file; }
+				foreach (glob("../app/seeds/*.php") as $file) { include_once $file; }
 				//
-				include_once "app/Filters.php";
+				include_once "../app/Filters.php";
 				//
 				//include for routes
 				//ErrorHandler::run();
 				//
 				if($routes)
 				{
-					include_once "app/Routes.php";
+					include_once "../app/Routes.php";
 					Routes::run();
 				} 
 			}

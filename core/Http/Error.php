@@ -45,8 +45,7 @@ class Errors
 	//
 	public static function ini($root=null)
 	{
-		// if(!empty($root)) $tbl=(include $root."app/Errors.php");
-		// else $tbl=(include Sys::$root."app/Errors.php");
+		
 		//
 
 		self::$r_400=Config::get("error.400");

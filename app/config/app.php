@@ -28,7 +28,7 @@ return array(
 	| hadak dossier hana
 	*/
 
-	'projectFolder'=>"", 
+	'projectFolder'=>"fiesta", 
 
 	/*
 	|----------------------------------------------
@@ -49,5 +49,16 @@ return array(
 	*/
 
 	'title'=> 'Fiesta PHP Framework',
+
+	/*
+	|----------------------------------------------
+	| Routing inexists event
+	|----------------------------------------------
+	| hena ila kan route makynch ,true bach 
+	| yafficher exception ,sinon false bach  
+	| ymchi l 404
+	*/
+
+	'unrouted'=> true,
 
 );

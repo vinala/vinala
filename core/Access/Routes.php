@@ -121,24 +121,6 @@ class Routes
 
 
 
-
-
-	// public static function post($uri='',$callback="")
-	// {
-	// 	self::$_uri[]=$uri;
-	// 	self::$_callback[]=$callback;
-	// 	self::$_controller[]="";
-	// 	self::$_type[]="post";
-	// 	self::$_request[]="none";
-	// 	//
-	// 	self::$_uri[]=$uri."/";
-	// 	self::$_callback[]=$callback;
-	// 	self::$_controller[]="";
-	// 	self::$_type[]="post";
-	// 	self::$_request[]="none";
-	// }
-
-
 	public static function run()
 	{
 		//
@@ -501,7 +483,7 @@ class Routes
 
 	public static function ini()
 	{
-		include_once "app/Routes.php";
+		include_once "../app/Routes.php";
 		Routes::run();
 	}
 

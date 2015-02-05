@@ -9,7 +9,7 @@ class Migration
 	
 	public static function getAll($name)
 	{
-		$r=glob("app/schemas/*.php");
+		$r=glob("../app/schemas/*.php");
 		$r2=array();
 		foreach ($r as $value) {
 			
@@ -31,11 +31,5 @@ class Migration
 		echo "</select></div>";
 	}
 
-	/**
-	 * Reverse the migrations.
-	 */
-	public function down()
-	{
-		# code...
-	}
+	
 }

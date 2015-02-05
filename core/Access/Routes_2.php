@@ -262,8 +262,12 @@ class Routes
 				}
 			}
 			if($ok==0) 
-				Errors::r_404();
-				//echo "non";
+			{
+				if(Config::get('app.unrouted')) 
+					throw new invalidArgumentException("There is no route call's ".$currentUrl." in your route file");
+				else Errors::r_404();
+				
+			}
 		}
 		else self::showMaintenance();
 	}
@@ -315,9 +319,25 @@ class Routes
 		call_user_func(App::$Callbacks['after']);
 	}
 
+	public static function SplitSlash($link)
+	{
+		$one="";
+		$links=$_SERVER['DOCUMENT_ROOT'];
+		$array=explode('/', $link);
+		foreach ($array as $value)
+		{
+			$links.="/".$value;
+			if (!is_dir($links)) $one.=$value."/";
+		}
+		return $one;
+	}
+
 	protected static function CheckUrl()
 	{
-		return isset($_GET['url'])?'/'.$_GET['url']:'/';
+		//$url=self::SplitSlash($_SERVER["REQUEST_URI"]);
+		$url=isset($_GET['url'])?'/'.$_GET['url']:"/";
+		return $url;
+		//return '/'.$url;
 	}
 
 	protected static function CheckMaintenance($url)
@@ -531,3 +551,8 @@ class Routes
 
 	
 }
+
+Routes::get(Config::get('panel.route'),function()
+{
+	include Config::get('panel.folder').'/home.php';
+});
