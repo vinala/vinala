@@ -38,7 +38,7 @@ header {
   color: white;
   background: #272727;
   box-sizing: border-box;
-  border-left: 5px solid #CD3F3F;
+  border-left: 5px solid #e30060;
 }
   .exc-title {
     margin: 0;
@@ -67,7 +67,7 @@ header {
   .details {
     padding: 10px;
     padding-left: 5px;
-    border-left: 5px solid rgba(0, 0, 0, .1);
+    border-left: 5px solid #ff8a29;
   }
 
 .frames-container {

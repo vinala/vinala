@@ -13,21 +13,24 @@
   </head>
   <body>
 
-    <div class="Whoops container">
 
+  <div class="Whoops container">
       <div class="stack-container">
-        <div class="frames-container cf <?php echo (!$has_frames ? 'empty' : '') ?>">
+        <div class="frames-container cf <?php echo (!$has_frames ? 'empty' : '') ?>" style="<?php echo (!$has_frames ? 'width:0%' : '') ?>">
           <?php $tpl->render($frame_list) ?>
         </div>
-        <div class="details-container cf">
+        <div class="details-container cf"  style="<?php echo (!$has_frames ? 'width:100%' : '') ?>">
           <header>
             <?php $tpl->render($header) ?>
           </header>
-          <?php $tpl->render($frame_code) ?>
+
+          <?php 
+          $tpl->render($frame_code) ?>
           <?php $tpl->render($env_details) ?>
         </div>
       </div>
     </div>
+    
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/1.3.5/ZeroClipboard.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js"></script>
