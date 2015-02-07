@@ -72,6 +72,7 @@ class App
 		require __DIR__.'/../core/Http/Root.php';
 		require __DIR__.'/../core/Mail_2.php';
 		require __DIR__.'/../core/Objects/DataCollection.php';
+		require __DIR__.'/../core/Debug.php';
 
 		//
 		// Database files
