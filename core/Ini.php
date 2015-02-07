@@ -113,13 +113,13 @@ class App
 				//include the seeders files
 				foreach (glob($root."../app/seeds/*.php") as $file) { include_once $file; }
 				//
-				include_once $root."../app/Filters.php";
+				include_once $root."../app/http/Filters.php";
 				//include for routes
 				//ErrorHandler::run();
 				//
 				if($routes)
 				{
-					include_once $root."../app/Routes.php";
+					include_once $root."../app/http/Routes.php";
 					Routes::run();
 				} 
 			}
@@ -136,14 +136,14 @@ class App
 				//include the seeders files
 				foreach (glob("../app/seeds/*.php") as $file) { include_once $file; }
 				//
-				include_once "../app/Filters.php";
+				include_once "../app/http/Filters.php";
 				//
 				//include for routes
 				//ErrorHandler::run();
 				//
 				if($routes)
 				{
-					include_once "../app/Routes.php";
+					include_once "../app/http/Routes.php";
 					Routes::run();
 				} 
 			}
