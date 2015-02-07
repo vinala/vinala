@@ -15,6 +15,7 @@
           <?php else: ?>
             <strong><?php echo $tpl->escape($filePath ?: '<#unknown>') ?></strong>
           <?php endif ?>
+
         </div>
         <?php
           // Do nothing if there's no line to work off

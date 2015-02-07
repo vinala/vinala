@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <title><?php echo $tpl->escape($page_title) ?></title>
-
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <style><?php echo $stylesheet ?></style>
   </head>
   <body>
@@ -20,6 +20,18 @@
           <?php $tpl->render($frame_list) ?>
         </div>
         <div class="details-container cf"  style="<?php echo (!$has_frames ? 'width:100%' : '') ?>">
+        <div class="header_type">
+            <?php foreach ($name as $i => $nameSection): ?>
+                <?php if ($i == count($name) - 1): ?>
+                  <span class="exc-title-primary"><?php echo $tpl->escape($nameSection) ?></span>
+                <?php else: ?>
+                  <?php echo $tpl->escape($nameSection) . ' \\' ?>
+                <?php endif ?>
+              <?php endforeach ?>
+              <?php if ($code): ?>
+                <span title="Exception Code">(<?php echo $tpl->escape($code) ?>)</span>
+              <?php endif ?>
+          </div>
           <header>
             <?php $tpl->render($header) ?>
           </header>
