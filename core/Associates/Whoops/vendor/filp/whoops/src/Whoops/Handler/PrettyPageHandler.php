@@ -166,7 +166,6 @@ class PrettyPageHandler extends Handler
                 "Cookies"               => $_COOKIE,
                 "Session"               => isset($_SESSION) ? $_SESSION :  array(),
                 "Environment Variables" => $_ENV,
-                "alt" => array('a' => "A" , "b" => "B" ),
             ),
         );
 
