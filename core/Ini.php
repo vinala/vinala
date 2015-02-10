@@ -74,80 +74,74 @@ class App
 		require __DIR__.'/../core/Objects/DataCollection.php';
 		require __DIR__.'/../core/Debug.php';
 
-		//
+		// Filesystem
+		require __DIR__.'/../core/Filesystem/FileNotFoundException.php';
+		require __DIR__.'/../core/Filesystem/Filesystem.php';
+
 		// Database files
 		require __DIR__.'/../core/Database/DBTable.php';
-		//
-		// Associates
-		//require 'Storage/Session.php';
-		//
-		//Config::ini($root);
 		
-			Sys::ini();
-			Url::ini();
-			Templete::ini(self::$root);
+		
+		Sys::ini();
+		Url::ini();
+		Templete::ini(self::$root);
+		//
+		Faker::ini();
+		Links::ini();
+		Errors::ini($root);
+		License::ini(self::$page);
+		Lang::ini("fr");
+		Database::ini();
+		Auth::ini();
+
+		//
+		
+		if($root!=null)
+		{		
+			// include models
+			foreach (glob($root."../app/models/*.php") as $file) { include_once $file; }
+			
+			//include the controllers files
+			foreach (glob($root."../app/controllers/*.php") as $file) { include_once $file; }
+
+			//include the link files
+			foreach (glob($root."../app/paths/*.php") as $file) { include_once $file; }
+
+			//include the seeders files
+			foreach (glob($root."../app/seeds/*.php") as $file) { include_once $file; }
 			//
-			Faker::ini();
-			Links::ini();
-			Errors::ini($root);
-			License::ini(self::$page);
-			Lang::ini("fr");
-			Database::ini();
-			Auth::ini();
-			//
-			//include the models files
-			//
-			if($root!=null)
-			{		
-				foreach (glob($root."../app/models/*.php") as $file) { include_once $file; }
-				//
-				//include the controllers files
-				foreach (glob($root."../app/controllers/*.php") as $file) { include_once $file; }
-				//
-				//include the variables files
-				// foreach (glob($root."app/vars/*.php") as $file) { include_once $file; }
-				//
-				//include the link files
-				foreach (glob($root."../app/paths/*.php") as $file) { include_once $file; }
-				//
-				//include the seeders files
-				foreach (glob($root."../app/seeds/*.php") as $file) { include_once $file; }
-				//
-				include_once $root."../app/http/Filters.php";
-				//include for routes
-				//ErrorHandler::run();
-				//
-				if($routes)
-				{
-					include_once $root."../app/http/Routes.php";
-					Routes::run();
-				} 
-			}
-			else
-			{		
-				foreach (glob("../app/models/*.php") as $file) { include_once $file; }
-				//
-				//include the controllers files
-				foreach (glob("../app/controllers/*.php") as $file) { include_once $file; }
-				//
-				//include the variables files
-				// foreach (glob("app/vars/*.php") as $file) { include_once $file; }
-				//
-				//include the seeders files
-				foreach (glob("../app/seeds/*.php") as $file) { include_once $file; }
-				//
-				include_once "../app/http/Filters.php";
-				//
-				//include for routes
-				//ErrorHandler::run();
-				//
-				if($routes)
-				{
-					include_once "../app/http/Routes.php";
-					Routes::run();
-				} 
-			}
-		//ErrorHandler::run();
+			//include filters
+			include_once $root."../app/http/Filters.php";
+
+			//include for routes
+			if($routes)
+			{
+				include_once $root."../app/http/Routes.php";
+				Routes::run();
+			} 
+		}
+		else
+		{		
+			// include models
+			foreach (glob("../app/models/*.php") as $file) { include_once $file; }
+
+			//include the controllers files
+			foreach (glob("../app/controllers/*.php") as $file) { include_once $file; }
+
+			//include the seeders files
+			foreach (glob("../app/seeds/*.php") as $file) { include_once $file; }
+
+
+			//include filters
+			include_once "../app/http/Filters.php";
+
+			//include for routes
+			if($routes)
+			{
+				include_once "../app/http/Routes.php";
+				Routes::run();
+			} 
+		}
 	
 		
 	}

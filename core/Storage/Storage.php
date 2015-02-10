@@ -203,7 +203,7 @@ class Storage
 
 	protected function moveNonStatic($name1,$name2)
 	{
-		if($this->exists($name))		
+		if($this->exists($name1))		
 		{
 			$content=$this->get($name1);
 			$this->put($name2,$content);
