@@ -40,8 +40,18 @@ class App
 		require __DIR__.'/../core/Faker.php';
 		
 		require __DIR__.'/../core/Storage/Cookie.php';
-		//require 'Access/Routes.php';
-		require __DIR__.'/../core/Access/Routes_2.php';
+
+
+		//routes
+		// old
+		//require __DIR__.'/../core/Access/Routes_2.php';
+		// new
+		require __DIR__.'/../core/Router/Routes.php';
+		require __DIR__.'/../core/Router/Route.php';
+		require __DIR__.'/../core/Router/Exceptions/RouteNotFoundException.php';
+
+
+
 		require __DIR__.'/../core/Storage/Storage.php';
 		require __DIR__.'/../core/Security/Auth.php';
 		require __DIR__.'/../core/Objects/List.php';
@@ -75,7 +85,8 @@ class App
 		require __DIR__.'/../core/Debug.php';
 
 		// Filesystem
-		require __DIR__.'/../core/Filesystem/FileNotFoundException.php';
+		require __DIR__.'/../core/Filesystem/Exceptions/FileNotFoundException.php';
+		require __DIR__.'/../core/Filesystem/Exceptions/DirectoryNotFoundException.php';
 		require __DIR__.'/../core/Filesystem/Filesystem.php';
 
 		// Database files
@@ -117,7 +128,7 @@ class App
 			if($routes)
 			{
 				include_once $root."../app/http/Routes.php";
-				Routes::run();
+				Fiesta\Router\Routes::run();
 			} 
 		}
 		else
@@ -139,7 +150,7 @@ class App
 			if($routes)
 			{
 				include_once "../app/http/Routes.php";
-				Routes::run();
+				Fiesta\Router\Routes::run();
 			} 
 		}
 	
