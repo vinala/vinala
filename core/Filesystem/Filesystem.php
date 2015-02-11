@@ -185,7 +185,7 @@ class Filesystem
 
 	public function copyDirectory($from, $to, $options=null)
 	{
-		if(! $this->isDirectory($from)) return false;
+		if(! $this->isDirectory($from)) { throw new DirectoryNotFoundException("Directory does not existe in ($from)"); return false; }
 		//
 		if(! $this->isDirectory($to)) $this->makeDirectory($to,0777,true);
 		//
@@ -212,7 +212,7 @@ class Filesystem
 
 	public function deleteDirectory($directory, $preserve = false)
 	{
-		if ( ! $this->isDirectory($directory)) return false;
+		if ( ! $this->isDirectory($directory)) { throw new DirectoryNotFoundException("Directory does not existe in ($directory)"); return false; }
 
 		$items = new \FilesystemIterator($directory);
 
