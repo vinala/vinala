@@ -211,6 +211,12 @@ class Config
 				else $tbl=(include App::$root.'../app/config/storage.php');
 				$ret=$tbl[$val[1]];
 				break;
+
+			case 'cache':
+				if(is_null(App::$root)) $tbl=(include '../app/config/cache.php');
+				else $tbl=(include App::$root.'../app/config/cache.php');
+				$ret=$tbl[$val[1]];
+				break;
 			
 		}
 		return $ret;

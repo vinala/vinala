@@ -45,9 +45,7 @@ class Errors
 	//
 	public static function ini($root=null)
 	{
-		
 		//
-
 		self::$r_400=Config::get("error.400");
 		self::$r_401=Config::get("error.401");
 		self::$r_402=Config::get("error.402");
@@ -82,7 +80,7 @@ class Errors
 		self::$r_507=Config::get("error.507");
 		self::$r_509=Config::get("error.509");
 		self::$r_db=Config::get("error.database");
-
+		//
 	}
 
 	public static function r_db()

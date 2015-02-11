@@ -50,7 +50,10 @@ class App
 		require __DIR__.'/../core/Router/Route.php';
 		require __DIR__.'/../core/Router/Exceptions/RouteNotFoundException.php';
 
-
+		// Caches
+		require __DIR__.'/../core/Caches/Caches.php';
+		require __DIR__.'/../core/Caches/Cache.php';
+		require __DIR__.'/../core/Caches/FileCache.php';
 
 		require __DIR__.'/../core/Storage/Storage.php';
 		require __DIR__.'/../core/Security/Auth.php';
