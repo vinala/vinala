@@ -1,5 +1,5 @@
 <?php
-
+//use Fiesta\Route;
 
 
 App::before(function()
@@ -15,7 +15,7 @@ App::after(function()
 
 
 
-Routes::filter('auth', function()
+Route::filter('auth', function()
 {
 	if(Auth::guest())
 	{
@@ -26,14 +26,14 @@ Routes::filter('auth', function()
 
 });
 
-Routes::filter('guest', function()
+Route::filter('guest', function()
 {
 	if (Auth::guest()) Url::redirect('/');
 });
 
 
 
-Routes::filter('csrf', function()
+Route::filter('csrf', function()
 {
 	if (Session::token() != Res::post('_token')) { return false; }
 	else { return true; }
