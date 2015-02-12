@@ -11,9 +11,6 @@ class FileCache
 	{
 		$value = $this->packing($value,$minutes);
 		//
-		//$this->path($key);
-		//$this->createCacheDirectory($path = $this->path($key));
-		//
 		(new \Fiesta\Filesystem\Filesystem)->put($this->path($key), $value);
 
 	}
@@ -47,22 +44,11 @@ class FileCache
 
 	protected function packing($value,$minutes)
 	{
-		//return $this->expiration($minutes)."/**".serialize($value);
 		return serialize($value)."/**".$this->expiration($minutes);
 	}
 
 	protected function unpacking($value)
 	{
-		// $parts=[];
-		// $p = explode("/**", $value);
-		// var_dump($p);
-		// $parts['time']=$p[0];
-		// //
-		// $cont="";
-		// for ($i=1; $i < count($p); $i++) $cont.=$p[$i]; 
-		// 	echo "<br>".$cont;
-		// $parts['value']="";
-		// unserialize($cont);
 
 		$parts=[];
 		$p = explode("/**", $value);
@@ -74,17 +60,10 @@ class FileCache
 					$cont.=$p[$i]; 
 				else $cont.=$p[$i]."/**"; 
 			}
-			//echo "<br>".$cont;
-		//$parts['value']=$cont;
-		//
-		//var_dump($p);
 		$parts['time']=$p[count($p)-1];
-		//
-		//echo "<br>".$cont;
 		
 		$parts['value']=unserialize($cont);
 		
-		//
 		return $parts;
 	}
 
@@ -136,4 +115,38 @@ class FileCache
 		}
 		else return false;
 	}
+
+	public function forever($key,$value)
+	{
+		return $this->put($key,$value,0);
+	}
+
+	public function clearOld()
+	{
+		$all=(new \Fiesta\Filesystem\Filesystem)->files("../app/".\Config::get('cache.location'));
+		//
+		foreach ($all as $value) {
+			//
+			$cont=(new \Fiesta\Filesystem\Filesystem)->get($value);
+			$parts = $this->unpacking($cont);
+			//
+			$time=$parts["time"];
+			//
+			if(time()>$time) (new \Fiesta\Filesystem\Filesystem)->delete($value);
+		}
+		return true;
+	}
+
+	public function prolongation($key,$minutes)
+	{
+		if($this->exists($key))
+		{
+			$cont=(new \Fiesta\Filesystem\Filesystem)->get($this->path($key));
+			$parts = $this->unpacking($cont);
+			//
+			$this->put($key ,$parts["value"], $minutes);
+		} else return false;
+	}
+
+
 }

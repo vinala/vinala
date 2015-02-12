@@ -21,4 +21,19 @@ class Cache
 	{
 		return Fiesta\Caches\Caches::exists($key);
 	}
+
+	public static function forever($key, $value)
+	{
+		return Fiesta\Caches\Caches::forever($key, $value);
+	}
+
+	public static function clearOld()
+	{
+		return Fiesta\Caches\Caches::clearOld();
+	}
+
+	public static function prolongation($key,$minutes)
+	{
+		return Fiesta\Caches\Caches::prolongation($key,$minutes);
+	}
 }

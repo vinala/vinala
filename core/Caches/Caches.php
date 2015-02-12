@@ -21,4 +21,19 @@ class Caches
 	{
 		return (new FileCache)->exists($key);
 	}
+
+	public static function forever($key,$value)
+	{
+		return (new FileCache)->forever($key,$value);
+	}
+
+	public static function clearOld()
+	{
+		return (new FileCache)->clearOld();
+	}
+
+	public static function prolongation($key,$minutes)
+	{
+		return (new FileCache)->prolongation($key,$minutes);
+	}
 }
