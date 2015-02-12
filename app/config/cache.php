@@ -9,6 +9,6 @@ return array(
 	|----------------------------------------------
 	*/
 
-	'location'=>"storage/cache/",
+	'location'=>"storage/cache",
 
 );
