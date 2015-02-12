@@ -15,7 +15,7 @@ class FileCache
 
 	}
 
-	public function get($key)
+	public function get($key,$default=null)
 	{
 		$path = $this->path($key);
 		//
@@ -30,7 +30,8 @@ class FileCache
 		}
 		else 
 		{
-			return false;
+			if(is_null($default)) return false;
+			else return $default;
 		}
 
 	}
@@ -146,6 +147,17 @@ class FileCache
 			//
 			$this->put($key ,$parts["value"], $minutes);
 		} else return false;
+	}
+
+	public function pull($key)
+	{
+		if($this->exists($key))
+		{
+			$value=$this->get($key);
+			$this->forget($key);
+			return $value;
+		}
+		else return false;
 	}
 
 

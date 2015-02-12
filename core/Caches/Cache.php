@@ -36,4 +36,9 @@ class Cache
 	{
 		return Fiesta\Caches\Caches::prolongation($key,$minutes);
 	}
+
+	public static function pull($key)
+	{
+		return Fiesta\Caches\Caches::pull($key);
+	}
 }

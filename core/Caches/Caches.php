@@ -36,4 +36,9 @@ class Caches
 	{
 		return (new FileCache)->prolongation($key,$minutes);
 	}
+
+	public static function pull($key)
+	{
+		return (new FileCache)->pull($key);
+	}
 }
