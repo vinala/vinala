@@ -19,6 +19,6 @@ class Cache
 
 	public static function has($key)
 	{
-		return Fiesta\Caches\Caches::existe($key);
+		return Fiesta\Caches\Caches::exists($key);
 	}
 }

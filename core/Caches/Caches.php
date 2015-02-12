@@ -17,8 +17,8 @@ class Caches
 		return (new FileCache)->get($key);
 	}
 
-	public static function existe($key)
+	public static function exists($key)
 	{
-		return (new FileCache)->existe($key);
+		return (new FileCache)->exists($key);
 	}
 }
