@@ -174,7 +174,8 @@ class App
 	{
 		$sub=$_SERVER["PHP_SELF"];
 		$r=explode("App.php", $sub);
-		return $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"].$r[0];
+		//echo "*".$_SERVER["REQUEST_SCHEME"];
+		return "http://".$_SERVER["HTTP_HOST"].$r[0];
 	}
 }
 
