@@ -187,7 +187,7 @@ class Routes
 	{
 		$currentUrl=self::CheckUrl();
 		//
-		if(self::CheckMaintenance($currentUrl))
+		if(self::CheckMaintenance(self::MaintenanceUrl()))
 		{
 			self::ReplaceParams();
 			self::Replace();
@@ -332,6 +332,14 @@ class Routes
 			if (!is_dir($links)) $one.=$value."/";
 		}
 		return $one;
+	}
+
+	protected static function MaintenanceUrl()
+	{
+		//$url=self::SplitSlash($_SERVER["REQUEST_URI"]);
+		$url=isset($_GET['url'])?$_GET['url']:"/";
+		return $url;
+		//return '/'.$url;
 	}
 
 	protected static function CheckUrl()
