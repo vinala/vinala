@@ -11,7 +11,7 @@ class SeedsCaller extends Seeder
 	*/
 	public static function run()
 	{
-		self::call("ddf");
+		// self::call("UserSeeder");
 	}
 }
 
