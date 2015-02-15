@@ -1,20 +1,41 @@
 # Fiesta
-Fiesta PHP Framework
+Fiesta PHP Framework (beta)
 
 ## Installation
 
-Vous pouvez installer Fiesta via Composer en utilisent la commande create-project dans votre terminal
+Vous pouvez installer Fiesta via [Composer](https://getcomposer.org/) en utilisent la commande create-project dans votre terminal
 
 	composer create-project fiesta/fiesta --prefer-dist
 
 vous pouvez aussi includer le nom de projet :
 
-	composer create-project fiesta/fiesta "nom-de-votre-projet" --prefer-dist
+	composer create-project fiesta/fiesta nom-de-votre-projet --prefer-dist
+	
+ou tout simplement télécharger depuis github [Ici](https://github.com/fiesta-framework/Fiesta/archive/master.zip)
 	
 ## Exigences du Fiesta
 
 Fiesta a quelques exigences du système:
 * PHP >= 5.4
+* Activation de Extension mod_rewrite dans Apache
+
+## Versions
+ 
+ [Fiesta v 1.5.0 (latest)](https://github.com/fiesta-framework/Fiesta/tree/master)
+ 
+ [Fiesta v 1.4.4](https://github.com/fiesta-framework/Fiesta/tree/1.4.4)
+ 
+ [Fiesta v 1.4.3](https://github.com/fiesta-framework/Fiesta/tree/1.4.3)
+ 
+ [Fiesta v 1.4.2](https://github.com/fiesta-framework/Fiesta/tree/1.4.2)
+ 
+ [Fiesta v 1.4.1](https://github.com/fiesta-framework/Fiesta/tree/1.4.1)
+ 
+ [Fiesta v 1.4.0](https://github.com/fiesta-framework/Fiesta/tree/1.4.0)
+ 
+ [Fiesta v 1.3.2](https://github.com/fiesta-framework/Fiesta/tree/1.3.2)
+ 
+ [Fiesta v 1.3.1](https://github.com/fiesta-framework/Fiesta/tree/1.3.1)
 
 ## Configuration
 
