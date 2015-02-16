@@ -84,7 +84,8 @@ class FileCache
 	{
 		$hash = $this->hash($key);
 		$parts=str_split($hash, 2);
-		return "../app/".\Config::get('cache.location').'/'.$hash;
+		return "../app/".\Config::get('cache.options')["file"]['location'].'/'.$hash;
+		//return "../app/".\Config::get('cache.location').'/'.$hash;
 	}
 
 	protected function forget($key)
@@ -124,7 +125,7 @@ class FileCache
 
 	public function clearOld()
 	{
-		$all=(new \Fiesta\Filesystem\Filesystem)->files("../app/".\Config::get('cache.location'));
+		$all=(new \Fiesta\Filesystem\Filesystem)->files("../app/".\Config::get('cache.options')["file"]['location']);
 		//
 		foreach ($all as $value) {
 			//
