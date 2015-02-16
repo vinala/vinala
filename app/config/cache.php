@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'default' => "file",
+	'default' => "database",
 
 
 	/*
@@ -26,15 +26,20 @@ return array(
 
 		"file" => [ 
 			"driver" => "file",
-			'location'=>"storage/cache"
+			'location' => "storage/cache"
 		],
 
 		"database" => [ 
 			"driver" => "database",
-			'database'=>null
+			//'database' => null,
+			'database' => [
+				"host" => "localhost",
+				"username" => "root",
+				"password" => "",
+				"database" => "tt",
+				]
 		],
 	],
 
-	'location'=>"storage/cache",
 
 );
