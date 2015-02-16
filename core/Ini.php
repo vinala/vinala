@@ -54,14 +54,27 @@ class App
 		require __DIR__.'/../core/Caches/Caches.php';
 		require __DIR__.'/../core/Caches/Cache.php';
 		require __DIR__.'/../core/Caches/FileCache.php';
+		require __DIR__.'/../core/Caches/DatabaseCache.php';
+		require __DIR__.'/../core/Caches/Exceptions/DriverNotFoundException.php';
+
 
 		require __DIR__.'/../core/Storage/Storage.php';
 		require __DIR__.'/../core/Security/Auth.php';
 		require __DIR__.'/../core/Objects/List.php';
+
+		// Database
+		require __DIR__.'/../core/Database/Schema.php';
+		require __DIR__.'/../core/Database/Migration.php';
 		require __DIR__.'/../core/Database/Seeder.php';
+		require __DIR__.'/../core/Database/Database.php';
+		require __DIR__.'/../core/Database/Drivers/MySql.php';
+		require __DIR__.'/../core/Database/Exceptions/DatabaseArgumentsException.php';
+		require __DIR__.'/../core/Database/Exceptions/DatabaseConnectionException.php';
+
+
 		require __DIR__.'/../core/Access/Url.php';
 		require __DIR__.'/../core/Hypertext/Pages.php';
-		require __DIR__.'/../core/Database/Database.php';
+		
 		require __DIR__.'/../core/Objects/Sys.php';
 		require __DIR__.'/../core/Http/Links.php';
 		require __DIR__.'/../core/Objects/Base.php';
@@ -72,8 +85,7 @@ class App
 		require __DIR__.'/../core/Hypertext/Cookie.php';
 		require __DIR__.'/../core/Lang.php';
 		require __DIR__.'/../core/Hypertext/HTML.php';
-		require __DIR__.'/../core/Database/Schema.php';
-		require __DIR__.'/../core/Database/Migration.php';
+		
 		require __DIR__.'/../core/Security/Encrypt.php';
 		require __DIR__.'/../core/Security.php';
 		require __DIR__.'/../core/MVC/Model.php';
