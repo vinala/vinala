@@ -32,7 +32,7 @@ class DatabaseCache
 				$tab->inc("id");
 				$tab->string("name");
 				$tab->string("val");
-				$tab->int("life");
+				$tab->long("life");
 				$tab->unique("cacheunique",["name"]);
 			});
 	}
@@ -46,6 +46,7 @@ class DatabaseCache
 	{
 		$value = $this->packing($value);
 		$time = $this->expiration($minutes);
+
 		//
 		$this->establish();
 		//
@@ -54,7 +55,11 @@ class DatabaseCache
 			$this->createTable();
 		}
 		$data=[["name" => $key ,"val" => $value ,"life" => $time ]];
-		\Schema::table('FiestaCache')->insert($data);
+		var_dump($data);
+		if( ! $this->exists($key))
+			\Schema::table('FiestaCache')->insert($data);
+		else 
+			\Schema::table('FiestaCache')->update("name='".$key."'",$data);
 		//
 		$this->back();
 	}
