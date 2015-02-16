@@ -70,9 +70,7 @@ class DBTable
 				if(count($subarray)>0)
 				{
 					$sql="update ".$this->name." set ";
-					$val="":
-					$col="(";
-					$vals="(";
+					$val="";
 					//
 					$i=0;
 					foreach ($subarray as $key => $value) {
