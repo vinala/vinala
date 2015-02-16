@@ -141,7 +141,19 @@ class Schema
 		if(!empty($colmun)) self::$sql_rows[$i].="(".$colmun.")";
 		echo self::$sql_rows[$i];
 	}
-	
+
+	public function unique($name,$colmuns=array())
+	{
+		$sql='UNIQUE KEY `'.$name.'` (';
+		for ($i=0; $i < count($colmuns); $i++) { 
+			if($i==count($colmuns)-1) $sql.=$colmuns[$i];
+			else $sql.=$colmuns[$i].",";
+		}
+		$sql.=")";
+		self::$sql_rows[]=$sql;
+		return $this;
+	}
+
 
 
 
@@ -165,6 +177,7 @@ class Schema
 		}
 		self::$main_sql.=$sql.") DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
 		//
+		echo self::$main_sql;
 		return Database::exec(self::$main_sql);
 	}
 
@@ -179,9 +192,10 @@ class Schema
 		Database::exec("RENAME TABLE ".$from." TO ".$to);
 	}
 
-	public static function existe($nom)
+	public static function existe($nom,$table=null)
 	{
-		$i=Database::countS("select * FROM information_schema.tables WHERE table_schema ='".Config::get('database.database')."' AND table_name = '".$nom."' LIMIT 1;");
+		$tab=is_null($table)?Config::get('database.database'):$table;
+		$i=Database::countS("select * FROM information_schema.tables WHERE table_schema ='".$tab."' AND table_name = '".$nom."' LIMIT 1;");
 		if($i>0) return true;
 		else return false;
 	}
