@@ -9,36 +9,60 @@ class Caches
 {
 	public static function put($key,$value,$minutes)
 	{
-		return (new FileCache)->put($key, $value, $minutes);
+		return self::driver()->put($key, $value, $minutes);
 	}
 
 	public static function get($key)
 	{
-		return (new FileCache)->get($key);
+		return self::driver()->get($key);
 	}
 
 	public static function exists($key)
 	{
-		return (new FileCache)->exists($key);
+		return self::driver()->exists($key);
 	}
 
 	public static function forever($key,$value)
 	{
-		return (new FileCache)->forever($key,$value);
+		return self::driver()->forever($key,$value);
 	}
 
 	public static function clearOld()
 	{
-		return (new FileCache)->clearOld();
+		return self::driver()->clearOld();
 	}
 
 	public static function prolongation($key,$minutes)
 	{
-		return (new FileCache)->prolongation($key,$minutes);
+		return self::driver()->prolongation($key,$minutes);
 	}
 
 	public static function pull($key)
 	{
-		return (new FileCache)->pull($key);
+		return self::driver()->pull($key);
 	}
+
+	protected static function driver()
+	{
+		$option=\Config::get('cache.options');
+		$default=\Config::get('cache.default');
+		//
+		switch ($default) {
+			case 'file':
+				return new FileCache;
+				break;
+			
+			case 'database':
+				return new DatabaseCache;
+				break;
+
+			default:
+			throw new DriverNotFoundException();
+				break;
+		}
+		
+
+
+	}
+
 }
