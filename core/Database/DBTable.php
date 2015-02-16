@@ -60,6 +60,39 @@ class DBTable
 		return $ok;
 	}
 
+	public function update($cond,$array)
+	{
+		$ok=false;
+		
+		if(count($array)>0)
+		{
+			foreach ($array as $subarray) {
+				if(count($subarray)>0)
+				{
+					$sql="update ".$this->name." set ";
+					$val="":
+					$col="(";
+					$vals="(";
+					//
+					$i=0;
+					foreach ($subarray as $key => $value) {
+						if($i>0) $val.=","; 
+						$val.=$key."='".$value."'";
+						$i++;
+					}
+					//
+					$sql.=$val." where ".$cond.";";
+					//
+					Database::exec($sql);
+					//
+					$ok=true;
+				}
+			}
+		}
+		//
+		return $ok;
+	}
+
 	public function clear()
 	{
 		Database::exec('TRUNCATE TABLE '.$this->name.';');
