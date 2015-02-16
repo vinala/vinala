@@ -7,8 +7,18 @@ class Database
 {
 
 	static $server=null;
+	static $default=null;
+	static $serverData=array();
+	static $defaultData=array();
+	private static $driver=null;
 
 	public static function ini()
+	{
+		self::$driver=self::getDriver();
+		self::$driver->setDefault();
+	}
+
+	public static function getDriver()
 	{
 		switch (Config::get('database.default')) {
 			case 'sqlite':
@@ -16,7 +26,7 @@ class Database
 				break;
 
 			case 'mysql':
-				self::set_mysql();
+					return (new Fiesta\Database\MysqlDatabase);
 				break;
 
 			case 'pgsql':
@@ -29,80 +39,56 @@ class Database
 		}
 	}
 	
-
-	static function set_mysql($red=false,$url=null)
+	public static function setDefault($red=false,$url=null)
 	{
-		if(Config::get("database.host")=="" and Config::get("database.username")=="" and Config::get("database.password")=="" and Config::get("database.database")=="")
-		{
-
-		}
-		else
-		{
-		  	
-		  	self::$server=mysqli_connect(Config::get("database.host"), Config::get("database.username"), Config::get("database.password"), Config::get("database.database"));
-		  	//
-		  	if (!self::$server)
-	  		{ 
-	  			if(!$red)
-	  				die("error Database !"); 
-	  			else if($red) 
-	  				{
-	  					if(empty($url)) Errors::r_db();
-	  					else Base::redirect($url);
-	  				}
-
-	  		}
-		  	
-		  	//
-		  	mysqli_query(self::$server,"SET NAMES ".Config::get("database.charset"));
-		}
+		self::$driver->setDefault();
 	}
+
+	public static function setNewServer($host,$user,$password,$database)
+	{
+		self::$driver->setNewServer($host,$user,$password,$database);
+	}
+
+	public static function setDefaultDB()
+	{
+		self::$driver->setDefaultDB();
+	}
+
+	public static function ChangeDB($database,$server=null)
+	{
+		self::$driver->ChangeDB($database,$server);
+	}
+
+
 
 	public static function exec($sql)
 	{
-		$msg=false;
-		if(mysqli_query(self::$server,$sql)) $msg=true;
-		//else $msg="mysql error :".mysql_error();
-		return $msg;
+		return self::$driver->exec($sql);
 	}
 
 	public static function execErr()
 	{
-		$msg="";
-		if(mysqli_error()!="")
-		$msg="mysql error :".mysqli_error();
-		return $msg;
+		return self::$driver->execErr();
 	}
 
 	public static function read($sql)
 	{
-		$vals = array();
-		$res=@mysqli_query(self::$server,$sql);
-		while ($row=@mysqli_fetch_array($res)) {
-			
-			$vals[]=$row;
-		}
-		return $vals;
+		return self::$driver->read($sql);
 	}
 
 	public static function countR($res)
 	{
-		return @mysqli_num_rows($res);
+		return self::$driver->countR($res);
 	}
 
 	public static function countS($sql)
 	{
-		$cnt=0;
-		//
-		if($res=mysqli_query(self::$server,$sql))$cnt=@mysqli_num_rows($res);
-		else $cnt=-1;
-		//
-		return $cnt;
+		return self::$driver->countS($sql);
 	}
 
 	public static function res($sql)
 	{
-		return @mysqli_query(self::$server,$sql);
+		return self::$driver->res($sql);
 	}
 
 }
