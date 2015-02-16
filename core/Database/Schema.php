@@ -47,6 +47,21 @@ class Schema
 		return $this;
 	}
 
+	public function long($nom,$length=11)
+	{
+		$cmnd=$nom.' bigint('.$length.')';
+		//
+		if(!empty($default))
+		{
+			if(is_string($default)) $cmnd.=" DEFAULT '$default' ";
+			else $cmnd.=" DEFAULT $default ";
+		}
+		//
+		self::$sql_rows[]=$cmnd;
+
+		return $this;
+	}
+
 	public function float($nom)
 	{
 		$cmnd=$nom.' float';
