@@ -31,13 +31,13 @@ return array(
 
 		"database" => [ 
 			"driver" => "database",
-			//'database' => null,
-			'database' => [
-				"host" => "localhost",
-				"username" => "root",
-				"password" => "",
-				"database" => "tt",
-				]
+			'database' => null,
+			// 'database' => [
+			// 	"host" => "localhost",
+			// 	"username" => "root",
+			// 	"password" => "",
+			// 	"database" => "tt",
+			// 	]
 		],
 	],
 
