@@ -558,6 +558,13 @@ class Routes
 		return $all;
 	}
 
+	public static function current()
+	{
+		return self::$current;
+	}
+
+
+
 
 	
 }

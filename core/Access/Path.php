@@ -25,7 +25,7 @@ class Path
 		//
 		self::$root=self::getRoot();
 		self::$host=self::getHost();
-		self::$base=$base;
+		self::$base=self::$host.self::$root;
 		//
 		self::$app=self::$host.self::$root."app";
 		//self::$app="app";
