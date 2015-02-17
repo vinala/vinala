@@ -28,9 +28,12 @@ class App
 		require __DIR__.'/../core/Access/ErrorHandler.php';
 		require __DIR__.'/../core/Config.php';
 		require __DIR__.'/../core/Objects/Vars.php';
+
+		// Access
+		require __DIR__.'/../core/Access/Path.php';
+
 		//
 		ini_set("log_errors", 1);
-		//ini_set("error_log", Config::get("loggin.log"));
 		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
 		//
 		if($whoops) ErrorHandler::ini(self::$root);
@@ -110,6 +113,7 @@ class App
 		
 		Sys::ini();
 		Url::ini();
+		Path::ini();
 		Templete::ini(self::$root);
 		//
 		Faker::ini();
