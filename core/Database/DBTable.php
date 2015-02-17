@@ -53,6 +53,8 @@ class DBTable
 					Database::exec($sql);
 					//
 					$ok=true;
+					//
+					
 				}
 			}
 		}
@@ -90,6 +92,17 @@ class DBTable
 		//
 		return $ok;
 	}
+
+	public function delete($cond)
+	{
+		$ok=false;
+		$sql="delete from ".$this->name." where ".$cond;
+		Database::exec($sql);
+		$ok=true;
+		return $ok;
+	}
+
+
 
 	public function clear()
 	{
