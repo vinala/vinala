@@ -16,6 +16,7 @@ class Lang
 
 	public static function ini($lang=NULL)
 	{
+		self::getSupported();
 		if(empty($lang)) $lang=self::detect();
 		self::set($lang);
 	}
@@ -65,7 +66,7 @@ class Lang
 	public static function detect()
 	{
 
-		if(Base::full(Cookie::get(Config::get('lang.cookie'))))
+		if(Base::full(self::getCookie()))
 		{
 			if (in_array(Cookie::get(Config::get('lang.cookie')), self::$app_langs)) {
 			    Res::stsession("lang",Cookie::get(Config::get('lang.cookie')));
@@ -85,5 +86,24 @@ class Lang
 		return Res::session("lang");
 	}
 
+	private static function hash($value)
+	{
+		return md5(md5($value)."lang".Config::get('security.key1').md5(Config::get('security.key2')));
+	}
+
+	private static function getName()
+	{
+		return self::hash(Config::get('lang.cookie'));
+	}
+
+	private static function getCookie()
+	{
+		return Cookie::get(self::getName());
+	}
+
+	private static function getSupported()
+	{
+		return (new Fiesta\Filesystem\Filesystem)->directories("../app/lang");
+	}
 	
 }
