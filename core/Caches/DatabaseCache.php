@@ -12,10 +12,9 @@ class DatabaseCache
 
 	private function establish()
 	{
-		if(!is_null(\Config::get("cache.options")['database']['database']))
+		if(!is_null($data=$this->DatabaseInfo()))
 		{
-			$data=\Config::get("cache.options")['database']['database'];
-			var_dump($data);
+			$data=$this->DatabaseInfo();
 			$this->old_server=\Database::$serverData;
 			\Database::setNewServer($data['host'],$data['username'],$data['password'],$data['database']);
 		}
@@ -25,9 +24,19 @@ class DatabaseCache
 		}
 	}
 
-	private function createTable()
+	private function DatabaseTableName()
 	{
-		\Schema::create('FiestaCache',function($tab)
+		return \Config::get('cache.options')["database"]["table"];
+	}
+
+	private function DatabaseInfo()
+	{
+		return \Config::get("cache.options")['database']['database'];
+	}
+
+	private function createCacheTable()
+	{
+		\Schema::create($this->DatabaseTableName(),function($tab)
 			{
 				$tab->inc("id");
 				$tab->string("name");
@@ -46,20 +55,21 @@ class DatabaseCache
 	{
 		$value = $this->packing($value);
 		$time = $this->expiration($minutes);
+		$name = $this->hash($key);
+		//$name = $key;
 
 		//
 		$this->establish();
 		//
-		if( ! \Schema::existe('FiestaCache',\Database::$serverData['database']))
+		if( ! \Schema::existe($this->DatabaseTableName(),\Database::$serverData['database']))
 		{
-			$this->createTable();
+			$this->createCacheTable();
 		}
-		$data=[["name" => $key ,"val" => $value ,"life" => $time ]];
-		var_dump($data);
+		$data=[["name" => $name ,"val" => $value ,"life" => $time ]];
 		if( ! $this->exists($key))
-			\Schema::table('FiestaCache')->insert($data);
+			\Schema::table($this->DatabaseTableName())->insert($data);
 		else 
-			\Schema::table('FiestaCache')->update("name='".$key."'",$data);
+			\Schema::table($this->DatabaseTableName())->update("name='".$name."'",$data);
 		//
 		$this->back();
 	}
@@ -70,6 +80,7 @@ class DatabaseCache
 		//
 		if($this->exists($key))
 		{
+			$key = $this->hash($key);
 			$value=$this->read($key);
 			//
 			$parts = $this->unpacking($value[0]['val']);
@@ -102,66 +113,35 @@ class DatabaseCache
 		return unserialize($value);
 	}
 
-	protected function unpacking2($value)
-	{
-
-		$parts=[];
-		$p = explode("/**", $value);
-		//
-		$cont="";
-		for ($i=0; $i < count($p)-1; $i++) 
-			{
-				if($i == count($p)-2)
-					$cont.=$p[$i];
-				else $cont.=$p[$i]."/**"; 
-			}
-		$parts['time']=$p[count($p)-1];
-		
-		$parts['value']=unserialize($cont);
-		
-		return $parts;
-	}
-
-	protected function createCacheDirectory($path)
-	{
-		if( ! (new \Fiesta\Filesystem\Filesystem)->isDirectory(dirname($path)))
-			(new \Fiesta\Filesystem\Filesystem)->makeDirectory(dirname($path), 0777, true, true);
-		
-	}
-
 	protected function hash($value)
 	{
 		return md5($value.\Config::get("security.key1").md5($value));
 	}
 
-	protected function path($key)
-	{
-		$hash = $this->hash($key);
-		$parts=str_split($hash, 2);
-		return "../app/".\Config::get('cache.options')["file"]['location'].'/'.$hash;
-		//return "../app/".\Config::get('cache.location').'/'.$hash;
-	}
-
 	protected function forget($key)
 	{
 		//$sql="delete from fiestacache where name='".$key."'";
-		return \Database::exec("delete from fiestacache where name='".$key."'");
+		$key = $this->hash($key);
+		return \Database::exec("delete from ".$this->DatabaseTableName()." where name='".$key."'");
 	}
 
 	private function exist($key)
 	{
-		return (\Database::countS("select * from fiestacache where name='$key'")>0);
+
+		return (\Database::countS("select * from ".$this->DatabaseTableName()." where name='$key'")>0);
 	}
 
 	private function read($key)
 	{
-		return \Database::read("select * from fiestacache where name='$key'");
+		return \Database::read("select * from ".$this->DatabaseTableName()." where name='$key'");
 		// return (\Database::countS("select * from fiestacache where name='$key'")>0);
 	}
 
 	public function exists($key)
 	{
-		if($this->exist($key))
+		$key2 = $this->hash($key);
+		//
+		if($this->exist($key2))
 		{
 			if(time()>$this->getExpiration($key)) 
 			{
@@ -175,9 +155,11 @@ class DatabaseCache
 
 	protected function getExpiration($key)
 	{
-		if($this->exist($key))
+		$key2 = $this->hash($key);
+		//
+		if($this->exist($key2))
 		{
-			$content=$this->read($key);
+			$content=$this->read($key2);
 			$content=$content[0];
 			return $content['life'];
 		}
@@ -189,18 +171,18 @@ class DatabaseCache
 		return $this->put($key,$value,0);
 	}
 
+	public function getAll()
+	{
+		return \Database::read('select * from '.$this->DatabaseTableName());
+	}
+
 	public function clearOld()
 	{
-		$all=(new \Fiesta\Filesystem\Filesystem)->files("../app/".\Config::get('cache.options')["file"]['location']);
+		$all=$this->getAll();
 		//
-		foreach ($all as $value) {
-			//
-			$cont=(new \Fiesta\Filesystem\Filesystem)->get($value);
-			$parts = $this->unpacking($cont);
-			//
-			$time=$parts["time"];
-			//
-			if(time()>$time) (new \Fiesta\Filesystem\Filesystem)->delete($value);
+		foreach ($all as $rows) {
+			$life=$rows['life'];
+			if(time()>$life) \Schema::table($this->DatabaseTableName())->delete("name='".$rows['name']."'");
 		}
 		return true;
 	}
@@ -209,10 +191,15 @@ class DatabaseCache
 	{
 		if($this->exists($key))
 		{
-			$cont=(new \Fiesta\Filesystem\Filesystem)->get($this->path($key));
-			$parts = $this->unpacking($cont);
+			$key2=$this->hash($key);
+			$parts=$this->read($key2);
 			//
-			$this->put($key ,$parts["value"], $minutes);
+			$one=$parts[0];
+			//
+			//$one["life"]=$one["life"] + ($minutes * 60);
+			$one["val"]=$this->unpacking($one["val"]);
+			//
+			$this->put($key ,$one["val"], $minutes);
 		} else return false;
 	}
 
@@ -227,10 +214,6 @@ class DatabaseCache
 		else return false;
 	}
 
-	public function getDatabase()
-	{
-		//if()
-	}
 
 
 }
