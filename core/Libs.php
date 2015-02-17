@@ -15,7 +15,8 @@ class Libs
 			if($default)
 			{
 				$file=str_replace('.', '/', $file);
-				echo '<link rel="stylesheet" type="text/css" href="../app/libs/css/'.$file.'.css">'."\n";
+				echo '<link rel="stylesheet" type="text/css" href="'.Path::$app.'/resources/css/'.$file.'.css">'."\n";
+				//echo '<link rel="stylesheet" type="text/css" href="'.Path::$app.'/resources/css/'.$file.'.css">'."\n";
 			}
 			else
 			{
@@ -35,7 +36,7 @@ class Libs
 			if($default)
 			{
 				$file=str_replace('.', '/', $file);
-				echo '<script type="text/javascript"  src="'.Sys::$app.'libs/js/'.$file.'"></script>'."\n";
+				echo '<script type="text/javascript"  src="'.Path::$app.'/resources/js/'.$file.'"></script>'."\n";
 			}
 			else
 			{
