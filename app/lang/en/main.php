@@ -1,6 +1,5 @@
 <?php 
 
 return array(
-	'hello' =>  "Hello World!",
-	'test' => 'test'
+	'welcome' =>  "Welcome",
 	);
