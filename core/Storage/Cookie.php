@@ -5,8 +5,11 @@
 */
 class Cookie
 {
-	public static function create($name,$value,$expire = 0,$path="/")
+	public static function create($name,$value,$minute = 0,$path="/")
 	{
+		$expire=time()+self::time($minute);
+
+		//
 		if($path==null)
 			setcookie($name,$value,$expire);
 		else 
@@ -34,5 +37,10 @@ class Cookie
 		//setcookie($name, false, time()-3000);
 		setcookie($name, '', time() - 999999, '/' );
 		unset($_COOKIE[$name]);
+	}
+
+	private static function time($minute)
+	{
+		return $minute * 60;
 	}
 }
