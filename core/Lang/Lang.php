@@ -20,9 +20,10 @@ class Lang
 	public static function get($key)
 	{
 		$value = "";
+		//
 		if(array_key_exists ($key, self::$textes)) $value=self::$textes[$key];
 		else throw new  Fiesta\Lang\LanguageKeyNotFoundException($key);
-		
+		//
 		return $value;
 	}
 
