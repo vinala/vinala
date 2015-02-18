@@ -16,7 +16,6 @@ class Libs
 			{
 				$file=str_replace('.', '/', $file);
 				echo '<link rel="stylesheet" type="text/css" href="'.Path::$app.'/resources/css/'.$file.'.css">'."\n";
-				//echo '<link rel="stylesheet" type="text/css" href="'.Path::$app.'/resources/css/'.$file.'.css">'."\n";
 			}
 			else
 			{
