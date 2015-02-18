@@ -86,9 +86,13 @@ class App
 		require __DIR__.'/../core/Hypertext/Input.php';
 		require __DIR__.'/../core/License.php';
 		require __DIR__.'/../core/Hypertext/Cookie.php';
-		require __DIR__.'/../core/Lang.php';
+
+		//Languages
+		require __DIR__.'/../core/Lang/Lang.php';
+		require __DIR__.'/../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
+
+
 		require __DIR__.'/../core/Hypertext/HTML.php';
-		
 		require __DIR__.'/../core/Security/Encrypt.php';
 		require __DIR__.'/../core/Security.php';
 		require __DIR__.'/../core/MVC/Model.php';
