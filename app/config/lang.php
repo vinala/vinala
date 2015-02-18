@@ -21,3 +21,5 @@ return array(
 	*/
 
 	'cookie'=>"fiesta_lang",
+
+);
