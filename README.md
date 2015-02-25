@@ -1,5 +1,5 @@
 # Fiesta
-Fiesta PHP Framework (beta)
+Fiesta PHP Framework v2.0
 
 ## Installation
 
@@ -21,7 +21,9 @@ Fiesta a quelques exigences du système:
 
 ## Versions
  
- [Fiesta v 1.5.0 (latest)](https://github.com/fiesta-framework/Fiesta/tree/master)
+ [Fiesta v 2.0.0 (latest)](https://github.com/fiesta-framework/Fiesta/tree/master)
+
+ [Fiesta v 1.5.0](https://github.com/fiesta-framework/Fiesta/tree/1.5.0)
  
  [Fiesta v 1.4.4](https://github.com/fiesta-framework/Fiesta/tree/1.4.4)
  
