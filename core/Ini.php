@@ -97,7 +97,7 @@ class App
 		require __DIR__.'/../core/Security.php';
 		require __DIR__.'/../core/MVC/Model.php';
 		require __DIR__.'/../core/MVC/View.php';
-		require __DIR__.'/../core/Bootstrap.php';
+		// require __DIR__.'/../core/Bootstrap.php';
 		require __DIR__.'/../core/MVC/Controller.php';
 		require __DIR__.'/../core/Http/Error.php';
 		require __DIR__.'/../core/Hypertext/Script.php';
