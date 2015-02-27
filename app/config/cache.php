@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'default' => "database",
+	'default' => "file",
 
 
 	/*
