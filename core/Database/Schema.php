@@ -176,9 +176,23 @@ class Schema
 	* Create function
 	*/
 
-	public static function create($nom,$script)
+	protected static function tableName($nom,$prefix=null)
 	{
-		self::$main_sql="create table ".$nom."(";
+		$name="";
+		if(is_null($prefix))
+			if(Config::get('database.prefixing')) $name=Config::get('database.prefixe').$nom;
+			else $name=$nom;
+		
+		else $name=$prefix.$nom;
+		//
+		return $name;
+	}
+
+	public static function create($nom,$script,$prefix=null)
+	{
+		$name=self::tableName($nom);
+		//	
+		self::$main_sql="create table ".$name."(";
 		//
 		$c=new self();
 		$script($c);
@@ -192,23 +206,28 @@ class Schema
 		}
 		self::$main_sql.=$sql.") DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
 		//
-		echo self::$main_sql;
 		return Database::exec(self::$main_sql);
 	}
 
 
-	public static function drop($nom)
+	public static function drop($nom,$prefix=null)
 	{
+		$nom=self::tableName($nom,$prefix);
 		return Database::exec("DROP TABLE ".$nom);
 	}
 
 	public static function rename($from, $to)
 	{
+		$from=self::tableName($from);
+		$to=self::tableName($to);
+		//
 		Database::exec("RENAME TABLE ".$from." TO ".$to);
 	}
 
 	public static function existe($nom,$table=null)
 	{
+		$nom=self::tableName($nom);
+		//
 		$tab=is_null($table)?Config::get('database.database'):$table;
 		$i=Database::countS("select * FROM information_schema.tables WHERE table_schema ='".$tab."' AND table_name = '".$nom."' LIMIT 1;");
 		if($i>0) return true;
@@ -217,6 +236,8 @@ class Schema
 
 	public static function table($name)
 	{
+		$name=self::tableName($name);
+		//
 		$h=new DBTable($name);
 		return $h;
 	}
