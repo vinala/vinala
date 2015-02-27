@@ -40,6 +40,12 @@ class Config
 				{
 					$ret=$tbl['migration'];
 				}
+				else if($val[1]=="prefixing")
+					$ret=$tbl['prefixing'];
+
+				else if($val[1]=="prefixe")
+					$ret=$tbl['prefixe'];
+
 				else
 				{ 
 					if(count($val)>=3)
