@@ -56,11 +56,25 @@ return array(
 
 	/*
 	|----------------------------------------------
-	| Migration Table
+	| Schemas Table
 	|----------------------------------------------
 	*/
 
 	'migration' => "fiesta_migrations",
+
+	/*
+	|----------------------------------------------
+	| Table prefixe 
+	|----------------------------------------------
+	| for your security change the prefix value to
+	| another value
+	|
+	*/
+
+	'prefixing' => !false,
+	'prefixe' => 'sid_',
+
+
 
 
 );
