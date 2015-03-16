@@ -265,10 +265,8 @@ class Routes
 			}
 			if($ok==0) 
 			{
-				if(\Config::get('app.unrouted')) 
-					throw new RouteNotFoundException("There is no route call's ".$currentUrl." in your route file");
+				if(\Config::get('app.unrouted')) throw new RouteNotFoundException($currentUrl);
 				else \Errors::r_404();
-				
 			}
 		}
 		else self::showMaintenance();
