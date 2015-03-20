@@ -12,6 +12,6 @@
 
 
 Route::get("/",function()
-{	
+{	//echo Config::get('app.hfgh');
 	return View::make('hello');
 });
