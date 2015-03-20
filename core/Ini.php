@@ -26,7 +26,12 @@ class App
 		if($session)Session::start(__DIR__.'/../app/storage/session');
 		//
 		require __DIR__.'/../core/Access/ErrorHandler.php';
-		require __DIR__.'/../core/Config.php';
+
+		// Config
+		require __DIR__.'/../core/Config/Config.php';
+		require __DIR__.'/../core/Config/Exceptions/ConfigException.php';
+
+
 		require __DIR__.'/../core/Objects/Vars.php';
 
 		// Access

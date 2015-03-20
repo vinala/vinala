@@ -17,19 +17,19 @@ class Filesystem
 	public function get($path)
 	{
 		if($this->exists($path)) return file_get_contents($path);
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function getRequire($path)
 	{
 		if($this->exists($path)) return require $path;
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function getRequireOnce($path)
 	{
 		if($this->exists($path)) return require_once $path;
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function put($path,$content,$lock=false)
@@ -48,7 +48,7 @@ class Filesystem
 			$oldContent=$this->get($path);	
 			$this->put($name,($content.$oldContent));	
 		}
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function append($path,$content)
@@ -58,7 +58,7 @@ class Filesystem
 			$oldContent=$this->get($path);	
 			$this->put($name,($oldContent.$content));	
 		}
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function delete($path)
@@ -79,7 +79,7 @@ class Filesystem
 			$content=$this->get($from);
 			return $this->put($to,$content);
 		}
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function move($from,$to)
@@ -90,7 +90,7 @@ class Filesystem
 			$this->put($to,$content);
 			$this->delete($from);
 		}
-		else throw new FileNotFoundException("File does not existe in ($path)");
+		else throw new FileNotFoundException($path);
 	}
 
 	public function name($path)
@@ -185,7 +185,7 @@ class Filesystem
 
 	public function copyDirectory($from, $to, $options=null)
 	{
-		if(! $this->isDirectory($from)) { throw new DirectoryNotFoundException("Directory does not existe in ($from)"); return false; }
+		if(! $this->isDirectory($from)) { throw new DirectoryNotFoundException($from); return false; }
 		//
 		if(! $this->isDirectory($to)) $this->makeDirectory($to,0777,true);
 		//
@@ -212,7 +212,7 @@ class Filesystem
 
 	public function deleteDirectory($directory, $preserve = false)
 	{
-		if ( ! $this->isDirectory($directory)) { throw new DirectoryNotFoundException("Directory does not existe in ($directory)"); return false; }
+		if ( ! $this->isDirectory($directory)) { throw new DirectoryNotFoundException($directory); return false; }
 
 		$items = new \FilesystemIterator($directory);
 
