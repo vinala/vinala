@@ -96,6 +96,11 @@ class App
 		require __DIR__.'/../core/Lang/Lang.php';
 		require __DIR__.'/../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
 
+		// MVC
+		require __DIR__.'/../core/MVC/Model/Model.php';
+		require __DIR__.'/../core/MVC/Model/ModelArray.php';
+		require __DIR__.'/../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
+		require __DIR__.'/../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
 
 		require __DIR__.'/../core/Hypertext/HTML.php';
 		require __DIR__.'/../core/Security/Encrypt.php';

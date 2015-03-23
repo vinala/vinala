@@ -115,14 +115,14 @@ class MysqlDatabase
 		return $msg;
 	}
 
-	public function read($sql)
+	public function read($sql,$mode)
 	{
 		$vals = array();
 		$res=@mysqli_query(\Database::$server,$sql);
-		while ($row=@mysqli_fetch_array($res)) 
-		{
-			$vals[]=$row;
-		}
+		if($mode == 1)
+		while ($row=@mysqli_fetch_assoc($res))  $vals[]=$row;
+		else if($mode == 2)
+		while ($row=@mysqli_fetch_array($res)) $vals[]=$row;
 		//
 		return $vals;
 	}

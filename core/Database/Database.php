@@ -71,9 +71,10 @@ class Database
 		return self::$driver->execErr();
 	}
 
-	public static function read($sql)
+	//assoc : 1 , array : 2
+	public static function read($sql,$mode=2)
 	{
-		return self::$driver->read($sql);
+		return self::$driver->read($sql , $mode);
 	}
 
 	public static function countR($res)

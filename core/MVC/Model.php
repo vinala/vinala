@@ -57,6 +57,8 @@ class Model
 		{
 		    $this->key = $value;
 		}
+		// echo "select COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '".Config::get('database.database')."' AND TABLE_NAME = '".$this->table."'";
+		// die();
 	}
 
 	function __construct($id=null,$tbl=null)
@@ -370,6 +372,20 @@ class Model
 		$collection=new DataCollection($data,true,$dbtable->nbRows,$RowsPerPage,$dbtable->CurrentPage);
 		//
 		return $collection;
+	}
+
+	public function hasOne($model,$local,$remote)
+	{
+		$val=$this->$local;
+		$mod=new $model;
+		return $mod->get($remote,$val);
+	}
+
+	public function belongsTo($model,$local,$remote)
+	{
+		$val=$this->$local;
+		$mod=new $model;
+		return $mod->get($remote,$val);
 	}
 }
 
