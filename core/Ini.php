@@ -37,11 +37,13 @@ class App
 		// Access
 		require __DIR__.'/../core/Access/Path.php';
 
-		//
+		// Set the error log
 		ini_set("log_errors", 1);
 		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
-		//
+
+		// Set Whoops error handler
 		if($whoops) ErrorHandler::ini(self::$root);
+
 		//
 		require __DIR__.'/../core/MVC/Templete.php';
 		require __DIR__.'/../core/Objects/Exception.php';
@@ -99,13 +101,15 @@ class App
 		// MVC
 		require __DIR__.'/../core/MVC/Model/Model.php';
 		require __DIR__.'/../core/MVC/Model/ModelArray.php';
+		require __DIR__.'/../core/MVC/Model/Exceptions/ForeingKeyMethodException.php';
+		require __DIR__.'/../core/MVC/Model/Exceptions/ColumnNotEmptyException.php';
 		require __DIR__.'/../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
 		require __DIR__.'/../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
 
 		require __DIR__.'/../core/Hypertext/HTML.php';
 		require __DIR__.'/../core/Security/Encrypt.php';
 		require __DIR__.'/../core/Security.php';
-		require __DIR__.'/../core/MVC/Model.php';
+		//require __DIR__.'/../core/MVC/Model.php';
 		require __DIR__.'/../core/MVC/View.php';
 		require __DIR__.'/../core/MVC/Controller.php';
 		require __DIR__.'/../core/Http/Error.php';
