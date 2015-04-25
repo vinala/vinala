@@ -213,6 +213,7 @@ class Config
 				if($val[1]=="debug") {$ret=$tbl['debug'];}
 				else if($val[1]=="msg") $ret=$tbl['msg'];
 				else if($val[1]=="log") $ret=$tbl['log'];
+				else if($val[1]=="bg") $ret=$tbl['bg'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				break;
 
