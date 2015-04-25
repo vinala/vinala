@@ -27,6 +27,7 @@ class ErrorHandler
 			
 			$errorPage = new Whoops\Handler\PlainTextHandler();
 			$errorPage->msg=Config::get('loggin.msg');
+			$errorPage->bg_color=Config::get('loggin.bg');
 			$errorPage->handle();
 			$whoops->pushHandler($errorPage);
 			$whoops->register();

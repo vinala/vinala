@@ -28,6 +28,7 @@ class PlainTextHandler extends Handler
     protected $logger;
 
     public $msg;
+    public $bg_color;
 
     /**
      * @var bool
@@ -324,6 +325,7 @@ class PlainTextHandler extends Handler
         if(! is_null ($exception)) 
             {
                 $msg=$this->msg;
+                $bg_color=$this->bg_color;
                 //include_once '/core/Access/ErrorDisplayer/simple.php';
                 ?>
                 <head>
@@ -333,12 +335,14 @@ class PlainTextHandler extends Handler
                     body
                     {
                         background: #e9e9e9;
+                        background: <?php echo $bg_color ?>;
                         margin: 0px;
                         padding: 0px;
                     }
 
                     div 
                     {
+                        box-shadow: 0px 3px 6px 3px rgba(0,0,0,0.2);
                         border:1px solid gray;
                         border-radius:5px;
                         display: inline-block;

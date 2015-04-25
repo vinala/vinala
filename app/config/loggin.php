@@ -14,7 +14,7 @@ return array(
 	| 
 	*/
 
-	'debug' => true,
+	'debug' => !true,
 
 	/*
 	|----------------------------------------------
@@ -38,6 +38,19 @@ return array(
 	*/
 
 	'log' => __DIR__.'/../app/storage/logs/fiesta.log',
+
+	/*
+	|----------------------------------------------
+	| Error simple page background color
+	|----------------------------------------------
+	| hana ghadi t3tih l couleur dial l background
+	| dial la page simple dial l erreur ya3ni lpage 
+	| li katkhroj dial l erreur ila kan debug fiha 
+	| false
+	| 
+	*/
+
+	'bg' => '#a4003a', // "#e9e9e9"
 
 
 	

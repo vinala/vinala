@@ -11,6 +11,7 @@
 
 	div	
 	{
+		box-shadow: 0px 3px 6px 3px rgba(0,0,0,0.2);
 		border:1px solid gray;
 		border-radius:5px;
 		display: inline-block;
