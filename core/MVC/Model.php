@@ -11,7 +11,7 @@
 /**
 * controler
 */
-class Model
+class Model2
 {
 	public $table="post";
 	public $columns = array();
