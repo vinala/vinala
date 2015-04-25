@@ -11,7 +11,7 @@ if(!file_exists($Root."../app/models/$file.php"))
 		$myfile = fopen($Root."../app/models/$file.php", "w");
 		$txt = "<?php\n\n";
 
-		$txt.="class $class extends Model\n\t{\n\t\t//Name of the table in database\n\t\tprotected static ".'$reference'."='$table';\n\n\t}";
+		$txt.="class $class extends Model\n\t{\n\t\t//Name of the table in database\n\t\tprotected static ".'$table'."='$table';\n\t\tprotected static ".'$foreignKeys=array();'."\n\n\t}";
 
 		fwrite($myfile, $txt);
 		fclose($myfile);
