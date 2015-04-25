@@ -77,8 +77,11 @@
 	{
 		$data=Database::read("select * from ".$this->DBtable." where ".$this->key."='".$pk."' ",1);
 		//
-		foreach ($data[0] as $key => $value) $this->$key = $value;
-		$this->setForeign();
+		if(count($data)==1)
+		{
+			foreach ($data[0] as $key => $value) $this->$key = $value;
+			$this->setForeign();
+		}
 	}
 
 	public static function find($id)
