@@ -233,17 +233,8 @@
 	{
 		$val=$this->$local;
 		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
-		$mod=new $model;
-		if(is_null($remote)) $remote = $mod->key;
-		$data=$mod->get($remote, '=' , $val);
-		$data=$data->get();
-		//
-		if(!is_null($data))
-		{
-			if(count($data)==1) return $data[0];
-			else if(count($data)==0) return null;
-		}
-		else return null;
+		$mod=new $model($val);
+		return $mod;
 	}
 
 	public function belongsTo($model , $local , $remote)
