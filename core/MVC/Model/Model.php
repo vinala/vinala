@@ -229,11 +229,12 @@
 		return $rows;
 	}
 
-	public function hasOne($model , $local , $remote)
+	public function hasOne($model , $local , $remote=null)
 	{
 		$val=$this->$local;
 		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
 		$mod=new $model;
+		if(is_null($remote)) $remote = $mod->key;
 		$data=$mod->get($remote, '=' , $val);
 		$data=$data->get();
 		//
