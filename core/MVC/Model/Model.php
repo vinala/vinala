@@ -3,7 +3,7 @@
 /**
 * Model class
 */
- class Model2
+ class Model
 {
 	protected $test;
 	protected static $table;
@@ -12,17 +12,6 @@
 	protected $key;
 	protected $object;
 	//
-
-	public function child()
-	{
-		echo $this->phone();
-	}
-
-	public static function child2()
-	{
-		$self=new self();
-		echo $self->phone();
-	}
 
 	protected function setColmuns()
 	{
@@ -54,20 +43,42 @@
 		$this->DBtable=$table;
 	}
 
-	public function __construct($table=null) 
+	public function __construct($pk=null,$table=null) 
 	{
-		echo "+".$this->object."+";
 		if(!is_null($table)) $this->setTable($table);
 		else $this->setTable(static::$table);
 		$this->setColmuns();
 		$this->setKey();
+		if( ! is_null($pk)) $this->setData($pk);
+	}
+
+	protected function setForeign()
+	{
+		if(isset(static::$foreignKeys))
+		if( ! is_null(static::$foreignKeys)) 
+		{
+			$foreigns=static::$foreignKeys;
+			//
+			foreach ($foreigns as $key => $value) 
+			{
+				if(method_exists($this, $value)) $this->$value = $this->$value();
+				else throw new Fiesta\MVC\Model\ForeingKeyMethodException($value,get_class($this));
+			}
+		}
 	}
 
 	protected static function instance()
 	{
 		$class=get_class();
-		return new $class(static::$table);
-		//return new self(static::$table);
+		return new $class(null,static::$table);
+	}
+
+	protected function setData($pk)
+	{
+		$data=Database::read("select * from ".$this->DBtable." where ".$this->key."='".$pk."' ",1);
+		//
+		foreach ($data[0] as $key => $value) $this->$key = $value;
+		$this->setForeign();
 	}
 
 	public static function find($id)
@@ -177,7 +188,6 @@
 	{
 		$self=self::instance();
 		$rows = new ModelArray;
-		//
 		$sql="select * from ".$self->DBtable." where $colmn $condution '$value'";
 		$data = Database::read($sql,1);
 		//
@@ -222,9 +232,17 @@
 	public function hasOne($model , $local , $remote)
 	{
 		$val=$this->$local;
+		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
 		$mod=new $model;
 		$data=$mod->get($remote, '=' , $val);
-		return $data->get();
+		$data=$data->get();
+		//
+		if(!is_null($data))
+		{
+			if(count($data)==1) return $data[0];
+			else if(count($data)==0) return null;
+		}
+		else return null;
 	}
 
 	public function belongsTo($model , $local , $remote)
