@@ -10,7 +10,7 @@ if(!file_exists($Root."../app/controllers/$file.php"))
 		$myfile = fopen($Root."../app/controllers/$file.php", "w");
 		$txt = "<?php\n\n";
 
-		$txt.="/**\n* class de controller $class\n*/\n\nclass $class extends Controler\n{\n\t";
+		$txt.="/**\n* class de controller $class\n*/\n\nclass $class extends Controller\n{\n\t";
 
 		//view
 		$txt.="\n\t\n\tpublic static ".'$id = null'.";\n\tpublic static ".'$object = null'.";\n\n";
