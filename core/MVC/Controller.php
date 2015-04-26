@@ -4,7 +4,7 @@
 /**
 * Controller class
 */
-class Controler
+class Controller
 {
 	
 }
