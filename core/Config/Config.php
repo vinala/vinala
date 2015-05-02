@@ -135,6 +135,8 @@ class Config
 				if($val[1]=="activate") $ret=$tbl['activate'];
 				else if($val[1]=="maintenanceEvent") $ret=$tbl['maintenanceEvent'];
 				else if($val[1]=="maintenanceResponse") $ret=$tbl['maintenanceResponse'];
+				else if($val[1]=="msg") $ret=$tbl['msg'];
+				else if($val[1]=="bg") $ret=$tbl['bg'];
 				else if($val[1]=="outRoutes") $ret=$tbl['outRoutes'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
