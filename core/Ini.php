@@ -31,7 +31,10 @@ class App
 		require __DIR__.'/../core/Config/Config.php';
 		require __DIR__.'/../core/Config/Exceptions/ConfigException.php';
 
+		//Maintenance
+		require __DIR__.'/../core/Maintenance/Maintenance.php';
 
+		//
 		require __DIR__.'/../core/Objects/Vars.php';
 
 		// Access
