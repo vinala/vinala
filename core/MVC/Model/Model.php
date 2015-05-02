@@ -13,6 +13,15 @@
 	protected $object;
 	//
 
+	public function __construct($pk=null,$table=null) 
+	{
+		if(!is_null($table)) $this->setTable($table);
+		else $this->setTable(static::$table);
+		$this->setColmuns();
+		$this->setKey();
+		if( ! is_null($pk)) $this->setData($pk);
+	}
+
 	protected function setColmuns()
 	{
 		$data=array();
@@ -21,9 +30,19 @@
 		//
 		foreach($rows as $key => $value)
 			foreach($value as $key2 => $value2)
-    			if(is_numeric($key2)) $data[]=$value2;
+    			if(is_numeric($key2)) 
+    			{
+    				$data[]=$value2;
+    				$this->setVars($value2);
+    			}
     	//
     	$this->columns=$data;
+    	$this->setForeign();
+	}
+
+	protected function setVars($key,$value = null)
+	{
+		$this->$key = $value ;
 	}
 
 	protected function setKey()
@@ -43,16 +62,7 @@
 		$this->DBtable=$table;
 	}
 
-	public function __construct($pk=null,$table=null) 
-	{
-		if(!is_null($table)) $this->setTable($table);
-		else $this->setTable(static::$table);
-		$this->setColmuns();
-		$this->setKey();
-		if( ! is_null($pk)) $this->setData($pk);
-	}
-
-	protected function setForeign()
+	protected function putForeign()
 	{
 		if(isset(static::$foreignKeys))
 		if( ! is_null(static::$foreignKeys)) 
@@ -62,6 +72,20 @@
 			foreach ($foreigns as $key => $value) 
 			{
 				if(method_exists($this, $value)) $this->$value = $this->$value();
+				else throw new Fiesta\MVC\Model\ForeingKeyMethodException($value,get_class($this));
+			}
+		}
+	}
+	protected function setForeign()
+	{
+		if(isset(static::$foreignKeys))
+		if( ! is_null(static::$foreignKeys)) 
+		{
+			$foreigns=static::$foreignKeys;
+			//
+			foreach ($foreigns as $key => $value) 
+			{
+				if(method_exists($this, $value)) $this->$value =  null;
 				else throw new Fiesta\MVC\Model\ForeingKeyMethodException($value,get_class($this));
 			}
 		}
@@ -79,9 +103,10 @@
 		//
 		if(count($data)==1)
 		{
-			foreach ($data[0] as $key => $value) $this->$key = $value;
-			$this->setForeign();
+			foreach ($data[0] as $key => $value) $this->setVars($key,$value);
+			$this->putForeign();
 		}
+		//else if(count($data)==0) $this->setForeign();
 	}
 
 	public static function find($id)
@@ -238,6 +263,26 @@
 		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
 		$mod=new $model($val);
 		return $mod;
+	}
+
+	public function hasMany($model , $local , $remote)
+	{
+		$val=$this->$local;
+		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
+		$mod=new $model;
+		$data=$mod->get($remote, '=' , $val);
+		$data=$data->get();
+		return $data;
+		// //
+		// if(!is_null($data))
+		// {
+		// 	if(count($data)==1) return $data[0];
+		// 	else if(count($data)==0) return null;
+		// }
+		// else return null;
+
+
+
 	}
 
 	public function belongsTo($model , $local , $remote)
