@@ -187,7 +187,7 @@ class Routes
 	{
 		$currentUrl=self::CheckUrl();
 		//
-		if(self::CheckMaintenance(self::MaintenanceUrl()))
+		if(\Maintenance::check())
 		{
 			self::ReplaceParams();
 			self::Replace();
@@ -269,7 +269,7 @@ class Routes
 				else \Errors::r_404();
 			}
 		}
-		else self::showMaintenance();
+		else \Maintenance::show();
 	}
 
 	protected static function exec($params,&$one)
