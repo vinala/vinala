@@ -9,11 +9,21 @@ return array(
 	|----------------------------------------------
 	*/
 
-	'activate' => false, 
-	'maintenanceEvent' => "string", //string ou link
+	'activate' => !false, 
 
-	// reaction dial l maintenance string ola lien
-	'maintenanceResponse' => "the web site is under maintenance", 
+	/*
+	|----------------------------------------------
+	| Maintenance Message
+	|----------------------------------------------
+	*/
+	'msg' => "Le site web est en cours de maintenance...", 
+
+	/*
+	|----------------------------------------------
+	| Maintenance background
+	|----------------------------------------------
+	*/
+	'bg' => "#d6003e", 
 
 	/*
 	|----------------------------------------------
