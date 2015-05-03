@@ -17,7 +17,8 @@ class Maintenance
 	{
 		$msg=Config::get("maintenance.msg");
 		$bg_color=Config::get("maintenance.bg");
-		include 'View.php';
+		//include 'View.php';
+		View::make('maintenance.view',['msg' => $msg , 'bg_color' => $bg_color ]);
 	}
 
 	protected static function thisUrl()
