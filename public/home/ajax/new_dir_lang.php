@@ -4,7 +4,7 @@
 
 	$Root="../../";
 	if(mkdir ($Root."../app/lang/".$name))
-		echo "okey";
+		echo "le dossier a été creé";
 	else echo "le dossier ne veut pas cree";
 	
 

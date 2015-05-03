@@ -14,7 +14,7 @@ if(!file_exists($Root."../app/views/$file.php"))
 		fwrite($myfile, $txt);
 		fclose($myfile);
 		//
-		echo "okey";
+		echo "Le view a été creé";
 	}
 	else
 	{

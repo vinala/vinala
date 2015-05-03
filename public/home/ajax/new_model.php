@@ -16,7 +16,7 @@ if(!file_exists($Root."../app/models/$file.php"))
 		fwrite($myfile, $txt);
 		fclose($myfile);
 		//
-		echo "okey";
+		echo "Le model a été creé";
 	}
 	else
 	{

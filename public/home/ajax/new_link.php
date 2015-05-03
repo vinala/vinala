@@ -18,7 +18,7 @@
 		fwrite($myfile, $txt);
 		fclose($myfile);
 		//
-		echo "okey";
+		echo "Le fichier link a été creé";
 	}
 	else echo "Le fichier deja existe";
 

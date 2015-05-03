@@ -14,7 +14,7 @@ if(!file_exists($Root."../app/lang/$dir/$file.php"))
 		fwrite($myfile, $txt);
 		fclose($myfile);
 		//
-		echo "okey";
+		echo "Le fichier langue a été creé";
 	}
 	else
 	{
