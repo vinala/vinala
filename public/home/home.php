@@ -85,6 +85,7 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 </head>
 
 <body>
+	
 	<div class="main_back"></div>
 	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
         <div class="container">
@@ -133,7 +134,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 
 	<?php 
 		Libs::js($path."js/me.js",false);
-		//Libs::css($path."css/me.css",false);
+		Libs::css($path."css/me2.css",false);
 	 ?>
 
 	<link rel="icon" type="image/png" href="<?php echo $path; ?>images/fiesta_ico.ico">
@@ -141,6 +142,12 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 </head>
 
 <body>
+<div class="alert_bg" id="alert_unit">
+	<div class="alert_main" id="alert_main">
+	<div class="alert_close" id="alert_close"><span class="glyphicon glyphicon-remove"></span></div>
+	<span id="alert_msg">Lorem ipsum dolor sit amet.</span></div>
+	
+</div>
 <nav class="navbar navbar-default" role="navigation" style='border-radius:0px;background: <?php echo Config::get('panel.mainColor') ?>;'>
   <div class="container-fluid">
     
