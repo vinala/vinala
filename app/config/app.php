@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 return array(
@@ -23,19 +23,19 @@ return array(
 	|----------------------------------------------
 	| Project parent folder
 	|----------------------------------------------
-	| ila kenti khedm b local serveur ola kenti 7at 
+	| ila kenti khedm b local serveur ola kenti 7at
 	| l framework wset chi dossier khask tkteb smyt
 	| hadak dossier hana
 	*/
 
-	'projectFolder'=>"fiesta", 
+	'projectFolder'=>"fiesta",
 
 	/*
 	|----------------------------------------------
 	| Project url
 	|----------------------------------------------
-	| hena kteb lien dial site dilak ila kenti 
-	| khedam f localhost kteb lien dial local host 
+	| hena kteb lien dial site dilak ila kenti
+	| khedam f localhost kteb lien dial local host
 	| o men b3d smyt dossier li khedam fih
 	*/
 
@@ -54,11 +54,22 @@ return array(
 	|----------------------------------------------
 	| Routing inexists event
 	|----------------------------------------------
-	| hena ila kan route makynch ,true bach 
-	| yafficher exception ,sinon false bach  
+	| hena ila kan route makynch ,true bach
+	| yafficher exception ,sinon false bach
 	| ymchi l 404
 	*/
 
 	'unrouted'=> true,
+
+	/*
+	|----------------------------------------------
+	| Default Character Set
+	|----------------------------------------------
+	| hena encode dial l'application meni
+	| tkhdem l methode HTML::charset()
+	|
+	*/
+
+	'charset'=> 'utf-8',
 
 );
