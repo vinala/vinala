@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
 * Config Class
 */
 class Config
 {
-	
+
 
 	public static function get($value)
 	{
@@ -47,7 +47,7 @@ class Config
 					$ret=$tbl['prefixe'];
 
 				else
-				{ 
+				{
 					if(count($val)>=3)
 					{
 						switch ($tbl['default']) {
@@ -112,6 +112,7 @@ class Config
 				else if($val[1]=="url") $ret=$tbl['url'];
 				else if($val[1]=="lang") $ret=$tbl['lang'];
 				else if($val[1]=="owner") $ret=$tbl['owner'];
+				else if($val[1]=="charset") $ret=$tbl['charset'];
 				else if($val[1]=="title") $ret=$tbl['title'];
 				else if($val[1]=="unrouted") $ret=$tbl['unrouted'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
@@ -127,7 +128,7 @@ class Config
 				else if($val[1]=="pageMsg") $ret=$tbl['pageMsg'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
-				break;	
+				break;
 			case 'maintenance':
 				if(is_null(App::$root)) $tbl=(include '../app/config/maintenance.php');
 				else $tbl=(include App::$root.'../app/config/maintenance.php');
@@ -140,7 +141,7 @@ class Config
 				else if($val[1]=="outRoutes") $ret=$tbl['outRoutes'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
-				break;		
+				break;
 			case 'lang':
 				if(is_null(App::$root)) $tbl=(include '../app/config/lang.php');
 				else $tbl=(include App::$root.'../app/config/lang.php');
@@ -149,7 +150,7 @@ class Config
 				else if($val[1]=="cookie") $ret=$tbl['cookie'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
-				break;		
+				break;
 			case 'security':
 				if(is_null(App::$root)) $tbl=(include '../app/config/security.php');
 				else $tbl=(include App::$root.'../app/config/security.php');
@@ -158,7 +159,7 @@ class Config
 				else if($val[1]=="key2") $ret=$tbl['key2'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
-				break;		
+				break;
 			case 'auth':
 				if(is_null(App::$root)) $tbl=(include '../app/config/auth.php');
 				else $tbl=(include App::$root.'../app/config/auth.php');
@@ -171,7 +172,7 @@ class Config
 				else if($val[1]=="csrf_token") $ret=$tbl['csrf_token'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
-				break;		
+				break;
 			case 'mail':
 				if(is_null(App::$root)) $tbl=(include '../app/config/mail.php');
 				else $tbl=(include App::$root.'../app/config/mail.php');
@@ -186,7 +187,7 @@ class Config
 						if($val[2]=="adresse") $ret=$tbl['from']['adresse'];
 						else if($val[2]=="name") $ret=$tbl['from']['name'];
 					}
-				} 
+				}
 				else if($val[1]=="encryption") $ret=$tbl['encryption'];
 				else if($val[1]=="username") $ret=$tbl['username'];
 				else if($val[1]=="password") $ret=$tbl['password'];
@@ -204,7 +205,7 @@ class Config
 				else if($val[1]=="paginationSimpleNext") $ret=$tbl['paginationSimpleNext'];
 				else if($val[1]=="paginationSimplePrevious") $ret=$tbl['paginationSimplePrevious'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
-				
+
 				//
 				break;
 
@@ -245,14 +246,12 @@ class Config
 				else if($val[1] == "options") { $ret=$tbl['options']; }
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				break;
-				
+
 			default: throw new Fiesta\Config\ConfigException($value);
 				break;
-			
+
 		}
 		return $ret;
 	}
 
 }
-
-

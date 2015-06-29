@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * HTML class
@@ -7,8 +7,9 @@ class Html
 {
 	static $tag;
 
-	public static function charset($encode='utf8')
+	public static function charset($encode=null)
 	{
+		if( is_null($encode)) $encode = Config::get( 'app.charset' );
 		echo "\r\n".'<meta charset="'.$encode.'"/>';
 	}
 
@@ -17,12 +18,12 @@ class Html
 		echo "\r\n".'<meta name="keywords" content="'.$keys.'">';
 	}
 
-	public static function meta_keywords($desc='utf8')
+	public static function meta_keywords($desc)
 	{
 		echo "\r\n".'<meta name="description" content="'.$desc.'">';
 	}
 
-	
+
 	public static function title($value=NULL)
 	{
 		if(empty($value)) $value=Config::get('app.title');
@@ -42,7 +43,7 @@ class Html
 			echo "'";
 		}
 		echo ">";
-		
+
 	}
 
 	public static function close($name)
@@ -63,7 +64,7 @@ class Html
 		}
 		if(!$self)echo " >"."\r\n";
 		else echo " />"."\r\n";
-		
+
 	}
 
 	public static function tclose($name)
@@ -74,9 +75,9 @@ class Html
 	public static function favicon($link)
 	{
 		echo '<link rel="icon" type="image/png" href="'.$link.'">';
-		
+
 	}
 
 
-	
+
 }

@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 /**
-* 
+*
 */
 class Libs
 {
@@ -31,17 +31,17 @@ class Libs
 		}
 		else
 		{
-			
+
 			if($default)
 			{
 				$file=str_replace('.', '/', $file);
-				echo '<script type="text/javascript"  src="'.Path::$app.'/resources/js/'.$file.'"></script>'."\n";
+				echo '<script type="text/javascript"  src="'.Path::$app.'/resources/js/'.$file.'.js"></script>'."\n";
 			}
 			else
 			{
 				echo '<script type="text/javascript"  src="'.$file.'"></script>'."\n";
 			}
 		}
-		
+
 	}
 }

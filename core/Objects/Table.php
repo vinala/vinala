@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * List Class
@@ -39,7 +39,7 @@ class Table
 	public static function add(&$array,$value,$key)
 	{
 		$array[$key]=$value;
-		
+
 	}
 
 	public static function push(&$array)
@@ -47,9 +47,9 @@ class Table
 		$params=func_get_args();
 		//
 		//self::show($params);
-		for ($i=1; $i < count($params); $i++) 
+		for ($i=1; $i < count($params); $i++)
 			array_push($array, $params[$i]);
-	
+
 	}
 
 	public static function concat($array,$sep=' ')
@@ -91,7 +91,7 @@ class Table
 		}
 		else
 		{
-			for ($i=0; $i <count($array1) ; $i++) { 
+			for ($i=0; $i <count($array1) ; $i++) {
 				if($array1[$i]!=$array2[$i]) { $ok=false; break;}
 			}
 		}
@@ -104,14 +104,14 @@ class Table
 		//
 		foreach ($array1 as  $key => $value) {
 			//echo $value."<br>";
-			if(!self::contains($array2,$value)) 
+			if(!self::contains($array2,$value))
 				if(is_int($key)) self::add($array,$value,count($array));
 				else self::add($array,$value,$key);
 		}
 
 		foreach ($array2 as  $key => $value) {
 			//echo $value."<br>";
-			if(!self::contains($array1,$value) && !self::contains($array,$value) ) 
+			if(!self::contains($array1,$value) && !self::contains($array,$value) )
 				if(is_int($key)) self::add($array,$value,count($array));
 				else self::add($array,$value,$key);
 		}
@@ -133,7 +133,7 @@ class Table
 	{
 		$val=null;
 		//
-		foreach ($array as $key => $v) 
+		foreach ($array as $key => $v)
 			if($value==$v){ $val=$key;break; }
 		//
 		return $val;
@@ -148,7 +148,7 @@ class Table
 	{
 		$val=null;
 		//
-		for ($i=count($array); $i <= count($array) ; $i++) { 
+		for ($i=count($array); $i <= count($array) ; $i++) {
 			$val=$array[$i];
 		}
 		//

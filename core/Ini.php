@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 //----------------------------------------
-// Fiesta v1.3.0 (http://ipixa.net)
-// Copyright 2014 Youssef Had, Inc.
+// Fiesta (http://ipixa.net)
+// Copyright 2014 - 2015 Youssef Had, Inc.
 // Licensed under Open Source
 //----------------------------------------
 
@@ -34,8 +34,10 @@ class App
 		//Maintenance
 		require __DIR__.'/../core/Maintenance/Maintenance.php';
 
-		//
+		//Objects
 		require __DIR__.'/../core/Objects/Vars.php';
+		require __DIR__.'/../core/Objects/String/String.php';
+		require __DIR__.'/../core/Objects/String/Exceptions/StringOutIndexException.php';
 
 		// Access
 		require __DIR__.'/../core/Access/Path.php';
@@ -48,10 +50,10 @@ class App
 		if($whoops) ErrorHandler::ini(self::$root);
 
 		//
-		require __DIR__.'/../core/MVC/Templete.php';
+		//require __DIR__.'/../core/MVC/Templete.php';
 		require __DIR__.'/../core/Objects/Exception.php';
 		require __DIR__.'/../core/Faker.php';
-		
+
 		require __DIR__.'/../core/Storage/Cookie.php';
 
 
@@ -73,7 +75,7 @@ class App
 
 		require __DIR__.'/../core/Storage/Storage.php';
 		require __DIR__.'/../core/Security/Auth.php';
-		require __DIR__.'/../core/Objects/List.php';
+		require __DIR__.'/../core/Objects/Table.php';
 
 		// Database
 		require __DIR__.'/../core/Database/Schema.php';
@@ -87,7 +89,8 @@ class App
 
 		require __DIR__.'/../core/Access/Url.php';
 		require __DIR__.'/../core/Hypertext/Pages.php';
-		
+
+		require __DIR__.'/../core/Objects/DateTime.php';
 		require __DIR__.'/../core/Objects/Sys.php';
 		require __DIR__.'/../core/Http/Links.php';
 		require __DIR__.'/../core/Objects/Base.php';
@@ -101,7 +104,7 @@ class App
 		require __DIR__.'/../core/Lang/Lang.php';
 		require __DIR__.'/../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
 
-		// MVC
+		// MVC - model
 		require __DIR__.'/../core/MVC/Model/Model.php';
 		require __DIR__.'/../core/MVC/Model/ModelArray.php';
 		require __DIR__.'/../core/MVC/Model/Exceptions/ForeingKeyMethodException.php';
@@ -109,11 +112,18 @@ class App
 		require __DIR__.'/../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
 		require __DIR__.'/../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
 
+		// MVC - View
+
+		require __DIR__.'/../core/MVC/View/View.php';
+		require __DIR__.'/../core/MVC/View/Libs/Template.php';
+		require __DIR__.'/../core/MVC/View/Libs/Views.php';
+		require __DIR__.'/../core/MVC/View/Exceptions/ViewNotFoundException.php';
+
 		require __DIR__.'/../core/Hypertext/HTML.php';
 		require __DIR__.'/../core/Security/Encrypt.php';
 		require __DIR__.'/../core/Security.php';
 		//require __DIR__.'/../core/MVC/Model.php';
-		require __DIR__.'/../core/MVC/View.php';
+		// require __DIR__.'/../core/MVC/View.php';
 		require __DIR__.'/../core/MVC/Controller.php';
 		require __DIR__.'/../core/Http/Error.php';
 		require __DIR__.'/../core/Hypertext/Script.php';
@@ -129,28 +139,28 @@ class App
 
 		// Database files
 		require __DIR__.'/../core/Database/DBTable.php';
-		
-		
+
+
 		Sys::ini();
 		Url::ini();
 		Path::ini();
-		Templete::ini(self::$root);
+		Fiesta\MVC\View\Template::ini(self::$root);
 		//
 		Faker::ini();
 		Links::ini();
 		Errors::ini($root);
 		License::ini(self::$page);
-		Lang::ini("fr");
+		Lang::ini();
 		Database::ini();
 		Auth::ini();
 
 		//
-		
+
 		if($root!=null)
-		{		
+		{
 			// include models
 			foreach (glob($root."../app/models/*.php") as $file) { include_once $file; }
-			
+
 			//include the controllers files
 			foreach (glob($root."../app/controllers/*.php") as $file) { include_once $file; }
 
@@ -168,10 +178,10 @@ class App
 			{
 				include_once $root."../app/http/Routes.php";
 				Fiesta\Router\Routes::run();
-			} 
+			}
 		}
 		else
-		{		
+		{
 			// include models
 			foreach (glob("../app/models/*.php") as $file) { include_once $file; }
 
@@ -190,10 +200,10 @@ class App
 			{
 				include_once "../app/http/Routes.php";
 				Fiesta\Router\Routes::run();
-			} 
+			}
 		}
-	
-		
+
+
 	}
 
 	public static function before($fun)
@@ -214,6 +224,3 @@ class App
 		return "http://".$_SERVER["HTTP_HOST"].$r[0];
 	}
 }
-
-
-
