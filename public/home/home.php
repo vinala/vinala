@@ -1,4 +1,4 @@
-<?php 
+<?php
 $rot="app/pages/panel";
 $root="./app/pages/panel";
 $rooot=$root;
@@ -14,7 +14,7 @@ if(isset($_POST['password_1']) && isset($_POST['password_2']) && !empty($_POST['
 	if($_POST['password_1']==Config::get('panel.password1') && $_POST['password_2']==Config::get('panel.password2')) $_SESSION['fiesta_pnl_fst_pass']=$_POST['password_1'];
 }
 
-if(isset($_GET['logout']) && $_GET['logout']="1") { 
+if(isset($_GET['logout']) && $_GET['logout']="1") {
 	$_SESSION['fiesta_pnl_fst_pass']="";unset($_SESSION['fiesta_pnl_fst_pass']);}
 
 //
@@ -26,22 +26,22 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 <head>
 	<?php Html::charset(); ?>
 	<title>Fiesta | Panel</title>
-	
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<?php 
+	<script src="app/library/jquery-1.11.3.min.js"></script>
+	<?php
 		Libs::js($path."js/me.js",false);
 		Libs::css($path."css/me.css",false);
 	?>
 	<link rel="icon" type="image/png" href="<?php echo $path; ?>images/fiesta_ico.ico">
 	<script type="text/javascript">
-		
+
 	</script>
 	<style type="text/css">
 		body {
         background-color: #40a9e0;
-        
+
     }
     .form-signin input[type="text"] {
         margin-bottom: 5px;
@@ -85,14 +85,14 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 </head>
 
 <body>
-	
+
 	<div class="main_back"></div>
 	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
         <div class="container">
           <div class="row vertical-offset-100">
              <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
-                   <div class="panel-heading" style="background:none;border:none">                                
+                   <div class="panel-heading" style="background:none;border:none">
                       <div class="row-fluid user-row header_pnl">
 	                     <img src="<?php echo $path; ?>images/fiesta_logo_absolute.png" class="img-responsive" alt="Conxole Admin" style="display:inline-block;width:100px;margin-right:10px"/>
 	                     <div class="sep_titl"></div>
@@ -128,11 +128,13 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 <head>
 	<?php Html::charset(); ?>
 	<title>Fiesta | Panel</title>
+	<link rel="stylesheet" href="app/library/bootstrap-3.3.1.min.css">
+	<link rel="stylesheet" href="app/library/bootstrap-theme-3.3.1.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="app/library/jquery-1.11.3.min.js"></script>
 
-	<?php 
+	<?php
 		Libs::js($path."js/me.js",false);
 		Libs::css($path."css/me2.css",false);
 	 ?>
@@ -146,11 +148,11 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 	<div class="alert_main" id="alert_main">
 	<div class="alert_close" id="alert_close"><span class="glyphicon glyphicon-remove"></span></div>
 	<span id="alert_msg">Lorem ipsum dolor sit amet.</span></div>
-	
+
 </div>
 <nav class="navbar navbar-default" role="navigation" style='border-radius:0px;background: <?php echo Config::get('panel.mainColor') ?>;'>
   <div class="container-fluid">
-    
+
       <div class="container">
 
     <div id="content">
@@ -161,7 +163,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
       	<a href="?logout=1" class="btn btn-default navbar-btn" style="float:right">Déconnexion</a>
       </div>
       </div>
-    
+
   </div>
 </nav>
 
@@ -232,20 +234,20 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 				<table class="table table-hover">
 					<tr class="info">
 					  <th>Nom de object</th>
-					  
+
 					  <th>Date de creation</th>
 					</tr>
-					  
-					  <?php 
+
+					  <?php
 					  foreach (glob($appPath."schemas/*.php") as $value) {
 					  	$r=explode('schemas/',$value);
 					  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-					  } 
-					  
+					  }
+
 					  ?>
 
 
-					  
+
 					</table>
 			</div>
         </div>
@@ -272,7 +274,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 				  	$r=explode('links/',$value);
 				  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 				  } ?>
-				  
+
 				</table>
 			</div>
         </div>
@@ -304,7 +306,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 				  	$r=explode('seeds/',$value);
 				  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 				  } ?>
-				  
+
 				</table>
 			</div>
         </div>
@@ -329,7 +331,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 						    <label for="">Nom de dossier</label>
 						    <!--<input type="text" class="form-lang_dir_name_2" id="" name="lang_dir_name_2" placeholder="Nom de dossier lang">-->
 						    <select class="form-control" id="sel1" name="lang_dir_name_2">
-						    <?php 
+						    <?php
 						    //
 						    $r=glob($appPath."lang/*");
 						    foreach ($r as $dir) {
@@ -363,7 +365,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 					</div>
 				  </div>
 				</div>
-            	
+
 			</div>
         </div>
         <div class="tab-pane" id="mvc">
@@ -403,7 +405,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 					  	$r=explode('models/',$value);
 					  	echo "<tr><td>".$r[1]."</td><td></td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 					  } ?>
-					  
+
 					</table>
 			    </div>
 			  </div>
@@ -441,7 +443,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 					  	$r=explode('views/',$value);
 					  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 					  } ?>
-					  
+
 					</table>
 				</div>
 			  </div>
@@ -479,12 +481,12 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 					  	$r=explode('controllers/',$value);
 					  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 					  } ?>
-					  
+
 					</table>
 				</div>
 			  </div>
 			</div>
-            
+
         </div>
         <div class="tab-pane" id="blue">
             <h1>Blue</h1>
@@ -500,7 +502,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
     jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
-</script>    
+</script>
 </div> <!-- container -->
 <div class="footer navbar-fixed-bottom" style="background:<?php echo Config::get('panel.mainColor') ?>">
    <center><p style="color:white;padding-top: 5px;">Youssef Had (c) 2014</p></center>
@@ -511,4 +513,3 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 </body>
 </html>
 <?php } ?>
-
