@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
 * Database Schema class
@@ -89,7 +89,7 @@ class Schema
 		//
 		self::$sql_rows[]=$cmnd;*/
 		return $this;
-		
+
 	}
 
 	public function bool($nom)
@@ -136,7 +136,7 @@ class Schema
 
 	/*
 	* Constrant
-	*/ 
+	*/
 
 	public function ini($value)
 	{
@@ -160,7 +160,7 @@ class Schema
 	public function unique($name,$colmuns=array())
 	{
 		$sql='UNIQUE KEY `'.$name.'` (';
-		for ($i=0; $i < count($colmuns); $i++) { 
+		for ($i=0; $i < count($colmuns); $i++) {
 			if($i==count($colmuns)-1) $sql.=$colmuns[$i];
 			else $sql.=$colmuns[$i].",";
 		}
@@ -182,7 +182,7 @@ class Schema
 		if(is_null($prefix))
 			if(Config::get('database.prefixing')) $name=Config::get('database.prefixe').$nom;
 			else $name=$nom;
-		
+
 		else $name=$prefix.$nom;
 		//
 		return $name;
@@ -191,15 +191,15 @@ class Schema
 	public static function create($nom,$script,$prefix=null)
 	{
 		$name=self::tableName($nom);
-		//	
+		//
 		self::$main_sql="create table ".$name."(";
 		//
 		$c=new self();
 		$script($c);
 		//
 		$sql="";
-		for ($i=0; $i < count(self::$sql_rows); $i++) 
-		{ 
+		for ($i=0; $i < count(self::$sql_rows); $i++)
+		{
 			if($i==(count(self::$sql_rows)-1))
 			$sql.=self::$sql_rows[$i]."";
 			else $sql.=self::$sql_rows[$i].",";
@@ -221,7 +221,7 @@ class Schema
 		$from=self::tableName($from);
 		$to=self::tableName($to);
 		//
-		Database::exec("RENAME TABLE ".$from." TO ".$to);
+		return Database::exec("RENAME TABLE ".$from." TO ".$to);
 	}
 
 	public static function existe($nom,$table=null)
@@ -242,6 +242,51 @@ class Schema
 		return $h;
 	}
 
+	public static function add($nom,$script,$prefix=null)
+	{
+		$name=self::tableName($nom);
+		//
+		self::$main_sql="alter table ".$name." ";
+		//
+		$c=new self();
+		$script($c);
+		//
+		$sql="";
+		for ($i=0; $i < count(self::$sql_rows); $i++)
+		{
+			if($i==(count(self::$sql_rows)-1))$sql.= " add " . self::$sql_rows[$i]."";
+			else $sql.= " add " . self::$sql_rows[$i].",";
+		}
+		self::$main_sql.=$sql;
+		// self::$main_sql.=$sql.") DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;";
+		//
+		
+		return Database::exec(self::$main_sql);
+	}
+
+	public static function remove($nom,$colmuns)
+	{
+		$name=self::tableName($nom);
+		//
+		self::$main_sql="alter table ".$name." ";
+		//
+		if(is_array($colmuns))
+		{
+			// foreach ($colmuns as $value) {
+			for ($i=0; $i < count($colmuns); $i++)
+			{
+				if($i==(count($colmuns)-1)) self::$main_sql.=" drop ".$colmuns[$i];
+				else self::$main_sql.=" drop ".$colmuns[$i] .",";
+			}
+		}
+		else
+		{
+			self::$main_sql.=" drop ".$colmuns;
+		}
+		//
+		return Database::exec(self::$main_sql);
+
+	}
+
 
 }
-
