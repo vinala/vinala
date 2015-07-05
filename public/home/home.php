@@ -29,9 +29,10 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 	<?php Html::charset(); ?>
 	<title>Fiesta | Panel</title>
 
-	<link rel="stylesheet" href="app/library/bootstrap-3.3.1.min.css">
-	<link rel="stylesheet" href="app/library/bootstrap-theme-3.3.1.min.css">
+	<link rel="stylesheet" href="<?php echo $path ?>bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $path ?>bootstrap/css/bootstrap-theme.min.css">
 	<script src="app/library/jquery-1.11.3.min.js"></script>
+
 	<?php
 		Html::favicon(Path::$public."/favicon.ico");
 		Libs::js($path."js/me.js",false);
@@ -76,10 +77,9 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 <html>
 <head>
 	<title>Fiesta | Panel</title>
-	<link rel="stylesheet" href="app/library/bootstrap-3.3.1.min.css">
-	<link rel="stylesheet" href="app/library/bootstrap-theme-3.3.1.min.css">
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<link rel="stylesheet" href="<?php echo $path ?>bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $path ?>bootstrap/css/bootstrap-theme.min.css">
+	<script src="app/library/jquery-1.11.3.min.js"></script>
 	<?php 
 		Html::charset();
 		Html::favicon(Path::$public."/favicon.ico");
@@ -473,14 +473,6 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 							    	<input type="text" class="form-control" id="new_view_file_name" name="new_view_file_name" placeholder="Nom de fichier">
 							    </div>
 							</div>
-							<div class="control_row">
-								<div class="col-md-4 form_control_label">
-							    	<label for="">Nom de class</label>
-							    </div>
-							    <div class="col-md-8">
-							    	<input type="text" class="form-control" id="new_view_class_name" name="new_view_class_name" placeholder="Nom de class">
-							    </div>
-							</div>
 							<div  class="MD_submit_row">
 								<input type="submit" value="Créé" class="btn unit_btn unit_btn_purple MD_submit_btn">
 							</div>
@@ -492,12 +484,11 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 						<table class="table table-hover">
 						<tr class="info">
 						  <th class="tr_table_files">Nom de fichiers</th>
-						  <th class="tr_table_files">Nom de class</th>
 						  <th class="tr_table_files">Date de creation</th>
 						</tr>
 						  <?php foreach (glob($appPath."views/*.php") as $value) {
 						  	$r=explode('views/',$value);
-						  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+						  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 						  } ?>
 
 						</table>
