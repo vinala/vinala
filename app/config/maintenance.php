@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 return array(
@@ -9,21 +9,21 @@ return array(
 	|----------------------------------------------
 	*/
 
-	'activate' => !false, 
+	'activate' => false, 
 
 	/*
 	|----------------------------------------------
 	| Maintenance Message
 	|----------------------------------------------
 	*/
-	'msg' => "Le site web est en cours de maintenance...", 
+	'msg' => "Le site web est en cours de maintenance...",
 
 	/*
 	|----------------------------------------------
 	| Maintenance background
 	|----------------------------------------------
 	*/
-	'bg' => "#d6003e", 
+	'bg' => "#d6003e",
 
 	/*
 	|----------------------------------------------

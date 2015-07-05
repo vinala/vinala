@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'segoe';
+  src: url('../fonts/segoeuil.ttf') format('truetype');
+}
+
+body
+{
+	padding:0px;
+	margin:0px;
+	background:#5b1d79;
+	font-family: "segoe";
+}
+
+.img
+{
+	width:260px;
+	margin:0pt auto;
+	display:block;
+	margin-top: 30px;
+}
+
+#welcom
+{
+	opacity:0;
+	color:white;
+	text-align: center;
+	/*font-family: 'Lato', sans-serif;*/
+	width:185px;
+	margin: 0px auto;
+}
+.text
+{
+	background: #5b1d79;
+	display: inline-block;
+	z-index: 3;
+	width: 145px;
+	font-size: 16px;
+}
+
+.bottom_panel
+{
+	opacity: 0;
+	height: 75px;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	padding: 20px;
+	text-align: right;
+}
+
+.hello_button
+{
+	background-color: transparent;
+	color: white;
+	transition: all 150ms ease-in;
+
+}
+
+.hello_button:hover
+{
+	background-color: #3e1453;
+	color:white;
+}
