@@ -98,8 +98,7 @@ class Config
 				else if($val[1]=="folder") $ret=$tbl['folder'];
 				else if($val[1]=="password1") $ret=$tbl['password1'];
 				else if($val[1]=="password2") $ret=$tbl['password2'];
-				else if($val[1]=="mainColor") $ret=$tbl['mainColor'];
-				else if($val[1]=="tabsColor") $ret=$tbl['tabsColor'];
+				else if($val[1]=="enable") $ret=$tbl['enable'];
 				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
 				//
 				break;
