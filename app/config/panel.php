@@ -5,6 +5,18 @@ return array(
 
 	/*
 	|----------------------------------------------
+	| Panel Activation
+	|----------------------------------------------
+	| hna true ila bghiti l panel tb9a kheda
+	| meni tsali menha redha false...pour 
+	| votre sécurité
+	| 
+	*/
+
+	'enable'=>true,
+
+	/*
+	|----------------------------------------------
 	| Panel Route
 	|----------------------------------------------
 	| hna route dial l panel
@@ -41,16 +53,7 @@ return array(
 	'password1'=>"1234",
 	'password2'=>"5678",
 
-	/*
-	|----------------------------------------------
-	| 
-	| Personalize Panel
-	|----------------------------------------------
-	| hna bach t personnalizer l panel dialk
-	*/
-
-	'mainColor'=>"#038cde",
-	'tabsColor'=>"#0eb1fa",
+	
 
 );
 
