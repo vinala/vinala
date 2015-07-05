@@ -21,11 +21,13 @@ Fiesta a quelques exigences du système:
 
 ## Versions
  
- [Fiesta v 2.5.0 (latest)](https://github.com/fiesta-framework/Fiesta/tree/master)
+ [Fiesta Releases](https://github.com/fiesta-framework/Fiesta/releases)
 
- [Fiesta v 2.0.0](https://github.com/fiesta-framework/Fiesta/tree/2.0.0)
+ [Fiesta v 2.5 (latest)](https://github.com/fiesta-framework/Fiesta/tree/master)
 
- [Fiesta v 1.5.0](https://github.com/fiesta-framework/Fiesta/tree/1.5.0)
+ [Fiesta v 2.0](https://github.com/fiesta-framework/Fiesta/tree/2.0.0.1)
+
+ [Fiesta v 1.5](https://github.com/fiesta-framework/Fiesta/tree/1.5.0)
  
  [Fiesta v 1.4.4](https://github.com/fiesta-framework/Fiesta/tree/1.4.4)
  
@@ -35,7 +37,7 @@ Fiesta a quelques exigences du système:
  
  [Fiesta v 1.4.1](https://github.com/fiesta-framework/Fiesta/tree/1.4.1)
  
- [Fiesta v 1.4.0](https://github.com/fiesta-framework/Fiesta/tree/1.4.0)
+ [Fiesta v 1.4](https://github.com/fiesta-framework/Fiesta/tree/1.4.0)
  
  [Fiesta v 1.3.2](https://github.com/fiesta-framework/Fiesta/tree/1.3.2)
  
