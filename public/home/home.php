@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 $rot="app/pages/panel";
 $root="./app/pages/panel";
 $rooot=$root;
@@ -8,17 +9,18 @@ $path="public/".Config::get('panel.folder')."/";
 $appPath="../app/";
 
 
-//
+// Login
+
 if(isset($_POST['password_1']) && isset($_POST['password_2']) && !empty($_POST['password_1']) && !empty($_POST['password_1']))
 {
-	if($_POST['password_1']==Config::get('panel.password1') && $_POST['password_2']==Config::get('panel.password2')) $_SESSION['fiesta_pnl_fst_pass']=$_POST['password_1'];
+	if($_POST['password_1']==Config::get('panel.password1') && $_POST['password_2']==Config::get('panel.password2')) 
+		$_SESSION['fiesta_pnl_fst_pass']=$_POST['password_1'];
 }
 
 if(isset($_GET['logout']) && $_GET['logout']="1") {
 	$_SESSION['fiesta_pnl_fst_pass']="";unset($_SESSION['fiesta_pnl_fst_pass']);}
 
-//
-//$root=Config::get("app.url")."app/pages/panel/";
+
 if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_pass']))
 {
 ?>
@@ -27,489 +29,628 @@ if(!isset($_SESSION['fiesta_pnl_fst_pass']) || empty($_SESSION['fiesta_pnl_fst_p
 	<?php Html::charset(); ?>
 	<title>Fiesta | Panel</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="app/library/bootstrap-3.3.1.min.css">
+	<link rel="stylesheet" href="app/library/bootstrap-theme-3.3.1.min.css">
 	<script src="app/library/jquery-1.11.3.min.js"></script>
 	<?php
+		Html::favicon(Path::$public."/favicon.ico");
 		Libs::js($path."js/me.js",false);
 		Libs::css($path."css/me.css",false);
+		Libs::css($path."css/main.css",false);
 	?>
-	<link rel="icon" type="image/png" href="<?php echo $path; ?>images/fiesta_ico.ico">
-	<script type="text/javascript">
-
-	</script>
 	<style type="text/css">
-		body {
-        background-color: #40a9e0;
-
-    }
-    .form-signin input[type="text"] {
-        margin-bottom: 5px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    .form-signin input[type="password"] {
-        margin-bottom: 10px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
-    .form-signin .form-control {
-        position: relative;
-        font-size: 16px;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        height: auto;
-        padding: 10px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-    .vertical-offset-100 {
-        padding-top: 100px;
-    }
-    .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    }
-    .panel {
-    margin-bottom: 20px;
-    background-color: transparent !important;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    }
+		body
+		{
+			padding:0px;
+			margin:0px;
+			background:#5b1d79;
+			font-family: segoe;
+		}
 	</style>
 
 </head>
 
-<body>
-
-	<div class="main_back"></div>
-	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
-        <div class="container">
-          <div class="row vertical-offset-100">
-             <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default">
-                   <div class="panel-heading" style="background:none;border:none">
-                      <div class="row-fluid user-row header_pnl">
-	                     <img src="<?php echo $path; ?>images/fiesta_logo_absolute.png" class="img-responsive" alt="Conxole Admin" style="display:inline-block;width:100px;margin-right:10px"/>
-	                     <div class="sep_titl"></div>
-	                     <span class="titl">Fiesta</span>
-	                  </div>
-                   </div>
-                   <div class="panel-body">
-                     <form accept-charset="UTF-8" role="form" class="form-signin" method="post" action="?login">
-                        <fieldset>
-                            <label class="panel-login">
-                                <div class="login_result"></div>
-                            </label>
-                            <input class="form-control" placeholder="Mot de pass 1" name="password_1" id="password_1" type="password">
-                            <input class="form-control" placeholder="Mot de pass 2" name="password_2" id="password_2" type="password">
-                            <input class="btn btn-lg btn-success btn-block btn_log" type="submit" id="login" value="Connexion">
-                        </fieldset>
-                     </form>
-                   </div>
-                </div>
-             </div>
-          </div>
-        </div>
+<body style="">
+	<img src="<?php echo "app/resources/images/fiesta_logo.png" ?>" class="lg_img">
+	<div id="login_form">
+		<form accept-charset="UTF-8" role="form" class="form-signin" method="post" action="?login">
+            <fieldset>
+                <label class="panel-login">
+                    <div class="login_result"></div>
+                </label>
+                <input class="form-control lg_input" placeholder="Mot de passe 1" name="password_1" id="password_1" type="password">
+                <input class="form-control lg_input" placeholder="Mot de passe 2" name="password_2" id="password_2" type="password">
+                <input class="btn lg_submit" type="submit" id="login" value="Connexion">
+            </fieldset>
+        </form>
+	</div>
 </body>
-</html>
 
+</html>
 <?php
 }
 else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 {
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
-	<?php Html::charset(); ?>
 	<title>Fiesta | Panel</title>
 	<link rel="stylesheet" href="app/library/bootstrap-3.3.1.min.css">
 	<link rel="stylesheet" href="app/library/bootstrap-theme-3.3.1.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	<script src="app/library/jquery-1.11.3.min.js"></script>
-
-	<?php
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<?php 
+		Html::charset();
+		Html::favicon(Path::$public."/favicon.ico");
+		$path="public/".Config::get('panel.folder')."/";
+		Libs::css($path."css/main.css",false); 
+		Libs::js($path."js/main.js",false);
 		Libs::js($path."js/me.js",false);
-		Libs::css($path."css/me2.css",false);
-	 ?>
-
-	<link rel="icon" type="image/png" href="<?php echo $path; ?>images/fiesta_ico.ico">
-
+	?>
 </head>
-
 <body>
-<div class="alert_bg" id="alert_unit">
-	<div class="alert_main" id="alert_main">
-	<div class="alert_close" id="alert_close"><span class="glyphicon glyphicon-remove"></span></div>
-	<span id="alert_msg">Lorem ipsum dolor sit amet.</span></div>
+	<div class="alert_bg" id="alert_unit">
+		<div class="alert_main" id="alert_main">
+		<div class="alert_close" id="alert_close"><span class="glyphicon glyphicon-remove"></span></div>
+		<span id="alert_msg">Lorem ipsum dolor sit amet.</span></div>
 
-</div>
-<nav class="navbar navbar-default" role="navigation" style='border-radius:0px;background: <?php echo Config::get('panel.mainColor') ?>;'>
-  <div class="container-fluid">
+	</div>
+	<div class="top_header">
+		<div class="menu_icon" id="menu_icon">
+			<span class="glyphicon glyphicon-align-justify"></span>
+		</div>
+		<a href="?logout=1">
+		<div class="menu_icon" id="menu_icon" style="float: right;">
+			<span class="glyphicon glyphicon-off"></span>
+		</div>
+		</a>
+		<div class="logo"></div>
 
-      <div class="container">
+	</div>
+	<div class="side_bar" id="side_bar">
+		<div class="content">
+			
+			<div class="link active" id="left_tab_schema" data-tab="schema" title="Schema & migrations">
+				<div class="side_bar_unit"> 
+					<div class="glyphicon glyphicon-transfer"></div>
+					<div class="lib">Schema & migrations</div>
+				</div>
+			</div>
 
-    <div id="content">
-      <a class="navbar-brand" href="#" style="padding: 5px;color: white;">
-        <img alt="Brand" src="<?php echo $path; ?>images/fiesta_logo_full.png" style="width: 42px;display: inline-block;">
-        <span style="margin-left:10px;display: inline-block;color:white">Fiesta</span>
-      </a>
-      	<a href="?logout=1" class="btn btn-default navbar-btn" style="float:right">Déconnexion</a>
-      </div>
-      </div>
+		
+			<div class="link" id="left_tab_links" data-tab="links" title="Liens">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-link"></span>
+					<div class="lib">Liens</div>
+				</div>
+			</div>
+			
 
-  </div>
-</nav>
+			<div class="link" id="left_tab_langs" data-tab="langs" title="Langues">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-flag"></span>
+					<div class="lib">Langues</div>
+				</div>
+			</div>
 
-<div class="container">
+			<div class="link" id="left_tab_mvc_m" data-tab="mvc_m" title="Model (MVC)">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-cloud"></span>
+					<div class="lib">Model (MVC)</div>
+				</div>
+			</div>
+
+			<div class="link" id="left_tab_mvc_v" data-tab="mvc_v" title="View (MVC)">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-file"></span>
+					<div class="lib">View (MVC)</div>
+				</div>
+			</div>
+
+			<div class="link" id="left_tab_mvc_c" data-tab="mvc_c" title="Control (MVC)">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-cog"></span>
+					<div class="lib">Controller (MVC)</div>
+				</div>
+			</div>
+
+			<div class="link" id="left_tab_seeds" data-tab="seeds" title="Graines">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-leaf"></span>
+					<div class="lib">Graines</div>
+				</div>
+			</div>
 
 
-<!-------->
-<div id="content">
-    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a href="#schema" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-transfer"></span> Schemas</a></li>
-        <li><a href="#links" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-link"></span> Liens</a></li>
-        <li><a href="#lang" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-flag"></span> Langues</a></li>
-        <li><a href="#mvc" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-cloud-upload"></span> MVC</a></li>
-        <li><a href="#seeds" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-leaf"></span> Graines</a></li>
-        <li><a href="#config" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-bookmark"></span> Configuration</a></li>
-        <li><a href="#bloc" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-eye-close"></span> Blocage</a></li>
-        <li><a href="#blue" data-toggle="tab" style="color:<?php echo Config::get('panel.tabsColor') ?>"><span class="glyphicon glyphicon-cog"></span> Général</a></li>
 
-    </ul>
-    <div id="my-tab-content" class="tab-content">
-        <div class="tab-pane active" id="schema">
-            <h1>Schemas</h1>
-            <div class="col-md-5" >
-	            <div class="col-md-10">
-	            	<h3>Nouvelle schema</h3>
+			<!-- <div class="link">
+				<span class="glyphicon glyphicon-bookmark"></span>
+			</div>
+
+			<div class="link">
+				<span class="glyphicon glyphicon-eye-close"></span>
+			</div>
+
+			<div class="link" alt="kkkk">
+				<span class="glyphicon glyphicon-cog"></span>
+			</div> -->
+
+			<div class="link" id="left_tab_info" data-tab="info" title="A Propos">
+				<div class="side_bar_unit"> 
+					<span class="glyphicon glyphicon-info-sign"></span>
+					<div class="lib">A Propos</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div id="tab_schema" class="main_panel schema">
+		<div class="content">
+			<div class="title"> 
+				<h1 style="margin:0px">Schemas</h1>
+			</div>
+			
+            <div class="col-md-6" >
+	            <div class="MD_unit MD_unit_orange">
+	            	<div class="MD_unit_title unit_title_orange">Nouvelle schema</div>
+	            	
 		            <form id="new_migrate" method="post" name="new_migrate">
 
-						<div class="form-group col-md-7">
-						    <label for="">Nom de schema</label>
-						    <input type="text" class="form-control" id="migname" name="migname" placeholder="Nom de schema">
+						<div class="control_row">
+							<div class="col-md-3 form_control_label">
+								<label for="">Nom de schema</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="migname" name="migname" placeholder="Nom de schema">
+							</div>
 						</div>
 
-						<div class="form-group col-md-7" style="display:block">
-						    <label for="">Type de schema</label>
-						    <select class="form-control" id="sel1" name="object">
-							    <option value="table" selected>Table</option>
-								<option value="vue">Vue</option>
-					        </select>
+						<div class="control_row">
+							<div class="col-md-3 form_control_label">
+								<label for="">Type de schema</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-control" id="sel1" name="object">
+								    <option value="table" selected>Table</option>
+									<option value="vue">Vue</option>
+						        </select>
+							</div>
 						</div>
 
-						<div class="form-group col-md-7">
-							<input type="submit" value="Créé"  class="btn btn-primary">
+						<div  class="MD_submit_row">
+							<input type="submit" value="Créé" class="btn unit_btn unit_btn_orange MD_submit_btn" >
 						</div>
 					</form>
 				</div>
-				<div class="col-md-10">
-					<h3 style="margin-bottom:20px">Exécution de dernier schema</h3>
-					<form id="exec_last_migrate" method="post" name="exec_last_migrate" class="col-md-5" style="padding: 0px;">
-						<input type="submit" value="Exécuter schéma" class="btn btn-primary">
+				<div class="MD_unit MD_unit_purple" style="  height: 93px;">
+					<div class="MD_unit_title unit_title_purple">Exécution de dernier schema</div>
+					
+					<form id="exec_last_migrate" method="post" name="exec_last_migrate" class="col-md-6" style="padding: 0px;text-align: right;">
+						<input type="submit" value="Exécuter schéma" class="btn unit_btn unit_btn_purple MD_submit_btn">
 					</form>
-					<form id="rollback_last_migrate" method="post" name="rollback_last_migrate" class="col-md-5" style="padding: 0px;">
-						<input type="submit" value="Annuler schéma" class="btn btn-primary">
+					<form id="rollback_last_migrate" method="post" name="rollback_last_migrate" class="col-md-6" style="padding: 0px;">
+						<input type="submit" value="Annuler schéma" class="btn unit_btn unit_btn_purple MD_submit_btn">
 					</form>
 				</div>
-				<div class="col-md-10">
-				<h3 style="margin-bottom:20px">Personnaliser l'exécution</h3>
+				<div class="MD_unit MD_unit_cyan" style="height: 145px;">
+					<div class="MD_unit_title unit_title_cyan">Personnaliser l'exécution</div>
+				
 					<form id="exec_cos_migrate" method="post" name="exec_cos_migrate">
+					<div class="control_row">
 					<?php Migration::getAll('exec_cos_migrate_select'); ?>
-						<input type="submit" value="Exécuter" class="btn btn-primary">
+						<input type="submit" value="Exécuter" class="btn unit_btn unit_btn_cyan no_margins MD_submit_btn">
 					</form>
+					</div>
+					<div class="control_row">
 					<form id="rollback_cos_migrate" method="post" name="rolback_cos_migrate">
 					<?php Migration::getAll('ggg'); ?>
-						<input type="submit" value="Annuler" class="btn btn-primary">
+						<input type="submit" value="Annuler" class="btn unit_btn unit_btn_cyan no_margins MD_submit_btn">
 					</form>
-				</div>
-			</div>
-			<div class="col-md-7" >
-				<table class="table table-hover">
-					<tr class="info">
-					  <th>Nom de object</th>
-
-					  <th>Date de creation</th>
-					</tr>
-
-					  <?php
-					  foreach (glob($appPath."schemas/*.php") as $value) {
-					  	$r=explode('schemas/',$value);
-					  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-					  }
-
-					  ?>
-
-
-
-					</table>
-			</div>
-        </div>
-        <div class="tab-pane" id="links">
-            <h1>Liens</h1>
-            <div class="col-md-6" >
-            <h3>Nouveau Fichier link</h3>
-	            <form id="new_link" method="post" name="new_link">
-	            	 <div class="form-group col-md-6">
-					    <label for="">Nom de fichier liens</label>
-					    <input type="text" class="form-control" id="" name="link_name" placeholder="Nom de fichier liens">
-					    <small style="color:#a9a5a4">* Si vous laissez ce champ vide le nom de nouveau ficher sera le timestamp</small>
-					  </div>
-					<input type="submit" value="Créé" class="btn btn-primary" style="margin-top: 25px;">
-				</form>
-			</div>
-			<div class="col-md-6">
-				<table class="table table-hover">
-				<tr class="info">
-				  <th>Nom de fichiers</th>
-				  <th>Date de creation</th>
-				</tr>
-				  <?php foreach (glob($appPath."links/*.php") as $value) {
-				  	$r=explode('links/',$value);
-				  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-				  } ?>
-
-				</table>
-			</div>
-        </div>
-        <div class="tab-pane" id="seeds">
-            <h1>Graines</h1>
-            <div class="col-md-6" >
-            	<h3>Nouveau graine (seed)</h3>
-	            <form id="new_seed" method="post" name="new_seed">
-	            	 <div class="form-group col-md-6">
-					    <label for="">Nom de seed</label>
-					    <input type="text" class="form-control" id="" name="seedname_name" placeholder="Nom de seed">
-					  </div>
-					<input type="submit" value="Créé" class="btn btn-primary" style="margin-top: 25px;">
-				</form>
-
-				<h3>Lancer Seeders</h3>
-				<p>Lancer tous les seeders dans la class SeedsCaller</p>
-	            <form id="run_seed" method="post" name="run_seed">
-					<input type="submit" value="Lancer" class="btn btn-primary" style="margin-top: 25px;">
-				</form>
-			</div>
-			<div class="col-md-6">
-				<table class="table table-hover">
-				<tr class="info">
-				  <th>Nom de fichiers</th>
-				  <th>Date de creation</th>
-				</tr>
-				  <?php foreach (glob($appPath."seeds/*.php") as $value) {
-				  	$r=explode('seeds/',$value);
-				  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-				  } ?>
-
-				</table>
-			</div>
-        </div>
-        <div class="tab-pane" id="lang">
-            <h1 style="margin-bottom:40px">Langues</h1>
-            <div class="col-md-6" >
-            	<div>
-		            <h3>Nouveau dossier de lang</h3>
-		            <form id="new_lang_dir" method="post" name="new_lang_dir">
-		            	 <div class="form-group col-md-6">
-						    <label for="">Nom de dossier</label>
-						    <input type="text" class="form-control" id="" name="lang_dir_name" placeholder="Nom de dossier lang">
-						  </div>
-						<input type="submit" value="Créé" class="btn btn-primary" style="margin-top: 25px;">
-					</form>
-				</div>
-
-				<div style="margin-top:30px">
-		            <h3>Nouveau fichier de lang</h3>
-		            <form id="new_lang_file" method="post" name="new_lang_file">
-		            	<div class="form-group col-md-7" style="display:block">
-						    <label for="">Nom de dossier</label>
-						    <!--<input type="text" class="form-lang_dir_name_2" id="" name="lang_dir_name_2" placeholder="Nom de dossier lang">-->
-						    <select class="form-control" id="sel1" name="lang_dir_name_2">
-						    <?php
-						    //
-						    $r=glob($appPath."lang/*");
-						    foreach ($r as $dir) {
-						    	$r2=explode('lang/', $dir);
-						    	echo "<option value='".$r2[1]."'>".$r2[1]."</option>";
-						    } ?>
-					        </select>
-						</div>
-		            	<div class="form-group col-md-7" style="display:block">
-						    <label for="">Nom de fichier</label>
-						    <input type="text" class="form-control" id="lang_file_name" name="lang_file_name" placeholder="Nom de fichier">
-						</div>
-						<div class="col-md-7">
-							<input type="submit" value="Créé" class="btn btn-primary" style="display:block">
-						</div>
-					</form>
-				</div>
-			</div>
-        </div>
-        <div class="tab-pane" id="config">
-            <h1 style="margin-bottom:30px">Configuration</h1>
-            <div class="col-md-6">
-            	<div class="panel panel-default">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">Connection de base de donnees</h3>
-				  </div>
-				  <div class="panel-body">
-				    <div class="form-group col-md-8">
-					    <label for="" class="col-md-6">Nom de database</label>
-					    <input type="text" class="form-control col-md-6" id="" name="lang_dir_name" placeholder="Nom de dossier lang">
 					</div>
-				  </div>
 				</div>
-
 			</div>
-        </div>
-        <div class="tab-pane" id="mvc">
-            <h1>MVC</h1>
-            <div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h2 class="panel-title">Models</h2>
-			  </div>
-			  <div class="panel-body">
-			    <div class="col-md-3">
-			    	<h3>Nouveau model</h3>
-			    	<form id="new_models" method="post" name="new_models">
-		            	<div class="form-group">
-						    <label for="">Nom de fichier</label>
-						    <input type="text" class="form-control" id="new_models_file_name" name="new_models_file_name" placeholder="Nom de fichier">
+			<div class="col-md-6" >
+				<div class="MD_unit">
+					<table class="table table-hover">
+						<tr class="info">
+						  <th class="tr_table_files">Nom de object</th>
+						  <th class="tr_table_files">Date de creation</th>
+						</tr>
+
+						  <?php
+						  foreach (glob($appPath."schemas/*.php") as $value) {
+						  	$r=explode('schemas/',$value);
+						  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+						  }
+
+						  ?>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tab_links" class="main_panel links hidden">
+		<div class="content">
+			<div class="title"> 
+				<h1 style="margin:0px">Liens</h1>
+			</div>
+            <div class="col-md-6" >
+            	<div class="MD_unit MD_unit_green">
+	            	<div class="MD_unit_title unit_title_green">Nouveau Fichier link</div>
+		            <form id="new_link" method="post" name="new_link">
+		            	<div class="control_row">
+		            		<div class="col-md-3 form_control_label">
+								<label for="">Nom de fichier liens</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="" name="link_name" placeholder="Nom de fichier liens">
+							</div>
 						</div>
-						<div class="form-group">
-						    <label for="">Nom de class</label>
-						    <input type="text" class="form-control" id="new_models_class_name" name="new_models_class_name" placeholder="Nom de class">
+						<div class="control_row" style="  text-align: center;">
+							<small>* Si vous laissez ce champ vide le nom de nouveau ficher sera le timestamp</small>
 						</div>
-						<div class="form-group">
-						    <label for="">Nom de table dans BD</label>
-						    <input type="text" class="form-control" id="new_models_table_name" name="new_models_table_name" placeholder="Nom de table dans BD">
+						    
+						<div  class="MD_submit_row">
+							<input type="submit" value="Créé" class="btn unit_btn unit_btn_green MD_submit_btn">
 						</div>
-						<input type="submit" value="Créé" class="btn btn-primary" style="margin-top: 25px;">
 					</form>
-			    </div>
-			    <div class="col-md-9">
-			    	<table class="table table-hover">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="MD_unit">
+					<table class="table table-hover">
 					<tr class="info">
-					  <th>Nom de fichiers</th>
-					  <th>Nom de class</th>
-					  <th>nom de table</th>
-					  <th>Date de creation</th>
+					  <th class="tr_table_files">Nom de fichiers</th>
+					  <th class="tr_table_files">Date de creation</th>
 					</tr>
-					  <?php foreach (glob($appPath."models/*.php") as $value) {
-					  	$r=explode('models/',$value);
-					  	echo "<tr><td>".$r[1]."</td><td></td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+					  <?php foreach (glob($appPath."links/*.php") as $value) {
+					  	$r=explode('links/',$value);
+					  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
 					  } ?>
 
 					</table>
-			    </div>
-			  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tab_langs" class="main_panel langs hidden">
+		<div class="content">
+			<div class="title"> 
+				<h1 style="margin:0px">Langues</h1>
+			</div>
+            <div class="col-md-6" >
+            	<div class="MD_unit MD_unit_brown">
+	            	<div class="MD_unit_title unit_title_brown">Nouveau dossier de langue</div>
+
+		            <form id="new_lang_dir" method="post" name="new_lang_dir">
+		            	<div class="control_row">
+		            		<div class="col-md-3 form_control_label">
+								<label for="">Nom de dossier</label>
+							</div>
+						    <div class="col-md-9">
+						    	<input type="text" class="form-control" id="" name="lang_dir_name" placeholder="Nom de dossier lang">
+						    </div>
+						</div>
+
+						<div  class="MD_submit_row">
+							<input type="submit" value="Créé" class="btn unit_btn unit_btn_brown MD_submit_btn">
+						</div>
+					</form>
+				</div>
 			</div>
 
-			<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h2 class="panel-title">Views</h2>
-			  </div>
-			  <div class="panel-body">
-			  	<div class="col-md-3">
-				    <div class="form-group">
-					    <h3>Nouveau view</h3>
-					    <form id="new_view" method="post" name="new_view">
-			            	<div class="form-group">
+			<div class="col-md-6" >
+				<div class="MD_unit MD_unit_red">
+		            <div class="MD_unit_title unit_title_red">Nouveau fichier de langue</div>
+		            <form id="new_lang_file" method="post" name="new_lang_file">
+		            	<div class="control_row">
+		            		<div class="col-md-3 form_control_label">
+						    	<label for="">Nom de dossier</label>
+						    </div>
+						    <!--<input type="text" class="form-lang_dir_name_2" id="" name="lang_dir_name_2" placeholder="Nom de dossier lang">-->
+						    <div class="col-md-9">
+							    <select class="form-control" id="sel1" name="lang_dir_name_2">
+							    <?php
+							    //
+							    $r=glob($appPath."lang/*");
+							    foreach ($r as $dir) {
+							    	$r2=explode('lang/', $dir);
+							    	echo "<option value='".$r2[1]."'>".$r2[1]."</option>";
+							    } ?>
+					        	</select>
+					        </div>
+						</div>
+		            	<div class="control_row">
+			            	<div class="col-md-3 form_control_label">
 							    <label for="">Nom de fichier</label>
-							    <input type="text" class="form-control" id="new_view_file_name" name="new_view_file_name" placeholder="Nom de fichier">
 							</div>
-							<div class="form-group">
-							    <label for="">Nom de class</label>
-							    <input type="text" class="form-control" id="new_view_class_name" name="new_view_class_name" placeholder="Nom de class">
+							<div class="col-md-9">
+						    	<input type="text" class="form-control" id="lang_file_name" name="lang_file_name" placeholder="Nom de fichier">
+						    </div>
+						</div>
+						<div  class="MD_submit_row">
+							<input type="submit" value="Créé" class="btn unit_btn unit_btn_red MD_submit_btn">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tab_mvc_m" class="main_panel mvc hidden">
+		<div class="content">
+			<div class="title"> 
+				<h1 style="margin:0px">Model - MVC</h1>
+			</div>
+
+			
+            
+			  
+			    <div class="col-md-4">
+			    	<div class="MD_unit MD_unit_orange">
+		            	<div class="MD_unit_title unit_title_orange">Nouveau model</div>
+			    	
+				    	<form id="new_models" method="post" name="new_models">
+			            	<div class="control_row">
+				            	<div class="col-md-4 form_control_label">
+								    <label for="">Nom de fichier</label>
+								</div>
+								<div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_models_file_name" name="new_models_file_name" placeholder="Nom de fichier">
+							    </div>
 							</div>
-							<input type="submit" value="Créé" class="btn btn-primary" style="margin-top: 25px;">
+							<div class="control_row">
+								<div class="col-md-4 form_control_label">
+								    <label for="">Nom de class</label>
+								</div>
+							   	<div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_models_class_name" name="new_models_class_name" placeholder="Nom de class">
+							    </div>
+							</div>
+							<div class="control_row">
+								<div class="col-md-4 form_control_label">
+							    	<label for="">Nom de table dans BD</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_models_table_name" name="new_models_table_name" placeholder="Nom de table dans BD">
+							    </div>
+							</div>
+							<div  class="MD_submit_row">
+								<input type="submit" value="Créé" class="btn unit_btn unit_btn_orange MD_submit_btn">
+							</div>
+							
+						</form>
+				    </div>
+			    </div>
+			
+			    <div class="col-md-8">
+			    	<div class="MD_unit">
+				    	<table class="table table-hover">
+						<tr class="info">
+						  <th class="tr_table_files">Nom de fichiers</th>
+						  <th class="tr_table_files">Nom de class</th>
+						  <th class="tr_table_files">nom de table</th>
+						  <th class="tr_table_files">Date de creation</th>
+						</tr>
+						  <?php foreach (glob($appPath."models/*.php") as $value) {
+						  	$r=explode('models/',$value);
+						  	echo "<tr><td>".$r[1]."</td><td></td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+						  } ?>
+
+						</table>
+				    </div>
+			    </div>
+			  
+			
+			</div>
+			</div>
+
+			<div id="tab_mvc_v" class="main_panel mvc hidden">
+				<div class="content">
+					<div class="title"> 
+						<h1 style="margin:0px">View - MVC</h1>
+					</div>
+
+			
+			  	<div class="col-md-4">
+				    <div class="MD_unit MD_unit_purple">
+		            	<div class="MD_unit_title unit_title_purple">Nouveau view</div>
+					    
+					    <form id="new_view" method="post" name="new_view">
+			            	<div class="control_row">
+			            		<div class="col-md-4 form_control_label">
+							    	<label for="">Nom de fichier</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_view_file_name" name="new_view_file_name" placeholder="Nom de fichier">
+							    </div>
+							</div>
+							<div class="control_row">
+								<div class="col-md-4 form_control_label">
+							    	<label for="">Nom de class</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_view_class_name" name="new_view_class_name" placeholder="Nom de class">
+							    </div>
+							</div>
+							<div  class="MD_submit_row">
+								<input type="submit" value="Créé" class="btn unit_btn unit_btn_purple MD_submit_btn">
+							</div>
 						</form>
 					</div>
 				</div>
-				<div class="col-md-9">
-					<table class="table table-hover">
-					<tr class="info">
-					  <th>Nom de fichiers</th>
-					  <th>Nom de class</th>
-					  <th>Date de creation</th>
-					</tr>
-					  <?php foreach (glob($appPath."views/*.php") as $value) {
-					  	$r=explode('views/',$value);
-					  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-					  } ?>
+				<div class="col-md-8">
+					<div class="MD_unit">
+						<table class="table table-hover">
+						<tr class="info">
+						  <th class="tr_table_files">Nom de fichiers</th>
+						  <th class="tr_table_files">Nom de class</th>
+						  <th class="tr_table_files">Date de creation</th>
+						</tr>
+						  <?php foreach (glob($appPath."views/*.php") as $value) {
+						  	$r=explode('views/',$value);
+						  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+						  } ?>
 
-					</table>
+						</table>
+					</div>
 				</div>
 			  </div>
 			</div>
 
-			<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h2 class="panel-title">Controles</h2>
-			  </div>
-			  <div class="panel-body">
-			    <div class="col-md-3">
-				    <div class="form-group">
-					    <h3>Nouveau controller</h3>
+			<div id="tab_mvc_c" class="main_panel mvc hidden">
+				<div class="content">
+					<div class="title"> 
+						<h1 style="margin:0px">Controles - MVC</h1>
+					</div>
+
+			
+			  
+			    <div class="col-md-4">
+				    <div class="MD_unit MD_unit_cyan">
+					    <div class="MD_unit_title unit_title_cyan">Nouveau controller</div>
 					    <form id="new_controller" method="post" name="new_controller">
-			            	<div class="form-group">
-							    <label for="">Nom de fichier</label>
-							    <input type="text" class="form-control" id="new_controller_file_name" name="new_controller_file_name" placeholder="Nom de fichier">
+					    	<div class="control_row">
+			            		<div class="col-md-4 form_control_label">
+							    	<label for="">Nom de fichier</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_controller_file_name" name="new_controller_file_name" placeholder="Nom de fichier">
+							    </div>
 							</div>
-							<div class="form-group">
-							    <label for="">Nom de class</label>
-							    <input type="text" class="form-control" id="new_controller_class_name" name="new_controller_class_name" placeholder="Nom de class">
+							<div class="control_row">
+			            		<div class="col-md-4 form_control_label">
+							    	<label for="">Nom de class</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<input type="text" class="form-control" id="new_controller_class_name" name="new_controller_class_name" placeholder="Nom de class">
+							    </div>
 							</div>
-							<input type="submit" value="Créé" class="btn btn-primary" style="margin-top: 25px;">
+
+							<div  class="MD_submit_row">
+								<input type="submit" value="Créé" class="btn unit_btn unit_btn_cyan MD_submit_btn">
+							</div>
+
 						</form>
 				    </div>
 				</div>
-				<div class="col-md-9">
-					<table class="table table-hover">
-					<tr class="info">
-					  <th>Nom de fichiers</th>
-					  <th>Nom de class</th>
-					  <th>Date de creation</th>
-					</tr>
-					  <?php foreach (glob($appPath."controllers/*.php") as $value) {
-					  	$r=explode('controllers/',$value);
-					  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-					  } ?>
+				<div class="col-md-8">
+					<div class="MD_unit">
+						<table class="table table-hover">
+							<tr class="info">
+							  <th class="tr_table_files">Nom de fichiers</th>
+							  <th class="tr_table_files">Nom de class</th>
+							  <th class="tr_table_files">Date de creation</th>
+							</tr>
+							  <?php foreach (glob($appPath."controllers/*.php") as $value) {
+							  	$r=explode('controllers/',$value);
+							  	echo "<tr><td>".$r[1]."</td><td></td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+							  } ?>
 
-					</table>
+						</table>
+					</div>
 				</div>
 			  </div>
+			</div> 
+		</div>
+	</div>
+
+	<div id="tab_seeds" class="main_panel seeds hidden">
+		<div class="content">
+			<div class="title"> 
+				<h1 style="margin:0px">Graines</h1>
 			</div>
+            <div class="col-md-6" >
+            	<div class="MD_unit MD_unit_blue">
+            		<div class="MD_unit_title unit_title_blue">Nouveau graine (seed)</div>
+	            		<form id="new_seed" method="post" name="new_seed">
+						<div class="control_row">
+							<div class="col-md-3 form_control_label">
+								<label for="">Nom de seed</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="" name="seedname_name" placeholder="Nom de seed">
+							</div>
+						</div>
+						<div  class="MD_submit_row">
+							<input type="submit" value="Créé" class="btn unit_btn unit_btn_blue MD_submit_btn" >
+						</div>
+						
+					</form>
+            	</div>
 
-        </div>
-        <div class="tab-pane" id="blue">
-            <h1>Blue</h1>
-            <p>blue blue blue blue blue</p>
-        </div>
-    </div>
-</div>
+            	<div class="MD_unit MD_unit_deeppink">
+            		<div class="MD_unit_title unit_title_deeppink">Lancer Seeders</div>
+            		<div class="col-md-9" style="margin-top: 15px;">
+            			<p>Lancer tous les seeders dans la class SeedsCaller</p>
+            		</div>
+            		
+	            		<form id="run_seed" method="post" name="run_seed">
+							<input type="submit" value="Lancer" class="btn unit_btn unit_btn_deeppink MD_submit_btn" >
+						</form>
+					
+            	</div>
+			</div> 
+			<div class="col-md-6" >
+				<div class="MD_unit">
+					<table class="table table-hover">
+					<tr class="info " >
+					  <th class="tr_table_files">Nom de fichiers</th>
+					  <th class="tr_table_files">Date de creation</th>
+					</tr>
+					  <?php foreach (glob($appPath."seeds/*.php") as $value) {
+					  	$r=explode('seeds/',$value);
+					  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
+					  } ?>
+					</table>
 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tab_info" class="main_panel seeds hidden">
+		<div class="content">
+			<div class="title"> 
+				<h1 style="margin:0px">A Propos</h1>
+			</div>
+			<div class="col-md-6" >
+            	<div class="MD_unit MD_unit_blue">
+            		<div class="MD_unit_title unit_title_blue">Créateur</div>
+            		<div class="MD_unit_text">Fiesta v2.5 (PHP Framework)</div>
+            		<div class="MD_unit_text">Crée par <b>Youssef Had</b> (youssefhad2@gmail.com - <a href="http://www.facebook.com/yussef.had" style="color:white">www.facebook.com/yussef.had</a> )<br></div>
+            		<div class="MD_unit_text">
+            			<!-- Place this tag where you want the button to render. -->
+						<a class="github-button" href="https://github.com/fiesta-framework/Fiesta" data-icon="octicon-star" data-style="mega" data-count-href="/fiesta-framework/Fiesta/stargazers" data-count-api="/repos/fiesta-framework/Fiesta#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star fiesta-framework/Fiesta on GitHub">Star</a>
+						</div>
+						<div class="MD_unit_text">
+						<!-- Place this tag where you want the button to render. -->
+						<a class="github-button" href="https://github.com/youssefhad" data-style="mega" data-count-href="/youssefhad/followers" data-count-api="/users/youssefhad#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @youssefhad on GitHub">Follow @youssefhad</a>
+						</div>
+						<div class="MD_unit_text">
+						<!-- Place this tag where you want the button to render. -->
+						<a class="github-button" href="https://github.com/fiesta-framework/Fiesta/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/fiesta-framework/Fiesta/network" data-count-api="/repos/fiesta-framework/Fiesta#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork fiesta-framework/Fiesta on GitHub">Fork</a>
+
+						<!-- Place this tag right after the last button or just before your close body tag. -->
+						<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+            		</div>
+            	</div>
+            </div>
+		</div>
+	</div>
+
+
+</body>
 <script type="text/javascript">
 	var panelFolder="<?php echo Config::get('panel.folder'); ?>";
 </script>
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $('#tabs').tab();
-    });
-</script>
-</div> <!-- container -->
-<div class="footer navbar-fixed-bottom" style="background:<?php echo Config::get('panel.mainColor') ?>">
-   <center><p style="color:white;padding-top: 5px;">Youssef Had (c) 2014</p></center>
- </div>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</body>
 </html>
 <?php } ?>
