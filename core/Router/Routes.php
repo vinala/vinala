@@ -567,6 +567,7 @@ class Routes
 	
 }
 
+if(\Config::get('panel.enable'))
 Routes::get(\Config::get('panel.route'),function()
 {
 	include \Config::get('panel.folder').'/home.php';
