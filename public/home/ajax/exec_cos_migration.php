@@ -28,6 +28,7 @@ if($ex==$_POST['exec_cos_migrate_select'])
 	}
 }
 $v="";
+$full_name="";
 //
 if(count($r2)>1)
 {
@@ -36,19 +37,24 @@ if(count($r2)>1)
 		if($r3[$i]>=$r3[$i-1])
 		{
 			$v=$Root."../app/schemas/".$r3[$i]."_".$r2[$i].".php";
+			$full_name=$r3[$i]."_".$r2[$i];
 		}
 	}
 }
 else
 {
 	$v=$Root."../app/schemas/".$r3[0]."_".$r2[0].".php";
+	$full_name=$r3[0]."_".$r2[0];
 }
 
 
 try {
 	include_once $v;
 	if(up())
+	{
+		Migration::updateRegister($full_name,"exec",$Root);
 		echo "Schéma executé";
+	}
 	else echo Database::execErr();
 } catch (Exception $e) {
 	echo $e->getMessage();

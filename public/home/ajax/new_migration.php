@@ -52,6 +52,8 @@ App::run(null,$Root,false,true,false);
 	}
 	//
 	Database::exec("insert into ".Config::get('database.migration')."(name_schema,date_schema,status_schema,type_schema) values('".$name."','".$time."','init','".$object."')");
+	//
+	Migration::updateRegister($time."_".$name,"init",$Root);
 
 	echo "la schema a été ajoutéé";
 

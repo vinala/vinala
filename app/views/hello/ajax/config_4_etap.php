@@ -1,4 +1,12 @@
+<?php 
 
+	$state=$_POST['state'];
+	$route=empty($_POST['route']) ? "fiesta" : $_POST['route'];
+	$pass_1=empty($_POST['pass_1']) ? "1234" : $_POST['pass_1'];
+	$pass_2=empty($_POST['pass_2']) ? "5678" : $_POST['pass_2'];
+
+
+$contect="
 <?php 
 
 
@@ -14,7 +22,7 @@ return array(
 	| 
 	*/
 
-	'enable'=> true,
+	'enable'=> ".$state.",
 
 	/*
 	|----------------------------------------------
@@ -26,7 +34,7 @@ return array(
 	| 
 	*/
 
-	'route'=>'fiesta',
+	'route'=>'".$route."',
 
 	/*
 	|----------------------------------------------
@@ -51,8 +59,8 @@ return array(
 	| fihom 1234 o 5678 nta t9der tbdlhom
 	*/
 
-	'password1'=>'1234',
-	'password2'=>'5678',
+	'password1'=>'".$pass_1."',
+	'password2'=>'".$pass_2."',
 
 	/*
 	|----------------------------------------------
@@ -61,10 +69,15 @@ return array(
 	| 
 	*/
 
-	'configurated' => !true
+	'configurated' => true
 
 	
 
 );
 
 
+";
+//print_r($_POST);
+file_put_contents("../../../config/panel.php", $contect, 0);
+//
+echo "ok";

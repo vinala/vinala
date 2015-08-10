@@ -10,6 +10,7 @@ $r=glob($Root."../app/schemas/*.php");
 $pieces=array();
 $pieces1=array();
 $pieces2=array();
+$full_names=array();
 //
 $time="";
 $name="";
@@ -25,6 +26,7 @@ foreach ($r as $key) {
 	$f[]=$pieces1[0];
 	$pieces2[]=$pieces[1];
 	//
+	$full_names=$pieces1[0]."_".$name;
 }
 
 //echo "\n";
@@ -52,6 +54,8 @@ try {
 		{
 			Database::exec("update ".Config::get('database.migration')." set status_schema='rolledback' where name_schema='".$name."' and date_schema='".$time."'");
 		}
+		$full_names=$time."_".$name;
+		Migration::updateRegister($full_names,"rollback",$Root);
 		echo "Schéma annulé";
 		
 	}

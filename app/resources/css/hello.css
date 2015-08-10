@@ -19,13 +19,18 @@ body
 	margin-top: 30px;
 }
 
+.config_logo
+{
+	margin: 12px auto;
+}
+
 #welcom
 {
 	opacity:0;
 	color:white;
 	text-align: center;
 	/*font-family: 'Lato', sans-serif;*/
-	width:185px;
+	width:600px;
 	margin: 0px auto;
 }
 .text
@@ -33,8 +38,8 @@ body
 	background: #5b1d79;
 	display: inline-block;
 	z-index: 3;
-	width: 145px;
-	font-size: 16px;
+	/*width: 145px;*/
+	font-size: 32px;
 }
 
 .bottom_panel
@@ -60,4 +65,102 @@ body
 {
 	background-color: #3e1453;
 	color:white;
+}
+
+.config_form
+{
+	color: white;
+    text-align: center;
+    width: 500px;
+    margin: 0px auto;
+}
+
+.config_input
+{
+	background-color: rgba(255,255,255,.8);
+}
+
+.control_c_row
+{
+	margin: 7px 0px;
+}
+
+.conf_lab
+{
+	display: inline-block;
+    width: 33%;
+    vertical-align: middle;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.conf_input
+{
+	display: inline-block;
+	margin: 0px 10px;
+	width: 60%;
+	vertical-align: top;
+}
+
+
+.bottonn
+{
+	/*opacity: 0;*/
+	height: 75px;
+	width: 100%;
+	padding: 20px;
+	text-align: right;
+}
+
+.conf_input_note
+{
+	text-align: left;
+	font-size: 12px;
+}
+
+.conf_title
+{
+	text-align: center;
+	color: white;
+	margin: 0 0 13px 0;
+}
+
+.progres
+{
+	background-color: rgba(255,255,255,.5);
+	height:5px;
+	width: 100px;
+	margin: 0pt Auto 18px auto;
+}
+
+.progres_1
+{
+	background-color: white;
+	height:5px;
+	width: 25px;
+	margin-left: 0%
+}
+
+.progres_2
+{
+	background-color: white;
+	height:5px;
+	width: 25px;
+	margin-left: 25%
+}
+
+.progres_3
+{
+	background-color: white;
+	height:5px;
+	width: 25px;
+	margin-left: 50%
+}
+
+.progres_4
+{
+	background-color: white;
+	height:5px;
+	width: 25px;
+	margin-left: 75%
 }

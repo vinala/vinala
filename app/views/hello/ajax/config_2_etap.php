@@ -1,4 +1,15 @@
+<?php 
 
+	$host=empty($_POST['db_host']) ? "localhost" : $_POST['db_host'] ;
+	$name=empty($_POST['db_name']) ? "test" : $_POST['db_name'];
+	$usr=empty($_POST['db_usr']) ? "root" : $_POST['db_usr'];
+	$pass=empty($_POST['db_pass']) ? "" : $_POST['db_pass'];
+	$prefix=$_POST['db_prefix'];
+
+if(empty($prefix)) { $prefixing="false"; $prefix="ysf"; }
+else  { $prefixing="true";  }
+
+$contect="
 <?php 
 
 
@@ -27,10 +38,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'test',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => '".$host."',
+			'database'  => '".$name."',
+			'username'  => '".$usr."',
+			'password'  => '".$pass."',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 		),
@@ -72,11 +83,16 @@ return array(
 	|
 	*/
 
-	'prefixing' => true,
-	'prefixe' => 'kuc_',
+	'prefixing' => ".$prefixing.",
+	'prefixe' => '".$prefix."_',
 
 
 
 
 );
 
+";
+//print_r($_POST);
+file_put_contents("../../../config/database.php", $contect, 0);
+//
+echo "ok";

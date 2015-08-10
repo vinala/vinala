@@ -28,6 +28,7 @@ foreach ($r as $key) {
 	$name=$p[0];
 	$f[]=$pieces1[0];
 	$pieces2[]=$pieces[1];
+	$full_name=$pieces1[0]."_".$name;
 	//
 }
 
@@ -37,7 +38,6 @@ $mx=max($f);
 $ind=0;$i=0;
 //
 foreach ($pieces2 as $value) {
-	//echo $value."\n";
 	
 	if (strpos($value,$mx) !== false) $ind=$i;
 
@@ -51,11 +51,13 @@ try {
 	
 	if(up())
 	{
-		
+		$full_name=$time."_".$name;
 		if(Schema::existe(Config::get('database.migration')))
 		{
 			Database::exec("update ".Config::get('database.migration')." set status_schema='executed' where name_schema='".$name."' and date_schema='".$time."'");
+
 		}
+		Migration::updateRegister($full_name,"exec",$Root);
 		echo "Schéma executé";
 		
 	}
