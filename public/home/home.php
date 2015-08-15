@@ -641,7 +641,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 
 </body>
 <script type="text/javascript">
-	var panelFolder="<?php echo Config::get('panel.folder'); ?>";
+	<?php echo "var panelFolder='".Config::get('panel.folder')."';"; ?>
 </script>
 </html>
 <?php } ?>
