@@ -4,8 +4,7 @@
 	$sec_2=$_POST['sec_2'];
 
 
-$contect="
-<?php 
+$contect="<?php 
 
 return array(
 
@@ -23,8 +22,7 @@ return array(
 	'key1' => '".$sec_1."',
 	'key2' => '".$sec_2."',
 
-);
-";
+);";
 //print_r($_POST);
 file_put_contents("../../../config/security.php", $contect, 0);
 //
