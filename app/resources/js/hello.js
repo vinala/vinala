@@ -71,7 +71,9 @@ $( document ).ready(function() {
             {
                 if(data=="ok")
                 {
-                	document.getElementById('fst_panel').href=document.getElementById('pnl_route').value;
+                	if(document.getElementById('pnl_route').value!="")
+                	   document.getElementById('fst_panel').href=document.getElementById('pnl_route').value;
+                    	else  document.getElementById('fst_panel').href="fiesta";
                 	$( "#config_logo" ).fadeOut( 300);
                 	$( "#etap_4" ).fadeOut( 300, function(){ 
                 		Timer3 = setInterval(function(){ fade3() }, 200);
