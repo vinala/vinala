@@ -5,8 +5,7 @@
 	$langue=$_POST['langue'];
 
 
-	$content_app="
-<?php
+	$content_app="<?php
   
 \treturn array( 
  
@@ -79,17 +78,14 @@
  
 \t'charset'=> 'utf-8', 
  
-); 
-
-	";
+);";
 
 file_put_contents("../../../config/app.php", $content_app, 0);
 
 
 //
 
-$contect_lang="
-<?php 
+$contect_lang="<?php 
 
 
 return array(
@@ -113,8 +109,7 @@ return array(
 
 \t'cookie'=>'fiesta_lang',
 
-);
-";
+);";
 
 file_put_contents("../../../config/lang.php", $contect_lang, 0);
 
