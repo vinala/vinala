@@ -1,30 +1,20 @@
 <head>
-
-	<link rel="stylesheet" href="app/library/bootstrap-3.3.1.min.css">
-	<link rel="stylesheet" href="app/library/bootstrap-theme-3.3.1.min.css">
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-
-	<?php 
-		Html::charset("utf-8"); 
-		Html::title();
-		Html::favicon(Path::$public."/favicon.ico");
-		Libs::css("hello");
-		Libs::js("hello");
-	?>
-
-	
-
-	<style type="text/css">
-		
-		
-	</style>
-
+<?php 
+	Libs::css("app/library/bootstrap-3.3.1.min.css",false);
+	Libs::css("app/library/bootstrap-theme-3.3.1.min.css",false);
+	Libs::js("app/library/jquery-1.11.3.min.js",false);
+	Html::charset("utf-8"); 
+	Html::title();
+	Html::favicon(Path::$public."/favicon.ico");
+	Libs::css("hello");
+	Libs::js("hello");
+?>
 </head>
 
 
 
 
-<body style="">
+<body>
 <?php if(!Config::get('panel.configurated')): ?>
 	<img src="<?php echo "app/resources/images/logo_mini.png" ?>" class="img config_logo" id="config_logo">
 
