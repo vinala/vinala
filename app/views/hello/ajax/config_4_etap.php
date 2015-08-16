@@ -6,8 +6,7 @@
 	$pass_2=empty($_POST['pass_2']) ? "5678" : $_POST['pass_2'];
 
 
-$contect="
-<?php 
+$contect="<?php 
 
 
 return array(
@@ -73,10 +72,7 @@ return array(
 
 	
 
-);
-
-
-";
+);";
 //print_r($_POST);
 file_put_contents("../../../config/panel.php", $contect, 0);
 //
