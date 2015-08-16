@@ -9,8 +9,7 @@
 if(empty($prefix)) { $prefixing="false"; $prefix="ysf"; }
 else  { $prefixing="true";  }
 
-$contect="
-<?php 
+$contect="<?php 
 
 
 return array(
@@ -89,9 +88,7 @@ return array(
 
 
 
-);
-
-";
+);";
 //print_r($_POST);
 file_put_contents("../../../config/database.php", $contect, 0);
 //
