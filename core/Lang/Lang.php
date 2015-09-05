@@ -9,11 +9,11 @@ class Lang
 	public static $lang;
 	private static $supportedLangs=array();
 
-	public static function ini()
+	public static function ini($lang=null)
 	{
 		self::$supportedLangs=self::getSupported();
 		//
-		self::$lang=self::detect();
+		self::$lang= is_null($lang) ? self::detect() : $lang ;
 		self::put();
 	}
 
