@@ -5,12 +5,12 @@
 */
  class Model
 {
-	protected $test;
+	// protected $test;
 	protected static $table;
 	protected $DBtable;
 	protected $columns= array();
 	protected $key;
-	protected $object;
+	// protected $object;
 	//
 
 	public function __construct($pk=null,$table=null) 
