@@ -462,15 +462,16 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 			
 			  	<div class="col-md-4">
 				    <div class="MD_unit MD_unit_purple">
-		            	<div class="MD_unit_title unit_title_purple">Nouveau view</div>
+		            	<div class="MD_unit_title unit_title_purple">Nouvelle vue</div>
 					    
 					    <form id="new_view" method="post" name="new_view">
 			            	<div class="control_row">
 			            		<div class="col-md-4 form_control_label">
-							    	<label for="">Nom de fichier</label>
+							    	<label for="">Nom de vue</label>
 							    </div>
 							    <div class="col-md-8">
 							    	<input type="text" class="form-control" id="new_view_file_name" name="new_view_file_name" placeholder="Nom de fichier">
+							    	<label>* vous pouvez créer des vues dans des dossiers, même s'ils ne sont pas existés, en utilisant '.', par exemple: "user.show"</label>
 							    </div>
 							</div>
 							<div  class="MD_submit_row">
@@ -483,13 +484,47 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 					<div class="MD_unit">
 						<table class="table table-hover">
 						<tr class="info">
-						  <th class="tr_table_files">Nom de fichiers</th>
+						  <th class="tr_table_files">Nom de fichiers et dossiers</th>
 						  <th class="tr_table_files">Date de creation</th>
 						</tr>
-						  <?php foreach (glob($appPath."views/*.php") as $value) {
-						  	$r=explode('views/',$value);
-						  	echo "<tr><td>".$r[1]."</td><td>".date("Y/m/d H:i:s",filemtime($value))."</td></tr>";
-						  } ?>
+						  <?php 
+
+							/* - by Amine Abri(https://github.com/amineabri) - */
+							
+							function listFolderFiles($dir){
+								$ffs = scandir($dir);
+										foreach($ffs as $ff){
+											if($ff != '.' && $ff != '..' && $ff != 'ajax'){
+												echo '<tr>';
+													echo '<td>';
+															echo '<strong>'.$ff.'/';
+																if(is_dir($dir.'/'.$ff)) 
+																	echo '<ol class="list_without_number">';
+																	foreach (glob($dir.'/'.$ff."/*.php") as $value) {
+																		$r	=	explode('views/'.$ff.'/' ,$value);
+																		echo "<li>".$r[1]."</li>";
+																	} 
+																	echo '</ol>';
+															echo '</strong>';
+													echo '</td>';
+													echo '<td>';
+															echo '<strong>&nbsp;';
+																if(is_dir($dir.'/'.$ff)) 
+																	echo '<ol class="list_without_number">';
+																	foreach (glob($dir.'/'.$ff."/*.php") as $value) {
+																		echo "<li>".date("Y/m/d H:i:s",filemtime($value))."</li>";
+																	} 
+																	echo '</ol>';
+															echo '</strong>';
+													echo '</td>';
+												echo '</tr>';
+											}
+										}
+							}
+							listFolderFiles($appPath.'views');
+
+							/* -- */
+							?>
 
 						</table>
 					</div>

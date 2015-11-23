@@ -511,6 +511,11 @@ body
 	color:white;
 }
 
+.list_without_number
+{
+	list-style-type: none;
+}
+
 
 
 
