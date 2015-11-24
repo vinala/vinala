@@ -1,5 +1,7 @@
 <?php
 
+namespace Fiesta\Core\Objects;
+
 /**
 * String Trim Consts
 **/
@@ -51,7 +53,7 @@ class String
 		{
 			$string="";
 			//
-			$end= $count==-1 ? Table::count($array) : $count;
+			$end= $count==-1 ? \Fiesta\Core\Objects\Table::count($array) : $count;
 			//
 			for ($i=$startIndex; $i < $end ; $i++) {
 				if($i==($end-1)) $string.=$array[$i];
@@ -90,13 +92,13 @@ class String
 					$str1.=$string[$i];
 				}
 				//
-				for ($i=($index); $i < String::lenght($string) ; $i++) {
+				for ($i=($index); $i < self::lenght($string) ; $i++) {
 					$str2.=$string[$i];
 				}
 				//
 				return $str1.$new.$str2;
 			}
-			else throw new Fiesta\Objects\String\StringOutIndexException();
+			else throw new \Fiesta\Core\Objects\String\StringOutIndexException();
 		}
 
 	public static function subString($string,$indexStart,$count)
@@ -114,12 +116,12 @@ class String
 	static function checkIndex($string,$index)
 		{
 			if(self::isIndexIN($string,$index)) return true;
-			else throw new Fiesta\Objects\String\StringOutIndexException();
+			else throw new \Fiesta\Core\Objects\String\StringOutIndexException();
 		}
 
 	static function isIndexIN($string,$index)
 		{
-			if(String::lenght($string)>($index+1)) return true;
+			if(self::lenght($string)>($index+1)) return true;
 			else return false;
 		}
 
