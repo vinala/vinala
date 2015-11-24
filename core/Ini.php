@@ -20,7 +20,7 @@ class App
 		//
 		self::$page=$p;
 		self::$root=$root;
-		//
+		
 		//session
 		require __DIR__.'/../core/Storage/Session.php';
 		if($session)Session::start(__DIR__.'/../app/storage/session');
@@ -52,15 +52,11 @@ class App
 		//
 		//require __DIR__.'/../core/MVC/Templete.php';
 		require __DIR__.'/../core/Objects/Exception.php';
-		require __DIR__.'/../core/Faker.php';
+		require __DIR__.'/../core/Resources/Faker.php';
 
 		require __DIR__.'/../core/Storage/Cookie.php';
 
-
-		//routes
-		// old
-		//require __DIR__.'/../core/Access/Routes_2.php';
-		// new
+		// Routes
 		require __DIR__.'/../core/Router/Routes.php';
 		require __DIR__.'/../core/Router/Route.php';
 		require __DIR__.'/../core/Router/Exceptions/RouteNotFoundException.php';
@@ -94,10 +90,10 @@ class App
 		require __DIR__.'/../core/Objects/Sys.php';
 		require __DIR__.'/../core/Http/Links.php';
 		require __DIR__.'/../core/Objects/Base.php';
-		require __DIR__.'/../core/Libs.php';
+		require __DIR__.'/../core/Resources/Libs.php';
 		require __DIR__.'/../core/Hypertext/Res.php';
 		require __DIR__.'/../core/Hypertext/Input.php';
-		require __DIR__.'/../core/License.php';
+		require __DIR__.'/../core/Security/License.php';
 		require __DIR__.'/../core/Hypertext/Cookie.php';
 
 		//Languages
@@ -121,16 +117,14 @@ class App
 
 		require __DIR__.'/../core/Hypertext/HTML.php';
 		require __DIR__.'/../core/Security/Encrypt.php';
-		require __DIR__.'/../core/Security.php';
-		//require __DIR__.'/../core/MVC/Model.php';
-		// require __DIR__.'/../core/MVC/View.php';
+		require __DIR__.'/../core/Security/Security.php';
 		require __DIR__.'/../core/MVC/Controller.php';
 		require __DIR__.'/../core/Http/Error.php';
 		require __DIR__.'/../core/Hypertext/Script.php';
 		require __DIR__.'/../core/Http/Root.php';
-		require __DIR__.'/../core/Mail_2.php';
+		require __DIR__.'/../core/Mailing/Mail.php';
 		require __DIR__.'/../core/Objects/DataCollection.php';
-		require __DIR__.'/../core/Debug.php';
+		require __DIR__.'/../core/Maintenance/Debug.php';
 
 		// Filesystem
 		require __DIR__.'/../core/Filesystem/Exceptions/FileNotFoundException.php';
@@ -140,6 +134,8 @@ class App
 		// Database files
 		require __DIR__.'/../core/Database/DBTable.php';
 
+		//
+
 
 		Sys::ini();
 		Url::ini();
@@ -147,7 +143,7 @@ class App
 		Fiesta\MVC\View\Template::ini(self::$root);
 		//
 		Faker::ini();
-		Links::ini();
+		Links::ini($root);
 		Errors::ini($root);
 		License::ini(self::$page);
 		Lang::ini();
