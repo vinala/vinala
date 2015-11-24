@@ -1,4 +1,6 @@
 <?php
+
+namespace Fiesta\Core\Config;
 /**
 * Config Class
 */
@@ -13,8 +15,8 @@ class Config
 			//
 		switch ($val[0]) {
 			case 'database':
-				if(is_null(App::$root)) $tbl=(include '../app/config/database.php');
-				else $tbl=(include App::$root.'../app/config/database.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/database.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/database.php');
 				//
 				if($val[1]=="default")
 				{
@@ -91,8 +93,8 @@ class Config
 				}
 				break;
 			case 'panel':
-				if(is_null(App::$root)) { $tbl=(include '../app/config/panel.php'); }
-				else { $tbl=(include App::$root.'../app/config/panel.php'); }
+				if(is_null(\Fiesta\Core\Glob\App::$root)) { $tbl=(include '../app/config/panel.php'); }
+				else { $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/panel.php'); }
 				//
 				if($val[1]=="route") $ret=$tbl['route'];
 				else if($val[1]=="folder") $ret=$tbl['folder'];
@@ -100,12 +102,12 @@ class Config
 				else if($val[1]=="password2") $ret=$tbl['password2'];
 				else if($val[1]=="enable") $ret=$tbl['enable'];
 				else if($val[1]=="configurated") $ret=$tbl['configurated'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'app':
-				if(is_null(App::$root)) $tbl=(include '../app/config/app.php');
-				else $tbl=(include App::$root.'../app/config/app.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/app.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/app.php');
 				//
 				if($val[1]=="project") $ret=$tbl['project'];
 				else if($val[1]=="projectFolder") $ret=$tbl['projectFolder'];
@@ -115,23 +117,23 @@ class Config
 				else if($val[1]=="charset") $ret=$tbl['charset'];
 				else if($val[1]=="title") $ret=$tbl['title'];
 				else if($val[1]=="unrouted") $ret=$tbl['unrouted'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'license':
-				if(is_null(App::$root)) $tbl=(include '../app/config/license.php');
-				else $tbl=(include App::$root.'../app/config/license.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/license.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/license.php');
 				//
 				if($val[1]=="authorized") $ret=$tbl['authorized'];
 				else if($val[1]=="pageblock") $ret=$tbl['pageblock'];
 				else if($val[1]=="webMsg") $ret=$tbl['webMsg'];
 				else if($val[1]=="pageMsg") $ret=$tbl['pageMsg'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'maintenance':
-				if(is_null(App::$root)) $tbl=(include '../app/config/maintenance.php');
-				else $tbl=(include App::$root.'../app/config/maintenance.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/maintenance.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/maintenance.php');
 				//
 				if($val[1]=="activate") $ret=$tbl['activate'];
 				else if($val[1]=="maintenanceEvent") $ret=$tbl['maintenanceEvent'];
@@ -139,30 +141,30 @@ class Config
 				else if($val[1]=="msg") $ret=$tbl['msg'];
 				else if($val[1]=="bg") $ret=$tbl['bg'];
 				else if($val[1]=="outRoutes") $ret=$tbl['outRoutes'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'lang':
-				if(is_null(App::$root)) $tbl=(include '../app/config/lang.php');
-				else $tbl=(include App::$root.'../app/config/lang.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/lang.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/lang.php');
 				//
 				if($val[1]=="default") $ret=$tbl['default'];
 				else if($val[1]=="cookie") $ret=$tbl['cookie'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'security':
-				if(is_null(App::$root)) $tbl=(include '../app/config/security.php');
-				else $tbl=(include App::$root.'../app/config/security.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/security.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/security.php');
 				//
 				if($val[1]=="key1") $ret=$tbl['key1'];
 				else if($val[1]=="key2") $ret=$tbl['key2'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'auth':
-				if(is_null(App::$root)) $tbl=(include '../app/config/auth.php');
-				else $tbl=(include App::$root.'../app/config/auth.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/auth.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/auth.php');
 				//
 				if($val[1]=="table") $ret=$tbl['table'];
 				else if($val[1]=="hashed_fields") $ret=$tbl['hashed_fields'];
@@ -170,12 +172,12 @@ class Config
 				else if($val[1]=="rememeber_cookie") $ret=$tbl['rememeber_cookie'];
 				else if($val[1]=="login") $ret=$tbl['login'];
 				else if($val[1]=="csrf_token") $ret=$tbl['csrf_token'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'mail':
-				if(is_null(App::$root)) $tbl=(include '../app/config/mail.php');
-				else $tbl=(include App::$root.'../app/config/mail.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/mail.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/mail.php');
 				//
 				if($val[1]=="host") $ret=$tbl['host'];
 				else if($val[1]=="port") $ret=$tbl['port'];
@@ -192,62 +194,62 @@ class Config
 				else if($val[1]=="username") $ret=$tbl['username'];
 				else if($val[1]=="password") $ret=$tbl['password'];
 				else if($val[1]=="subject") $ret=$tbl['subject'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				//
 				break;
 			case 'view':
-				if(is_null(App::$root)) $tbl=(include '../app/config/view.php');
-				else $tbl=(include App::$root.'../app/config/view.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/view.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/view.php');
 				//
 				if($val[1]=="pagination_param") $ret=$tbl['pagination_param'];
 				else if($val[1]=="pagination_style") $ret=$tbl['pagination_style'];
 				else if($val[1]=="pagination_class") $ret=$tbl['pagination_class'];
 				else if($val[1]=="paginationSimpleNext") $ret=$tbl['paginationSimpleNext'];
 				else if($val[1]=="paginationSimplePrevious") $ret=$tbl['paginationSimplePrevious'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 
 				//
 				break;
 
 			case 'loggin':
-				if(is_null(App::$root)) $tbl=(include '../app/config/loggin.php');
-				else $tbl=(include App::$root.'../app/config/loggin.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/loggin.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/loggin.php');
 				//
 				if($val[1]=="debug") {$ret=$tbl['debug'];}
 				else if($val[1]=="msg") $ret=$tbl['msg'];
 				else if($val[1]=="log") $ret=$tbl['log'];
 				else if($val[1]=="bg") $ret=$tbl['bg'];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				break;
 
 			case 'error':
-				if(is_null(App::$root)) $tbl=(include '../app/config/errors.php');
-				else $tbl=(include App::$root.'../app/config/errors.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/errors.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/errors.php');
 				if(array_key_exists($val[1],$tbl))
 					$ret=$tbl[$val[1]];
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				break;
 
 			case 'storage':
-				if(is_null(App::$root)) $tbl=(include '../app/config/storage.php');
-				else $tbl=(include App::$root.'../app/config/storage.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/storage.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/storage.php');
 				$ret=$tbl[$val[1]];
 				//
 				if($val[1]=="default") {$ret=$tbl['default'];}
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				break;
 
 			case 'cache':
-				if(is_null(App::$root)) $tbl=(include '../app/config/cache.php');
-				else $tbl=(include App::$root.'../app/config/cache.php');
+				if(is_null(\Fiesta\Core\Glob\App::$root)) $tbl=(include '../app/config/cache.php');
+				else $tbl=(include \Fiesta\Core\Glob\App::$root.'../app/config/cache.php');
 				$ret=$tbl[$val[1]];
 				//
 				if($val[1] == "default") { $ret=$tbl['default']; }
 				else if($val[1] == "options") { $ret=$tbl['options']; }
-				else throw new Fiesta\Config\ConfigException($val[1],$val[0]);
+				else throw new \Fiesta\Core\Config\Exceptions\ConfigException($val[1],$val[0]);
 				break;
 
-			default: throw new Fiesta\Config\ConfigException($value);
+			default: throw new \Fiesta\Core\Config\Exceptions\ConfigException($value);
 				break;
 
 		}
