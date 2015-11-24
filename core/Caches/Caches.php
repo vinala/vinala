@@ -1,6 +1,6 @@
 <?php 
 
-namespace Fiesta\Caches;
+namespace Fiesta\Core\Caches;
 
 /**
 * Cache class
@@ -44,20 +44,20 @@ class Caches
 
 	protected static function driver()
 	{
-		$option=\Config::get('cache.options');
-		$default=\Config::get('cache.default');
+		$option=\Fiesta\Core\Config\Config::get('cache.options');
+		$default=\Fiesta\Core\Config\Config::get('cache.default');
 		//
 		switch ($default) {
 			case 'file':
-				return new FileCache;
+				return new \Fiesta\Core\Caches\FileCache;
 				break;
 			
 			case 'database':
-				return new DatabaseCache;
+				return new \Fiesta\Core\Caches\DatabaseCache;
 				break;
 
 			default:
-			throw new DriverNotFoundException();
+			throw new \Fiesta\Core\Caches\Exception\DriverNotFoundException();
 				break;
 		}
 		
