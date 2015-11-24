@@ -59,7 +59,8 @@
 
 	protected function setTable($table)
 	{
-		$this->DBtable=$table;
+		if(Config::get('database.prefixing')) $this->DBtable = Config::get('database.prefixe') . $table;
+		else $this->DBtable=$table;
 	}
 
 	protected function putForeign()
