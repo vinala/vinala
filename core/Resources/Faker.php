@@ -1,5 +1,10 @@
 <?php 
 
+namespace Fiesta\Core\Resources;
+
+use Faker\Factory;
+use Fiesta\Core\Glob\App;
+
 /**
 *  Faker class
 */
@@ -12,7 +17,7 @@ class Faker
 		if(is_null(App::$root))
 		include_once '../core/Associates/FakerMaster/src/autoload.php';
 		else include_once App::$root.'../core/Associates/FakerMaster/src/autoload.php';
-		self::$Mainfaker = Faker\Factory::create();
+		self::$Mainfaker = Factory::create();
 	}
 
 	public static function title()

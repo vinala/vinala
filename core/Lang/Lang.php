@@ -1,5 +1,14 @@
 <?php 
 
+namespace Fiesta\Core\Translator;
+
+use Fiesta\Core\Translator\Exception\LanguageKeyNotFoundException;
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Storage\Cookie;
+use Fiesta\Core\HyperText\Res;
+use Fiesta\Core\Objects\Base;
+use Fiesta\Core\Filesystem\Filesystem;
+
 /**
 * Language class
 */
@@ -22,7 +31,7 @@ class Lang
 		$value = "";
 		//
 		if(array_key_exists ($key, self::$textes)) $value=self::$textes[$key];
-		else throw new  Fiesta\Lang\LanguageKeyNotFoundException($key);
+		else throw new  LanguageKeyNotFoundException($key);
 		//
 		return $value;
 	}
@@ -112,7 +121,7 @@ class Lang
 	private static function getSupported()
 	{
 		$supp=array();
-		$sup=(new Fiesta\Filesystem\Filesystem)->directories("../app/lang");
+		$sup=(new Filesystem)->directories("../app/lang");
 		//
 		foreach ($sup as $value) {
 			$r=explode("../app/lang/", $value);

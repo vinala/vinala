@@ -1,5 +1,13 @@
 <?php 
 
+namespace Fiesta\Core\Security;
+
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Objects\Table;
+use Fiesta\Core\Database\Database;
+use Fiesta\Core\Storage\Session;
+use Fiesta\Core\Storage\Cookie;
+
 /**
 * Authentification class
 */

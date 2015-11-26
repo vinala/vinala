@@ -1,6 +1,8 @@
-<?php 	
+<?php 
 
 namespace Fiesta\Core\Objects;
+
+use Fiesta\Core\Config\Config;	
 
 /**
 * 	Data array
@@ -52,22 +54,22 @@ class DataCollection
 	{
 		// Pagination Style
 		$pagination=true;
-		if(\Fiesta\Core\Config\Config::get('view.pagination_style')=="simple")
+		if(Config::get('view.pagination_style')=="simple")
 		{
 			$pagination=!true;
-			if(empty($nexte))$nexte=\Fiesta\Core\Config\Config::get('view.paginationSimpleNext');
-			if(empty($previous))$previous=\Fiesta\Core\Config\Config::get('view.paginationSimplePrevious');
+			if(empty($nexte))$nexte=Config::get('view.paginationSimpleNext');
+			if(empty($previous))$previous=Config::get('view.paginationSimplePrevious');
 		}
 		//
 
 
 		// Pagination class
-		if(\Fiesta\Core\Config\Config::get('view.pagination_class')=="{bootstrap}")
+		if(Config::get('view.pagination_class')=="{bootstrap}")
 		{
 			if($pagination) echo '<nav style="display:inline-block"><ul class="pagination">';	
 			else echo '<nav style="display:inline-block"><ul class="pager">';
 		}
-		else echo '<nav style="display:inline-block"><ul class="'.\Fiesta\Core\Config\Config::get('view.pagination_class').'">';
+		else echo '<nav style="display:inline-block"><ul class="'.Config::get('view.pagination_class').'">';
 
    
   		//previous page
@@ -80,7 +82,7 @@ class DataCollection
 			$Prevgets="?";
 			$i=0;
 			foreach ($_GET as $key => $value) {
-				if($key!="url" && $key != \Fiesta\Core\Config\Config::get('view.pagination_param'))
+				if($key!="url" && $key!=Config::get('view.pagination_param'))
 				{
 					if($i>0) $Prevgets.="&";
 					$Prevgets.=$key."=".$value;
@@ -88,9 +90,9 @@ class DataCollection
 				}
 			}
 			if($i>0) $Prevgets.='&';
-			$Prevgets .= \Fiesta\Core\Config\Config::get('view.pagination_param').'='.$prev;
+			$Prevgets.=Config::get('view.pagination_param').'='.$prev;
 		}
-		else $Prevgets='?'.\Fiesta\Core\Config\Config::get('view.pagination_param').'='.$prev;
+		else $Prevgets='?'.Config::get('view.pagination_param').'='.$prev;
 		
 		//
 		//?>
@@ -146,7 +148,7 @@ class DataCollection
 						$Numgets="?";
 						$j=0;
 						foreach ($_GET as $key => $value) {
-							if($key!="url" && $key!=\Fiesta\Core\Config\Config::get('view.pagination_param'))
+							if($key!="url" && $key!=Config::get('view.pagination_param'))
 							{
 								if($j>0) $Numgets.="&";
 								$Numgets.=$key."=".$value;
@@ -154,9 +156,9 @@ class DataCollection
 							}
 						}
 						if($j>0) $Numgets.='&';
-						$Numgets.=\Fiesta\Core\Config\Config::get('view.pagination_param').'='.$i;
+						$Numgets.=Config::get('view.pagination_param').'='.$i;
 					}
-					else $Numgets='?'.\Fiesta\Core\Config\Config::get('view.pagination_param').'='.$i;
+					else $Numgets='?'.Config::get('view.pagination_param').'='.$i;
 
 
 					//
@@ -175,7 +177,7 @@ class DataCollection
 			$Nextgets="?";
 			$i=0;
 			foreach ($_GET as $key => $value) {
-				if($key!="url" && $key!=\Fiesta\Core\Config\Config::get('view.pagination_param'))
+				if($key!="url" && $key!=Config::get('view.pagination_param'))
 				{
 					if($i>0) $Nextgets.="&";
 					$Nextgets.=$key."=".$value;
@@ -183,9 +185,9 @@ class DataCollection
 				}
 			}
 			if($i>0) $Nextgets.='&';
-			$Nextgets.=\Fiesta\Core\Config\Config::get('view.pagination_param').'='.$next;
+			$Nextgets.=Config::get('view.pagination_param').'='.$next;
 		}
-		else $Nextgets='?'.\Fiesta\Core\Config\Config::get('view.pagination_param').'='.$next;
+		else $Nextgets='?'.Config::get('view.pagination_param').'='.$next;
 		//?>
 		<li>
 	      <a href="<?php echo $Nextgets ?>" aria-label="Next">

@@ -6,7 +6,7 @@ $Root="../../";
 if(!file_exists($Root."../app/seeds/$nom.php"))
 	{
 		$myfile = fopen($Root."../app/seeds/$nom.php", "w");
-		$txt = "<?php\n\n";
+		$txt = "<?php\n\nuse Fiesta\Core\Database\Seeder;\n\n";
 
 		$txt.="/**\n* class de seeder $nom\n*/\n\nclass $nom extends Seeder\n{\n";
 

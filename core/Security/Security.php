@@ -1,5 +1,7 @@
 <?php 
 
+namespace Fiesta\Core\Security;
+
 /**
 * Security class
 */

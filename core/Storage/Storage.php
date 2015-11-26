@@ -1,5 +1,10 @@
 <?php 
 
+namespace Fiesta\Core\Storage;
+
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Objects\Sys;
+use Whoops\Exception\ErrorException;
 /**
 * Storage class
 */
@@ -19,7 +24,7 @@ class Storage
 				$this->basePath=Sys::$app."/storage/file";
 				$this->storagePath=$this->basePath."/".Config::get('storage.default');
 			}
-			else throw new invalidArgumentException("There is no disk call's ".Config::get('storage.default'));
+			else throw new \invalidArgumentException("There is no disk call's ".Config::get('storage.default'));
 		}
 		else 
 		{
@@ -29,7 +34,7 @@ class Storage
 				$this->basePath=Sys::$app."/storage/file";
 				$this->storagePath=$this->basePath."/".$disk;
 			}
-			else throw new invalidArgumentException("There is no disk call's ".$disk);
+			else throw new \invalidArgumentException("There is no disk call's ".$disk);
 		}
 	}
 
@@ -106,7 +111,7 @@ class Storage
 			$oldContent=$this->get($name);	
 			$this->put($name,($content.$oldContent));	
 		}
-		else throw new InvalidArgumentException("There is no file calls $name to prepend");
+		else throw new \InvalidArgumentException("There is no file calls $name to prepend");
 	}
 
 	protected static function prependStatic($name,$content)
@@ -117,7 +122,7 @@ class Storage
 			$oldContent=$self->get($name);
 			$self->put($name,($content.$oldContent));	
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function appendNonStatic($name,$content)
@@ -127,7 +132,7 @@ class Storage
 			$oldContent=$this->get($name);	
 			$this->put($name,($oldContent.$content));	
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected static function appendStatic($name,$content)
@@ -138,7 +143,7 @@ class Storage
 			$oldContent=$self->get($name);
 			$self->put($name,($oldContent.$content));	
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function sizeNonStatic($name)
@@ -147,7 +152,7 @@ class Storage
 		{
 			return filesize($this->path($name));
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected static function sizeStatic($name)
@@ -157,7 +162,7 @@ class Storage
 		{
 			return filesize($self->path($name));	
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function deleteNonStatic($name)
@@ -166,7 +171,7 @@ class Storage
 		{
 			return unlink($this->path($name));
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected static function deleteStatic($name)
@@ -177,7 +182,7 @@ class Storage
 		{
 			return unlink ($self->path($name));	
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function copyNonStatic($name1,$name2)
@@ -187,7 +192,7 @@ class Storage
 			$content=$this->get($name1);
 			return $this->put($name2,$content);
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected static function copyStatic($name1,$name2)
@@ -198,7 +203,7 @@ class Storage
 			$content=$self->get($name1);
 			return $self->put($name2,$content);
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function moveNonStatic($name1,$name2)
@@ -209,7 +214,7 @@ class Storage
 			$this->put($name2,$content);
 			$this->delete($name1);
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected static function moveStatic($name1,$name2)
@@ -221,7 +226,7 @@ class Storage
 			$self->put($name2,$content);
 			$self->delete($name1);
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function lasteditNonStatic($name)
@@ -230,7 +235,7 @@ class Storage
 		{
 			return filemtime($this->path($name));
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected static function lasteditStatic($name)
@@ -240,7 +245,7 @@ class Storage
 		{
 			return filemtime($self->path($name));
 		}
-		else throw new InvalidArgumentException("There is no file calls $name");
+		else throw new \InvalidArgumentException("There is no file calls $name");
 	}
 
 	protected function filesNonStatic($name="")
@@ -254,7 +259,7 @@ class Storage
 			}
 			return $files;
 		}
-		else throw new InvalidArgumentException("There is no directory calls $name");
+		else throw new \InvalidArgumentException("There is no directory calls $name");
 	}
 
 	protected static function filesStatic($name="")
@@ -269,7 +274,7 @@ class Storage
 			}
 			return $files;
 		}
-		else throw new InvalidArgumentException("There is no directory calls $name");
+		else throw new \InvalidArgumentException("There is no directory calls $name");
 	}
 
 	protected function directorysNonStatic($name="")
@@ -283,7 +288,7 @@ class Storage
 			}
 			return $files;
 		}
-		else throw new InvalidArgumentException("There is no directory calls $name");
+		else throw new \InvalidArgumentException("There is no directory calls $name");
 	}
 
 	protected static function directorysStatic($name="")
@@ -298,7 +303,7 @@ class Storage
 			}
 			return $files;
 		}
-		else throw new InvalidArgumentException("There is no directory calls $name");
+		else throw new \InvalidArgumentException("There is no directory calls $name");
 	}
 
 	protected function makeDirNonStatic($name)
@@ -319,7 +324,7 @@ class Storage
 		{
 			return rmdir($self->storagePath."/".$name);
 		}
-		else throw new InvalidArgumentException("There is no directory calls $name");
+		else throw new \InvalidArgumentException("There is no directory calls $name");
 	}
 
 	protected static function deleteDirStatic($name="")
@@ -329,7 +334,7 @@ class Storage
 		{
 			return rmdir($self->storagePath."/".$name);
 		}
-		else throw new InvalidArgumentException("There is no directory calls $name");
+		else throw new \InvalidArgumentException("There is no directory calls $name");
 	}
 
 
@@ -375,7 +380,7 @@ class Storage
 	    	case 'directories': return call_user_func_array(array("Storage", "directorysStatic"), $args); break;
 	    	case 'makeDirectory': return call_user_func_array(array("Storage", "makeDirStatic"), $args); break;
 	    	case 'deleteDirectory': return call_user_func_array(array("Storage", "deleteDirStatic"), $args); break;
-	    	default : throw new Whoops\Exception\ErrorException("Call to undefined method Storage::$name()");
+	    	default : throw new ErrorException("Call to undefined method Storage::$name()");
 	    	
 	    }
 	}

@@ -1,4 +1,3 @@
-
 <?php 
 
 
@@ -61,10 +60,8 @@ return array(
 	| 
 	*/
 
-	'configurated' => !true
+	'configurated' => true
 
 	
 
 );
-
-

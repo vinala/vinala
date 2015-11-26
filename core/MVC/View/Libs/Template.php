@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fiesta\MVC\View;
+namespace Fiesta\Core\MVC\View;
 
 /**
 * Smarty Template class

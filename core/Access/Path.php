@@ -2,6 +2,8 @@
 
 namespace Fiesta\Core\Access;
 
+use Fiesta\Core\Filesystem\Filesystem;
+
 /**
 * System Class
 */
@@ -47,7 +49,7 @@ class Path
 		for ($i=1; $i < count($parts) ; $i++) 
 		{
 			$folder.=$parts[$i]."/";
-			if( ! (new \Fiesta\Core\Filesystem\Filesystem)->isDirectory($folder)) break;
+			if( ! (new Filesystem)->isDirectory($folder)) break;
 		}
 		//
 		return $folder;

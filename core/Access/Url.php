@@ -2,6 +2,8 @@
 
 namespace Fiesta\Core\Access;
 
+use Fiesta\Core\Config\Config;
+
 /**
 * Url class
 */
@@ -15,7 +17,7 @@ class Url
 	{
 		$link="";
 		if ($url[0] == "@") {
-		    $link=\Fiesta\Core\Config\Config::get('app.url').substr($url, 1);;
+		    $link=Config::get('app.url').substr($url, 1);;
 		    echo $link."<br>";
 		    echo $url;
 		}

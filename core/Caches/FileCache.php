@@ -2,6 +2,9 @@
 
 namespace Fiesta\Core\Caches;
 
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Filesystem\Filesystem;
+
 /**
 * FileCache class
 */
@@ -11,7 +14,7 @@ class FileCache
 	{
 		$value = $this->packing($value,$minutes);
 		//
-		(new \Fiesta\Core\Filesystem\Filesystem)->put($this->path($key), $value);
+		(new Filesystem)->put($this->path($key), $value);
 
 	}
 
@@ -21,7 +24,7 @@ class FileCache
 		//
 		if($this->exists($key))
 		{
-			$value=(new \Fiesta\Core\Filesystem\Filesystem)->get($path);
+			$value=(new Filesystem)->get($path);
 			$parts = $this->unpacking($value);
 			//
 			$time=$parts['time'];
@@ -70,32 +73,32 @@ class FileCache
 
 	protected function createCacheDirectory($path)
 	{
-		if( ! (new \Fiesta\Core\Filesystem\Filesystem)->isDirectory(dirname($path)))
-			(new \Fiesta\Core\Filesystem\Filesystem)->makeDirectory(dirname($path), 0777, true, true);
+		if( ! (new Filesystem)->isDirectory(dirname($path)))
+			(new Filesystem)->makeDirectory(dirname($path), 0777, true, true);
 		
 	}
 
 	protected function hash($value)
 	{
-		return md5($value.\Fiesta\Core\Config\Config::get("security.key1").md5($value));
+		return md5($value.Config::get("security.key1").md5($value));
 	}
 
 	protected function path($key)
 	{
 		$hash = $this->hash($key);
 		$parts=str_split($hash, 2);
-		return "../app/".\Fiesta\Core\Config\Config::get('cache.options')["file"]['location'].'/'.$hash;
-		//return "../app/".\Config::get('cache.location').'/'.$hash;
+		return "../app/".Config::get('cache.options')["file"]['location'].'/'.$hash;
+		//return "../app/".Config::get('cache.location').'/'.$hash;
 	}
 
 	protected function forget($key)
 	{
-		return (new \Fiesta\Core\Filesystem\Filesystem)->delete($this->path($key));
+		return (new Filesystem)->delete($this->path($key));
 	}
 
 	public function exists($key)
 	{
-		if((new \Fiesta\Core\Filesystem\Filesystem)->exists($this->path($key)))
+		if((new Filesystem)->exists($this->path($key)))
 		{
 			if(time()>$this->getExpiration($key)) 
 			{
@@ -125,16 +128,16 @@ class FileCache
 
 	public function clearOld()
 	{
-		$all=(new \Fiesta\Core\Filesystem\Filesystem)->files("../app/".\Fiesta\Core\Config\Config::get('cache.options')["file"]['location']);
+		$all=(new Filesystem)->files("../app/".Config::get('cache.options')["file"]['location']);
 		//
 		foreach ($all as $value) {
 			//
-			$cont=(new \Fiesta\Core\Filesystem\Filesystem)->get($value);
+			$cont=(new Filesystem)->get($value);
 			$parts = $this->unpacking($cont);
 			//
 			$time=$parts["time"];
 			//
-			if(time()>$time) (new \Fiesta\Core\Filesystem\Filesystem)->delete($value);
+			if(time()>$time) (new Filesystem)->delete($value);
 		}
 		return true;
 	}
@@ -143,7 +146,7 @@ class FileCache
 	{
 		if($this->exists($key))
 		{
-			$cont=(new \Fiesta\Core\Filesystem\Filesystem)->get($this->path($key));
+			$cont=(new Filesystem)->get($this->path($key));
 			$parts = $this->unpacking($cont);
 			//
 			$this->put($key ,$parts["value"], $minutes);

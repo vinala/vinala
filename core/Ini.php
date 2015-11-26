@@ -6,6 +6,23 @@
 // Licensed under Open Source
 //----------------------------------------
 
+namespace Fiesta\Core\Glob;
+
+use Fiesta\Core\Storage\Session;
+use Fiesta\Core\Access\ErrorHandler;
+use Fiesta\Core\Config\Alias;
+use Fiesta\Core\Objects\Sys;
+use Fiesta\Core\Access\Url;
+use Fiesta\Core\Access\Path;
+use Fiesta\Core\MVC\View\Template;
+use Fiesta\Core\Resources\Faker;
+use Fiesta\Core\Http\Links;
+use Fiesta\Core\Http\Errors;
+use Fiesta\Core\Security\License;
+use Fiesta\Core\Translator\Lang;
+use Fiesta\Core\Database\Database;
+use Fiesta\Core\Security\Auth;
+use Fiesta\Core\Router\Routes;
 
 
 class App
@@ -21,15 +38,24 @@ class App
 		self::$page=$p;
 		self::$root=$root;
 		
-		//session
-		require __DIR__.'/../core/Storage/Session.php';
-		if($session)Session::start(__DIR__.'/../app/storage/session');
+		
 		//
 		require __DIR__.'/../core/Access/ErrorHandler.php';
 
 		// Config
 		require __DIR__.'/../core/Config/Config.php';
 		require __DIR__.'/../core/Config/Exceptions/ConfigException.php';
+
+		// Set the error log
+		ini_set("log_errors", 1);
+		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
+
+		// Set Whoops error handler
+		if($whoops) ErrorHandler::ini(self::$root);
+
+		//session
+		require __DIR__.'/../core/Storage/Session.php';
+		if($session)Session::start(__DIR__.'/../app/storage/session');
 
 		//Maintenance
 		require __DIR__.'/../core/Maintenance/Maintenance.php';
@@ -42,12 +68,8 @@ class App
 		// Access
 		require __DIR__.'/../core/Access/Path.php';
 
-		// Set the error log
-		ini_set("log_errors", 1);
-		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
-
-		// Set Whoops error handler
-		if($whoops) ErrorHandler::ini(self::$root);
+		//Alias
+		require __DIR__.'/../core/Config/Alias.php';
 
 		//
 		//require __DIR__.'/../core/MVC/Templete.php';
@@ -84,7 +106,6 @@ class App
 
 
 		require __DIR__.'/../core/Access/Url.php';
-		require __DIR__.'/../core/Hypertext/Pages.php';
 
 		require __DIR__.'/../core/Objects/DateTime.php';
 		require __DIR__.'/../core/Objects/Sys.php';
@@ -94,7 +115,6 @@ class App
 		require __DIR__.'/../core/Hypertext/Res.php';
 		require __DIR__.'/../core/Hypertext/Input.php';
 		require __DIR__.'/../core/Security/License.php';
-		require __DIR__.'/../core/Hypertext/Cookie.php';
 
 		//Languages
 		require __DIR__.'/../core/Lang/Lang.php';
@@ -120,7 +140,6 @@ class App
 		require __DIR__.'/../core/Security/Security.php';
 		require __DIR__.'/../core/MVC/Controller.php';
 		require __DIR__.'/../core/Http/Error.php';
-		require __DIR__.'/../core/Hypertext/Script.php';
 		require __DIR__.'/../core/Http/Root.php';
 		require __DIR__.'/../core/Mailing/Mail.php';
 		require __DIR__.'/../core/Objects/DataCollection.php';
@@ -137,11 +156,11 @@ class App
 		//
 
 
+		Alias::ini(self::$root);
 		Sys::ini();
 		Url::ini();
 		Path::ini();
-		Fiesta\MVC\View\Template::ini(self::$root);
-		//
+		Template::ini(self::$root);
 		Faker::ini();
 		Links::ini($root);
 		Errors::ini($root);
@@ -173,7 +192,7 @@ class App
 			if($routes)
 			{
 				include_once $root."../app/http/Routes.php";
-				Fiesta\Router\Routes::run();
+				Routes::run();
 			}
 		}
 		else
@@ -195,7 +214,7 @@ class App
 			if($routes)
 			{
 				include_once "../app/http/Routes.php";
-				Fiesta\Router\Routes::run();
+				Routes::run();
 			}
 		}
 

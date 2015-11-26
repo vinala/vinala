@@ -1,5 +1,7 @@
 <?php 
 
+namespace Fiesta\Core\HyperText;
+
 /**
 * Ressources Clas
 */

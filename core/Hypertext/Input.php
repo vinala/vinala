@@ -1,5 +1,7 @@
 <?php 
 
+namespace Fiesta\Core\HyperText;
+
 /**
 * Input type
 */

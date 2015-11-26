@@ -1,5 +1,15 @@
 <?php 
 
+namespace Fiesta\Core\MVC\Model;
+
+use Fiesta\Core\MVC\Model\Exception\ColumnNotEmptyException;
+use Fiesta\Core\MVC\Model\Exception\ForeingKeyMethodException;
+use Fiesta\Core\MVC\Model\Exception\ManyPrimaryKeysException;
+use Fiesta\Core\MVC\Model\Exception\PrimaryKeyNotFoundException;
+use Fiesta\Core\Database\Database;
+use Fiesta\Core\Config\Config;
+
+
 /**
 * Model class
 */
@@ -51,8 +61,8 @@
 		//
 		$rows=Database::read("SHOW INDEX FROM ".$this->DBtable." WHERE `Key_name` = 'PRIMARY'");
 		//
-		if(count($rows) > 1) throw new Fiesta\MVC\Model\ManyPrimaryKeysException();
-		else if(count($rows) == 0 ) throw new Fiesta\MVC\Model\PrimaryKeyNotFoundException($this->DBtable);
+		if(count($rows) > 1) throw new ManyPrimaryKeysException();
+		else if(count($rows) == 0 ) throw new PrimaryKeyNotFoundException($this->DBtable);
 		//
 		$this->key=$rows[0]['Column_name'];
 	}
@@ -73,7 +83,7 @@
 			foreach ($foreigns as $key => $value) 
 			{
 				if(method_exists($this, $value)) $this->$value = $this->$value();
-				else throw new Fiesta\MVC\Model\ForeingKeyMethodException($value,get_class($this));
+				else throw new ForeingKeyMethodException($value,get_class($this));
 			}
 		}
 	}
@@ -87,7 +97,7 @@
 			foreach ($foreigns as $key => $value) 
 			{
 				if(method_exists($this, $value)) $this->$value =  null;
-				else throw new Fiesta\MVC\Model\ForeingKeyMethodException($value,get_class($this));
+				else throw new ForeingKeyMethodException($value,get_class($this));
 			}
 		}
 	}
@@ -261,7 +271,7 @@
 	public function hasOne($model , $local , $remote=null)
 	{
 		$val=$this->$local;
-		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
+		if(is_object($val)) throw new ColumnNotEmptyException($local,$model);
 		$mod=new $model($val);
 		return $mod;
 	}
@@ -269,7 +279,7 @@
 	public function hasMany($model , $local , $remote)
 	{
 		$val=$this->$local;
-		if(is_object($val)) throw new Fiesta\MVC\Model\ColumnNotEmptyException($local,$model);
+		if(is_object($val)) throw new ColumnNotEmptyException($local,$model);
 		$mod=new $model;
 		$data=$mod->get($remote, '=' , $val);
 		$data=$data->get();

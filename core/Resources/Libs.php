@@ -1,5 +1,9 @@
 <?php
 
+namespace Fiesta\Core\Resources;
+
+use Fiesta\Core\Access\Path;
+
 /**
 *
 */

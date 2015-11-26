@@ -1,6 +1,6 @@
 <?php 
 
-namespace Fiesta\MVC\Model;
+namespace Fiesta\Core\MVC\Model\Exception;
 
 /**
 * Directory not fount exception

@@ -2,6 +2,10 @@
 
 namespace Fiesta\Core\Caches;
 
+use Fiesta\Core\Database\Database;
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Database\Schema;
+
 /**
 * FileCache class
 */
@@ -15,28 +19,28 @@ class DatabaseCache
 		if(!is_null($data=$this->DatabaseInfo()))
 		{
 			$data=$this->DatabaseInfo();
-			$this->old_server=\Fiesta\Core\Database\Database::$serverData;
-			\Fiesta\Core\Database\Database::setNewServer($data['host'],$data['username'],$data['password'],$data['database']);
+			$this->old_server=Database::$serverData;
+			Database::setNewServer($data['host'],$data['username'],$data['password'],$data['database']);
 		}
 		else
 		{
-			$this->old_server=\Fiesta\Core\Database\Database::$serverData;
+			$this->old_server=Database::$serverData;
 		}
 	}
 
 	private function DatabaseTableName()
 	{
-		return \Fiesta\Core\Config\Config::get('cache.options')["database"]["table"];
+		return Config::get('cache.options')["database"]["table"];
 	}
 
 	private function DatabaseInfo()
 	{
-		return \Fiesta\Core\Config\Config::get("cache.options")['database']['database'];
+		return Config::get("cache.options")['database']['database'];
 	}
 
 	private function createCacheTable()
 	{
-		\Fiesta\Core\Database\Schema::create($this->DatabaseTableName(),function($tab)
+		Schema::create($this->DatabaseTableName(),function($tab)
 			{
 				$tab->inc("id");
 				$tab->string("name");
@@ -48,7 +52,7 @@ class DatabaseCache
 
 	private function back()
 	{
-		return \Fiesta\Core\Database\Database::setNewServer($this->old_server['host'],$this->old_server['username'],$this->old_server['password'],$this->old_server['database']);
+		return Database::setNewServer($this->old_server['host'],$this->old_server['username'],$this->old_server['password'],$this->old_server['database']);
 	}
 
 	public function put($key, $value, $minutes)
@@ -61,15 +65,15 @@ class DatabaseCache
 		//
 		$this->establish();
 		//
-		if( ! \Fiesta\Core\Database\Schema::existe($this->DatabaseTableName(),\Fiesta\Core\Database\Database::$serverData['database']))
+		if( ! Schema::existe($this->DatabaseTableName(),Database::$serverData['database']))
 		{
 			$this->createCacheTable();
 		}
 		$data=[["name" => $name ,"val" => $value ,"life" => $time ]];
 		if( ! $this->exists($key))
-			\Fiesta\Core\Database\Schema::table($this->DatabaseTableName())->insert($data);
+			Schema::table($this->DatabaseTableName())->insert($data);
 		else 
-			\Fiesta\Core\Database\Schema::table($this->DatabaseTableName())->update("name='".$name."'",$data);
+			Schema::table($this->DatabaseTableName())->update("name='".$name."'",$data);
 		//
 		$this->back();
 	}
@@ -115,25 +119,25 @@ class DatabaseCache
 
 	protected function hash($value)
 	{
-		return md5($value.\Fiesta\Core\Config\Config::get("security.key1").md5($value));
+		return md5($value.Config::get("security.key1").md5($value));
 	}
 
 	protected function forget($key)
 	{
 		//$sql="delete from fiestacache where name='".$key."'";
 		$key = $this->hash($key);
-		return \Fiesta\Core\Database\Database::exec("delete from ".$this->DatabaseTableName()." where name='".$key."'");
+		return Database::exec("delete from ".$this->DatabaseTableName()." where name='".$key."'");
 	}
 
 	private function exist($key)
 	{
 
-		return (\Fiesta\Core\Database\Database::countS("select * from ".$this->DatabaseTableName()." where name='$key'")>0);
+		return (Database::countS("select * from ".$this->DatabaseTableName()." where name='$key'")>0);
 	}
 
 	private function read($key)
 	{
-		return \Fiesta\Core\Database\Database::read("select * from ".$this->DatabaseTableName()." where name='$key'");
+		return Database::read("select * from ".$this->DatabaseTableName()." where name='$key'");
 		// return (\Database::countS("select * from fiestacache where name='$key'")>0);
 	}
 
@@ -173,7 +177,7 @@ class DatabaseCache
 
 	public function getAll()
 	{
-		return \Fiesta\Core\Database\Database::read('select * from '.$this->DatabaseTableName());
+		return Database::read('select * from '.$this->DatabaseTableName());
 	}
 
 	public function clearOld()
@@ -182,7 +186,7 @@ class DatabaseCache
 		//
 		foreach ($all as $rows) {
 			$life=$rows['life'];
-			if(time()>$life) \Fiesta\Core\Database\Schema::table($this->DatabaseTableName())->delete("name='".$rows['name']."'");
+			if(time()>$life) Schema::table($this->DatabaseTableName())->delete("name='".$rows['name']."'");
 		}
 		return true;
 	}

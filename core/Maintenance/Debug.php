@@ -1,5 +1,9 @@
 <?php 
 
+namespace Fiesta\Core\Log;
+
+use Whoops\Handler\PrettyPageHandler;
+
 /**
 * debug class
 */
@@ -13,7 +17,7 @@ class Debug
 			$name="User Debug";
 		}
 		//
-		$Handler=new Whoops\Handler\PrettyPageHandler();
+		$Handler=new PrettyPageHandler();
 		$Handler->handleUserDebug($name,$array_vars);
 	}
 }

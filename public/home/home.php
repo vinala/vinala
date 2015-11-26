@@ -1,5 +1,7 @@
 <?php 
 
+use Fiesta\Core\Database\Migration;
+
 $rot="app/pages/panel";
 $root="./app/pages/panel";
 $rooot=$root;

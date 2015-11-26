@@ -1,6 +1,15 @@
 <?php 
 
-namespace Fiesta\Router;
+namespace Fiesta\Core\Router;
+
+use Fiesta\Core\HyperText\Res;
+use Fiesta\Core\Maintenance\Maintenance;
+use Fiesta\Core\Objects\Table;
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Router\Exception\RouteNotFoundException;
+use Fiesta\Core\Http\Errors;
+use Fiesta\Core\Glob\App;
+use Fiesta\Core\Access\Url;
 
 /**
 * Routes 2
@@ -187,7 +196,7 @@ class Routes
 	{
 		$currentUrl=self::CheckUrl();
 		//
-		if(\Maintenance::check())
+		if(Maintenance::check())
 		{
 			self::ReplaceParams();
 			self::Replace();
@@ -202,14 +211,14 @@ class Routes
 				{
 					if(!is_null($value["subdomain"]))
 					{
-						if(\Table::contains($value["subdomain"],self::getDomain()))
+						if(Table::contains($value["subdomain"],self::getDomain()))
 							{
-								if($value["methode"]=="post" && \Res::isPost())
+								if($value["methode"]=="post" && Res::isPost())
 								{
 									$ok=self::exec($params,$value);
 									break;
 								}
-								else if($value["methode"]=="post" && !\Res::isPost())
+								else if($value["methode"]=="post" && !Res::isPost())
 								{
 									$ok=0;
 								}
@@ -234,12 +243,12 @@ class Routes
 					}
 					else
 					{
-						if($value["methode"]=="post" && \Res::isPost())
+						if($value["methode"]=="post" && Res::isPost())
 						{
 							$ok=self::exec($params,$value);
 							break;
 						}
-						else if($value["methode"]=="post" && !\Res::isPost())
+						else if($value["methode"]=="post" && !Res::isPost())
 						{
 							$ok=0;
 						}
@@ -265,11 +274,11 @@ class Routes
 			}
 			if($ok==0) 
 			{
-				if(\Config::get('app.unrouted')) throw new RouteNotFoundException($currentUrl);
-				else \Errors::r_404();
+				if(Config::get('app.unrouted')) throw new RouteNotFoundException($currentUrl);
+				else Errors::r_404();
 			}
 		}
-		else \Maintenance::show();
+		else Maintenance::show();
 	}
 
 	protected static function exec($params,&$one)
@@ -311,12 +320,12 @@ class Routes
 
 	protected static function callBefore()
 	{
-		call_user_func(\App::$Callbacks['before']);
+		call_user_func(App::$Callbacks['before']);
 	}
 
 	protected static function callAfter()
 	{
-		call_user_func(\App::$Callbacks['after']);
+		call_user_func(App::$Callbacks['after']);
 	}
 
 	protected static function SplitSlash($link)
@@ -350,7 +359,7 @@ class Routes
 
 	protected static function CheckMaintenance($url)
 	{
-		if(!\Config::get("maintenance.activate") || in_array($url, \Config::get("maintenance.outRoutes")))
+		if(!Config::get("maintenance.activate") || in_array($url, Config::get("maintenance.outRoutes")))
 			return true;
 		else return false;
 	}
@@ -424,8 +433,8 @@ class Routes
 
 	protected static function showMaintenance()
 	{
-		if(\Config::get("maintenance.maintenanceEvent")=="string") echo \Config::get("maintenance.maintenanceResponse");
-		else if(\Config::get("maintenance.maintenanceEvent")=="link") \Url::redirect(\Config::get("maintenance.maintenanceResponse"));
+		if(Config::get("maintenance.maintenanceEvent")=="string") echo Config::get("maintenance.maintenanceResponse");
+		else if(Config::get("maintenance.maintenanceEvent")=="link") Url::redirect(Config::get("maintenance.maintenanceResponse"));
 	}
 
 	public static function resource($uri,$controller,$data=null)
@@ -444,7 +453,7 @@ class Routes
 		$update=isset($names['update'])?(!empty($names['update'])?$names['update']:"update"):"update";
 		$delete=isset($names['delete'])?(!empty($names['delete'])?$names['delete']:"delete"):"delete";
 		//
-		if(\Table::contains($routes,"index"))
+		if(Table::contains($routes,"index"))
 		{
 			self::addController($uri."",                  $controller,"index");
 			self::addController($uri."/",                 $controller,"index");
@@ -452,31 +461,31 @@ class Routes
 			self::addController($uri."/".$index."/",      $controller,"index");
 		}
 		//
-		if(\Table::contains($routes,"show"))
+		if(Table::contains($routes,"show"))
 		{
 			self::addController($uri."/$show/{}",         $controller,"show");
 			self::addController($uri."/$show/{}/",        $controller,"show");
 		}
 		//
-		if(\Table::contains($routes,"add"))
+		if(Table::contains($routes,"add"))
 		{
 			self::addController($uri."/$add",             $controller,"add");
 			self::addController($uri."/$add/",            $controller,"add");
 		}
 		//
-		if(\Table::contains($routes,"insert"))
+		if(Table::contains($routes,"insert"))
 		{
 			self::addController($uri."/$insert",          $controller,"insert");
 			self::addController($uri."/$insert/",         $controller,"insert");
 		}
 		//
-		if(\Table::contains($routes,"edit"))
+		if(Table::contains($routes,"edit"))
 		{
 			self::addController($uri."/$edit/{}",         $controller,"edit");
 			self::addController($uri."/$edit/{}/",        $controller,"edit");
 		}
 		//
-		if(\Table::contains($routes,"update"))
+		if(Table::contains($routes,"update"))
 		{
 			self::addController($uri."/$update",          $controller,"update");
 			self::addController($uri."/$update/",         $controller,"update");
@@ -484,7 +493,7 @@ class Routes
 			self::addController($uri."/$update/{}/",      $controller,"update",true);
 		}
 		//
-		if(\Table::contains($routes,"delete"))
+		if(Table::contains($routes,"delete"))
 		{
 			self::addController($uri."/$delete/{}",       $controller,"delete");
 			self::addController($uri."/$delete/{}/",      $controller,"delete");
@@ -537,7 +546,7 @@ class Routes
 			$i=0;
 			foreach ($all as  $value) 
 			{
-				if(\Table::contains($except,$value)) unset($all[$i]);
+				if(Table::contains($except,$value)) unset($all[$i]);
 				$i++;
 			}
 		}
@@ -567,8 +576,8 @@ class Routes
 	
 }
 
-if(\Config::get('panel.enable'))
-Routes::get(\Config::get('panel.route'),function()
+if(Config::get('panel.enable'))
+Routes::get(Config::get('panel.route'),function()
 {
-	include \Config::get('panel.folder').'/home.php';
+	include Config::get('panel.folder').'/home.php';
 });

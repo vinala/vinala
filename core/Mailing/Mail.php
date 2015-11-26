@@ -1,5 +1,10 @@
 <?php 
 
+namespace Fiesta\Core\Mailing;
+
+use Fiesta\Core\MVC\View\View;
+use Fiesta\Core\Config\Config;
+
 /**
 * Mail class
 */
@@ -38,13 +43,13 @@ class Mail
 
 	static function check($selfmail)
 	{
-		if(empty($selfmail->host)) throw new InvalidArgumentException("Missing smtp host");
-		if(empty($selfmail->port)) throw new InvalidArgumentException("Missing smtp port"); 
-		if(empty($selfmail->secure)) throw new InvalidArgumentException("Missing smtp secure");
-		if(empty($selfmail->username)) throw new InvalidArgumentException("Missing smtp username");
-		if(empty($selfmail->password)) throw new InvalidArgumentException("Missing smtp password");
-		if(empty($selfmail->from['adresse'])) throw new InvalidArgumentException("Missing smtp adresse from");
-		if(empty($selfmail->from['name'])) throw new InvalidArgumentException("Missing smtp name from");
+		if(empty($selfmail->host)) throw new \InvalidArgumentException("Missing smtp host");
+		if(empty($selfmail->port)) throw new \InvalidArgumentException("Missing smtp port"); 
+		if(empty($selfmail->secure)) throw new \InvalidArgumentException("Missing smtp secure");
+		if(empty($selfmail->username)) throw new \InvalidArgumentException("Missing smtp username");
+		if(empty($selfmail->password)) throw new \InvalidArgumentException("Missing smtp password");
+		if(empty($selfmail->from['adresse'])) throw new \InvalidArgumentException("Missing smtp adresse from");
+		if(empty($selfmail->from['name'])) throw new \InvalidArgumentException("Missing smtp name from");
 	}
 
 
@@ -82,7 +87,7 @@ class Mail
 		//
 		self::check($selfmail);
 		//
-		$selfmail->transport = Swift_SmtpTransport::newInstance($selfmail->host, $selfmail->port, $selfmail->secure)
+		$selfmail->transport = \Swift_SmtpTransport::newInstance($selfmail->host, $selfmail->port, $selfmail->secure)
 		  ->setUsername($selfmail->username)
 		  ->setPassword($selfmail->password);
 
@@ -92,12 +97,12 @@ class Mail
 		//   ->setBody($body , "text/html");
 		 //var_dump($selfmail->transport);
 
-		$mailer = Swift_Mailer::newInstance($selfmail->transport);
-		$subject=is_null($selfmail->subject)?Config::get('mail.subject'):$selfmail->subject;
+		$mailer = \Swift_Mailer::newInstance($selfmail->transport);
+		$subject=is_null($selfmail->subject) ? Config::get('mail.subject'):$selfmail->subject;
 
 		//
 		//The Message
-		$message = Swift_Message::newInstance($subject);
+		$message = \Swift_Message::newInstance($subject);
 		$message->setBody($body , $type);
 		$message->setFrom(array($selfmail->from['adresse'] => $selfmail->from['name']));
 
@@ -106,7 +111,7 @@ class Mail
 		//
 		if(!is_null($selfmail->too) && !empty($selfmail->too) )
 			$message->setTo($selfmail->too);
-		else throw new InvalidArgumentException("Missing mail to", 1);
+		else throw new \InvalidArgumentException("Missing mail to", 1);
 
 		//
 		// Attaches
@@ -122,11 +127,11 @@ class Mail
 			}
 			if(empty($name)) 
 				{ 
-					$message->attach(Swift_Attachment::fromPath($filee));
+					$message->attach(\Swift_Attachment::fromPath($filee));
 				}
 			else 
 				{  
-					$message->attach(Swift_Attachment::fromPath($filee)->setFilename($name));
+					$message->attach(\Swift_Attachment::fromPath($filee)->setFilename($name));
 				}
 		}
 

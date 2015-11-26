@@ -1,9 +1,13 @@
 <?php 
 
+namespace Fiesta\Core\Objects;
+
+use Fiesta\Core\Objects\Table;
+
 /**
 * Exception Class
 */
-class FiestaException extends Exception
+class FiestaException extends \Exception
 {
 	
 	

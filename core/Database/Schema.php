@@ -1,5 +1,10 @@
 <?php
 
+namespace Fiesta\Core\Database;
+
+use Fiesta\Core\Config\Config;
+
+
 /**
 * Database Schema class
 */

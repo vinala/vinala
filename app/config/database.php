@@ -1,4 +1,3 @@
-
 <?php 
 
 
@@ -73,10 +72,9 @@ return array(
 	*/
 
 	'prefixing' => true,
-	'prefixe' => 'kuc_',
+	'prefixe' => 'jau_',
 
 
 
 
 );
-

@@ -1,5 +1,9 @@
 <?php
 
+namespace Fiesta\Core\HyperText;
+
+use Fiesta\Core\Config\Config;
+
 /**
 * HTML class
 */

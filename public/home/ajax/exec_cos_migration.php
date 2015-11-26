@@ -1,5 +1,8 @@
 <?php 
 
+use Fiesta\Core\Glob\App;
+use Fiesta\Core\Database\Migration;
+
 
 $Root="../../";
 

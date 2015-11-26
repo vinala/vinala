@@ -8,7 +8,7 @@ $file=$_POST['new_controller_file_name'];
 if(!file_exists($Root."../app/controllers/$file.php"))
 	{
 		$myfile = fopen($Root."../app/controllers/$file.php", "w");
-		$txt = "<?php\n\n";
+		$txt = "<?php\n\nuse Fiesta\Core\MVC\Controller\Controller;\n\n";
 
 		$txt.="/**\n* class de controller $class\n*/\n\nclass $class extends Controller\n{\n\t";
 

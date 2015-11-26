@@ -1,6 +1,9 @@
 <?php 
 
+namespace Fiesta\Core\Database;
 
+use Fiesta\Core\Filesystem\Filesystem;
+use Fiesta\Core\Objects\Table;
 /**
 * migaration class
 */
@@ -34,8 +37,8 @@ class Migration
 
 	protected static function createRegister($root)
 	{
-		if(!(new Fiesta\Filesystem\Filesystem)->exists($root.'../app/schemas/.register'))
-			(new Fiesta\Filesystem\Filesystem)->put($root.'../app/schemas/.register',"");
+		if(!(new Filesystem)->exists($root.'../app/schemas/.register'))
+			(new Filesystem)->put($root.'../app/schemas/.register',"");
 	}
 	
 	protected static function setRegister($array,$root)

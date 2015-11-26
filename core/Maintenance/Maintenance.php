@@ -1,9 +1,13 @@
 <?php 
 
+namespace Fiesta\Core\Maintenance;
+
+use Fiesta\Core\MVC\View\View;
+use Fiesta\Core\Config\Config;
+
 /**
 * Maintenance class
 */
-
 class Maintenance
 {
 	public static function check()

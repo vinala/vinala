@@ -1,6 +1,6 @@
 <?php 
 
-namespace Fiesta\Router;
+namespace Fiesta\Core\Router\Exception;
 
 /**
 * Route Exception

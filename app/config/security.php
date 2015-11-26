@@ -1,4 +1,3 @@
-
 <?php 
 
 return array(
@@ -14,7 +13,7 @@ return array(
 	|
 	*/
 
-	'key1' => '0bfa31746c472cb4f6f7bddc45813de2',
-	'key2' => '2a4cbbdc60edd7001f5febc2e824df14',
+	'key1' => '8aae522b95242e3618f6ecfc3e98c1b5',
+	'key2' => 'a058f845231de632b6c25a2accb99ae8',
 
 );

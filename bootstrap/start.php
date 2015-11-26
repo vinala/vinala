@@ -25,7 +25,7 @@ require_once __DIR__.'/../core/Ini.php';
 | Hna katlancé l framework dialk
 */
 
-App::run();
+Fiesta\Core\Glob\App::run();
 
 	
 	
