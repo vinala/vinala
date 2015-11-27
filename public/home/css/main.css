@@ -10,6 +10,11 @@ body
 	font-family: segoe;
 }
 
+.version_link
+{
+	color:white;
+	text-decoration: underline;
+}
 
 .top_header
 {

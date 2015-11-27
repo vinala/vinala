@@ -6,6 +6,12 @@ body
 	background-position: 50% 50%;
 	background-size: cover;
 }
+
+.version_link
+{
+	color:white;
+	text-decoration: underline;
+}
 .table_header
 {
 	background: #1eb1fe !important;
