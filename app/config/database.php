@@ -72,7 +72,7 @@ return array(
 	*/
 
 	'prefixing' => true,
-	'prefixe' => 'jau_',
+	'prefixe' => 'fst_',
 
 
 
