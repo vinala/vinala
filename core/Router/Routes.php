@@ -481,6 +481,11 @@ class Routes
 		//
 		if(Table::contains($routes,"edit"))
 		{
+			
+			// self::addController($uri."/{}/$edit",         $controller,"edit");
+			// self::addController($uri."/{}/$edit/",        $controller,"edit");
+			
+			// edited in build 2.5.1.268 last script
 			self::addController($uri."/$edit/{}",         $controller,"edit");
 			self::addController($uri."/$edit/{}/",        $controller,"edit");
 		}
