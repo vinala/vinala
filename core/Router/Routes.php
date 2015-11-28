@@ -520,6 +520,7 @@ class Routes
 			'callback' => $callback,
 			'methode' => "resource",
 			"filtre" => null,
+			"subdomain" => null,
 			'controller' => $controller
 			);
 		//
@@ -531,6 +532,7 @@ class Routes
 			'callback' => $callback,
 			'methode' => "resource",
 			"filtre" => null,
+			"subdomain" => null,
 			'controller' => $controller
 			);
 		self::$requests[]=$r;
