@@ -25,7 +25,7 @@ class Route
 		return Routes::filter($name,$callback,$falsecall);
 	}
 
-	public static function resource($uri,$controller,$data=null)
+	public static function controller($uri,$controller,$data=null)
 	{
 		return Routes::resource($uri,$controller,$data);
 	}
