@@ -1,14 +1,16 @@
 <?php 
-
 $Root="../../";
 
-$class=$_POST['new_controller_class_name'];
-$file=$_POST['new_controller_file_name'];
+// true if the user accept to add the route
+if(isset($_POST['new_controller_add_route'])) $add_route = $_POST['new_controller_add_route'];
+else $add_route = false;
 
-if(!file_exists($Root."../app/controllers/$file.php"))
-	{
+$class = $_POST['new_controller_class_name'];
+$file = $_POST['new_controller_file_name'];
+
+if(!file_exists($Root."../app/controllers/$file.php")){
 		$myfile = fopen($Root."../app/controllers/$file.php", "w");
-		$txt = "<?php\n\nuse Fiesta\Core\MVC\Controller\Controller;\n\n";
+		$txt = "<?php\n\n use Fiesta\Core\MVC\Controller\Controller;\n\n";
 
 		$txt.="/**\n* class de controller $class\n*/\n\nclass $class extends Controller\n{\n\t";
 
@@ -49,6 +51,20 @@ if(!file_exists($Root."../app/controllers/$file.php"))
 		fwrite($myfile, $txt);
 		fclose($myfile);
 		//
+		
+		
+		//Création des routes
+		if($add_route)
+		{
+			$RouterFile 	= $Root."../app/http/Routes.php";
+		
+			// $RouterContent 	.= "Route::get('$file',\tfunction(){\n\t$file::index();\n});";
+			$RouterContent 	 = "\n\n// $file Route \n";
+			$RouterContent 	.= 'Route::controller("'.$file.'","'.$file.'");';
+			
+			file_put_contents($RouterFile, $RouterContent, FILE_APPEND | LOCK_EX);
+		}
+		
 		echo "le controller est créé";
 	}
 	else
