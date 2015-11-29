@@ -265,6 +265,32 @@ body
 	margin-top: 5px;
 }
 
+.MD_unit_slategray
+{
+	background-color: #607D8B;
+	color:white;
+}
+
+
+.unit_title_slategray
+{
+	background-color: #53606c;
+	color:white;
+}
+
+.unit_btn_slategray
+{
+	background-color: transparent;
+	transition: all 150ms ease-in;
+	color:white;
+}
+
+.unit_btn_slategray:hover
+{
+	background-color: #53606c;
+	color:white;
+}
+
 .MD_unit_blue
 {
 	background-color: #1d88e5;
@@ -524,6 +550,56 @@ body
 
 
 
+
+
+.switch {
+    position: relative; width: 31px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+	margin-top: 9px;
+}
+.switch-checkbox {
+    display: none;
+}
+.switch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 16px; padding: 0; line-height: 16px;
+    border: 2px solid #CCCCCC; border-radius: 16px;
+    background-color: #CCCCCC;
+    transition: background-color 0.3s ease-in;
+}
+.switch-label:before {
+    content: "";
+    display: block; width: 16px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 17px;
+    border: 2px solid #CCCCCC; border-radius: 16px;
+    transition: all 0.3s ease-in 0s; 
+}
+.switch-checkbox:checked + .switch-label-blue {
+    background-color: #0094a8;
+}
+.switch-checkbox:checked + .switch-label-blue, .switch-checkbox:checked + .switch-label-blue:before {
+   border-color: #0094a8;
+}
+
+.switch-checkbox:checked + .switch-label-violet {
+    background-color: #270052;
+}
+.switch-checkbox:checked + .switch-label-violet, .switch-checkbox:checked + .switch-label-violet:before {
+   border-color: #270052;
+}
+
+.switch-checkbox:checked + .switch-label-deeppink {
+    background-color: #bf0346;
+}
+.switch-checkbox:checked + .switch-label-deeppink, .switch-checkbox:checked + .switch-label-deeppink:before {
+   border-color: #bf0346;
+}
+
+.switch-checkbox:checked + .switch-label:before {
+    right: 0px; 
+}
 
 
 
