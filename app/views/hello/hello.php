@@ -174,13 +174,17 @@
 		<form class="config_form" id="form_4">
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="sel1">Etat</label>
+					<label for="sel1">Activation</label>
 				</div>
 				<div class="conf_input">
-					<select class="form-control" id="sel1" name="state">
+					<!-- <select class="form-control" id="sel1" name="state">
 					    <option value="true" selected>Activé</option>
 						<option value="false">Désactivé</option>
-			        </select>
+			        </select> -->
+			        <div class="switch">
+					    <input type="checkbox" name="stat" class="switch-checkbox" id="myswitch-violet" checked>
+					    <label class="switch-label switch-label-violet" for="myswitch-violet"></label>
+					</div>
 				</div>
 			</div>
 			<div class="control_c_row">
