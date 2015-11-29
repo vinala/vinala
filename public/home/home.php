@@ -463,8 +463,8 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 
 			
 			  	<div class="col-md-4">
-				    <div class="MD_unit MD_unit_purple">
-		            	<div class="MD_unit_title unit_title_purple">Nouvelle vue</div>
+				    <div class="MD_unit MD_unit_deeppink">
+		            	<div class="MD_unit_title unit_title_deeppink">Nouvelle vue</div>
 					    
 					    <form id="new_view" method="post" name="new_view">
 			            	<div class="control_row">
@@ -476,8 +476,19 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 							    	<label>* vous pouvez créer des vues dans des dossiers, même s'ils ne sont pas existés, en utilisant '.', par exemple: "user.show"</label>
 							    </div>
 							</div>
+							<div class="control_row">
+			            		<div class="col-md-4 form_control_label">
+							    	<label for="">Vue de Smarty</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<div class="switch">
+									    <input type="checkbox" name="new_controller_add_route" class="switch-checkbox" id="myswitch-deeppink" checked>
+									    <label class="switch-label switch-label-deeppink" for="myswitch-deeppink"></label>
+									</div>
+							    </div>
+							</div>
 							<div  class="MD_submit_row">
-								<input type="submit" value="Créé" class="btn unit_btn unit_btn_purple MD_submit_btn">
+								<input type="submit" value="Créé" class="btn unit_btn unit_btn_deeppink MD_submit_btn">
 							</div>
 						</form>
 					</div>
@@ -562,6 +573,17 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 							    	<input type="text" class="form-control" id="new_controller_class_name" name="new_controller_class_name" placeholder="Nom de class">
 							    </div>
 							</div>
+							<div class="control_row">
+			            		<div class="col-md-4 form_control_label">
+							    	<label for="">Ajouter un Route</label>
+							    </div>
+							    <div class="col-md-8">
+							    	<div class="switch">
+									    <input type="checkbox" name="new_controller_add_route" class="switch-checkbox" id="myswitch-blue" checked>
+									    <label class="switch-label switch-label-blue" for="myswitch-blue"></label>
+									</div>
+							    </div>
+							</div>
 
 							<div  class="MD_submit_row">
 								<input type="submit" value="Créé" class="btn unit_btn unit_btn_cyan MD_submit_btn">
@@ -615,14 +637,14 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 					</form>
             	</div>
 
-            	<div class="MD_unit MD_unit_deeppink">
-            		<div class="MD_unit_title unit_title_deeppink">Lancer Seeders</div>
+            	<div class="MD_unit MD_unit_slategray">
+            		<div class="MD_unit_title unit_title_slategray">Lancer Seeders</div>
             		<div class="col-md-9" style="margin-top: 15px;">
             			<p>Lancer tous les seeders dans la class SeedsCaller</p>
             		</div>
             		
 	            		<form id="run_seed" method="post" name="run_seed">
-							<input type="submit" value="Lancer" class="btn unit_btn unit_btn_deeppink MD_submit_btn" >
+							<input type="submit" value="Lancer" class="btn unit_btn unit_btn_slategray MD_submit_btn" >
 						</form>
 					
             	</div>
