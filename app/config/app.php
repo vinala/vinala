@@ -66,7 +66,6 @@
 	|---------------------------------------------- 
 	| hena encode dial l'application meni 
 	| tkhdem l methode HTML::charset() 
-	| 
 	*/ 
  
 	'charset'=> 'utf-8', 
