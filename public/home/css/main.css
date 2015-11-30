@@ -591,10 +591,10 @@ body
 }
 
 .switch-checkbox:checked + .switch-label-deeppink {
-    background-color: #bf0346;
+    background-color: #a6003a;
 }
 .switch-checkbox:checked + .switch-label-deeppink, .switch-checkbox:checked + .switch-label-deeppink:before {
-   border-color: #bf0346;
+   border-color: #a6003a;
 }
 
 .switch-checkbox:checked + .switch-label:before {
