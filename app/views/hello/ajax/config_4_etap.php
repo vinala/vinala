@@ -1,7 +1,9 @@
 <?php 
+	
 
-	if(isset($_POST['state'])) $state="true";
+	if(isset($_POST['stat'])) $state="true";
 	else $state="false";
+	//
 	$route=empty($_POST['route']) ? "fiesta" : $_POST['route'];
 	$pass_1=empty($_POST['pass_1']) ? "1234" : $_POST['pass_1'];
 	$pass_2=empty($_POST['pass_2']) ? "5678" : $_POST['pass_2'];
