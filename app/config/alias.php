@@ -6,8 +6,8 @@
 	|----------------------------------------------
 	| this array is resposible for aliases of class
 	| in the app, feel free to register as many as 
-    | you wish as the aliases are "lazy" loaded so 
-    | they don't hinder performance.
+    	| you wish as the aliases are "lazy" loaded so 
+	| they don't hinder performance.
 	|
 	**/
 
