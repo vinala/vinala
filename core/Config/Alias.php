@@ -12,15 +12,20 @@ class Alias
 
 	public static function ini($root)
 	{
-		self::load($root);
-		//
-		foreach (self::$aliases as $key => $value) 
-			class_alias ( "$value" , $key);
+		if(Config::get('alias.enable'))
+		{
+			self::load($root);
+			//
+			foreach (self::$aliases as $key => $value) 
+				class_alias ( "$value" , $key);
+		}
+		
 	}
 
 	protected static function load($root)
 	{
-		self::$aliases = include $root."../app/config/alias.php";
+		// if(Config::get('alias.enable'))
+		self::$aliases = Config::get('alias.aliases');
 		return self::$aliases;
 	}
 }

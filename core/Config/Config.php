@@ -253,6 +253,16 @@ class Config
 				else throw new ConfigException($val[1],$val[0]);
 				break;
 
+			case 'alias':
+				if(is_null(App::$root)) $tbl=(include '../app/config/alias.php');
+				else $tbl=(include App::$root.'../app/config/alias.php');
+				$ret=$tbl[$val[1]];
+				//
+				if($val[1] == "enable") { $ret=$tbl['enable']; }
+				else if($val[1] == "aliases") { $ret=$tbl['aliases']; }
+				else throw new ConfigException($val[1],$val[0]);
+				break;
+
 			default: throw new ConfigException($value);
 				break;
 
