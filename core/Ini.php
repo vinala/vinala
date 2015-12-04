@@ -40,118 +40,118 @@ class App
 		
 		
 		//
-		require __DIR__.'/../core/Access/ErrorHandler.php';
+		require self::$root.'../core/Access/ErrorHandler.php';
 
 		// Config
-		require __DIR__.'/../core/Config/Config.php';
-		require __DIR__.'/../core/Config/Exceptions/ConfigException.php';
+		require self::$root.'../core/Config/Config.php';
+		require self::$root.'../core/Config/Exceptions/ConfigException.php';
 
 		// Set the error log
 		ini_set("log_errors", 1);
-		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
+		ini_set("error_log", self::$root.'../app/storage/logs/fiesta.log');
 
 		// Set Whoops error handler
 		if($whoops) ErrorHandler::ini(self::$root);
 
 		//session
-		require __DIR__.'/../core/Storage/Session.php';
-		if($session)Session::start(__DIR__.'/../app/storage/session');
+		require self::$root.'../core/Storage/Session.php';
+		if($session)Session::start(self::$root.'../app/storage/session');
 
 		//Maintenance
-		require __DIR__.'/../core/Maintenance/Maintenance.php';
+		require self::$root.'../core/Maintenance/Maintenance.php';
 
 		//Objects
-		require __DIR__.'/../core/Objects/Vars.php';
-		require __DIR__.'/../core/Objects/String/String.php';
-		require __DIR__.'/../core/Objects/String/Exceptions/StringOutIndexException.php';
+		require self::$root.'../core/Objects/Vars.php';
+		require self::$root.'../core/Objects/String/String.php';
+		require self::$root.'../core/Objects/String/Exceptions/StringOutIndexException.php';
 
 		// Access
-		require __DIR__.'/../core/Access/Path.php';
+		require self::$root.'../core/Access/Path.php';
 
 		//Alias
-		require __DIR__.'/../core/Config/Alias.php';
+		require self::$root.'../core/Config/Alias.php';
 
 		//
-		//require __DIR__.'/../core/MVC/Templete.php';
-		require __DIR__.'/../core/Objects/Exception.php';
-		require __DIR__.'/../core/Resources/Faker.php';
+		//require self::$root.'../core/MVC/Templete.php';
+		require self::$root.'../core/Objects/Exception.php';
+		require self::$root.'../core/Resources/Faker.php';
 
-		require __DIR__.'/../core/Storage/Cookie.php';
+		require self::$root.'../core/Storage/Cookie.php';
 
 		// Routes
-		require __DIR__.'/../core/Router/Routes.php';
-		require __DIR__.'/../core/Router/Route.php';
-		require __DIR__.'/../core/Router/Exceptions/RouteNotFoundException.php';
+		require self::$root.'../core/Router/Routes.php';
+		require self::$root.'../core/Router/Route.php';
+		require self::$root.'../core/Router/Exceptions/RouteNotFoundException.php';
 
 		// Caches
-		require __DIR__.'/../core/Caches/Caches.php';
-		require __DIR__.'/../core/Caches/Cache.php';
-		require __DIR__.'/../core/Caches/FileCache.php';
-		require __DIR__.'/../core/Caches/DatabaseCache.php';
-		require __DIR__.'/../core/Caches/Exceptions/DriverNotFoundException.php';
+		require self::$root.'../core/Caches/Caches.php';
+		require self::$root.'../core/Caches/Cache.php';
+		require self::$root.'../core/Caches/FileCache.php';
+		require self::$root.'../core/Caches/DatabaseCache.php';
+		require self::$root.'../core/Caches/Exceptions/DriverNotFoundException.php';
 
 
-		require __DIR__.'/../core/Storage/Storage.php';
-		require __DIR__.'/../core/Security/Auth.php';
-		require __DIR__.'/../core/Objects/Table.php';
+		require self::$root.'../core/Storage/Storage.php';
+		require self::$root.'../core/Security/Auth.php';
+		require self::$root.'../core/Objects/Table.php';
 
 		// Database
-		require __DIR__.'/../core/Database/Schema.php';
-		require __DIR__.'/../core/Database/Migration.php';
-		require __DIR__.'/../core/Database/Seeder.php';
-		require __DIR__.'/../core/Database/Database.php';
-		require __DIR__.'/../core/Database/Drivers/MySql.php';
-		require __DIR__.'/../core/Database/Exceptions/DatabaseArgumentsException.php';
-		require __DIR__.'/../core/Database/Exceptions/DatabaseConnectionException.php';
+		require self::$root.'../core/Database/Schema.php';
+		require self::$root.'../core/Database/Migration.php';
+		require self::$root.'../core/Database/Seeder.php';
+		require self::$root.'../core/Database/Database.php';
+		require self::$root.'../core/Database/Drivers/MySql.php';
+		require self::$root.'../core/Database/Exceptions/DatabaseArgumentsException.php';
+		require self::$root.'../core/Database/Exceptions/DatabaseConnectionException.php';
 
 
-		require __DIR__.'/../core/Access/Url.php';
+		require self::$root.'../core/Access/Url.php';
 
-		require __DIR__.'/../core/Objects/DateTime.php';
-		require __DIR__.'/../core/Objects/Sys.php';
-		require __DIR__.'/../core/Http/Links.php';
-		require __DIR__.'/../core/Objects/Base.php';
-		require __DIR__.'/../core/Resources/Libs.php';
-		require __DIR__.'/../core/Hypertext/Res.php';
-		require __DIR__.'/../core/Hypertext/Input.php';
-		require __DIR__.'/../core/Security/License.php';
+		require self::$root.'../core/Objects/DateTime.php';
+		require self::$root.'../core/Objects/Sys.php';
+		require self::$root.'../core/Http/Links.php';
+		require self::$root.'../core/Objects/Base.php';
+		require self::$root.'../core/Resources/Libs.php';
+		require self::$root.'../core/Hypertext/Res.php';
+		require self::$root.'../core/Hypertext/Input.php';
+		require self::$root.'../core/Security/License.php';
 
 		//Languages
-		require __DIR__.'/../core/Lang/Lang.php';
-		require __DIR__.'/../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
+		require self::$root.'../core/Lang/Lang.php';
+		require self::$root.'../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
 
 		// MVC - model
-		require __DIR__.'/../core/MVC/Model/Model.php';
-		require __DIR__.'/../core/MVC/Model/ModelArray.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/ForeingKeyMethodException.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/ColumnNotEmptyException.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
+		require self::$root.'../core/MVC/Model/Model.php';
+		require self::$root.'../core/MVC/Model/ModelArray.php';
+		require self::$root.'../core/MVC/Model/Exceptions/ForeingKeyMethodException.php';
+		require self::$root.'../core/MVC/Model/Exceptions/ColumnNotEmptyException.php';
+		require self::$root.'../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
+		require self::$root.'../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
 
 		// MVC - View
 
-		require __DIR__.'/../core/MVC/View/View.php';
-		require __DIR__.'/../core/MVC/View/Libs/Template.php';
-		require __DIR__.'/../core/MVC/View/Libs/Views.php';
-		require __DIR__.'/../core/MVC/View/Exceptions/ViewNotFoundException.php';
+		require self::$root.'../core/MVC/View/View.php';
+		require self::$root.'../core/MVC/View/Libs/Template.php';
+		require self::$root.'../core/MVC/View/Libs/Views.php';
+		require self::$root.'../core/MVC/View/Exceptions/ViewNotFoundException.php';
 
-		require __DIR__.'/../core/Hypertext/HTML.php';
-		require __DIR__.'/../core/Security/Encrypt.php';
-		require __DIR__.'/../core/Security/Security.php';
-		require __DIR__.'/../core/MVC/Controller.php';
-		require __DIR__.'/../core/Http/Error.php';
-		require __DIR__.'/../core/Http/Root.php';
-		require __DIR__.'/../core/Mailing/Mail.php';
-		require __DIR__.'/../core/Objects/DataCollection.php';
-		require __DIR__.'/../core/Maintenance/Debug.php';
+		require self::$root.'../core/Hypertext/HTML.php';
+		require self::$root.'../core/Security/Encrypt.php';
+		require self::$root.'../core/Security/Security.php';
+		require self::$root.'../core/MVC/Controller.php';
+		require self::$root.'../core/Http/Error.php';
+		require self::$root.'../core/Http/Root.php';
+		require self::$root.'../core/Mailing/Mail.php';
+		require self::$root.'../core/Objects/DataCollection.php';
+		require self::$root.'../core/Maintenance/Debug.php';
 
 		// Filesystem
-		require __DIR__.'/../core/Filesystem/Exceptions/FileNotFoundException.php';
-		require __DIR__.'/../core/Filesystem/Exceptions/DirectoryNotFoundException.php';
-		require __DIR__.'/../core/Filesystem/Filesystem.php';
+		require self::$root.'../core/Filesystem/Exceptions/FileNotFoundException.php';
+		require self::$root.'../core/Filesystem/Exceptions/DirectoryNotFoundException.php';
+		require self::$root.'../core/Filesystem/Filesystem.php';
 
 		// Database files
-		require __DIR__.'/../core/Database/DBTable.php';
+		require self::$root.'../core/Database/DBTable.php';
 
 		//
 
