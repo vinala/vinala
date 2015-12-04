@@ -16,7 +16,7 @@ ou tout simplement télécharger depuis github [Ici](https://github.com/fiesta-f
 ## Exigences du Fiesta
 
 Fiesta a quelques exigences du système:
-* PHP >= 5.4
+* PHP >= 5.5
 * Activation de Extension mod_rewrite dans Apache
 
 ## Versions
