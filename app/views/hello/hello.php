@@ -1,5 +1,11 @@
 <head>
 <?php 
+	use Fiesta\Core\Resources\Libs;
+	use Fiesta\Core\HyperText\Html;
+	use Fiesta\Core\Access\Path;
+	use Fiesta\Core\Config\Config;
+	use Fiesta\Core\Translator\Lang;
+	//
 	Libs::css("app/library/bootstrap-3.3.1.min.css",false);
 	Libs::css("app/library/bootstrap-theme-3.3.1.min.css",false);
 	Libs::js("app/library/jquery-1.11.3.min.js",false);
@@ -42,6 +48,33 @@
 			        </select>
 				</div>
 			</div>
+
+			<div class="control_c_row">
+				<div class="conf_lab">
+					<label for="sel1">Debugging</label>
+				</div>
+				<div class="conf_input">
+			        <div class="switch">
+					    <input type="checkbox" name="ckeck_loggin" class="switch-checkbox" id="chechBox1" >
+					    <label class="switch-label switch-label-violet" for="chechBox1"></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="control_c_row">
+				<div class="conf_lab">
+					<label for="sel1">Maintenance</label>
+				</div>
+				<div class="conf_input">
+			        <div class="switch">
+					    <input type="checkbox" name="ckeck_maintenance" class="switch-checkbox" id="chechBox2" >
+					    <label class="switch-label switch-label-violet" for="chechBox2"></label>
+					</div>
+					<p class="conf_input_note">
+					Vous pouvez modifier le message d'erreur et de maintenance plus tard dans les fichiers de configuration</p>
+				</div>
+			</div>
+
 			<!-- <div class="bottom" id="bottom_panel">
 				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Fiesta Panel</div></a>
 			</div> -->
@@ -53,19 +86,7 @@
 		</form>
 	</div>
 
-	<!-- <div id="welcom" style="display:none">
-		<div class="text">
-			<?php 
-				echo Lang::get('welcome');
-				//
-				if(Base::full(Config::get('app.owner'))) 
-					echo " ".Config::get('app.owner');
-			?>
-		</div>
-	</div> -->
-	<!-- <div class="bottom_panel" id="bottom_panel">
-		<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Fiesta Panel</div></a>
-	</div> -->
+	
 
 	<div id="etap_2" style="display:none">
 	<h1 class="conf_title">Base de données</h1>
