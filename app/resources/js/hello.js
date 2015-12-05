@@ -26,7 +26,7 @@ $( document ).ready(function() {
 	}
 
 	$('#form_1').submit(function () {
-		$.post('app/views/hello/ajax/config_1_etap.php',$('#form_1').serialize(),function(data)
+        $.post('hello/1',$('#form_1').serialize(),function(data)
             {
                 if(data=="ok")
                 {
@@ -41,7 +41,7 @@ $( document ).ready(function() {
     });
 
     $('#form_2').submit(function () {
-		$.post('app/views/hello/ajax/config_2_etap.php',$('#form_2').serialize(),function(data)
+        $.post('hello/2',$('#form_2').serialize(),function(data)
             {
                 if(data=="ok")
                 {
@@ -54,7 +54,7 @@ $( document ).ready(function() {
     });
 
     $('#form_3').submit(function () {
-		$.post('app/views/hello/ajax/config_3_etap.php',$('#form_3').serialize(),function(data)
+        $.post('hello/3',$('#form_3').serialize(),function(data)
             {
                 if(data=="ok")
                 {
@@ -67,7 +67,7 @@ $( document ).ready(function() {
     });
 
     $('#form_4').submit(function () {
-		$.post('app/views/hello/ajax/config_4_etap.php',$('#form_4').serialize(),function(data)
+        $.post('hello/4',$('#form_4').serialize(),function(data)
             {
                 if(data=="ok")
                 {
