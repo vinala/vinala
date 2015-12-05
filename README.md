@@ -1,7 +1,7 @@
-# Fiesta
-Fiesta PHP Framework v2.5
+## Fiesta
+Fiesta PHP Framework (Beta)
 
-## Installation
+### Installation
 
 Vous pouvez installer Fiesta via [Composer](https://getcomposer.org/) en utilisent la commande create-project dans votre terminal
 
@@ -13,13 +13,13 @@ vous pouvez aussi includer le nom de projet :
 	
 ou tout simplement télécharger depuis github [Ici](https://github.com/fiesta-framework/Fiesta/archive/master.zip)
 	
-## Exigences du Fiesta
+### Exigences du Fiesta
 
 Fiesta a quelques exigences du système:
 * PHP >= 5.5
 * Activation de Extension mod_rewrite dans Apache
 
-## Versions
+### Versions
  
  [Fiesta Releases](https://github.com/fiesta-framework/Fiesta/releases)
 
@@ -43,11 +43,16 @@ Fiesta a quelques exigences du système:
  
  [Fiesta v 1.3.1](https://github.com/fiesta-framework/Fiesta/tree/1.3.1) (09/01/2015)
 
-## Configuration
+### Configuration
 
 Après l'installation de Fiesta vous devez modifier quelques paramètres de configuration dans `app/config`, Mais d'abord vous devez modifier les clés de sécurité de votre projet dans `app/config/security.php` ,key1 doit consiste d'une chaine aléatoire de 32 caractères et key2 doit être consisté d'une chaine de votre choix. Si la clé d'application n'est pas réglée, vos données chiffrées ne seront pas sécurisées.
 
 Aussi vous devez régler le paramètre de l'URL root `url` de votre projet que ce soit dans un serveur local où à distance dans `app/config/app.php`
 
+### License
+
+The Fiesta framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
 Launched in 10/10/2014
+
 Copyright 2014 Youssef Had, Inc.
