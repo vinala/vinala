@@ -95,7 +95,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 	<div class="alert_bg" id="alert_unit">
 		<div class="alert_main" id="alert_main">
 		<div class="alert_close" id="alert_close"><span class="glyphicon glyphicon-remove"></span></div>
-		<span id="alert_msg">Lorem ipsum dolor sit amet.</span></div>
+		<span id="alert_msg"></span></div>
 
 	</div>
 	<div class="top_header">
@@ -213,7 +213,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 							</div>
 						</div>
 
-						<div class="control_row">
+						<!-- <div class="control_row">
 							<div class="col-md-3 form_control_label">
 								<label for="">Type de schema</label>
 							</div>
@@ -223,7 +223,7 @@ else if($_SESSION['fiesta_pnl_fst_pass']==Config::get('panel.password1'))
 									<option value="vue">Vue</option>
 						        </select>
 							</div>
-						</div>
+						</div> -->
 
 						<div  class="MD_submit_row">
 							<input type="submit" value="Créé" class="btn unit_btn unit_btn_orange MD_submit_btn" >
