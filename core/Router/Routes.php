@@ -196,7 +196,7 @@ class Routes
 	{
 		$currentUrl=self::CheckUrl();
 		//
-		if(Maintenance::check())
+		if( ! Maintenance::check())
 		{
 			self::ReplaceParams();
 			self::Replace();
