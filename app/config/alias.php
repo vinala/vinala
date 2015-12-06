@@ -45,7 +45,7 @@
 			'Hash' => 			Fiesta\Core\Security\Hash::class,
 			'Html' => 			Fiesta\Core\HyperText\Html::class,
 			'Input' => 			Fiesta\Core\HyperText\Input::class,
-			'Lang' => 			Fiesta\Core\Translator\Lang::class,
+			'Translator' => 	Fiesta\Core\Translator\Lang::class,
 			'Libs' => 			Fiesta\Core\Resources\Libs::class,
 			'License' => 		Fiesta\Core\Security\License::class,
 			'Links' => 			Fiesta\Core\Http\Links::class,
@@ -65,5 +65,6 @@
 			'Url' => 			Fiesta\Core\Access\Url::class,
 			'Vars' => 			Fiesta\Core\Objects\Vars::class,
 			'View' => 			Fiesta\Core\MVC\View\View::class,
+			'Smiley' => 		Fiesta\Core\Translator\Smiley::class,
 		)
 	);
