@@ -4,6 +4,7 @@ namespace Fiesta\Core\Translator;
 
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Objects\Table;
+use Fiesta\Core\Access\Path;
 
 
 /**
@@ -19,11 +20,11 @@ class Smiley
 	**/
 	public static function Ini()
 	{
-		echo "<link href='app".Config::get('smiley.css')."' rel='stylesheet' type='text/css'>";
+		echo "<link href='".Path::$app.Config::get('smiley.css')."' rel='stylesheet' type='text/css'>";
 	}
 
 	/*
-	*	To Translate written smileys text to smiles images
+	*	To Translate written smileys text to smileys images
 	**/
 	public static function translate($text)
 	{
