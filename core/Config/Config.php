@@ -263,6 +263,18 @@ class Config
 				else throw new ConfigException($val[1],$val[0]);
 				break;
 
+			case 'smiley':
+				if(is_null(App::$root)) $tbl=(include '../app/config/smiley.php');
+				else $tbl=(include App::$root.'../app/config/smiley.php');
+				$ret=$tbl[$val[1]];
+				//
+				if($val[1] == "css") { $ret=$tbl['css']; }
+				else if($val[1] == "smileys") { $ret=$tbl['smileys']; }
+				else if($val[1] == "codes") { $ret=$tbl['codes']; }
+				else if($val[1] == "db_smileys") { $ret=$tbl['db_smileys']; }
+				else throw new ConfigException($val[1],$val[0]);
+				break;
+
 			default: throw new ConfigException($value);
 				break;
 
