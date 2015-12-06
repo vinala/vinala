@@ -117,8 +117,9 @@ class App
 		require self::$root.'../core/Security/License.php';
 
 		//Languages
-		require self::$root.'../core/Lang/Lang.php';
-		require self::$root.'../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
+		require self::$root.'../core/Translator/Lang.php';
+		require self::$root.'../core/Translator/Exceptions/LanguageKeyNotFoundException.php';
+		require self::$root.'../core/Translator/Smiley.php';
 
 		// MVC - model
 		require self::$root.'../core/MVC/Model/Model.php';
