@@ -82,44 +82,44 @@ class Routes
 		return $url2;
 	}
 
-	protected static function addCallable($url,$callback,$methode,$subdomain=null)
+	protected static function addCallable($_url_,$_callback_,$_methode_,$_subdomain_=null)
 	{
-		$name=self::convert($url);
+		$_name_=self::convert($_url_);
 		$r = array(
-			'name' => $name ,
-			'url' => $url , 
-			'callback' => $callback,
-			'methode' => $methode,
+			'name' => $_name_ ,
+			'url' => $_url_ , 
+			'callback' => $_callback_,
+			'methode' => $_methode_,
 			"filtre" => null,
-			"subdomain" => $subdomain,
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => "$name"."/" , 
-			'url' => $url."/" , 
-			'callback' => $callback,
-			'methode' => $methode,
+			'name' => "$_name_"."/" , 
+			'url' => $_url_."/" , 
+			'callback' => $_callback_,
+			'methode' => $_methode_,
 			"filtre" => null,
-			"subdomain" => $subdomain,
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
 	}
 
-	protected static function addFiltred($uri,$callback,$methode,$subdomain=null)
+	protected static function addFiltred($_uri_,$_callback_,$_methode_,$_subdomain_=null)
 	{
-		$name=self::convert($url);
+		$_name_=self::convert($_url_);
 		$r = array(
-			'name' => $name , 
-			'url' => $url , 
-			'callback' => $callback[1],
-			'methode' => $methode,
-			"filtre" => $callback[0],
-			"subdomain" => $subdomain,
+			'name' => $_name_ , 
+			'url' => $_url_ , 
+			'callback' => $_callback_[1],
+			'methode' => $_methode_,
+			"filtre" => $_callback_[0],
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 
@@ -127,12 +127,12 @@ class Routes
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => $name."/" , 
-			'url' => $url."/" , 
-			'callback' => $callback[1],
-			'methode' => $methode,
-			"filtre" => $callback[0],
-			"subdomain" => $subdomain,
+			'name' => $_name_."/" , 
+			'url' => $_url_."/" , 
+			'callback' => $_callback_[1],
+			'methode' => $_methode_,
+			"filtre" => $_callback_[0],
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 		//
@@ -379,25 +379,25 @@ class Routes
 			//		self::$requests[$i]['url']=str_replace('{}', '(.*)?', self::$requests[$i]['url']); 
 	}
 
-	protected static function addFilter($name,$callback,$falsecall=null)
+	protected static function addFilter($_name_,$_callback_,$_falsecall_=null)
 	{
 		$r = array(
-			'name' => $name,
-			'callback' => $callback,
-			'falsecall' => $falsecall
+			'name' => $_name_,
+			'callback' => $_callback_,
+			'falsecall' => $_falsecall_
 			 );
-		self::$filters[$name]=$r;
+		self::$filters[$_name_]=$r;
 		//if(!is_null($falsecall)) self::$_falsecall[$filter]=$falsecall;
 	}
 
-	public static function filter($name,$callback,$falsecall=null)
+	public static function filter($_name_,$_callback_,$_falsecall_=null)
 	{
-		self::addFilter($name,$callback,$falsecall);
+		self::addFilter($_name_,$_callback_,$_falsecall_);
 	}
 
-	protected static function getFilterCallback($name)
+	protected static function getFilterCallback($_name_)
 	{
-		return self::$filters[$name];
+		return self::$filters[$_name_];
 	}
 
 	protected static function callFilter($filtre,&$ok,&$falseok)
@@ -518,9 +518,9 @@ class Routes
 			$callback=function() use ($controller,$methode){ $controller::$methode(); };
 			
 
-		$name=self::convert($url);
+		$_name_=self::convert($url);
 		$r = array(
-			'name' => $name ,
+			'name' => $_name_ ,
 			'url' => $url , 
 			'callback' => $callback,
 			'methode' => "resource",
@@ -532,7 +532,7 @@ class Routes
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => "$name"."/" , 
+			'name' => "$_name_"."/" , 
 			'url' => $url."/" , 
 			'callback' => $callback,
 			'methode' => "resource",

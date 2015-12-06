@@ -20,9 +20,9 @@ class Route
 		return Routes::get($uri,$callback);
 	}
 
-	public static function filter($name,$callback,$falsecall=null)
+	public static function filter($_name_,$callback,$falsecall=null)
 	{
-		return Routes::filter($name,$callback,$falsecall);
+		return Routes::filter($_name_,$callback,$falsecall);
 	}
 
 	public static function controller($uri,$controller,$data=null)
