@@ -8,6 +8,7 @@ use Fiesta\Core\MVC\Model\Exception\ManyPrimaryKeysException;
 use Fiesta\Core\MVC\Model\Exception\PrimaryKeyNotFoundException;
 use Fiesta\Core\Database\Database;
 use Fiesta\Core\Config\Config;
+use Fiesta\Core\Objects\Date_Time as Time;
 
 
 /**
@@ -15,28 +16,33 @@ use Fiesta\Core\Config\Config;
 */
  class Model
 {
-	// protected $test;
 	protected static $table;
 	protected $DBtable;
 	protected $columns= array();
 	protected $key;
-	// protected $object;
 	//
+	protected $isKept = false;
+	protected $isMaj = false;
+	protected $areMaj = 0;
 
 	public function __construct($pk=null,$table=null) 
 	{
-		if(!is_null($table)) $this->setTable($table);
-		else $this->setTable(static::$table);
+		$this->setTable($table);
 		$this->setColmuns();
 		$this->setKey();
 		if( ! is_null($pk)) $this->setData($pk);
+	}
+
+	protected function getColmuns()
+	{
+		return Database::read("select COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '".Config::get('database.database')."' AND TABLE_NAME = '".$this->DBtable."';");
 	}
 
 	protected function setColmuns()
 	{
 		$data=array();
 		//
-		$rows = Database::read("select COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '".Config::get('database.database')."' AND TABLE_NAME = '".$this->DBtable."';");
+		$rows = $this->getColmuns();
 		//
 		foreach($rows as $key => $value)
 			foreach($value as $key2 => $value2)
@@ -44,22 +50,33 @@ use Fiesta\Core\Config\Config;
     			{
     				$data[]=$value2;
     				$this->setVars($value2);
+    				if($value2 == "deleted_at") $this->isKept = true;
+    				if($value2 == "created_at" ) $this->areMaj++;
+    				else if($value2 == "edited_at" ) $this->areMaj++;
+    				//
+    				if($this->areMaj == 2) $this->isMaj = true;
     			}
     	//
     	$this->columns=$data;
     	$this->setForeign();
 	}
 
-	protected function setVars($key,$value = null)
+	protected function setVars($key,$value = null,$kept=false)
 	{
-		$this->$key = $value ;
+		if( ! $kept ) $this->$key = $value ;
+		else if( $kept && $key == "deleted_at") $this->$key = $value ;
+	}
+
+	protected function getKey()
+	{
+		return Database::read("SHOW INDEX FROM ".$this->DBtable." WHERE `Key_name` = 'PRIMARY'");;
 	}
 
 	protected function setKey()
 	{
 		$data = array();
 		//
-		$rows=Database::read("SHOW INDEX FROM ".$this->DBtable." WHERE `Key_name` = 'PRIMARY'");
+		$rows = $this->getKey();
 		//
 		if(count($rows) > 1) throw new ManyPrimaryKeysException();
 		else if(count($rows) == 0 ) throw new PrimaryKeyNotFoundException($this->DBtable);
@@ -69,8 +86,29 @@ use Fiesta\Core\Config\Config;
 
 	protected function setTable($table)
 	{
+		if(is_null($table)) $table = static::$table;
+		//
 		if(Config::get('database.prefixing')) $this->DBtable = Config::get('database.prefixe') . $table;
 		else $this->DBtable=$table;
+	}
+
+	protected function setData($pk)
+	{
+		// if( ! $this->isKept) 
+			$sql = "select * from ".$this->DBtable." where ".$this->key."='".$pk."' ";
+		// else $sql = "select * from ".$this->DBtable." where ".$this->key."='".$pk."' where deleted_at<'".Time::now()."'";
+		//
+		$data=Database::read($sql,1);
+		//
+		if(count($data)==1)
+		{
+			$kept = false;
+			// for Smooth delete
+			if($this->isKept) if( $this->isSmoothDeleted($data) ) $kept = true;
+
+			foreach ($data[0] as $key => $value) $this->setVars($key,$value,$kept);
+			$this->putForeign();
+		}
 	}
 
 	protected function putForeign()
@@ -102,22 +140,39 @@ use Fiesta\Core\Config\Config;
 		}
 	}
 
+	protected function isSmoothDeleted($data)
+	{
+		if(is_null($data[0]["deleted_at"])) return false;
+		else
+		return $data[0]["deleted_at"] < Time::now();
+	}
+
 	protected static function instance()
 	{
 		$class=get_class();
 		return new $class(null,static::$table);
 	}
 
-	protected function setData($pk)
+	protected function getData()
 	{
-		$data=Database::read("select * from ".$this->DBtable." where ".$this->key."='".$pk."' ",1);
+		$vars = array();
+		$defaultVars = $this->getDefaultVars();
 		//
-		if(count($data)==1)
-		{
-			foreach ($data[0] as $key => $value) $this->setVars($key,$value);
-			$this->putForeign();
-		}
-		//else if(count($data)==0) $this->setForeign();
+		foreach (get_object_vars($this) as $key => $value) 
+			if(!in_array($key,$defaultVars))
+				$vars[$key]=$value; 
+		//
+		return $vars;
+	}
+
+	protected function clean()
+	{
+		$vars = array();
+		$defaultVars = $this->getDefaultVars();
+		//
+		foreach (get_object_vars($this) as $key => $value) 
+			if(!in_array($key,$defaultVars))
+				$this->$key = null; 
 	}
 
 	public static function find($id)
@@ -133,20 +188,10 @@ use Fiesta\Core\Config\Config;
 
 	protected function getDefaultVars()
 	{
-		return array('table','DBtable','columns','key');
+		return array('table','DBtable','columns','key','isKept','isMaj','areMaj',"pk","");
 	}
 
-	protected function getData()
-	{
-		$vars = array();
-		$defaultVars = $this->getDefaultVars();
-		//
-		foreach (get_object_vars($this) as $key => $value) 
-			if(!in_array($key,$defaultVars))
-				$vars[$key]=$value; 
-		//
-		return $vars;
-	}
+	
 
 	public function emptyPK()
 	{
@@ -167,7 +212,13 @@ use Fiesta\Core\Config\Config;
 		foreach ($data as $key => $value) {
 			if($i==0) { $colmn_string.="".$key; $value_string.="'".$value."'"; }
 			else { $colmn_string.=",".$key; $value_string.=",'".$value."'"; }
+			//
 			$i++;
+		}
+		if( $this->isMaj ) 
+		{
+			if($i==0) { $colmn_string.="created_at"; $value_string.="'".Time::now()."'"; }
+			else { $colmn_string.=",created_at"; $value_string.=",'".Time::now()."'"; }
 		}
 		//
 		$colmn_string.=")";
@@ -186,10 +237,25 @@ use Fiesta\Core\Config\Config;
 
 	public function delete()
 	{
+		if( $this->isKept ) $this->lightDelete();
+		else $this->forceDelete();
+	}
+
+	public function forceDelete()
+	{
 		$key=$this->getPKvalue();
-		$sql="delete from ".$this->DBtable." where ".$this->key."='".$key."'";
+		$sql="delete from ".$this->DBtable." where ".$this->key." = '".$key."' ";
 		//
 		return Database::exec($sql);
+	}
+
+	protected function lightDelete()
+	{
+		$now = Time::now();
+		$key=$this->getPKvalue();
+		//
+		$sql="update ".$this->DBtable." set deleted_at='".$now."' where ".$this->key." = '".$key."' ";
+		if(Database::exec($sql)) { $this->clean(); $this->deleted_at = $now; }
 	}
 
 	public static function all()
@@ -200,7 +266,6 @@ use Fiesta\Core\Config\Config;
 		//
 		$sql="select * from ".$self->DBtable;
 		return Database::read($sql,1);
-		//return json_encode($data);
 	}
 
 	public function edit()
@@ -210,11 +275,18 @@ use Fiesta\Core\Config\Config;
 		$data=$this->getData();
 		//
 		$i=0;
+		//
 		foreach ($data as $key => $value) 
 		{
 			if($i==0) { $sql.="$key='$value'"; }
 			else { $sql.=",$key='$value'"; }
 			$i++;
+		}
+
+		if( $this->isMaj ) 
+		{
+			if($i==0) { $sql.="edited_at='".Time::now()."'"; }
+			else { $sql.=",edited_at='".Time::now()."'"; }
 		}
 		//
 		$key=$this->getPKvalue();
@@ -284,16 +356,6 @@ use Fiesta\Core\Config\Config;
 		$data=$mod->get($remote, '=' , $val);
 		$data=$data->get();
 		return $data;
-		// //
-		// if(!is_null($data))
-		// {
-		// 	if(count($data)==1) return $data[0];
-		// 	else if(count($data)==0) return null;
-		// }
-		// else return null;
-
-
-
 	}
 
 	public function belongsTo($model , $local , $remote)
