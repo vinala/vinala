@@ -14,12 +14,12 @@ App::run(null,$Root,false,true,false);
 	$time2=date("Y/m/d H:i:s",time());
 	$time=time();
 	$name=$_POST['migname'];
-	$object=$_POST['object'];
+	// $object=$_POST['object'];
 	
 	$myfile = fopen($Root."../app/schemas/".$time."_".$name.".php", "w");
 	$txt = "<?php\n\n";
 
-	$txt.="/* Schema info\n* @date : ".$time2."(".$time.")\n* @name : ".$name."\n* @object : ".$object."\n*/\n\n\n";
+	$txt.="/* Schema info\n* @date : ".$time2."(".$time.")\n* @name : ".$name."\n\n\n\n";
 
 	$txt .= "\t/**\n\t * Run the schemas.\n\t*/\n";
 
@@ -54,7 +54,7 @@ App::run(null,$Root,false,true,false);
 		});
 	}
 	//
-	Database::exec("insert into ".Config::get('database.migration')."(name_schema,date_schema,status_schema,type_schema) values('".$name."','".$time."','init','".$object."')");
+	Database::exec("insert into ".Config::get('database.migration')."(name_schema,date_schema,status_schema,type_schema) values('".$name."','".$time."','init','table')");
 	//
 	Migration::updateRegister($time."_".$name,"init",$Root);
 
