@@ -5,9 +5,9 @@
 */
 class Script
 {
-	public static function make($name)
+	public static function make($_name_)
 	{
-		$name=str_replace(".", "/", $name);
-		include "../app/scripts/".$name.".php";
+		$_name_=str_replace(".", "/", $_name_);
+		include "../app/scripts/".$_name_.".php";
 	}
 }
