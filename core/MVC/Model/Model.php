@@ -273,7 +273,7 @@ use InvalidArgumentException;
 	public function getCallable($name)
 	{
 		if(method_exists($this, $name)) return call_user_func(array($this,$name));
-		else throw new InvalidArgumentException;
+		else throw new InvalidArgumentException("Undefined property: ".get_class($this)."::$name");
 	}
 
 
