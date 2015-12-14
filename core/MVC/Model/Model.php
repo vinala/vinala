@@ -9,6 +9,7 @@ use Fiesta\Core\MVC\Model\Exception\PrimaryKeyNotFoundException;
 use Fiesta\Core\Database\Database;
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Objects\Date_Time as Time;
+use InvalidArgumentException;
 
 
 /**
@@ -31,6 +32,11 @@ use Fiesta\Core\Objects\Date_Time as Time;
 		$this->setColmuns();
 		$this->setKey();
 		if( ! is_null($pk)) $this->setData($pk);
+	}
+
+	public function __get($name)
+	{
+		return $this->getCallable($name);
 	}
 
 	protected function getColmuns()
@@ -258,6 +264,22 @@ use Fiesta\Core\Objects\Date_Time as Time;
 		if(Database::exec($sql)) { $this->clean(); $this->deleted_at = $now; }
 	}
 
+
+	/**
+	 * Dynamic Property
+	 *
+	 * @param $name : name of the function
+	 */
+	public function getCallable($name)
+	{
+		if(method_exists($this, $name)) return call_user_func(array($this,$name));
+		else throw new InvalidArgumentException;
+	}
+
+
+	/**
+	 * Get all rows of Data Table
+	 */
 	public static function all()
 	{
 		$self=self::instance();
