@@ -11,7 +11,7 @@ if(!file_exists($Root."../app/models/$file.php"))
 		$myfile = fopen($Root."../app/models/$file.php", "w");
 		$txt = "<?php\n\nuse Fiesta\Core\MVC\Model\Model;\n\n";
 
-		$txt.="class $class extends Model\n\t{\n\t\t//Name of the table in database\n\t\tprotected static ".'$table'."='$table';\n\t\tprotected static ".'$foreignKeys=array();'."\n\n\t}";
+		$txt.="class $class extends Model\n{\n\t//Name of the table in database\n\tpublic static ".'$table'."='$table';\n\tprotected static ".'$foreignKeys=array();'."\n\n}";
 
 		fwrite($myfile, $txt);
 		fclose($myfile);
