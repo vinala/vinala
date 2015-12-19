@@ -129,6 +129,11 @@ class App
 		require self::$root.'../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
 		require self::$root.'../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
 
+		// MVC - Relations
+		require self::$root.'../core/MVC/Relations/OneToOne.php';
+		require self::$root.'../core/MVC/Relations/OneToMany.php';
+		require self::$root.'../core/MVC/Relations/Exceptions/ManyRelationException.php';
+
 		// MVC - View
 
 		require self::$root.'../core/MVC/View/View.php';
