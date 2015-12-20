@@ -8,7 +8,7 @@ use Fiesta\Core\MVC\Relations\Exception\ManyRelationException;
 use Fiesta\Core\MVC\Relations\Exception\ModelNotFindedException;
 
 /**
-* One to many relation
+* Many to many relation
 */
 class ManyToMany
 {
