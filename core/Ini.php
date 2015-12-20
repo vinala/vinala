@@ -106,7 +106,6 @@ class App
 
 
 		require self::$root.'../core/Access/Url.php';
-
 		require self::$root.'../core/Objects/DateTime.php';
 		require self::$root.'../core/Objects/Sys.php';
 		require self::$root.'../core/Http/Links.php';
@@ -116,24 +115,9 @@ class App
 		require self::$root.'../core/Hypertext/Input.php';
 		require self::$root.'../core/Security/License.php';
 
-		//Languages
-		require self::$root.'../core/Translator/Lang.php';
-		require self::$root.'../core/Translator/Exceptions/LanguageKeyNotFoundException.php';
-		require self::$root.'../core/Translator/Smiley.php';
-
-		// MVC - model
-		require self::$root.'../core/MVC/Model/Model.php';
-		require self::$root.'../core/MVC/Model/ModelArray.php';
-		require self::$root.'../core/MVC/Model/Exceptions/ForeingKeyMethodException.php';
-		require self::$root.'../core/MVC/Model/Exceptions/ColumnNotEmptyException.php';
-		require self::$root.'../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
-		require self::$root.'../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
-
-		// MVC - Relations
-		require self::$root.'../core/MVC/Relations/OneToOne.php';
-		require self::$root.'../core/MVC/Relations/OneToMany.php';
-		require self::$root.'../core/MVC/Relations/Exceptions/ManyRelationException.php';
-		require self::$root.'../core/MVC/Relations/Exceptions/ModelNotFindedException.php';
+		self::translatorCalls();
+		self::modelsCalls();
+		self::relationsCalls();
 
 		// MVC - View
 
@@ -244,5 +228,64 @@ class App
 		$r=explode("App.php", $sub);
 		//echo "*".$_SERVER["REQUEST_SCHEME"];
 		return "http://".$_SERVER["HTTP_HOST"].$r[0];
+	}
+
+	/**
+	 * Call files
+	 * @param $files array
+	 * @param $path string
+	 */
+	public static function call($files,$path)
+	{
+		foreach ($files as $file)
+			require $path.$file.".php";
+	}
+
+	/**
+	 * MVC Model relationships calls
+	 */
+	public static function relationsCalls()
+	{
+		// Files of relation
+		$files = array('OneToOne', 'OneToMany', 'ManyToMany', 'BelongsTo');
+		$filesPath = self::$root.'../core/MVC/Relations/';
+		self::call($files,$filesPath);
+
+		// Exeptions of relation
+		$exceptions = array('ManyRelationException', 'ModelNotFindedException');
+		$exceptionsPath = self::$root.'../core/MVC/Relations/Exceptions/';
+		self::call($exceptions,$exceptionsPath);
+	}
+
+	/**
+	 * MVC Model calls
+	 */
+	public static function modelsCalls()
+	{
+		// Files of models
+		$files = array('Model', 'ModelArray');
+		$filesPath = self::$root.'../core/MVC/Model/';
+		self::call($files,$filesPath);
+
+		// Exeptions of models
+		$exceptions = array('ForeingKeyMethodException', 'ColumnNotEmptyException', 'ManyPrimaryKeysException', 'PrimaryKeyNotFoundException');
+		$exceptionsPath = self::$root.'../core/MVC/Model/Exceptions/';
+		self::call($exceptions,$exceptionsPath);
+	}
+
+	/**
+	 * Translator calls
+	 */
+	public static function translatorCalls()
+	{
+		// Files of models
+		$files = array('Lang', 'Smiley');
+		$filesPath = self::$root.'../core/Translator/';
+		self::call($files,$filesPath);
+
+		// Exeptions of models
+		$exceptions = array('LanguageKeyNotFoundException');
+		$exceptionsPath = self::$root.'../core/Translator/Exceptions/';
+		self::call($exceptions,$exceptionsPath);
 	}
 }
