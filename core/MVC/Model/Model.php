@@ -6,10 +6,15 @@ use Fiesta\Core\MVC\Model\Exception\ColumnNotEmptyException;
 use Fiesta\Core\MVC\Model\Exception\ForeingKeyMethodException;
 use Fiesta\Core\MVC\Model\Exception\ManyPrimaryKeysException;
 use Fiesta\Core\MVC\Model\Exception\PrimaryKeyNotFoundException;
+use Fiesta\Core\MVC\Model\Exception\ManyRelationException;
 use Fiesta\Core\Database\Database;
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Objects\Date_Time as Time;
 use InvalidArgumentException;
+use Fiesta\Core\Objects\String;
+use Fiesta\Core\Objects\Table;
+use Fiesta\Core\MVC\Relations\OneToOne;
+use Fiesta\Core\MVC\Relations\OneToMany;
 
 
 /**
@@ -17,6 +22,13 @@ use InvalidArgumentException;
 */
  class Model
 {
+	 /**
+     * primary key for the model
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
 	protected static $table;
 	protected $DBtable;
 	protected $columns= array();
@@ -30,7 +42,7 @@ use InvalidArgumentException;
 	{
 		$this->setTable($table);
 		$this->setColmuns();
-		$this->setKey();
+		$this->setPrimaryKey();
 		if( ! is_null($pk)) $this->setData($pk);
 	}
 
@@ -73,26 +85,27 @@ use InvalidArgumentException;
 		else if( $kept && $key == "deleted_at") $this->$key = $value ;
 	}
 
-	protected function getKey()
+	protected function getPrimaryKey()
 	{
 		return Database::read("SHOW INDEX FROM ".$this->DBtable." WHERE `Key_name` = 'PRIMARY'");;
 	}
 
-	protected function setKey()
+	protected function setPrimaryKey()
 	{
 		$data = array();
 		//
-		$rows = $this->getKey();
+		$rows = $this->getPrimaryKey();
 		//
 		if(count($rows) > 1) throw new ManyPrimaryKeysException();
 		else if(count($rows) == 0 ) throw new PrimaryKeyNotFoundException($this->DBtable);
 		//
 		$this->key=$rows[0]['Column_name'];
+		$this->primaryKey=$rows[0]['Column_name'];
 	}
 
 	protected function setTable($table)
 	{
-		if(is_null($table)) $table = static::$table;
+		$table = is_null($table) ? ! isset(static::$table) ? get_class($this) : static::$table : $table;
 		//
 		if(Config::get('database.prefixing')) $this->DBtable = Config::get('database.prefixe') . $table;
 		else $this->DBtable=$table;
@@ -101,8 +114,8 @@ use InvalidArgumentException;
 	protected function setData($pk)
 	{
 		// if( ! $this->isKept) 
-			$sql = "select * from ".$this->DBtable." where ".$this->key."='".$pk."' ";
-		// else $sql = "select * from ".$this->DBtable." where ".$this->key."='".$pk."' where deleted_at<'".Time::now()."'";
+			$sql = "select * from ".$this->DBtable." where ".$this->primaryKey."='".$pk."' ";
+		// else $sql = "select * from ".$this->DBtable." where ".$this->primaryKey."='".$pk."' where deleted_at<'".Time::now()."'";
 		//
 		$data=Database::read($sql,1);
 		//
@@ -201,7 +214,7 @@ use InvalidArgumentException;
 
 	public function emptyPK()
 	{
-		$key=$this->key;
+		$key=$this->primaryKey;
 		$this->$key=null;
 	}
 
@@ -238,7 +251,7 @@ use InvalidArgumentException;
 	protected function getPKvalue()
 	{
 		$data = $this->getData();
-		return $data[$this->key];
+		return $data[$this->primaryKey];
 	}
 
 	public function delete()
@@ -250,7 +263,7 @@ use InvalidArgumentException;
 	public function forceDelete()
 	{
 		$key=$this->getPKvalue();
-		$sql="delete from ".$this->DBtable." where ".$this->key." = '".$key."' ";
+		$sql="delete from ".$this->DBtable." where ".$this->primaryKey." = '".$key."' ";
 		//
 		return Database::exec($sql);
 	}
@@ -260,7 +273,7 @@ use InvalidArgumentException;
 		$now = Time::now();
 		$key=$this->getPKvalue();
 		//
-		$sql="update ".$this->DBtable." set deleted_at='".$now."' where ".$this->key." = '".$key."' ";
+		$sql="update ".$this->DBtable." set deleted_at='".$now."' where ".$this->primaryKey." = '".$key."' ";
 		if(Database::exec($sql)) { $this->clean(); $this->deleted_at = $now; }
 	}
 
@@ -312,7 +325,7 @@ use InvalidArgumentException;
 		}
 		//
 		$key=$this->getPKvalue();
-		$sql.=" where ".$this->key."='".$key."'";
+		$sql.=" where ".$this->primaryKey."='".$key."'";
 		//
 		return Database::exec($sql);
 	}
@@ -362,23 +375,38 @@ use InvalidArgumentException;
 		return $rows;
 	}
 
-	public function hasOne($model , $local , $remote=null)
+
+	/**
+	 * The has one relation for one to one
+	 *
+	 * @param $model : the model wanted to be related to the 
+	 *			current model
+	 * @param $local : if not null would be the local column
+	 *			of the relation
+	 * @param $remote : if not null would be the $remote column
+	 *			of the relation
+	 */
+	public function hasOne($model , $local = null , $remote=null)
 	{
-		$val=$this->$local;
-		if(is_object($val)) throw new ColumnNotEmptyException($local,$model);
-		$mod=new $model($val);
-		return $mod;
+		return (new OneToOne)->ini($model , $this , $local , $remote);
 	}
 
-	public function hasMany($model , $local , $remote)
+	
+	public function hasMany($model , $local = null , $remote = null)
 	{
-		$val=$this->$local;
-		if(is_object($val)) throw new ColumnNotEmptyException($local,$model);
-		$mod=new $model;
-		$data=$mod->get($remote, '=' , $val);
-		$data=$data->get();
-		return $data;
+		return (new OneToMany)->ini($model , $this , $local , $remote);
+		// return $this->oneToMany($model , $local , $remote);
 	}
+
+	public function oneToMany($model , $local = null , $remote = null)
+	{
+		$relationVal  = $this->relationValue($model , $local);
+		$relationColumn  = $this->relationColumn($model , $local);
+		//
+		$data=$this->getManyObject($model , $relationColumn , $relationVal);
+		die(var_dump($data));
+	}
+
 
 	public function belongsTo($model , $local , $remote)
 	{
