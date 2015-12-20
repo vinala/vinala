@@ -157,5 +157,15 @@ class Table
 		return $val;
 	}
 
+	/**
+	 * Sort an array
+	 * @param $array : array
+	*/
+	public static function sort($array)
+	{
+		sort($array);
+		return $array;
+	}
+
 
 }
