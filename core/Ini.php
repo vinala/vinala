@@ -133,6 +133,7 @@ class App
 		require self::$root.'../core/MVC/Relations/OneToOne.php';
 		require self::$root.'../core/MVC/Relations/OneToMany.php';
 		require self::$root.'../core/MVC/Relations/Exceptions/ManyRelationException.php';
+		require self::$root.'../core/MVC/Relations/Exceptions/ModelNotFindedException.php';
 
 		// MVC - View
 
