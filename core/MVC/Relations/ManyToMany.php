@@ -153,7 +153,7 @@ class ManyToMany
 	{
 		$intermediates = $this->intermediates($intermediates , $localColumn , $localValue);
 		//
-		$data = $this->all($intermediates , $remote , $remoteColumn);
+		$data = ! is_null($intermediates->data) ? $this->all($intermediates , $remote , $remoteColumn) : null ;
 		//
 		return $data;
 	}
