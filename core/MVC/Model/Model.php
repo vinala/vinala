@@ -15,6 +15,7 @@ use Fiesta\Core\Objects\String;
 use Fiesta\Core\Objects\Table;
 use Fiesta\Core\MVC\Relations\OneToOne;
 use Fiesta\Core\MVC\Relations\OneToMany;
+use Fiesta\Core\MVC\Relations\ManyToMany;
 
 
 /**
@@ -391,22 +392,35 @@ use Fiesta\Core\MVC\Relations\OneToMany;
 		return (new OneToOne)->ini($model , $this , $local , $remote);
 	}
 
-	
+	/**
+	 * The one to many relation
+	 *
+	 * @param $model : the model wanted to be related to the 
+	 *			current model
+	 * @param $local : if not null would be the local column
+	 *			of the relation
+	 * @param $remote : if not null would be the $remote column
+	 *			of the relation
+	 */
 	public function hasMany($model , $local = null , $remote = null)
 	{
 		return (new OneToMany)->ini($model , $this , $local , $remote);
-		// return $this->oneToMany($model , $local , $remote);
 	}
 
-	public function oneToMany($model , $local = null , $remote = null)
+	/**
+	 * The many to many relation
+	 *
+	 * @param $model : the model wanted to be related to the 
+	 *			current model
+	 * @param $local : if not null would be the local column
+	 *			of the relation
+	 * @param $remote : if not null would be the $remote column
+	 *			of the relation
+	 */
+	public function belongsToMany($model , $intermediate = null , $local = null , $remote = null)
 	{
-		$relationVal  = $this->relationValue($model , $local);
-		$relationColumn  = $this->relationColumn($model , $local);
-		//
-		$data=$this->getManyObject($model , $relationColumn , $relationVal);
-		die(var_dump($data));
+		return (new ManyToMany)->ini($model , $this , $intermediate , $local , $remote);
 	}
-
 
 	public function belongsTo($model , $local , $remote)
 	{
