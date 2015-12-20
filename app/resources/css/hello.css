@@ -53,6 +53,14 @@ body
 	text-align: right;
 }
 
+.bottom_panel_2
+{
+    color: white;
+    opacity: 0;
+    padding: 27px;
+    padding-right: 131px;
+}
+
 .hello_button
 {
 	background-color: transparent;

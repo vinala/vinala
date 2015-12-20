@@ -277,6 +277,7 @@
 		function fade2 () 
 		{
 			$( "#bottom_panel" ).fadeTo( "slow", 1 );
+			$( "#bottom_panel_2" ).fadeTo( "slow", 1 );
 			clearInterval(Timer2);
 		}
 
@@ -302,6 +303,9 @@
 		</div>
 	</div>
 	
+	<div class="bottom_panel bottom_panel_2" id="bottom_panel_2" style="display:none">
+	v 2.6
+	</div>
 	<div class="bottom_panel" id="bottom_panel" style="display:none">
 		<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Fiesta Panel</div></a>
 	</div>
