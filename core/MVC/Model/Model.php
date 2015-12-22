@@ -16,6 +16,7 @@ use Fiesta\Core\Objects\Table;
 use Fiesta\Core\MVC\Relations\OneToOne;
 use Fiesta\Core\MVC\Relations\OneToMany;
 use Fiesta\Core\MVC\Relations\ManyToMany;
+use Fiesta\Core\MVC\Relations\BelongsTo;
 
 
 /**
@@ -422,12 +423,13 @@ use Fiesta\Core\MVC\Relations\ManyToMany;
 		return (new ManyToMany)->ini($model , $this , $intermediate , $local , $remote);
 	}
 
-	public function belongsTo($model , $local , $remote)
+	public function belongsTo($model , $local = null , $remote=null)
 	{
-		$val=$this->$local;
-		$mod=new $model;
-		$data=$mod->get($remote, '=' , $val);
-		return $data->get();
+		return (new BelongsTo)->ini($model , $this , $local , $remote);
+		// $val=$this->$local;
+		// $mod=new $model;
+		// $data=$mod->get($remote, '=' , $val);
+		// return $data->get();
 	}
 
 }

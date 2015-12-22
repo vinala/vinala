@@ -118,6 +118,7 @@ class App
 		self::translatorCalls();
 		self::modelsCalls();
 		self::relationsCalls();
+		self::mediaCalls();
 
 		// MVC - View
 
@@ -287,5 +288,21 @@ class App
 		$exceptions = array('LanguageKeyNotFoundException');
 		$exceptionsPath = self::$root.'../core/Translator/Exceptions/';
 		self::call($exceptions,$exceptionsPath);
+	}
+
+	/**
+	 * Media calls
+	 */
+	public static function mediaCalls()
+	{
+		// Files of models
+		$files = array('QR');
+		$filesPath = self::$root.'../core/Media/';
+		self::call($files,$filesPath);
+
+		// // Exeptions of models
+		// $exceptions = array('LanguageKeyNotFoundException');
+		// $exceptionsPath = self::$root.'../core/Translator/Exceptions/';
+		// self::call($exceptions,$exceptionsPath);
 	}
 }

@@ -116,7 +116,7 @@ class OneToOne
 	protected function checkModels($related,$model)
 	{
 		if( ! class_exists($related)) $this->ModelNotFinded($related);
-		if( ! class_exists($model)) $this->ModelNotFinded($model);
+		if( ! class_exists(get_class($model))) $this->ModelNotFinded(get_class($model));
 	}
 
 	/**
