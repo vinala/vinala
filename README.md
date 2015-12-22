@@ -1,3 +1,4 @@
+![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/alpha/app/resources/images/fiesta_wild.png)
 ## Fiesta
 Fiesta PHP Framework (Beta)
 
