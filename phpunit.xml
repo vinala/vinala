@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-         bootstrap="bootstrap/start.php"
+         bootstrap="core/Ini.php"
          colors="true"
          stopOnFailure="false">
     <php>
