@@ -2,7 +2,14 @@
 	"name": "fiesta/fiesta",
 	"description": "The Fiesta PHP Framework.",
 	"keywords": ["framework", "fiesta"],
-	"license": "GNU",
+	"license": "MIT",
+	"authors": [
+        {
+            "name": "Youssef Had",
+            "email": "youssefhad2@gmail.com"
+        }
+    ],
+
 	"require": {
         "php": ">=5.5.9"
     },
