@@ -115,6 +115,7 @@ class App
 		require self::$root.'../core/Hypertext/Input.php';
 		require self::$root.'../core/Security/License.php';
 
+		self::vendor();
 		self::translatorCalls();
 		self::modelsCalls();
 		self::relationsCalls();
@@ -211,6 +212,15 @@ class App
 		}
 
 
+	}
+
+	/**
+	 * call vendor
+	 */
+	public static function vendor()
+	{
+		$path = is_null(App::$root) ? '../vendor/autoload.php' : App::$root.'../vendor/autoload.php';
+		include_once $path;
 	}
 
 	public static function before($fun)
