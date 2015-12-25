@@ -28,21 +28,18 @@ class Views
 		$_tpl_=false;
 		//
 		if(file_exists($_link1_)) { $_link3_=$_link1_; $_tpl_=false; }
-		else if(file_exists($_link2_)) { $_link3_=$_link2_; $tpl=true; }
+		else if(file_exists($_link2_)) { $_link3_=$_link2_; $_tpl_=true; }
 		else { throw new ViewNotFoundException($_name_); }
 
 		if($_tpl_)
 		{
 			self::$showed="tpl";
 			Template::show($_link3_,$_data_);
-
-
 		}
 		else
 		{
 			self::$showed="smpl";
 			include($_link3_);
-
 		}
 
 
