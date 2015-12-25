@@ -38,7 +38,7 @@ class App
 		self::$page=$p;
 		self::$root=$root;
 		
-		
+		self::vendor();
 		//
 		require self::$root.'../core/Logging/Handler.php';
 
@@ -115,7 +115,7 @@ class App
 		require self::$root.'../core/Hypertext/Input.php';
 		require self::$root.'../core/Security/License.php';
 
-		self::vendor();
+		
 		self::translatorCalls();
 		self::modelsCalls();
 		self::relationsCalls();
