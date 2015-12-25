@@ -31,7 +31,7 @@ class App
 	public static $root;
 	public static $Callbacks = array('before'=>null,'after'=>null);
 
-	public static function run($p=null,$root=null,$routes=true,$session=true,$whoops=true)
+	public static function run($p=null,$root=null,$routes=true,$session=true)
 	{
 		ob_start();
 		//
@@ -51,7 +51,7 @@ class App
 		ini_set("error_log", self::$root.'../app/storage/logs/fiesta.log');
 
 		// Set Whoops error handler
-		if($whoops) Handler::ini(self::$root);
+		Handler::ini(self::$root);
 
 		//session
 		require self::$root.'../core/Storage/Session.php';
