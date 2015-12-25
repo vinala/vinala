@@ -15,7 +15,7 @@ Route::get("/",function()
 	return View::make('hello.hello');
 });
 
-Route::post("hello/1",function(){ helloController::firstStep(); });
-Route::post("hello/2",function(){ helloController::secondStep(); });
-Route::post("hello/3",function(){ helloController::thirdStep(); });
-Route::post("hello/4",function(){ helloController::fourthStep(); });
+Route::get("hello/{step}",function($step)
+{
+	return helloController::steps($step);
+});
