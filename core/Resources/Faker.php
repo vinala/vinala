@@ -14,9 +14,6 @@ class Faker
 	
 	public static function ini()
 	{
-		if(is_null(App::$root))
-		include_once '../core/Associates/FakerMaster/src/autoload.php';
-		else include_once App::$root.'../core/Associates/FakerMaster/src/autoload.php';
 		self::$Mainfaker = Factory::create();
 	}
 
