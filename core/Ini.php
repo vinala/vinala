@@ -9,7 +9,7 @@
 namespace Fiesta\Core\Glob;
 
 use Fiesta\Core\Storage\Session;
-use Fiesta\Core\Access\ErrorHandler;
+use Fiesta\Core\Logging\Handler;
 use Fiesta\Core\Config\Alias;
 use Fiesta\Core\Objects\Sys;
 use Fiesta\Core\Access\Url;
@@ -40,7 +40,7 @@ class App
 		
 		
 		//
-		require self::$root.'../core/Access/ErrorHandler.php';
+		require self::$root.'../core/Logging/Handler.php';
 
 		// Config
 		require self::$root.'../core/Config/Config.php';
@@ -51,7 +51,7 @@ class App
 		ini_set("error_log", self::$root.'../app/storage/logs/fiesta.log');
 
 		// Set Whoops error handler
-		if($whoops) ErrorHandler::ini(self::$root);
+		if($whoops) Handler::ini(self::$root);
 
 		//session
 		require self::$root.'../core/Storage/Session.php';
