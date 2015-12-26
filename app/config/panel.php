@@ -38,7 +38,7 @@ return array(
 	| 
 	*/
 
-	'folder'=>'home',
+	'folder'=>'panel',
 
 
 	/*
