@@ -18,6 +18,7 @@
 		"smarty/smarty": "~3.1.21",
 		"swiftmailer/swiftmailer": "5.3.1",
 		"fiesta/whoops": "~1.2.0",
-		"monolog/monolog": "~1.17.2"
+		"monolog/monolog": "~1.17.2",
+		"fiesta/panel": "~2.0"
 	}
 }
