@@ -104,7 +104,6 @@ class helloController extends Controller
 			case 4: self::fourthStep(); break;
 		}
 	}
-
 	
 	public static function firstStep()
 	{
@@ -138,8 +137,6 @@ class helloController extends Controller
 		file_put_contents("../app/config/maintenance.php", $contect_maintenance, 0);
 		echo "ok";
 	}
-
-
 
 	public static function secondStep()
 	{
