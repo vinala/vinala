@@ -594,7 +594,7 @@ class Routes
 if(Config::get('panel.enable'))
 {
 	Routes::get(Config::get('panel.route'),function(){
-		include '../vendor/fiesta/panel/App.php';
+		include '../vendor/fiesta/'.Config::get('panel.folder').'/index.php';
 	});
 
 	Routes::get(Config::get('panel.route')."/{op}",function($op){
