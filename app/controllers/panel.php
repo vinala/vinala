@@ -370,3 +370,72 @@ class Model
 		return $txt;
 	}
 }
+
+/**
+* View class
+*/
+class View
+{
+	protected static function replace($name)
+	{
+		return str_replace(".", "/", $name);
+	}
+	public static function create()
+	{
+		$file	=	self::replace($_POST['new_view_file_name']);
+		$pos 	= 	strpos($file, "/");
+		$Root	=	"../";
+		if($pos)
+		{
+			$file		= 	explode("/", $file);
+			$structure 	=   "../app/views/".$file[0]."/";
+			//
+			if(mkdir($structure, 0777, true)) 
+			{
+				if(strpos($file[1], "."))
+				{
+					$ext 		= 	explode(".", $file[1]);
+					$extention 	= 	$ext[1] ?  $ext[1] : "php";
+					//
+					echo self::CreatView($file[1], "../app/views/".$file[0]."/", $extention);
+				}
+				else echo self::CreatView($file[1], "../app/views/".$file[0]."/", "php");
+			}
+			else echo ('Echec lors de la création des répertoires...');
+			
+		}
+		else
+		{
+			if(strpos($file, "."))
+			{
+				$ext 		= 	explode(".", $file);
+				$extention 	= 	$ext[1] ?  $ext[1] : "php";
+				//
+				echo self::CreatView($file, "../app/views/", $extention);
+			}
+			else echo self::CreatView($file, "../app/views/", "php");
+		}
+
+	}
+
+	protected static function CreatView($file, $path, $ext = 'php')
+	{
+		if( ! file_exists($path."$file.php"))
+		{
+			$myfile = fopen($path."$file.php", "w");
+			//
+			$txt = self::set($ext , $file);
+			//
+			fwrite($myfile, $txt);
+			fclose($myfile);
+			//
+			return "Le view a été creé";
+		}
+		else return "Le fichier deja existe";
+	}
+
+	protected static function set($ext , $file)
+	{
+		return ($ext == 'tpl') ? "{* View file  : $file *} \n" : (($ext == 'php') ? "<?php\n\n/**\n* View file  : $file\n*/\n\n" : "");
+	}
+}
