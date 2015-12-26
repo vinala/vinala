@@ -37,8 +37,8 @@ class Migration
 
 	protected static function createRegister($root)
 	{
-		if(!(new Filesystem)->exists($root.'../app/schemas/.register'))
-			(new Filesystem)->put($root.'../app/schemas/.register',"");
+		if(!(new Filesystem)->exists($root.'app/schemas/.register'))
+			(new Filesystem)->put($root.'app/schemas/.register',"");
 	}
 	
 	protected static function setRegister($array,$root)
@@ -47,7 +47,7 @@ class Migration
 		//
 		$s = serialize($array);
 		//
-		file_put_contents($root.'../app/schemas/.register', $s);
+		file_put_contents($root.'app/schemas/.register', $s);
 		//
 		
 	}
@@ -56,7 +56,7 @@ class Migration
 	{
 		self::createRegister($root);
 		//
-		$f=file_get_contents($root.'../app/schemas/.register');
+		$f=file_get_contents($root.'app/schemas/.register');
 		$data = unserialize($f);
 		$data = !($data) ? array() : $data ;
 		//
@@ -113,7 +113,7 @@ class Migration
 
 	protected static function getSchemas($root)
 	{
-		$f=glob($root.'../app/schemas/*.php');
+		$f=glob($root.'app/schemas/*.php');
 		$sch = array();
 		//
 		foreach ($f as $value) {
