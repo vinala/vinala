@@ -10,6 +10,8 @@ use Fiesta\Core\Router\Exception\RouteNotFoundException;
 use Fiesta\Core\Http\Errors;
 use Fiesta\Core\Glob\App;
 use Fiesta\Core\Access\Url;
+use Fiesta\Core\Panel\Migrations;
+
 
 /**
 * Routes 2
@@ -584,7 +586,15 @@ class Routes
 }
 
 if(Config::get('panel.enable'))
-Routes::get(Config::get('panel.route'),function()
 {
-	include Config::get('panel.folder').'/home.php';
-});
+	Routes::get(Config::get('panel.route'),function(){
+		include '../vendor/fiesta/panel/App.php';
+	});
+
+	Routes::get(Config::get('panel.route')."/{op}",function($op){
+		switch ($op) {
+			case 'new_migration': Migrations::add(); break;
+		}
+	});
+}
+
