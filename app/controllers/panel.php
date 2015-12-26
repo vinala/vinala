@@ -1,6 +1,6 @@
 <?php
 
-namespace Fiesta\Core\Panel;
+namespace Fiesta\Vendor\Panel;
 //
 // use Fiesta\Core\MVC\Controller\Controller as Ctrl;
 use Fiesta\Core\Glob\App;
