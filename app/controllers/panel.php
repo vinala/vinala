@@ -27,6 +27,11 @@ class Panel
 class Seeds
 {
 
+	public static function exec()
+	{
+		echo Seeder::ini();
+	}
+
 	public static function add()
 	{
 		$nom=$_POST['seedname_name'];
@@ -234,9 +239,6 @@ class Migrations
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
-
-
-
 	}
 }
 
