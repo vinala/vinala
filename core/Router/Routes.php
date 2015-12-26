@@ -10,13 +10,13 @@ use Fiesta\Core\Router\Exception\RouteNotFoundException;
 use Fiesta\Core\Http\Errors;
 use Fiesta\Core\Glob\App;
 use Fiesta\Core\Access\Url;
-use Fiesta\Core\Panel\Seeds;
-use Fiesta\Core\Panel\Migrations;
-use Fiesta\Core\Panel\Controller;
-use Fiesta\Core\Panel\Lang;
-use Fiesta\Core\Panel\Link;
-use Fiesta\Core\Panel\Model;
-use Fiesta\Core\Panel\View;
+use Fiesta\Vendor\Panel\Seeds;
+use Fiesta\Vendor\Panel\Migrations;
+use Fiesta\Vendor\Panel\Controller;
+use Fiesta\Vendor\Panel\Lang;
+use Fiesta\Vendor\Panel\Link;
+use Fiesta\Vendor\Panel\Model;
+use Fiesta\Vendor\Panel\View;
 
 
 /**
