@@ -13,6 +13,7 @@ use Fiesta\Core\Access\Url;
 use Fiesta\Core\Panel\Seeds;
 use Fiesta\Core\Panel\Migrations;
 use Fiesta\Core\Panel\Controller;
+use Fiesta\Core\Panel\Lang;
 
 
 /**
@@ -599,6 +600,8 @@ if(Config::get('panel.enable'))
 			case 'exec_migration': Migrations::exec(); break;
 			case 'new_migration': Migrations::add(); break;
 			case 'new_controller': Controller::create(); break;
+			case 'new_dir_lang': Lang::createDir(); break;
+			case 'new_file_lang': Lang::createFile(); break;
 		}
 	});
 }
