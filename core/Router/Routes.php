@@ -609,6 +609,8 @@ if(Config::get('panel.enable'))
 			case 'new_link': Link::create(); break;
 			case 'new_model': Model::create(); break;
 			case 'new_view': View::create(); break;
+			case 'exec_cos_migration': Migrations::exec_cos(); break;
+			case 'rollback_cos_migration': Migrations::rollback_cos(); break;
 		}
 	});
 }
