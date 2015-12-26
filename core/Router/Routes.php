@@ -10,6 +10,7 @@ use Fiesta\Core\Router\Exception\RouteNotFoundException;
 use Fiesta\Core\Http\Errors;
 use Fiesta\Core\Glob\App;
 use Fiesta\Core\Access\Url;
+use Fiesta\Core\Panel\Seeds;
 use Fiesta\Core\Panel\Migrations;
 
 
@@ -592,7 +593,8 @@ if(Config::get('panel.enable'))
 	});
 
 	Routes::get(Config::get('panel.route')."/{op}",function($op){
-		switch ($op) {
+		switch ($op) {			
+			case 'new_seed': Seeds::add(); break;			
 			case 'new_migration': Migrations::add(); break;
 		}
 	});
