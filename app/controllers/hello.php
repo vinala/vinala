@@ -95,6 +95,16 @@ class helloController extends Controller
 		//
 	}
 
+	public static function steps($step)
+	{
+		switch ($step) {
+			case 1: self::firstStep(); break;
+			case 2: self::secondStep(); break;
+			case 3: self::thirdStep(); break;
+			case 4: self::fourthStep(); break;
+		}
+	}
+
 	
 	public static function firstStep()
 	{
