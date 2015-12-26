@@ -9,6 +9,7 @@ use Fiesta\Core\Database\Migration;
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Database\Schema;
 use Fiesta\Core\Database\Database;
+use Fiesta\Core\Objects\Date_Time as Time;
 
 /**
 * class de controller PanelController
@@ -297,5 +298,40 @@ class Lang
 	public static function set()
 	{
 		return "<?php\n\nreturn array(\n\t'var_lan_name_1' => 'var_lang_value_1',\n\t'var_lan_name_2' => 'var_lang_value_2'\n);";
+	}
+}
+
+/**
+* Link class
+*/
+class Link
+{
+	public static function create()
+	{
+		$time = Time::now();
+		$name=$_POST['link_name'];
+		if(empty($name)) $name=$time;
+		//
+		$Root="../";
+		if(!file_exists($Root."app/links/".$name.".php"))
+		{
+			$myfile = fopen($Root."app/links/".$name.".php", "w");
+			$txt = self::set($name);
+			fwrite($myfile, $txt);
+			fclose($myfile);
+			//
+			echo "Le fichier link a été creé";
+		}
+		else echo "Le fichier deja existe";
+	}
+
+	public static function set($name)
+	{
+		$txt = "<?php\n\n";
+		$txt.="/*\n\tlinks of ".$name."\n*/\n\n";
+		$txt .= "return array(\n\t'link_name_1' => 'link_value_1',\n\t'link_name_2' => 'link_value_2'\n);";
+		$txt .= "\n\n?>";
+
+		return $txt;
 	}
 }
