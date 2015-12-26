@@ -57,7 +57,7 @@ class Migration
 		self::createRegister($root);
 		//
 		$f=file_get_contents($root.'app/schemas/.register');
-		$data = unserialize($f);
+		$data = strlen($f) > 2 ? unserialize($f) : "";
 		$data = !($data) ? array() : $data ;
 		//
 		return $data;
