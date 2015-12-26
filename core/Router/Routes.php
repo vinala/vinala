@@ -12,6 +12,7 @@ use Fiesta\Core\Glob\App;
 use Fiesta\Core\Access\Url;
 use Fiesta\Core\Panel\Seeds;
 use Fiesta\Core\Panel\Migrations;
+use Fiesta\Core\Panel\Controller;
 
 
 /**
@@ -597,6 +598,7 @@ if(Config::get('panel.enable'))
 			case 'new_seed': Seeds::add(); break;
 			case 'exec_migration': Migrations::exec(); break;
 			case 'new_migration': Migrations::add(); break;
+			case 'new_controller': Controller::create(); break;
 		}
 	});
 }
