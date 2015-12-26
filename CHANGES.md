@@ -8,7 +8,7 @@ New features:
  * creating system for storing infos about schema 
 
 
-### 2.5.0 (Beta)
+### 2.5.0
 ----------------------
 
 New features:
