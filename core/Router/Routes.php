@@ -593,8 +593,9 @@ if(Config::get('panel.enable'))
 	});
 
 	Routes::get(Config::get('panel.route')."/{op}",function($op){
-		switch ($op) {			
-			case 'new_seed': Seeds::add(); break;			
+		switch ($op) {
+			case 'new_seed': Seeds::add(); break;
+			case 'exec_migration': Migrations::exec(); break;
 			case 'new_migration': Migrations::add(); break;
 		}
 	});
