@@ -31,6 +31,11 @@ class App
 	public static $root;
 	public static $Callbacks = array('before'=>null,'after'=>null);
 
+	public static function version()
+	{
+		return "Fiesta v3 (3.0.*) PHP Framework";
+	}
+
 	public static function run($p=null,$root=null,$routes=true,$session=true)
 	{
 		ob_start();
