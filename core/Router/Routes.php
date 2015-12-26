@@ -601,6 +601,7 @@ if(Config::get('panel.enable'))
 		switch ($op) {
 			case 'new_seed': Seeds::add(); break;
 			case 'exec_migration': Migrations::exec(); break;
+			case 'rollback_migration': Migrations::rollback(); break;
 			case 'new_migration': Migrations::add(); break;
 			case 'new_controller': Controller::create(); break;
 			case 'new_dir_lang': Lang::createDir(); break;
