@@ -260,3 +260,42 @@ class Controller
 		}
 	}
 }
+
+/**
+* Language class
+*/
+class Lang
+{
+	public static function createDir()
+	{
+		$name=$_POST['lang_dir_name'];
+		$Root="../";
+		if(mkdir ($Root."app/lang/".$name))
+			echo "le dossier a été creé";
+		else echo "le dossier ne veut pas cree";
+	}
+
+	public static function createFile()
+	{
+		$dir=$_POST['lang_dir_name_2'];
+		$file=$_POST['lang_file_name'];
+
+		$Root="../";
+		if(!file_exists($Root."app/lang/$dir/$file.php"))
+			{
+				$myfile = fopen($Root."app/lang/$dir/$file.php", "w");
+				$txt = self::set();
+				//
+				fwrite($myfile, $txt);
+				fclose($myfile);
+				//
+				echo "Le fichier langue a été creé";
+			}
+			else echo "Le fichier deja existe";
+	}
+
+	public static function set()
+	{
+		return "<?php\n\nreturn array(\n\t'var_lan_name_1' => 'var_lang_value_1',\n\t'var_lan_name_2' => 'var_lang_value_2'\n);";
+	}
+}
