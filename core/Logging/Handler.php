@@ -11,7 +11,7 @@ class Handler
 {
 	public static function ini($root="")
 	{
-		require $root."../core/Associates/Whoops/vendor/autoload.php";
+		// require $root."../core/Associates/Whoops/vendor/autoload.php";
 		//
 		
 		if(Config::get('loggin.debug'))
