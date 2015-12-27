@@ -106,6 +106,7 @@ class Config
 				else if($val[1]=="password2") $ret=$tbl['password2'];
 				else if($val[1]=="enable") $ret=$tbl['enable'];
 				else if($val[1]=="configurated") $ret=$tbl['configurated'];
+				else if($val[1]=="ajax") $ret=$tbl['ajax'];
 				else throw new ConfigException($val[1],$val[0]);
 				//
 				break;
