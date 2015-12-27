@@ -16,7 +16,7 @@
 		"fzaninotto/faker": "~1.4",
 		"smarty/smarty": "~3.1.21",
 		"swiftmailer/swiftmailer": "5.3.1",
-		"fiesta/whoops": "~1.2.0",
+		"fiesta/whoops": "dev-master",
 		"monolog/monolog": "~1.17.2",
 		"fiesta/panel": "~2.1.24"
 	}
