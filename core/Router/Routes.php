@@ -599,18 +599,18 @@ if(Config::get('panel.enable'))
 
 	Routes::get(Config::get('panel.route')."/{op}",function($op){
 		switch ($op) {
-			case 'new_seed': Seeds::add(); break;
-			case 'exec_migration': Migrations::exec(); break;
-			case 'rollback_migration': Migrations::rollback(); break;
-			case 'new_migration': Migrations::add(); break;
-			case 'new_controller': Controller::create(); break;
-			case 'new_dir_lang': Lang::createDir(); break;
-			case 'new_file_lang': Lang::createFile(); break;
-			case 'new_link': Link::create(); break;
-			case 'new_model': Model::create(); break;
-			case 'new_view': View::create(); break;
-			case 'exec_cos_migration': Migrations::exec_cos(); break;
-			case 'rollback_cos_migration': Migrations::rollback_cos(); break;
+			case Config::get('panel.ajax')['new_seed']: Seeds::add(); break;
+			case Config::get('panel.ajax')['exec_migration']: Migrations::exec(); break;
+			case Config::get('panel.ajax')['rollback_migration']: Migrations::rollback(); break;
+			case Config::get('panel.ajax')['new_migration']: Migrations::add(); break;
+			case Config::get('panel.ajax')['new_controller']: Controller::create(); break;
+			case Config::get('panel.ajax')['new_dir_lang']: Lang::createDir(); break;
+			case Config::get('panel.ajax')['new_file_lang']: Lang::createFile(); break;
+			case Config::get('panel.ajax')['new_link']: Link::create(); break;
+			case Config::get('panel.ajax')['new_model']: Model::create(); break;
+			case Config::get('panel.ajax')['new_view']: View::create(); break;
+			case Config::get('panel.ajax')['exec_cos_migration']: Migrations::exec_cos(); break;
+			case Config::get('panel.ajax')['rollback_cos_migration']: Migrations::rollback_cos(); break;
 		}
 	});
 }
