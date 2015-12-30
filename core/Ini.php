@@ -24,6 +24,7 @@ use Fiesta\Core\Database\Database;
 use Fiesta\Core\Security\Auth;
 use Fiesta\Core\Router\Routes;
 use Fiesta\Core\Config\Config;
+use Fiesta\Core\Logging\Log;
 
 
 class App
@@ -47,6 +48,7 @@ class App
 		self::vendor();
 		//
 		require self::$root.'../core/Logging/Handler.php';
+		require self::$root.'../core/Logging/Log.php';
 
 		// Config
 		require self::$root.'../core/Config/Config.php';
@@ -54,8 +56,7 @@ class App
 		Config::load();
 
 		// Set the error log
-		ini_set("log_errors", 1);
-		ini_set("error_log", self::$root.'../app/storage/logs/fiesta.log');
+		Log::ini();
 
 		// Set Whoops error handler
 		Handler::ini(self::$root);
