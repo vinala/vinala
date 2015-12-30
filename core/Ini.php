@@ -25,6 +25,7 @@ use Fiesta\Core\Security\Auth;
 use Fiesta\Core\Router\Routes;
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Logging\Log;
+use Fiesta\Core\Objects\Date_Time;
 
 
 class App
@@ -54,6 +55,10 @@ class App
 		require self::$root.'../core/Config/Config.php';
 		require self::$root.'../core/Config/Exceptions/ConfigException.php';
 		Config::load();
+
+		// Set Timezone
+		require self::$root.'../core/Objects/DateTime.php';
+		Date_Time::setTimezone();
 
 		// Set the error log
 		Log::ini();
@@ -114,7 +119,7 @@ class App
 
 
 		require self::$root.'../core/Access/Url.php';
-		require self::$root.'../core/Objects/DateTime.php';
+		
 		require self::$root.'../core/Objects/Sys.php';
 		require self::$root.'../core/Http/Links.php';
 		require self::$root.'../core/Objects/Base.php';
