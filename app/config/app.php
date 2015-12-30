@@ -48,6 +48,19 @@
 	*/ 
  
 	'title'=> 'Fiesta PHP Framework', 
+
+	/* 
+	|---------------------------------------------- 
+	| Timezone
+	|---------------------------------------------- 
+	| Here you should set your timezone after that 
+	| whenever you wanna get time, Fiesta will give
+	| you exact time for the timezone.
+	| To get all of timezones supported in php 
+	| visite here : http://php.net/manual/en/timezones.php
+	*/ 
+ 
+	'timezone'=> 'UTC', 
  
 	/* 
 	|---------------------------------------------- 
