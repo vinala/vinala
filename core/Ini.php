@@ -23,6 +23,7 @@ use Fiesta\Core\Translator\Lang;
 use Fiesta\Core\Database\Database;
 use Fiesta\Core\Security\Auth;
 use Fiesta\Core\Router\Routes;
+use Fiesta\Core\Config\Config;
 
 
 class App
@@ -50,6 +51,7 @@ class App
 		// Config
 		require self::$root.'../core/Config/Config.php';
 		require self::$root.'../core/Config/Exceptions/ConfigException.php';
+		Config::load();
 
 		// Set the error log
 		ini_set("log_errors", 1);
