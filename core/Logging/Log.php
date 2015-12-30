@@ -2,14 +2,21 @@
 
 namespace Fiesta\Core\Logging;
 
+
+use Fiesta\Core\Glob\App;
+use Fiesta\Core\Config\Config;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 /**
 * 
 */
 class Log
 {
 	
-	function __construct(argument)
+	public static function ini()
 	{
-		# code...
+		ini_set("log_errors", 1);
+		ini_set("error_log", Config::get("loggin.errors"));
 	}
 }
