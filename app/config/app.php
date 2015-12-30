@@ -1,5 +1,7 @@
 <?php
   
+use Fiesta\Core\Glob\App;
+
 	return array( 
  
 	/*
