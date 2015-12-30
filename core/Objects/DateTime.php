@@ -2,11 +2,22 @@
 
 namespace Fiesta\Core\Objects;
 
+use Fiesta\Core\Config\Config;
+
 /**
 * datetime class
 */
 class Date_Time
 {
+
+	/**
+	 * set framework Timezone 
+	 */
+	public static function setTimezone()
+	{
+		date_default_timezone_set(Config::get('app.timezone'));
+	}
+
 	public static function now()
 	{
 		return time();
