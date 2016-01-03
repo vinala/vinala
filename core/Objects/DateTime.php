@@ -18,6 +18,14 @@ class Date_Time
 		date_default_timezone_set(Config::get('app.timezone'));
 	}
 
+	/**
+	 * get framework Timezone 
+	 */
+	public static function getTimezone()
+	{
+		return date_default_timezone_get();
+	}
+
 	public static function now()
 	{
 		return time();
