@@ -21,7 +21,7 @@ class Log
 	public static function ini()
 	{
 		ini_set("log_errors", 1);
-		ini_set("error_log", Config::get("loggin.errors"));
+		ini_set("error_log", Config::get("loggin.log"));
 	}
 
 	public static function log($message , $time = true)
