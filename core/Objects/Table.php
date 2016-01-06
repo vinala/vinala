@@ -167,5 +167,18 @@ class Table
 		return $array;
 	}
 
+	/**
+	 * convert array to string
+	 * @param $array : array
+	*/
+	public static function toString($array)
+	{
+		$txt = "";
+		foreach ($array as $key => $value) {
+			$txt .= "'$key' => '$value',";
+		}
+		return $txt;
+	}
+
 
 }
