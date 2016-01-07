@@ -6,7 +6,7 @@ use Fiesta\Core\HyperText\Res;
 use Fiesta\Core\Maintenance\Maintenance;
 use Fiesta\Core\Objects\Table;
 use Fiesta\Core\Config\Config;
-use Fiesta\Core\Router\Exception\RouteNotFoundException;
+use Fiesta\Core\Router\Exception\NotFoundHttpException;
 use Fiesta\Core\Http\Errors;
 use Fiesta\Core\Glob\App;
 use Fiesta\Core\Access\Url;
@@ -282,7 +282,7 @@ class Routes
 			}
 			if($ok==0) 
 			{
-				if(Config::get('app.unrouted')) throw new RouteNotFoundException($currentUrl);
+				if(Config::get('app.unrouted')) throw new NotFoundHttpException();
 				else Errors::r_404();
 			}
 		}
