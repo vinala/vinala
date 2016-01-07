@@ -1,12 +1,12 @@
 <?php 
 
 /*
-|----------------------------------------------
+|----------------------------------------------------------------------------------
 | App Routes
-|----------------------------------------------
-| hna route dial l application dialk aya route 
-| khask t7eto hena 
-|
+|----------------------------------------------------------------------------------
+| here for framework routes , all http request should put it here with their events
+| put it here with their events
+| 
 */
 
 
