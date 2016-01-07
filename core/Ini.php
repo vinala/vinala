@@ -94,7 +94,7 @@ class App
 		// Routes
 		require self::$root.'../core/Router/Routes.php';
 		require self::$root.'../core/Router/Route.php';
-		require self::$root.'../core/Router/Exceptions/RouteNotFoundException.php';
+		require self::$root.'../core/Router/Exceptions/NotFoundHttpException.php';
 
 		// Caches
 		require self::$root.'../core/Caches/Caches.php';
