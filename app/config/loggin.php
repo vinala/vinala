@@ -37,7 +37,7 @@ return array(
 	| 
 	*/
 
-	'log' => __DIR__.'/../app/storage/logs/fiesta.log',
+	'log' => 'app/storage/logs/fiesta.log',
 
 	/*
 	|----------------------------------------------
