@@ -20,8 +20,9 @@ class Log
 
 	public static function ini()
 	{
+		$path = "../".Config::get("loggin.log");
 		ini_set("log_errors", 1);
-		ini_set("error_log", Config::get("loggin.log"));
+		ini_set("error_log" , $path );
 	}
 
 	public static function log($message , $time = true)
@@ -81,50 +82,42 @@ class Log
 	public static function error($message , $data = array())
 	{
 		self::log("Error : " . $message);
-		if( ! empty($data) ) 
-			self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
+		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
 	}
 
 	public static function warning($message , $data = array())
 	{
 		self::log("Warning : " . $message);
 		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
 	}
 
 	public static function info($message , $data = array())
 	{
 		self::log("Info : " . $message);
 		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
 	}
 
 	public static function debug($message , $data = array())
 	{
 		self::log("Debug : " . $message);
 		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
 	}
 
 	public static function notice($message , $data = array())
 	{
 		self::log("Notice : " . $message);
 		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
 	}
 
 	public static function critical($message , $data = array())
 	{
 		self::log("Critical : " . $message);
 		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
 	}
 
 	public static function alert($message , $data = array())
 	{
 		self::log("Alert : " . $message);
 		if( ! empty($data) ) self::log(self::tabulation(). Table::toString ($data),false);
-		self::log("" , false);
 	}
 }
