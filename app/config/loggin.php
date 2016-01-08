@@ -1,6 +1,5 @@
 <?php 
 
-
 return array(
 
 	/*
@@ -14,7 +13,7 @@ return array(
 	| 
 	*/
 
-	'debug' => !true,
+	'debug' => false,
 
 	/*
 	|----------------------------------------------
@@ -24,7 +23,6 @@ return array(
 	| l framework ghadi y affichier had l msag
 	| 
 	*/
-
 	'msg' => "Ohlala! il semble que quelque chose s'ait mal passé",
 
 	/*
@@ -37,7 +35,7 @@ return array(
 	| 
 	*/
 
-	'log' => __DIR__.'/../app/storage/logs/fiesta.log',
+	'log' => 'app/storage/logs/fiesta.log',
 
 	/*
 	|----------------------------------------------
@@ -50,9 +48,8 @@ return array(
 	| 
 	*/
 
-	'bg' => '#a4003a', // "#e9e9e9"
+	'bg' => '#a4003a',
 
 
-	
 );
 ?>
