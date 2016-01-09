@@ -25,7 +25,7 @@ use Fiesta\Core\Security\Auth;
 use Fiesta\Core\Router\Routes;
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Logging\Log;
-use Fiesta\Core\Objects\Date_Time;
+use Fiesta\Core\Objects\DateTime;
 
 
 class App
@@ -57,8 +57,9 @@ class App
 		Config::load();
 
 		// Set Timezone
-		require self::$root.'../core/Objects/DateTime.php';
-		Date_Time::setTimezone();
+		// require self::$root.'../core/Objects/DateTime.php';
+		require self::$root.'../core/Objects/DateTime2.php';
+		DateTime::setTimezone();
 
 		// Set the error log
 		Log::ini();
@@ -174,6 +175,7 @@ class App
 		Lang::ini();
 		Database::ini();
 		Auth::ini();
+		self::scoopCall();
 
 		//
 
@@ -322,10 +324,15 @@ class App
 		$files = array('QR');
 		$filesPath = self::$root.'../core/Media/';
 		self::call($files,$filesPath);
+	}
 
-		// // Exeptions of models
-		// $exceptions = array('LanguageKeyNotFoundException');
-		// $exceptionsPath = self::$root.'../core/Translator/Exceptions/';
-		// self::call($exceptions,$exceptionsPath);
+	/**
+	 * scoop call
+	 */
+	public static function scoopCall()
+	{
+		$files = array('Scoop');
+		$filesPath = self::$root.'../core/Access/';
+		self::call($files,$filesPath);
 	}
 }
