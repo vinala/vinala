@@ -6,6 +6,7 @@ New features:
  * supporting smileys
  * First Configuration
  * creating system for storing infos about schema 
+ * Scoop functions
 
 
 ### 2.5.0
