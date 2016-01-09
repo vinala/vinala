@@ -36,7 +36,7 @@
 			'Cookie' => 		Fiesta\Core\Storage\Cookie::class,
 			'Database' => 		Fiesta\Core\Database\Database::class,
 			'DataCollection' => Fiesta\Core\Objects\DataCollection::class,
-			'Time' => 			Fiesta\Core\Objects\Date_Time::class,
+			'Time' => 			Fiesta\Core\Objects\DateTime::class,
 			'DBTable' => 		Fiesta\Core\Database\DBTable::class,
 			'Debug' => 			Fiesta\Core\Log\Debug::class,
 			'Errors' => 		Fiesta\Core\Http\Errors::class,
@@ -49,6 +49,7 @@
 			'Libs' => 			Fiesta\Core\Resources\Libs::class,
 			'License' => 		Fiesta\Core\Security\License::class,
 			'Links' => 			Fiesta\Core\Http\Links::class,
+			'Log' => 			Fiesta\Core\Logging\Log::class,
 			'Mail' => 			Fiesta\Core\Mailing\Mail::class,
 			'ModelArray' => 	Fiesta\Core\MVC\Model\ModelArray::class,
 			'Path' => 			Fiesta\Core\Access\Path::class,
@@ -65,6 +66,6 @@
 			'Url' => 			Fiesta\Core\Access\Url::class,
 			'Vars' => 			Fiesta\Core\Objects\Vars::class,
 			'View' => 			Fiesta\Core\MVC\View\View::class,
-			'Smiley' => 		Fiesta\Core\Translator\Smiley::class,
+			'Smile' => 			Fiesta\Core\Translator\Smiley::class,
 		)
 	);
