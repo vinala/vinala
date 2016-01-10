@@ -35,12 +35,17 @@ class App
 	public static $root;
 	public static $Callbacks = array('before'=>null,'after'=>null);
 
+	public static function runTest($path)
+	{
+		return self::run("test",$path);
+	}
+
 	public static function version()
 	{
 		return "Fiesta v3 (3.0.*) PHP Framework";
 	}
 
-	public static function run($p=null,$root=null,$routes=true,$session=true)
+	public static function run($p=null,$root=null,$routes=true,$session=false)
 	{
 		ob_start();
 		//
@@ -68,7 +73,7 @@ class App
 
 		//session
 		require self::$root.'../core/Storage/Session.php';
-		if($session)Session::start(self::$root.'../app/storage/session');
+		if($session) Session::start(self::$root.'../app/storage/session');
 
 		//Maintenance
 		require self::$root.'../core/Maintenance/Maintenance.php';
@@ -252,7 +257,7 @@ class App
 	{
 		$sub=$_SERVER["PHP_SELF"];
 		$r=explode("App.php", $sub);
-		//echo "*".$_SERVER["REQUEST_SCHEME"];
+		//
 		return "http://".$_SERVER["HTTP_HOST"].$r[0];
 	}
 
