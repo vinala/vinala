@@ -1,15 +1,15 @@
-<?php
+<?php 
 
 namespace Fiesta\Core\Objects;
 
 use Fiesta\Core\Config\Config;
+use Carbon\Carbon;
 
 /**
-* datetime class
+* DateTime class
 */
-class Date_Time
+class DateTime
 {
-
 	/**
 	 * set framework Timezone 
 	 */
@@ -26,9 +26,52 @@ class Date_Time
 		return date_default_timezone_get();
 	}
 
-	public static function now()
+	/**
+	 * get current timestamp
+	 */
+	public static function current()
 	{
 		return time();
+	}
+
+	/**
+	 * get now datetime
+	 */
+	public static function now()
+	{
+		return Carbon::now();
+	}
+
+	/**
+	 * get today date
+	 */
+	public static function today()
+	{
+		return Carbon::today();
+	}
+
+	/**
+	 * get tomorrow date
+	 */
+	public static function tomorrow()
+	{
+		return Carbon::tomorrow();
+	}
+
+	/**
+	 * get yesterday date
+	 */
+	public static function yesterday()
+	{
+		return Carbon::yesterday();
+	}
+
+	/**
+	 * create new date
+	 */
+	public static function create( $year=null , $month=null , $day=null , $hour=null , $month=null , $day=null )
+	{
+		return Carbon::create($year, $month, $day, $hour, $month, $day);
 	}
 
 	public static function date($timestamp=null,$vars=false)
@@ -53,9 +96,7 @@ class Date_Time
 			$o2=date("Y/n/j",$timestamp);
 			//
 			return $o2;
-
 		}
-
 	}
 
 	public static function time($timestamp=null,$vars=false)
@@ -83,31 +124,5 @@ class Date_Time
 		}
 	}
 
-	public static function both($timestamp=null,$vars=false)
-	{
-		$o1 = array();
-		$o2=null;
-		//
-		if($vars)
-		{
-			if(is_null($timestamp)) $timestamp=time();
-			//
-			$o1["year"]=date("Y",$timestamp);
-			$o1["month"]=date("n",$timestamp);
-			$o1["day"]=date("j",$timestamp);
-			$o1["hours"]=date("G",$timestamp);
-			$o1["minutes"]=date("i",$timestamp);
-			$o1["second"]=date("s",$timestamp);
-			//
-			return $o1;
-		}
-		else
-		{
-			if(is_null($timestamp)) $timestamp=time();
-			//
-			$o2=date("Y/n/j G:i:s",$timestamp);
-			//
-			return $o2;
-		}
-	}
+
 }
