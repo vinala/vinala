@@ -26,6 +26,7 @@ use Fiesta\Core\Router\Routes;
 use Fiesta\Core\Config\Config;
 use Fiesta\Core\Logging\Log;
 use Fiesta\Core\Objects\DateTime;
+use Fiesta\Vendor\Panel\Panel;
 
 
 class App
@@ -175,6 +176,7 @@ class App
 		Lang::ini();
 		Database::ini();
 		Auth::ini();
+		Panel::run();
 		self::scoopCall();
 
 		//
