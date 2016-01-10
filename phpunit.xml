@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-         bootstrap="core/Ini.php"
-         colors="true"
-         stopOnFailure="false">
-    <php>
-        <env name="APP_ENV" value="testing"/>
-        <env name="CACHE_DRIVER" value="array"/>
-        <env name="SESSION_DRIVER" value="array"/>
-        <env name="QUEUE_DRIVER" value="sync"/>
-    </php>
+<phpunit bootstrap="./vendor/autoload.php" color="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stopOnFailures="false" syntaxCheck="false"
+	>
+    <testsuites>
+	    <testsuite name="Fiesta Unit Test">
+	    	<directory>./tests/</directory>
+	    </testsuite>
+	</testsuites>
 </phpunit>
