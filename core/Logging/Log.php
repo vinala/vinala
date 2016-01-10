@@ -7,8 +7,8 @@ use Fiesta\Core\Glob\App;
 use Fiesta\Core\Config\Config;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Fiesta\Core\Objects\Date_Time;
-use Fiesta\Core\Objects\Date_Time as Time;
+use Fiesta\Core\Objects\DateTime;
+use Fiesta\Core\Objects\DateTime as Time;
 use Fiesta\Core\Objects\String;
 use Fiesta\Core\Objects\Table;
 
@@ -44,7 +44,7 @@ class Log
 
 	protected static function tabulation()
 	{
-		$lenght= 21+2+(String::lenght(Date_Time::getTimezone()));
+		$lenght= 21+2+(String::lenght(DateTime::getTimezone()));
 		$txt = "";
 		for ($i=0; $i < $lenght; $i++) $txt .= " ";
 		return $txt." ";
@@ -52,7 +52,7 @@ class Log
 
 	protected static function TraceTabulation()
 	{
-		$tab = self::getTime( Date_Time::now() )." Trace : ";
+		$tab = self::getTime( DateTime::now() )." Trace : ";
 		$txt = "";
 		for ($i=0; $i < String::lenght($tab); $i++) $txt .= " ";
 		return $txt." ";
