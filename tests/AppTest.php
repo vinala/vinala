@@ -9,7 +9,7 @@ class AppTest extends PHPUnit_Framework_TestCase
 	{
 		require_once __DIR__.'/../core/Ini.php';
 		
-		$app = Fiesta\Core\Glob\App::run();
+		$app = Fiesta\Core\Glob\App::runTest(__DIR__."/");
 		
 		$this->assertTrue( $app );
 	}
