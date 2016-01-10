@@ -8,7 +8,7 @@ use Fiesta\Core\Router\Route;
  */
 function view($value,$data=null)
 {
-	View::make($value,$data);
+	return View::make($value,$data);
 }
 
 /**
@@ -16,5 +16,13 @@ function view($value,$data=null)
  */
 function get($uri,$callback,$subdomains=null)
 {
-	Route::get($uri,$callback,$subdomains);
+	return Route::get($uri,$callback,$subdomains);
+}
+
+/**
+ * Config
+ */
+function config($param)
+{
+	return Config::get($param);
 }
