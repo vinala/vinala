@@ -7,6 +7,7 @@ New features:
  * First Configuration
  * creating system for storing infos about schema 
  * Scoop functions
+ * using Travis and PHPUnit
 
 
 ### 2.5.0
