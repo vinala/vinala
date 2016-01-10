@@ -37,7 +37,7 @@ class App
 
 	public static function runTest($path)
 	{
-		return self::run("test",$path);
+		return self::run("test",$path,true,false);
 	}
 
 	public static function version()
@@ -45,7 +45,7 @@ class App
 		return "Fiesta v3 (3.0.*) PHP Framework";
 	}
 
-	public static function run($p=null,$root=null,$routes=true,$session=false)
+	public static function run($p=null,$root=null,$routes=true,$session=true)
 	{
 		ob_start();
 		//
