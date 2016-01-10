@@ -3,7 +3,7 @@
 /*
 |----------------------------------------
 | Fiesta (http://ipixa.net)
-| Copyright 2015 Youssef Had, Inc.
+| Copyright 2016 Youssef Had, Inc.
 | Licensed under Open Source
 |----------------------------------------
 */
