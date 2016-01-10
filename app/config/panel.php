@@ -60,7 +60,7 @@ return array(
 	| 
 	*/
 
-	'configurated' => true,
+	'configured' => false,
 
 	/*
 	|----------------------------------------------
