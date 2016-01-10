@@ -19,6 +19,7 @@
 		"fiesta/whoops": "~1.2.1",
 		"monolog/monolog": "~1.17.2",
 		"fiesta/panel": "~2.1.24",
-		"nesbot/carbon": "~1.14"
+		"nesbot/carbon": "~1.14",
+		"phpunit/phpunit": "3.7.*"
 	}
 }
