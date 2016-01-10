@@ -6,4 +6,8 @@
 	    	<directory>./tests/</directory>
 	    </testsuite>
 	</testsuites>
+	<php>
+        <server name='HTTP_HOST' value='localhost' />
+        <server name='REQUEST_URI' value='/fiesta' />
+    </php>
 </phpunit>
