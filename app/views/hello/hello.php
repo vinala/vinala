@@ -21,7 +21,7 @@
 
 
 <body>
-<?php if(!Config::get('panel.configurated')): ?>
+<?php if(!Config::get('panel.configured')): ?>
 	<img src="<?php echo "app/resources/images/logo_mini.png" ?>" class="img config_logo" id="config_logo">
 
 	<div id="etap_1">
