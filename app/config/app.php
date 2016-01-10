@@ -1,43 +1,36 @@
 <?php
-  
-use Fiesta\Core\Glob\App;
 
-	return array( 
+use Fiesta\Core\Glob\App;
  
+	return array(
+
 	/*
 	|----------------------------------------------
 	| Project name
 	|----------------------------------------------
+	| Your project name
 	*/
  
 	'project'=>'fiesta', 
  
-	/* 
+	/*
 	|---------------------------------------------- 
 	| Owner name 
 	|---------------------------------------------- 
+	| Your name
 	*/ 
  
-	'owner'=>'', 
+	'owner'=>'Youssef', 
  
-	/* 
-	|---------------------------------------------- 
-	| Project parent folder 
-	|---------------------------------------------- 
-	| ila kenti khedm b local serveur ola kenti 7at 
-	| l framework wset chi dossier khask tkteb smyt 
-	| hadak dossier hana 
-	*/ 
- 
-	'projectFolder'=>'fiesta', 
  
 	/* 
 	|---------------------------------------------- 
 	| Project url 
 	|---------------------------------------------- 
-	| hena kteb lien dial site dilak ila kenti 
-	| khedam f localhost kteb lien dial local host 
-	| o men b3d smyt dossier li khedam fih 
+	| Your website root link, you should put your 
+	| root link , by default we using App::root 
+	| function to get the root link even if you 
+	| working on localhost
 	*/ 
  
 	'url'=>App::root(), 
@@ -46,12 +39,12 @@ use Fiesta\Core\Glob\App;
 	|---------------------------------------------- 
 	| HTML Default title 
 	|---------------------------------------------- 
-	| hena blast titlre par default dial site 
+	| Default HTML title
 	*/ 
  
-	'title'=> 'Fiesta PHP Framework', 
+	'title'=> 'Fiesta PHP Framework',
 
-	/* 
+	/* 	
 	|---------------------------------------------- 
 	| Timezone
 	|---------------------------------------------- 
@@ -61,16 +54,17 @@ use Fiesta\Core\Glob\App;
 	| To get all of timezones supported in php 
 	| visite here : http://php.net/manual/en/timezones.php
 	*/ 
- 
-	'timezone'=> 'UTC', 
+
+	'timezone'=> 'UTC',  
  
 	/* 
 	|---------------------------------------------- 
 	| Routing inexists event 
 	|---------------------------------------------- 
-	| hena ila kan route makynch ,true bach 
-	| yafficher exception ,sinon false bach 
-	| ymchi l 404 
+	| When HttpNotFoundException trown if unrouted 
+	| parameter was true it will be show to 
+	| exception else the framework will redirect
+	| user to Error::r_404 route,
 	*/ 
  
 	'unrouted'=> true, 
@@ -79,8 +73,7 @@ use Fiesta\Core\Glob\App;
 	|---------------------------------------------- 
 	| Default Character Set 
 	|---------------------------------------------- 
-	| hena encode dial l'application meni 
-	| tkhdem l methode HTML::charset() 
+	| Default encodage when you using HTML::charset
 	*/ 
  
 	'charset'=> 'utf-8', 
