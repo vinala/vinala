@@ -29,12 +29,12 @@ return array(
 
 	/*
 	|----------------------------------------------
-	| Panel path
+	| Panel Path
 	|----------------------------------------------
 	| here the path of the panel index, you can 
 	| search in the internet to change the panel, 
 	| for your security you should change the panel
-	|  folder name
+	| folder name
 	| 
 	*/
 
