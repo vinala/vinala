@@ -58,9 +58,7 @@ class App
 		Config::load();
 
 		// Set Timezone
-		// require self::$root.'../core/Objects/DateTime.php';
-		require self::$root.'../core/Objects/DateTime2.php';
-		DateTime::setTimezone();
+		self::timeCall();
 
 		// Set the error log
 		Log::ini();
@@ -336,5 +334,14 @@ class App
 		$files = array('Scoop');
 		$filesPath = self::$root.'../core/Access/';
 		self::call($files,$filesPath);
+	}
+
+	/**
+	 * time call
+	 */
+	public static function timeCall()
+	{
+		require self::$root.'../core/Objects/DateTime.php';
+		DateTime::setTimezone();
 	}
 }
