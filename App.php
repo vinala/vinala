@@ -4,7 +4,7 @@
 |----------------------------------------
 | Fiesta (http://ipixa.net)
 | Copyright 2016 Youssef Had, Inc.
-| Licensed under Open Source
+| Licensed under MIT License
 |----------------------------------------
 */
 
@@ -13,7 +13,7 @@
 |----------------------------------------------
 | Framework calling
 |----------------------------------------------
-| Hna kat3yet 3la Fiesta Framework o ktalancih
+| Calling the fiesta framework
 */
 
 require_once 'core/Ini.php';
@@ -22,10 +22,7 @@ require_once 'core/Ini.php';
 |----------------------------------------------
 | Run the Framework
 |----------------------------------------------
-| Hna katlancé l framework dialk
+| launch the Fiesta framework
 */
 
-App::run();
-
-	
-	
+Fiesta\Core\Glob\App::run();
