@@ -4,11 +4,11 @@ php:
     - 5.5
     - 5.6
 
-before_install:
-	- php /home/travis/.phpenv/versions/5.4.25/bin/composer.phar self-update
+# before_install:
+# 	- php /home/travis/.phpenv/versions/5.4.25/bin/composer.phar self-update
 
-before_script:
-	- composer before_install
+# before_script:
+# 	- composer before_install
 
-script : phpunit --configuration phpunit.xml --coverage-text
+# script : phpunit --configuration phpunit.xml --coverage-text
 
