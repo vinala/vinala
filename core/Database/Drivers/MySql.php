@@ -31,7 +31,7 @@ class MysqlDatabase
 			//
 		  	if(!Database::$default)
 		  	{
-	  			if($faild==2) throw new DatabaseConnectionException();
+	  			if($faild==2 && Config::get('panel.configured')) throw new DatabaseConnectionException();
 	  			else if($faild==1) \Errors::r_db();
 
 	  		}
@@ -71,7 +71,7 @@ class MysqlDatabase
 		  	//
 		  	if (!Database::$server)
 	  		{ 
-	  			if($faild==2) throw new DatabaseConnectionException();
+	  			if($faild==2 && Config::get('panel.configured')) throw new DatabaseConnectionException();
 	  			else if($faild==1) \Errors::r_db();
 	  		}
 		  	//
