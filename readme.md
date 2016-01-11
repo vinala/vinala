@@ -65,4 +65,4 @@ The Fiesta framework is open-sourced software licensed under the [MIT license](h
 
 Launched in 10/10/2014
 
-Copyright 2014 Youssef Had, Inc.
+Copyright 2014 - 2016 Youssef Had, Inc.
