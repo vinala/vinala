@@ -12,31 +12,31 @@ use Fiesta\Core\Glob\App;
 class TestCase extends PHPUnit_Framework_TestCase
 {
 	
-	public function run()
+	public static function run()
 	{
-		$this->call(__DIR__."/../");
+		self::call(__DIR__."/../");
 		//
-		return $this->check();
+		return self::check();
 	}
 
-	public function mock()
+	public static function mock()
 	{
-		return $app = $this->instance(__DIR__."/");
+		return $app = self::instance(__DIR__."/");
 	}
 
-	public function call($path)
+	public static function call($path)
 	{
 		require_once $path.'core/Ini.php';
 	}
 
-	public function instance($path)
+	public static function instance($path)
 	{
 		return App::run("test",$path,false,false);
 	}
 
-	public function check()
+	public static function check()
 	{
-		return $this->mock();
+		return self::mock();
 	}
 }
 
