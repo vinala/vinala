@@ -1,5 +1,8 @@
 <?php 
 
+use Fiesta\Core\MVC\Model\Model;
+
+
 // Model Class
 class userM extends Model
 {

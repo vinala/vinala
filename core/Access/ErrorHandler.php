@@ -1,5 +1,9 @@
 <?php 
 
+namespace Fiesta\Core\Access;
+
+use Fiesta\Core\Config\Config;
+
 /**
 * Error Handler class
 */
@@ -13,7 +17,7 @@ class ErrorHandler
 		if(Config::get('loggin.debug'))
 		{
 			$whoops = new \Whoops\Run;
-			$errorPage = new Whoops\Handler\PrettyPageHandler();
+			$errorPage = new \Whoops\Handler\PrettyPageHandler();
 			//
 			$errorPage->setPageTitle(Config::get('loggin.msg')); // Set the page's title
 			$errorPage->setEditor("sublime"); 
@@ -25,7 +29,7 @@ class ErrorHandler
 		{
 			$whoops = new \Whoops\Run;
 			
-			$errorPage = new Whoops\Handler\PlainTextHandler();
+			$errorPage = new \Whoops\Handler\PlainTextHandler();
 			$errorPage->msg=Config::get('loggin.msg');
 			$errorPage->bg_color=Config::get('loggin.bg');
 			$errorPage->handle();

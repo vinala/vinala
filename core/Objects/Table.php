@@ -1,5 +1,7 @@
 <?php
 
+namespace Fiesta\Core\Objects;
+
 /**
 * List Class
 */
@@ -153,6 +155,29 @@ class Table
 		}
 		//
 		return $val;
+	}
+
+	/**
+	 * Sort an array
+	 * @param $array : array
+	*/
+	public static function sort($array)
+	{
+		sort($array);
+		return $array;
+	}
+
+	/**
+	 * convert array to string
+	 * @param $array : array
+	*/
+	public static function toString($array)
+	{
+		$txt = "";
+		foreach ($array as $key => $value) {
+			$txt .= "'$key' => '$value',";
+		}
+		return $txt;
 	}
 
 

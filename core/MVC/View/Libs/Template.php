@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Fiesta\MVC\View;
+namespace Fiesta\Core\MVC\View;
 
 /**
 * Smarty Template class
@@ -10,11 +10,8 @@ class Template
 {
 	public static $smarty;
 
-
 	public static function ini($root="")
 	{
-		require_once $root.'../core/Associates/Smarty/Smarty.class.php';
-		//
 		self::$smarty=new \Smarty;
 		//
 		self::$smarty->force_compile = false;
@@ -25,7 +22,6 @@ class Template
 
 		self::$smarty->setTemplateDir('../app/storage/view/compile');
 		self::$smarty->setCompileDir('../app/storage/view/template');
-		//self::$smarty->setCacheDir('app/storage/view/cache');
 	}
 
 	public static function show($view,$data=null)
@@ -34,7 +30,6 @@ class Template
 			foreach ($data as $key => $value)
 				{self::$smarty->assign($key, $value);}
 		//
-
 		return self::$smarty->display($view);
 	}
 }

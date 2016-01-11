@@ -1,6 +1,8 @@
 <?php 
 
+namespace Fiesta\Core\Access;
 
+use Fiesta\Core\Config\Config;
 
 /**
 * Url class

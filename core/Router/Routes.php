@@ -1,6 +1,23 @@
 <?php 
 
-namespace Fiesta\Router;
+namespace Fiesta\Core\Router;
+
+use Fiesta\Core\HyperText\Res;
+use Fiesta\Core\Maintenance\Maintenance;
+use Fiesta\Core\Objects\Table;
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Router\Exception\NotFoundHttpException;
+use Fiesta\Core\Http\Errors;
+use Fiesta\Core\Glob\App;
+use Fiesta\Core\Access\Url;
+use Fiesta\Vendor\Panel\Seeds;
+use Fiesta\Vendor\Panel\Migrations;
+use Fiesta\Vendor\Panel\Controller;
+use Fiesta\Vendor\Panel\Lang;
+use Fiesta\Vendor\Panel\Link;
+use Fiesta\Vendor\Panel\Model;
+use Fiesta\Vendor\Panel\View;
+
 
 /**
 * Routes 2
@@ -73,44 +90,44 @@ class Routes
 		return $url2;
 	}
 
-	protected static function addCallable($url,$callback,$methode,$subdomain=null)
+	protected static function addCallable($_url_,$_callback_,$_methode_,$_subdomain_=null)
 	{
-		$name=self::convert($url);
+		$_name_=self::convert($_url_);
 		$r = array(
-			'name' => $name ,
-			'url' => $url , 
-			'callback' => $callback,
-			'methode' => $methode,
+			'name' => $_name_ ,
+			'url' => $_url_ , 
+			'callback' => $_callback_,
+			'methode' => $_methode_,
 			"filtre" => null,
-			"subdomain" => $subdomain,
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => "$name"."/" , 
-			'url' => $url."/" , 
-			'callback' => $callback,
-			'methode' => $methode,
+			'name' => "$_name_"."/" , 
+			'url' => $_url_."/" , 
+			'callback' => $_callback_,
+			'methode' => $_methode_,
 			"filtre" => null,
-			"subdomain" => $subdomain,
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 		//
 		self::$requests[]=$r;
 	}
 
-	protected static function addFiltred($uri,$callback,$methode,$subdomain=null)
+	protected static function addFiltred($_uri_,$_callback_,$_methode_,$_subdomain_=null)
 	{
-		$name=self::convert($url);
+		$_name_=self::convert($_url_);
 		$r = array(
-			'name' => $name , 
-			'url' => $url , 
-			'callback' => $callback[1],
-			'methode' => $methode,
-			"filtre" => $callback[0],
-			"subdomain" => $subdomain,
+			'name' => $_name_ , 
+			'url' => $_url_ , 
+			'callback' => $_callback_[1],
+			'methode' => $_methode_,
+			"filtre" => $_callback_[0],
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 
@@ -118,12 +135,12 @@ class Routes
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => $name."/" , 
-			'url' => $url."/" , 
-			'callback' => $callback[1],
-			'methode' => $methode,
-			"filtre" => $callback[0],
-			"subdomain" => $subdomain,
+			'name' => $_name_."/" , 
+			'url' => $_url_."/" , 
+			'callback' => $_callback_[1],
+			'methode' => $_methode_,
+			"filtre" => $_callback_[0],
+			"subdomain" => $_subdomain_,
 			'controller' => null
 			);
 		//
@@ -187,7 +204,7 @@ class Routes
 	{
 		$currentUrl=self::CheckUrl();
 		//
-		if(\Maintenance::check())
+		if( ! Maintenance::check())
 		{
 			self::ReplaceParams();
 			self::Replace();
@@ -202,14 +219,14 @@ class Routes
 				{
 					if(!is_null($value["subdomain"]))
 					{
-						if(\Table::contains($value["subdomain"],self::getDomain()))
+						if(Table::contains($value["subdomain"],self::getDomain()))
 							{
-								if($value["methode"]=="post" && \Res::isPost())
+								if($value["methode"]=="post" && Res::isPost())
 								{
 									$ok=self::exec($params,$value);
 									break;
 								}
-								else if($value["methode"]=="post" && !\Res::isPost())
+								else if($value["methode"]=="post" && !Res::isPost())
 								{
 									$ok=0;
 								}
@@ -234,12 +251,12 @@ class Routes
 					}
 					else
 					{
-						if($value["methode"]=="post" && \Res::isPost())
+						if($value["methode"]=="post" && Res::isPost())
 						{
 							$ok=self::exec($params,$value);
 							break;
 						}
-						else if($value["methode"]=="post" && !\Res::isPost())
+						else if($value["methode"]=="post" && !Res::isPost())
 						{
 							$ok=0;
 						}
@@ -265,11 +282,11 @@ class Routes
 			}
 			if($ok==0) 
 			{
-				if(\Config::get('app.unrouted')) throw new RouteNotFoundException($currentUrl);
-				else \Errors::r_404();
+				if(Config::get('app.unrouted')) throw new NotFoundHttpException();
+				else Errors::r_404();
 			}
 		}
-		else \Maintenance::show();
+		else Maintenance::show();
 	}
 
 	protected static function exec($params,&$one)
@@ -311,12 +328,12 @@ class Routes
 
 	protected static function callBefore()
 	{
-		call_user_func(\App::$Callbacks['before']);
+		call_user_func(App::$Callbacks['before']);
 	}
 
 	protected static function callAfter()
 	{
-		call_user_func(\App::$Callbacks['after']);
+		call_user_func(App::$Callbacks['after']);
 	}
 
 	protected static function SplitSlash($link)
@@ -350,7 +367,7 @@ class Routes
 
 	protected static function CheckMaintenance($url)
 	{
-		if(!\Config::get("maintenance.activate") || in_array($url, \Config::get("maintenance.outRoutes")))
+		if(!Config::get("maintenance.activate") || in_array($url, Config::get("maintenance.outRoutes")))
 			return true;
 		else return false;
 	}
@@ -370,25 +387,25 @@ class Routes
 			//		self::$requests[$i]['url']=str_replace('{}', '(.*)?', self::$requests[$i]['url']); 
 	}
 
-	protected static function addFilter($name,$callback,$falsecall=null)
+	protected static function addFilter($_name_,$_callback_,$_falsecall_=null)
 	{
 		$r = array(
-			'name' => $name,
-			'callback' => $callback,
-			'falsecall' => $falsecall
+			'name' => $_name_,
+			'callback' => $_callback_,
+			'falsecall' => $_falsecall_
 			 );
-		self::$filters[$name]=$r;
+		self::$filters[$_name_]=$r;
 		//if(!is_null($falsecall)) self::$_falsecall[$filter]=$falsecall;
 	}
 
-	public static function filter($name,$callback,$falsecall=null)
+	public static function filter($_name_,$_callback_,$_falsecall_=null)
 	{
-		self::addFilter($name,$callback,$falsecall);
+		self::addFilter($_name_,$_callback_,$_falsecall_);
 	}
 
-	protected static function getFilterCallback($name)
+	protected static function getFilterCallback($_name_)
 	{
-		return self::$filters[$name];
+		return self::$filters[$_name_];
 	}
 
 	protected static function callFilter($filtre,&$ok,&$falseok)
@@ -424,8 +441,8 @@ class Routes
 
 	protected static function showMaintenance()
 	{
-		if(\Config::get("maintenance.maintenanceEvent")=="string") echo \Config::get("maintenance.maintenanceResponse");
-		else if(\Config::get("maintenance.maintenanceEvent")=="link") \Url::redirect(\Config::get("maintenance.maintenanceResponse"));
+		if(Config::get("maintenance.maintenanceEvent")=="string") echo Config::get("maintenance.maintenanceResponse");
+		else if(Config::get("maintenance.maintenanceEvent")=="link") Url::redirect(Config::get("maintenance.maintenanceResponse"));
 	}
 
 	public static function resource($uri,$controller,$data=null)
@@ -444,7 +461,7 @@ class Routes
 		$update=isset($names['update'])?(!empty($names['update'])?$names['update']:"update"):"update";
 		$delete=isset($names['delete'])?(!empty($names['delete'])?$names['delete']:"delete"):"delete";
 		//
-		if(\Table::contains($routes,"index"))
+		if(Table::contains($routes,"index"))
 		{
 			self::addController($uri."",                  $controller,"index");
 			self::addController($uri."/",                 $controller,"index");
@@ -452,31 +469,36 @@ class Routes
 			self::addController($uri."/".$index."/",      $controller,"index");
 		}
 		//
-		if(\Table::contains($routes,"show"))
+		if(Table::contains($routes,"show"))
 		{
 			self::addController($uri."/$show/{}",         $controller,"show");
 			self::addController($uri."/$show/{}/",        $controller,"show");
 		}
 		//
-		if(\Table::contains($routes,"add"))
+		if(Table::contains($routes,"add"))
 		{
 			self::addController($uri."/$add",             $controller,"add");
 			self::addController($uri."/$add/",            $controller,"add");
 		}
 		//
-		if(\Table::contains($routes,"insert"))
+		if(Table::contains($routes,"insert"))
 		{
 			self::addController($uri."/$insert",          $controller,"insert");
 			self::addController($uri."/$insert/",         $controller,"insert");
 		}
 		//
-		if(\Table::contains($routes,"edit"))
+		if(Table::contains($routes,"edit"))
 		{
+			
+			// self::addController($uri."/{}/$edit",         $controller,"edit");
+			// self::addController($uri."/{}/$edit/",        $controller,"edit");
+			
+			// edited in build 2.5.1.268 last script
 			self::addController($uri."/$edit/{}",         $controller,"edit");
 			self::addController($uri."/$edit/{}/",        $controller,"edit");
 		}
 		//
-		if(\Table::contains($routes,"update"))
+		if(Table::contains($routes,"update"))
 		{
 			self::addController($uri."/$update",          $controller,"update");
 			self::addController($uri."/$update/",         $controller,"update");
@@ -484,7 +506,7 @@ class Routes
 			self::addController($uri."/$update/{}/",      $controller,"update",true);
 		}
 		//
-		if(\Table::contains($routes,"delete"))
+		if(Table::contains($routes,"delete"))
 		{
 			self::addController($uri."/$delete/{}",       $controller,"delete");
 			self::addController($uri."/$delete/{}/",      $controller,"delete");
@@ -504,24 +526,26 @@ class Routes
 			$callback=function() use ($controller,$methode){ $controller::$methode(); };
 			
 
-		$name=self::convert($url);
+		$_name_=self::convert($url);
 		$r = array(
-			'name' => $name ,
+			'name' => $_name_ ,
 			'url' => $url , 
 			'callback' => $callback,
 			'methode' => "resource",
 			"filtre" => null,
+			"subdomain" => null,
 			'controller' => $controller
 			);
 		//
 		self::$requests[]=$r;
 
 		$r = array(
-			'name' => "$name"."/" , 
+			'name' => "$_name_"."/" , 
 			'url' => $url."/" , 
 			'callback' => $callback,
 			'methode' => "resource",
 			"filtre" => null,
+			"subdomain" => null,
 			'controller' => $controller
 			);
 		self::$requests[]=$r;
@@ -537,7 +561,7 @@ class Routes
 			$i=0;
 			foreach ($all as  $value) 
 			{
-				if(\Table::contains($except,$value)) unset($all[$i]);
+				if(Table::contains($except,$value)) unset($all[$i]);
 				$i++;
 			}
 		}
@@ -567,8 +591,5 @@ class Routes
 	
 }
 
-if(\Config::get('panel.enable'))
-Routes::get(\Config::get('panel.route'),function()
-{
-	include \Config::get('panel.folder').'/home.php';
-});
+
+

@@ -1,6 +1,8 @@
 <?php
 
-namespace Fiesta\MVC\View;
+namespace Fiesta\Core\MVC\View;
+
+use Fiesta\Core\MVC\View\Exception\ViewNotFoundException;
 
 /**
 * View mother class
@@ -9,38 +11,35 @@ class Views
 {
 	public static $showed;
 
-	public static function make($value,$data=null)
+	public static function make($_value_,$_data_=null)
 	{
-		if(!is_null($data))
+		if(!is_null($_data_))
 		{
-			foreach ($data as $key => $value2) {
-				$$key=$value2;
+			foreach ($_data_ as $_key_ => $_value2_) {
+				$$_key_=$_value2_;
 			}
 		}
 		//getFile
-		$name=str_replace('.', '/', $value);
+		$_name_=str_replace('.', '/', $_value_);
 		//
-		$link1='../app/views/'.$name.'.php';
-		$link2='../app/views/'.$name.'.tpl.php';
+		$_link1_='../app/views/'.$_name_.'.php';
+		$_link2_='../app/views/'.$_name_.'.tpl.php';
 		//
-		$tpl=false;
+		$_tpl_=false;
 		//
-		if(file_exists($link1)) { $link3=$link1; $tpl=false; }
-		else if(file_exists($link2)) { $link3=$link2; $tpl=true; }
-		else { throw new ViewNotFoundException($name); }
+		if(file_exists($_link1_)) { $_link3_=$_link1_; $_tpl_=false; }
+		else if(file_exists($_link2_)) { $_link3_=$_link2_; $_tpl_=true; }
+		else { throw new ViewNotFoundException($_name_); }
 
-		if($tpl)
+		if($_tpl_)
 		{
 			self::$showed="tpl";
-			Template::show($link3,$data);
-
-
+			Template::show($_link3_,$_data_);
 		}
 		else
 		{
 			self::$showed="smpl";
-			include($link3);
-
+			include($_link3_);
 		}
 
 

@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'key1' => 't38jl3L5D21q7wWssSyxhKEkqsPR7JUt',
-	'key2' => 'fiestaFramework',
+	'key1' => '8aae522b95242e3618f6ecfc3e98c1b5',
+	'key2' => 'a058f845231de632b6c25a2accb99ae8',
 
 );

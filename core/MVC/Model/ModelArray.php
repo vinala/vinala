@@ -1,5 +1,6 @@
 <?php 
 
+namespace Fiesta\Core\MVC\Model;
 
 /**
 * Model array Class

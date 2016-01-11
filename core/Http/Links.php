@@ -1,5 +1,7 @@
 <?php 
 
+namespace Fiesta\Core\Http;
+
 /**
 * Links class
 */
@@ -12,9 +14,9 @@ class Links
 	public static $js;
 	public static $gen;
 
-	public static function ini()
+	public static function ini($root="")
 	{ 
-		$files=glob("../app/links/*.php");
+		$files=glob($root."../app/links/*.php");
 		//
 		foreach ($files as $filename)
 		{

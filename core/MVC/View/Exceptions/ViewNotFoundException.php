@@ -1,6 +1,6 @@
 <?php
 
-namespace Fiesta\MVC\View;
+namespace Fiesta\Core\MVC\View\Exception;
 
 /**
 * Directory not fount exception

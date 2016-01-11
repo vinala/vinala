@@ -1,5 +1,10 @@
 <?php
 
+namespace Fiesta\Core\Objects;
+
+use Fiesta\Core\Objects\String\Exception\StringOutIndexException;
+use Fiesta\Core\Objects\Table;
+
 /**
 * String Trim Consts
 **/
@@ -96,7 +101,7 @@ class String
 				//
 				return $str1.$new.$str2;
 			}
-			else throw new Fiesta\Objects\String\StringOutIndexException();
+			else throw new StringOutIndexException();
 		}
 
 	public static function subString($string,$indexStart,$count)
@@ -114,7 +119,7 @@ class String
 	static function checkIndex($string,$index)
 		{
 			if(self::isIndexIN($string,$index)) return true;
-			else throw new Fiesta\Objects\String\StringOutIndexException();
+			else throw new StringOutIndexException();
 		}
 
 	static function isIndexIN($string,$index)

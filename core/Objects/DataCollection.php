@@ -1,4 +1,8 @@
-<?php 	
+<?php 
+
+namespace Fiesta\Core\Objects;
+
+use Fiesta\Core\Config\Config;	
 
 /**
 * 	Data array

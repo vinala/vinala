@@ -1,5 +1,11 @@
 <?php 
 
+namespace Fiesta\Core\Database;
+
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Objects\Table;
+use Fiesta\Core\HyperText\Res;
+
 class DBTable
 {
 	public $name="null";

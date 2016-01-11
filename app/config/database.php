@@ -7,14 +7,16 @@ return array(
 	|----------------------------------------------
 	| Default Database Connection
 	|----------------------------------------------
+	| Default used database driver
 	*/
 
-	'default' => "mysql", 
+	'default' => 'mysql', 
 
 	/*
 	|----------------------------------------------
 	| Database Connections
 	|----------------------------------------------
+	| all drivers that Fiesta Work with
 	*/
 
 	'connections' => array(
@@ -58,23 +60,29 @@ return array(
 	|----------------------------------------------
 	| Schemas Table
 	|----------------------------------------------
+	| Database used to store migrations info
 	*/
 
-	'migration' => "fiesta_migrations",
+	'migration' => 'fiesta_migrations',
 
 	/*
 	|----------------------------------------------
-	| Table prefixe 
+	| Prefixing
 	|----------------------------------------------
-	| for your security change the prefix value to
-	| another value
-	|
+	| if true, Fiesta will add prefixe for all 
+	| Database tables created by the framework
 	*/
 
-	'prefixing' => !false,
-	'prefixe' => 'sid_',
+	'prefixing' => true,
 
+	/*
+	|----------------------------------------------
+	| The prefixe
+	|----------------------------------------------
+	| This string will be add to all tables names
+	| created by Fiesta if prefixing parameter was true
+	*/
 
-
+	'prefixe' => 'fst_',
 
 );

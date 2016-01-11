@@ -1,5 +1,10 @@
 <?php
 
+namespace Fiesta\Core\Database;
+
+use Fiesta\Core\Config\Config;
+
+
 /**
 * Database Schema class
 */
@@ -124,7 +129,13 @@ class Schema
 
 	public function timestamps()
 	{
-		self::$sql_rows[]='date_create int(15),date_edit int(15)';
+		self::$sql_rows[]='created_at int(15),edited_at int(15)';
+		return $this;
+	}
+
+	public function keep()
+	{
+		self::$sql_rows[]='deleted_at int(15)';
 		return $this;
 	}
 
@@ -172,9 +183,11 @@ class Schema
 
 
 
-	/*
-	* Create function
-	*/
+	/**
+	 * 
+	 */
+
+
 
 	protected static function tableName($nom,$prefix=null)
 	{

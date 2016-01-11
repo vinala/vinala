@@ -1,5 +1,10 @@
 <?php 
 
+namespace Fiesta\Core\Database;
+
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Database\Drivers\MysqlDatabase;
+
 /**
 * Database Class
 */
@@ -26,7 +31,7 @@ class Database
 				break;
 
 			case 'mysql':
-					return (new Fiesta\Database\MysqlDatabase);
+					return (new MysqlDatabase);
 				break;
 
 			case 'pgsql':

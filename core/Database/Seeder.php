@@ -1,5 +1,7 @@
 <?php 
 
+namespace Fiesta\Core\Database;
+
 /**
 * Seeder class
 */
@@ -22,7 +24,7 @@ class Seeder
 
 	public static function ini()
 	{
-		SeedsCaller::run();
+		\SeedsCaller::run();
 	}
 
 }

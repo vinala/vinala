@@ -1,11 +1,14 @@
 <?php 
 
-namespace Fiesta\Filesystem;
+namespace Fiesta\Core\Filesystem;
+
+use Fiesta\Core\Filesystem\Exception\DirectoryNotFoundException;
+use Fiesta\Core\Filesystem\Exception\FileNotFoundException;
+
+
 /**
 * File system
 */
-
-
 class Filesystem
 {
 	

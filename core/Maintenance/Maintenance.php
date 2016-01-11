@@ -1,15 +1,24 @@
 <?php 
 
+namespace Fiesta\Core\Maintenance;
+
+use Fiesta\Core\MVC\View\View;
+use Fiesta\Core\Config\Config;
+
 /**
 * Maintenance class
 */
-
 class Maintenance
 {
 	public static function check()
 	{
-		if(!Config::get("maintenance.activate") || in_array(self::thisUrl(), Config::get("maintenance.outRoutes")))
-			return true;
+		
+		if(Config::get("panel.configured"))
+		{
+			if(Config::get("maintenance.activate") && !in_array(self::thisUrl(), Config::get("maintenance.outRoutes"))) return true;
+			else if(Config::get("maintenance.activate") && in_array(self::thisUrl(), Config::get("maintenance.outRoutes"))) return false;
+			else if( ! Config::get("maintenance.activate")) return false;
+		}
 		else return false;
 	}
 

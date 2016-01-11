@@ -1,5 +1,9 @@
 <?php 
 
+namespace Fiesta\Core\Http;
+
+use Fiesta\Core\Config\Config;
+
 /**
 * erreur class
 */

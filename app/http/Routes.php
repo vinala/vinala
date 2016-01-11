@@ -1,16 +1,21 @@
 <?php 
 
 /*
-|----------------------------------------------
+|----------------------------------------------------------------------------------
 | App Routes
-|----------------------------------------------
-| hna route dial l application dialk aya route 
-| khask t7eto hena 
-|
+|----------------------------------------------------------------------------------
+| here for framework routes , all http request should put it here with their events
+| put it here with their events
+| 
 */
 
 
 Route::get("/",function()
 {
-	return View::make('hello');
+	return View::make('hello.hello');
+});
+
+Route::get("hello/{step}",function($step)
+{
+	return helloController::steps($step);
 });

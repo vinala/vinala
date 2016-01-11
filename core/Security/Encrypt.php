@@ -1,5 +1,9 @@
 <?php
 
+namespace Fiesta\Core\Security;
+
+use Fiesta\Core\Config\Config;
+
 /**
 *
 */

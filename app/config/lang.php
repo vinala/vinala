@@ -11,7 +11,7 @@ return array(
 	| dialk o t9der tbdelo men be3d
 	*/
 
-	'default'=>"fr",
+	'default'=>'fr',
 
 	/*
 	|----------------------------------------------
@@ -20,6 +20,6 @@ return array(
 	| hena smyt l cookie dial langue
 	*/
 
-	'cookie'=>"fiesta_lang",
+	'cookie'=>'fiesta_lang',
 
 );

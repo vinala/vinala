@@ -2,10 +2,31 @@
 
 //----------------------------------------
 // Fiesta (http://ipixa.net)
-// Copyright 2014 - 2015 Youssef Had, Inc.
+// Copyright 2014 - 2016 Youssef Had, Inc.
 // Licensed under Open Source
 //----------------------------------------
 
+namespace Fiesta\Core\Glob;
+
+use Fiesta\Core\Storage\Session;
+use Fiesta\Core\Logging\Handler;
+use Fiesta\Core\Config\Alias;
+use Fiesta\Core\Objects\Sys;
+use Fiesta\Core\Access\Url;
+use Fiesta\Core\Access\Path;
+use Fiesta\Core\MVC\View\Template;
+use Fiesta\Core\Resources\Faker;
+use Fiesta\Core\Http\Links;
+use Fiesta\Core\Http\Errors;
+use Fiesta\Core\Security\License;
+use Fiesta\Core\Translator\Lang;
+use Fiesta\Core\Database\Database;
+use Fiesta\Core\Security\Auth;
+use Fiesta\Core\Router\Routes;
+use Fiesta\Core\Config\Config;
+use Fiesta\Core\Logging\Log;
+use Fiesta\Core\Objects\DateTime;
+use Fiesta\Vendor\Panel\Panel;
 
 
 class App
@@ -14,145 +35,152 @@ class App
 	public static $root;
 	public static $Callbacks = array('before'=>null,'after'=>null);
 
-	public static function run($p=null,$root=null,$routes=true,$session=true,$whoops=true)
+	public static function runTest($path)
+	{
+		return self::run("test",$path,false,false);
+	}
+
+	public static function version()
+	{
+		return "Fiesta v3 (3.0.*) PHP Framework";
+	}
+
+	public static function run($p=null,$root=null,$routes=true,$session=true)
 	{
 		ob_start();
 		//
 		self::$page=$p;
 		self::$root=$root;
+		
+		self::vendor();
 		//
-		//session
-		require __DIR__.'/../core/Storage/Session.php';
-		if($session)Session::start(__DIR__.'/../app/storage/session');
-		//
-		require __DIR__.'/../core/Access/ErrorHandler.php';
+		require self::$root.'../core/Logging/Handler.php';
+		require self::$root.'../core/Logging/Log.php';
 
 		// Config
-		require __DIR__.'/../core/Config/Config.php';
-		require __DIR__.'/../core/Config/Exceptions/ConfigException.php';
+		require self::$root.'../core/Config/Config.php';
+		require self::$root.'../core/Config/Exceptions/ConfigException.php';
+		Config::load();
 
-		//Maintenance
-		require __DIR__.'/../core/Maintenance/Maintenance.php';
-
-		//Objects
-		require __DIR__.'/../core/Objects/Vars.php';
-		require __DIR__.'/../core/Objects/String/String.php';
-		require __DIR__.'/../core/Objects/String/Exceptions/StringOutIndexException.php';
-
-		// Access
-		require __DIR__.'/../core/Access/Path.php';
+		// Set Timezone
+		self::timeCall();
 
 		// Set the error log
-		ini_set("log_errors", 1);
-		ini_set("error_log", __DIR__.'/../app/storage/logs/fiesta.log');
+		Log::ini();
 
 		// Set Whoops error handler
-		if($whoops) ErrorHandler::ini(self::$root);
+		Handler::ini(self::$root);
+
+		//session
+		require self::$root.'../core/Storage/Session.php';
+		if($session) Session::start(self::$root.'../app/storage/session');
+
+		//Maintenance
+		require self::$root.'../core/Maintenance/Maintenance.php';
+
+		//Objects
+		require self::$root.'../core/Objects/Vars.php';
+		require self::$root.'../core/Objects/String/String.php';
+		require self::$root.'../core/Objects/String/Exceptions/StringOutIndexException.php';
+
+		// Access
+		require self::$root.'../core/Access/Path.php';
+
+		//Alias
+		require self::$root.'../core/Config/Alias.php';
 
 		//
-		//require __DIR__.'/../core/MVC/Templete.php';
-		require __DIR__.'/../core/Objects/Exception.php';
-		require __DIR__.'/../core/Faker.php';
+		//require self::$root.'../core/MVC/Templete.php';
+		require self::$root.'../core/Objects/Exception.php';
+		require self::$root.'../core/Resources/Faker.php';
 
-		require __DIR__.'/../core/Storage/Cookie.php';
+		require self::$root.'../core/Storage/Cookie.php';
 
-
-		//routes
-		// old
-		//require __DIR__.'/../core/Access/Routes_2.php';
-		// new
-		require __DIR__.'/../core/Router/Routes.php';
-		require __DIR__.'/../core/Router/Route.php';
-		require __DIR__.'/../core/Router/Exceptions/RouteNotFoundException.php';
+		// Routes
+		require self::$root.'../core/Router/Routes.php';
+		require self::$root.'../core/Router/Route.php';
+		require self::$root.'../core/Router/Exceptions/NotFoundHttpException.php';
 
 		// Caches
-		require __DIR__.'/../core/Caches/Caches.php';
-		require __DIR__.'/../core/Caches/Cache.php';
-		require __DIR__.'/../core/Caches/FileCache.php';
-		require __DIR__.'/../core/Caches/DatabaseCache.php';
-		require __DIR__.'/../core/Caches/Exceptions/DriverNotFoundException.php';
+		require self::$root.'../core/Caches/Caches.php';
+		require self::$root.'../core/Caches/Cache.php';
+		require self::$root.'../core/Caches/FileCache.php';
+		require self::$root.'../core/Caches/DatabaseCache.php';
+		require self::$root.'../core/Caches/Exceptions/DriverNotFoundException.php';
 
 
-		require __DIR__.'/../core/Storage/Storage.php';
-		require __DIR__.'/../core/Security/Auth.php';
-		require __DIR__.'/../core/Objects/Table.php';
+		require self::$root.'../core/Storage/Storage.php';
+		require self::$root.'../core/Security/Auth.php';
+		require self::$root.'../core/Objects/Table.php';
 
 		// Database
-		require __DIR__.'/../core/Database/Schema.php';
-		require __DIR__.'/../core/Database/Migration.php';
-		require __DIR__.'/../core/Database/Seeder.php';
-		require __DIR__.'/../core/Database/Database.php';
-		require __DIR__.'/../core/Database/Drivers/MySql.php';
-		require __DIR__.'/../core/Database/Exceptions/DatabaseArgumentsException.php';
-		require __DIR__.'/../core/Database/Exceptions/DatabaseConnectionException.php';
+		require self::$root.'../core/Database/Schema.php';
+		require self::$root.'../core/Database/Migration.php';
+		require self::$root.'../core/Database/Seeder.php';
+		require self::$root.'../core/Database/Database.php';
+		require self::$root.'../core/Database/Drivers/MySql.php';
+		require self::$root.'../core/Database/Exceptions/DatabaseArgumentsException.php';
+		require self::$root.'../core/Database/Exceptions/DatabaseConnectionException.php';
 
 
-		require __DIR__.'/../core/Access/Url.php';
-		require __DIR__.'/../core/Hypertext/Pages.php';
+		require self::$root.'../core/Access/Url.php';
+		
+		require self::$root.'../core/Objects/Sys.php';
+		require self::$root.'../core/Http/Links.php';
+		require self::$root.'../core/Objects/Base.php';
+		require self::$root.'../core/Resources/Libs.php';
+		require self::$root.'../core/Hypertext/Res.php';
+		require self::$root.'../core/Hypertext/Input.php';
+		require self::$root.'../core/Security/License.php';
 
-		require __DIR__.'/../core/Objects/DateTime.php';
-		require __DIR__.'/../core/Objects/Sys.php';
-		require __DIR__.'/../core/Http/Links.php';
-		require __DIR__.'/../core/Objects/Base.php';
-		require __DIR__.'/../core/Libs.php';
-		require __DIR__.'/../core/Hypertext/Res.php';
-		require __DIR__.'/../core/Hypertext/Input.php';
-		require __DIR__.'/../core/License.php';
-		require __DIR__.'/../core/Hypertext/Cookie.php';
-
-		//Languages
-		require __DIR__.'/../core/Lang/Lang.php';
-		require __DIR__.'/../core/Lang/Exceptions/LanguageKeyNotFoundException.php';
-
-		// MVC - model
-		require __DIR__.'/../core/MVC/Model/Model.php';
-		require __DIR__.'/../core/MVC/Model/ModelArray.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/ForeingKeyMethodException.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/ColumnNotEmptyException.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/ManyPrimaryKeysException.php';
-		require __DIR__.'/../core/MVC/Model/Exceptions/PrimaryKeyNotFoundException.php';
+		
+		self::translatorCalls();
+		self::modelsCalls();
+		self::relationsCalls();
+		self::mediaCalls();
 
 		// MVC - View
 
-		require __DIR__.'/../core/MVC/View/View.php';
-		require __DIR__.'/../core/MVC/View/Libs/Template.php';
-		require __DIR__.'/../core/MVC/View/Libs/Views.php';
-		require __DIR__.'/../core/MVC/View/Exceptions/ViewNotFoundException.php';
+		require self::$root.'../core/MVC/View/View.php';
+		require self::$root.'../core/MVC/View/Libs/Template.php';
+		require self::$root.'../core/MVC/View/Libs/Views.php';
+		require self::$root.'../core/MVC/View/Exceptions/ViewNotFoundException.php';
 
-		require __DIR__.'/../core/Hypertext/HTML.php';
-		require __DIR__.'/../core/Security/Encrypt.php';
-		require __DIR__.'/../core/Security.php';
-		//require __DIR__.'/../core/MVC/Model.php';
-		// require __DIR__.'/../core/MVC/View.php';
-		require __DIR__.'/../core/MVC/Controller.php';
-		require __DIR__.'/../core/Http/Error.php';
-		require __DIR__.'/../core/Hypertext/Script.php';
-		require __DIR__.'/../core/Http/Root.php';
-		require __DIR__.'/../core/Mail_2.php';
-		require __DIR__.'/../core/Objects/DataCollection.php';
-		require __DIR__.'/../core/Debug.php';
+		require self::$root.'../core/Hypertext/HTML.php';
+		require self::$root.'../core/Security/Encrypt.php';
+		require self::$root.'../core/Security/Security.php';
+		require self::$root.'../core/MVC/Controller.php';
+		require self::$root.'../core/Http/Error.php';
+		require self::$root.'../core/Http/Root.php';
+		require self::$root.'../core/Mailing/Mail.php';
+		require self::$root.'../core/Objects/DataCollection.php';
+		require self::$root.'../core/Maintenance/Debug.php';
 
 		// Filesystem
-		require __DIR__.'/../core/Filesystem/Exceptions/FileNotFoundException.php';
-		require __DIR__.'/../core/Filesystem/Exceptions/DirectoryNotFoundException.php';
-		require __DIR__.'/../core/Filesystem/Filesystem.php';
+		require self::$root.'../core/Filesystem/Exceptions/FileNotFoundException.php';
+		require self::$root.'../core/Filesystem/Exceptions/DirectoryNotFoundException.php';
+		require self::$root.'../core/Filesystem/Filesystem.php';
 
 		// Database files
-		require __DIR__.'/../core/Database/DBTable.php';
+		require self::$root.'../core/Database/DBTable.php';
+
+		//
 
 
+		Alias::ini(self::$root);
 		Sys::ini();
 		Url::ini();
 		Path::ini();
-		Fiesta\MVC\View\Template::ini(self::$root);
-		//
+		Template::ini(self::$root);
 		Faker::ini();
-		Links::ini();
+		Links::ini($root);
 		Errors::ini($root);
 		License::ini(self::$page);
 		Lang::ini();
 		Database::ini();
 		Auth::ini();
+		Panel::run();
+		self::scoopCall();
 
 		//
 
@@ -177,7 +205,7 @@ class App
 			if($routes)
 			{
 				include_once $root."../app/http/Routes.php";
-				Fiesta\Router\Routes::run();
+				Routes::run();
 			}
 		}
 		else
@@ -199,11 +227,20 @@ class App
 			if($routes)
 			{
 				include_once "../app/http/Routes.php";
-				Fiesta\Router\Routes::run();
+				Routes::run();
 			}
 		}
 
+		return true;
+	}
 
+	/**
+	 * call vendor
+	 */
+	public static function vendor()
+	{
+		$path = is_null(App::$root) ? '../vendor/autoload.php' : App::$root.'../vendor/autoload.php';
+		include_once $path;
 	}
 
 	public static function before($fun)
@@ -220,7 +257,96 @@ class App
 	{
 		$sub=$_SERVER["PHP_SELF"];
 		$r=explode("App.php", $sub);
-		//echo "*".$_SERVER["REQUEST_SCHEME"];
+		//
 		return "http://".$_SERVER["HTTP_HOST"].$r[0];
+	}
+
+	/**
+	 * Call files
+	 * @param $files array
+	 * @param $path string
+	 */
+	public static function call($files,$path)
+	{
+		foreach ($files as $file)
+			require $path.$file.".php";
+	}
+
+	/**
+	 * MVC Model relationships calls
+	 */
+	public static function relationsCalls()
+	{
+		// Files of relation
+		$files = array('OneToOne', 'OneToMany', 'ManyToMany', 'BelongsTo');
+		$filesPath = self::$root.'../core/MVC/Relations/';
+		self::call($files,$filesPath);
+
+		// Exeptions of relation
+		$exceptions = array('ManyRelationException', 'ModelNotFindedException');
+		$exceptionsPath = self::$root.'../core/MVC/Relations/Exceptions/';
+		self::call($exceptions,$exceptionsPath);
+	}
+
+	/**
+	 * MVC Model calls
+	 */
+	public static function modelsCalls()
+	{
+		// Files of models
+		$files = array('Model', 'ModelArray');
+		$filesPath = self::$root.'../core/MVC/Model/';
+		self::call($files,$filesPath);
+
+		// Exeptions of models
+		$exceptions = array('ForeingKeyMethodException', 'ColumnNotEmptyException', 'ManyPrimaryKeysException', 'PrimaryKeyNotFoundException');
+		$exceptionsPath = self::$root.'../core/MVC/Model/Exceptions/';
+		self::call($exceptions,$exceptionsPath);
+	}
+
+	/**
+	 * Translator calls
+	 */
+	public static function translatorCalls()
+	{
+		// Files of models
+		$files = array('Lang', 'Smiley');
+		$filesPath = self::$root.'../core/Translator/';
+		self::call($files,$filesPath);
+
+		// Exeptions of models
+		$exceptions = array('LanguageKeyNotFoundException');
+		$exceptionsPath = self::$root.'../core/Translator/Exceptions/';
+		self::call($exceptions,$exceptionsPath);
+	}
+
+	/**
+	 * Media calls
+	 */
+	public static function mediaCalls()
+	{
+		// Files of models
+		$files = array('QR');
+		$filesPath = self::$root.'../core/Media/';
+		self::call($files,$filesPath);
+	}
+
+	/**
+	 * scoop call
+	 */
+	public static function scoopCall()
+	{
+		$files = array('Scoop');
+		$filesPath = self::$root.'../core/Access/';
+		self::call($files,$filesPath);
+	}
+
+	/**
+	 * time call
+	 */
+	public static function timeCall()
+	{
+		require self::$root.'../core/Objects/DateTime.php';
+		DateTime::setTimezone();
 	}
 }

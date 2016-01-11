@@ -1,5 +1,9 @@
 <?php
 
+namespace Fiesta\Core\Storage;
+
+use Fiesta\Core\Security\Hash;
+
 /**
 * Session class
 */
