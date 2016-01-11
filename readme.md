@@ -7,6 +7,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/fiesta/fiesta/v/unstable)](https://packagist.org/packages/fiesta/fiesta) 
 [![License](https://poser.pugx.org/fiesta/fiesta/license)](https://packagist.org/packages/fiesta/fiesta)
 [![Monthly Downloads](https://poser.pugx.org/fiesta/fiesta/d/monthly)](https://packagist.org/packages/fiesta/fiesta)
+[![Owner](https://img.shields.io/badge/Owner-Youssef%20Had-blue.svg)](https://github.com/youssefhad)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fiesta-framework/Fiesta/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fiesta-framework/Fiesta/?branch=master)
 
 Fiesta PHP Framework
 
