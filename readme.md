@@ -12,13 +12,13 @@ Fiesta PHP Framework (Beta)
 
 Vous pouvez installer Fiesta via [Composer](https://getcomposer.org/) en utilisent la commande create-project dans votre terminal
 
-	composer create-project fiesta/fiesta --prefer-dist
+	composer create-project fiesta/fiesta
 
 vous pouvez aussi includer le nom de projet :
 
-	composer create-project fiesta/fiesta nom-de-votre-projet --prefer-dist
+	composer create-project fiesta/fiesta nom-de-votre-projet
 	
-ou tout simplement télécharger depuis github [Ici](https://github.com/fiesta-framework/Fiesta/archive/master.zip)
+
 
 	
 ### Exigences du Fiesta
