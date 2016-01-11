@@ -8,7 +8,11 @@ use Fiesta\Core\Testing\TestCase;
 */
 class AppTest
 {
-	public function testIfRun()
+
+	/**
+	 * Check if PHPUnit accept the Framework test 
+	 */
+	public function check()
 	{
 		$this->call();
 		//
@@ -17,6 +21,9 @@ class AppTest
 		$this->assertTrue( $app );
 	}
 
+	/**
+	 * Calling the test class
+	 */
 	protected function call()
 	{
 		require_once __DIR__.'/../core/Testing/TestCase.php'; 

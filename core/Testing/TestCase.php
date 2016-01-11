@@ -12,6 +12,9 @@ use Fiesta\Core\Glob\App;
 class TestCase extends PHPUnit_Framework_TestCase
 {
 	
+	/**
+	 * Run the test
+	 */
 	public static function run()
 	{
 		self::call(__DIR__."/../");
@@ -19,24 +22,28 @@ class TestCase extends PHPUnit_Framework_TestCase
 		return self::check();
 	}
 
-	public static function mock()
-	{
-		return $app = self::instance(__DIR__."/");
-	}
-
+	/**
+	 * Call the Fiesta Framework
+	 */
 	public static function call($path)
 	{
 		require_once $path.'core/Ini.php';
 	}
 
+	/**
+	 * Return instance the Framework App Class
+	 */
 	public static function instance($path)
 	{
 		return App::run("test",$path,false,false);
 	}
 
+	/**
+	 * Check if App Class retruns true
+	 */
 	public static function check()
 	{
-		return self::mock();
+		return self::instance(__DIR__."/");
 	}
 }
 
