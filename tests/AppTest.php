@@ -1,15 +1,16 @@
 <?php 
 
+require_once __DIR__.'/../core/Testing/TestCase.php'; 
+
 /**
-* 
+* AppTestClass for testing
 */
-class AppTest extends PHPUnit_Framework_TestCase
+class AppTest extends Fiesta\Core\Testing\TestCase
 {
 	public function testIfRun()
 	{
-		require_once __DIR__.'/../core/Ini.php';
 		
-		$app = Fiesta\Core\Glob\App::runTest(__DIR__."/");
+		$app = $this->run();
 		
 		$this->assertTrue( $app );
 	}
