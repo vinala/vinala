@@ -2,6 +2,7 @@
 
 use Fiesta\Core\MVC\View\View;
 use Fiesta\Core\Router\Route;
+use Fiesta\Core\Objects\DateTime;
 
 /**
  * Views
@@ -25,4 +26,12 @@ function get($uri,$callback,$subdomains=null)
 function config($param)
 {
 	return Config::get($param);
+}
+
+/**
+ * Time
+ */
+function now()
+{
+	return DateTime::now();
 }
