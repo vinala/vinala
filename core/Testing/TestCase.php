@@ -9,7 +9,7 @@ use Fiesta\Core\Glob\App;
 /**
 * TestCase Class For testing
 */
-class TestCase extends PHPUnit_Framework_TestCase
+class TestCase
 {
 	
 	/**
@@ -17,17 +17,30 @@ class TestCase extends PHPUnit_Framework_TestCase
 	 */
 	public static function run()
 	{
-		self::call(__DIR__."/../");
+		self::call();
 		//
-		return self::check();
+		return self::mock();
 	}
 
 	/**
 	 * Call the Fiesta Framework
 	 */
-	public static function call($path)
+	public static function call()
 	{
-		require_once $path.'core/Ini.php';
+		require_once self::path().'/Ini.php';
+	}
+
+	/**
+	 * Call the Fiesta Framework
+	 */
+	protected static function path()
+	{
+		$path =  __DIR__;
+		$data = explode("\\", $path);
+		$path = "";
+		//
+		for ($i=0; $i < count($data) - 1; $i++) $path = $data[$i]."\\";
+		return $path;
 	}
 
 	/**
@@ -41,9 +54,14 @@ class TestCase extends PHPUnit_Framework_TestCase
 	/**
 	 * Check if App Class retruns true
 	 */
-	public static function check()
+	public static function mock()
 	{
-		return self::instance(__DIR__."/");
+		return self::instance(__DIR__."/../");
+	}
+
+	public static function check($app)
+	{
+		return $this->assertTrue( $app );
 	}
 }
 
