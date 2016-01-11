@@ -12,7 +12,7 @@ class AppTest
 	/**
 	 * Check if PHPUnit accept the Framework test 
 	 */
-	public function testIfWorking()
+	public function test()
 	{
 		require_once __DIR__.'/../core/Testing/TestCase.php'; 
 		//
