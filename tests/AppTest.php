@@ -12,20 +12,12 @@ class AppTest
 	/**
 	 * Check if PHPUnit accept the Framework test 
 	 */
-	public function check()
+	public function testIfWorking()
 	{
-		$this->call();
+		require_once __DIR__.'/../core/Testing/TestCase.php'; 
 		//
 		$app = TestCase::run();
 		
 		$this->assertTrue( $app );
-	}
-
-	/**
-	 * Calling the test class
-	 */
-	protected function call()
-	{
-		require_once __DIR__.'/../core/Testing/TestCase.php'; 
 	}
 }
