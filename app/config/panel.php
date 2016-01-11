@@ -57,7 +57,8 @@ return array(
 	|----------------------------------------------
 	| First Configuration
 	|----------------------------------------------
-	| 
+	|  The framework will set true if you passed 
+	|  the first configuration
 	*/
 
 	'configured' => false,
