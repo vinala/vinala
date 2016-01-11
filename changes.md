@@ -3,11 +3,11 @@
 
 New features:
 
- * supporting smileys
+ * Supporting smileys
  * First Configuration
- * creating system for storing infos about schema 
+ * Creating system for storing infos about schema 
  * Scoop functions
- * using Travis and PHPUnit
+ * Using Travis and PHPUnit
 
 
 ### 2.5.0
