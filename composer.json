@@ -21,5 +21,11 @@
 		"fiesta/panel": "~2.1.24",
 		"nesbot/carbon": "~1.14",
 		"phpunit/phpunit": "~4.0"
-	}
+	},
+	"extra": {
+        "branch-alias": {
+            "dev-master": "3.0-beta"
+            "dev-alpha": "3.0-alpha"
+        }
+    },
 }
