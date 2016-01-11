@@ -1,6 +1,7 @@
 ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/alpha/app/resources/images/fiesta_wild.png)
 ## Fiesta
-![alt tag](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=alpha)
+
+[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=alpha)](https://travis-ci.org/fiesta-framework/Fiesta)
 
 Fiesta PHP Framework (Beta)
 
