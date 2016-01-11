@@ -304,7 +304,7 @@
 	</div>
 	
 	<div class="bottom_panel bottom_panel_2" id="bottom_panel_2" style="display:none">
-	v 2.6
+	v 3.0
 	</div>
 	<div class="bottom_panel" id="bottom_panel" style="display:none">
 		<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Fiesta Panel</div></a>
