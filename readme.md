@@ -1,14 +1,14 @@
 ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/alpha/app/resources/images/fiesta_wild.png)
 ## Fiesta
 
-[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=alpha)](https://travis-ci.org/fiesta-framework/Fiesta)
+[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg)](https://travis-ci.org/fiesta-framework/Fiesta)
 [![Latest Stable Version](https://poser.pugx.org/fiesta/fiesta/v/stable)](https://packagist.org/packages/fiesta/fiesta) 
 [![Total Downloads](https://poser.pugx.org/fiesta/fiesta/downloads)](https://packagist.org/packages/fiesta/fiesta) 
 [![Latest Unstable Version](https://poser.pugx.org/fiesta/fiesta/v/unstable)](https://packagist.org/packages/fiesta/fiesta) 
 [![License](https://poser.pugx.org/fiesta/fiesta/license)](https://packagist.org/packages/fiesta/fiesta)
 [![Monthly Downloads](https://poser.pugx.org/fiesta/fiesta/d/monthly)](https://packagist.org/packages/fiesta/fiesta)
 
-Fiesta PHP Framework (Beta)
+Fiesta PHP Framework
 
 ### Installation
 
