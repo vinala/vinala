@@ -37,7 +37,7 @@ class App
 
 	public static function runTest($path)
 	{
-		return self::run("test",$path,true,false);
+		return self::run("test",$path,false,false);
 	}
 
 	public static function version()
