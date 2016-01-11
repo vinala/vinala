@@ -24,25 +24,18 @@ use Fiesta\Core\MVC\Relations\BelongsTo;
 */
  class Model
 {
-<<<<<<< HEAD
-	 /**
-     * primary key for the model
-     *
-     * @var string
-     */
+
+	/**
+	* primary key for the model
+	*
+	* @var string
+	*/
     protected $primaryKey = 'id';
 
-=======
-	// protected $test;
->>>>>>> aca94e459e40dcc57a65e8daedf64d55c4cacbe3
 	protected static $table;
 	protected $DBtable;
 	protected $columns= array();
 	protected $key;
-<<<<<<< HEAD
-=======
-	// protected $object;
->>>>>>> aca94e459e40dcc57a65e8daedf64d55c4cacbe3
 	//
 	protected $isKept = false;
 	protected $isMaj = false;
