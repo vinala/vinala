@@ -1,5 +1,10 @@
 <?php 
 
+/**
+ * Scope function to make easy for users to 
+ * access to somefrmaework functions
+ */
+
 use Fiesta\Core\MVC\View\View;
 use Fiesta\Core\Router\Route;
 use Fiesta\Core\Objects\DateTime;
@@ -18,6 +23,11 @@ function view($value,$data=null)
 function get($uri,$callback,$subdomains=null)
 {
 	return Route::get($uri,$callback,$subdomains);
+}
+
+function call($uri,$controller,$data=null)
+{
+	return Route::call($uri,$controller,$data);
 }
 
 /**
