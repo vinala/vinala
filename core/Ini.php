@@ -331,7 +331,7 @@ class App
 	 */
 	public static function scoopCall()
 	{
-		$files = array('Scoop');
+		$files = array('Scope');
 		$filesPath = self::$root.'../core/Access/';
 		self::call($files,$filesPath);
 	}
