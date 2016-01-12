@@ -30,4 +30,9 @@ class Route
 		return Routes::resource($uri,$controller,$data);
 	}
 
+	public static function call($uri,$controller,$data=null)
+	{
+		return Routes::call($uri,$controller,$data);
+	}
+
 }

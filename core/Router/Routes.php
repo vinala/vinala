@@ -16,7 +16,7 @@ use Fiesta\Vendor\Panel\Controller;
 use Fiesta\Vendor\Panel\Lang;
 use Fiesta\Vendor\Panel\Link;
 use Fiesta\Vendor\Panel\Model;
-use Fiesta\Vendor\Panel\View;
+use Fiesta\Core\Objects\String as Strings;
 
 
 /**
@@ -215,7 +215,7 @@ class Routes
 				$requestsUrl=$value["url"];
 				//var_dump($value);
 				//
-				if(preg_match("#^$requestsUrl$#", $currentUrl,$params))
+				if(preg_match("#^$requestsUrl$#" , $currentUrl , $params))
 				{
 					if(!is_null($value["subdomain"]))
 					{
@@ -273,7 +273,6 @@ class Routes
 						else if($value["methode"]=="object")
 						{
 							$ok=self::exec($params,$value);
-							//var_dump($value);
 							break;
 						}
 					}
@@ -318,6 +317,7 @@ class Routes
 
 		// run the route callback
 		if($ok) { self::runRoute($one,$params); }
+
 		//if the filter is false
 		else { $ok=self::falseFilter($falseok); }
 		//
@@ -583,6 +583,53 @@ class Routes
 	public static function current()
 	{
 		return self::$current;
+	}	
+
+	/**
+	 * to call a method in a controller with string
+	 * the string must contains the controller name 
+	 * and methode name separted with @ like this
+	 * controller_name@methode_name
+	 */
+	public static function call($url,$callback,$parameter)
+	{
+		$controller =  self::getCallback($callback , $parameter);
+		//
+		self::addCallable($url,$controller,"get",null);
+	}
+
+	/**
+	 * return callback oth methode in controller and
+	 * passing one single parameter
+	 */
+	protected static function getAnonymousFunction($controller,$methode,$parameter)
+	{
+		return function() use ($controller,$methode,$parameter)
+		{
+			return $controller::$methode($parameter); 
+		};
+	}
+
+	/**
+	 * get the callback of commande string
+	 */
+	protected static function getCallback($command , $params)
+	{
+		$callbacks = self::spliteStringCallback($command);
+		//
+		$controller = $callbacks["controller"];
+		$methode = $callbacks["methode"];
+		//
+		return self::getAnonymousFunction($controller,$methode,$params);
+	}
+
+	/**
+	 * splite commande string with '@'
+	 */
+	protected static function spliteStringCallback($string)
+	{
+		$data = Strings::splite($string,"@");
+		return array('controller' => $data[0], 'methode' => $data[1]);
 	}
 
 
