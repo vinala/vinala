@@ -7,7 +7,6 @@
 [![Latest Unstable Version](https://poser.pugx.org/fiesta/fiesta/v/unstable)](https://packagist.org/packages/fiesta/fiesta) 
 [![License](https://poser.pugx.org/fiesta/fiesta/license)](https://packagist.org/packages/fiesta/fiesta)
 [![Monthly Downloads](https://poser.pugx.org/fiesta/fiesta/d/monthly)](https://packagist.org/packages/fiesta/fiesta)
-[![Owner](https://img.shields.io/badge/Owner-Youssef%20Had-blue.svg)](https://github.com/youssefhad)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fiesta-framework/Fiesta/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fiesta-framework/Fiesta/?branch=master)
 
 Fiesta PHP Framework
@@ -76,6 +75,7 @@ Fiesta livré avec fichier `.htaccess` qui utilise URL rewriting, is vous utilis
 
 The Fiesta framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-Launched in 10/10/2014
+[![Owner](https://img.shields.io/badge/Owner-Youssef%20Had-blue.svg)](https://github.com/youssefhad)
+[![Owner](https://img.shields.io/badge/copyright-2014--2016-red.svg)](https://github.com/fiesta-framework/Fiesta)
+[![Owner](https://img.shields.io/badge/launched-10%2F10%2F2014-ff2f6c.svg)](https://github.com/fiesta-framework/Fiesta)
 
-Copyright 2014 - 2016 Youssef Had, Inc.
