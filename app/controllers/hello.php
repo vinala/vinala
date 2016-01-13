@@ -24,6 +24,11 @@ class helloController extends Controller
 		}
 	}
 
+	public static function hello()
+	{
+		return View::make('hello.hello');
+	}
+
 	protected static function appDoc($index)
 	{
 		$doc = array(
