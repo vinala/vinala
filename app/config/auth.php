@@ -7,12 +7,9 @@ return array(
 	|----------------------------------------------
 	| Authentication Table
 	|----------------------------------------------
-	|
-	| ila kent khedam b l authentification, khasna 
-	| n3erfo table li fih les donnees dial les 
-	| utilisateur hna 3tinah smya par défaut 
-	| t9der tbdlha
-	|
+	| If you want working with Fiesta authentification,
+	| the framework will need to know the Database
+	| table where to get data from
 	*/
 
 	'table' => 'tbl_user',
@@ -21,12 +18,7 @@ return array(
 	|----------------------------------------------
 	| Password fields
 	|----------------------------------------------
-	|
-	| hna ghadi t7t nom dial column 
-	| n3erfo table li fih les donnees dial les 
-	| utilisateur hna 3tinah smya par défaut 
-	| t9der tbdlha
-	|
+	| Here are the hashed columns
 	*/
 
 	'hashed_fields' => array( 
@@ -38,11 +30,7 @@ return array(
 	|----------------------------------------------
 	| Saved fields
 	|----------------------------------------------
-	|
-	| hna ghadi t7t nom dial column 
-	| li bghitihom ib9aw f session o finma mchiti 
-	| tl9ahom
-	| 
+	| Columns to store in $_SESSION
 	*/
 
 	'saved_fields' => array( 
@@ -53,36 +41,19 @@ return array(
 	|----------------------------------------------
 	| Saved fields
 	|----------------------------------------------
-	|
-	| hna ghadi t7t nom dial column 
-	| li bghitihom ib9aw f session o finma mchiti 
-	| tl9ahom
-	| 
+	| Name of cookie where storing the authentification
+	| data, to make remember me
 	*/
 
 	'rememeber_cookie' => 'rPuqyyAOg',
 
-	/*
-	|----------------------------------------------
-	| Saved fields
-	|----------------------------------------------
-	|
-	| hna ghadi t7t nom dial column 
-	| li bghitihom ib9aw f session o finma mchiti 
-	| tl9ahom
-	| 
-	*/
-
-	'login' => 'login',
 
 	/*
 	|----------------------------------------------
 	| CSRF Protection Token name
 	|----------------------------------------------
-	|
-	| hna ghadi t7t nom dial input hidden dial CSRF 
+	| Name of input hidden of CSRF 
 	| (cross-site request forgery attacks)
-	| 
 	*/
 
 	'csrf_token' => '_token',
