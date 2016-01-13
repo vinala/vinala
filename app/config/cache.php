@@ -1,16 +1,15 @@
 <?php 
 
 
+
 return array(
 
 	/*
 	|---------------------------------------------
 	| Default Cache Store
 	|---------------------------------------------
-	|
-	| Hna l mode dial storage dial l cache
-	| disponibles : file - database
-	|
+	| Name of cache storage mode
+	| available : file - database
 	*/
 
 	'default' => "file",
@@ -34,7 +33,6 @@ return array(
 			"table" => "fiestacache",
 			"database" => null,
 
-			// database' => [ "host" => "localhost" , "username" => "root" , "password" => "" , "database" => "tt"] , 
 		],
 	],
 
