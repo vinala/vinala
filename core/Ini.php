@@ -234,8 +234,17 @@ class App
 	 */
 	public static function vendor()
 	{
+		self::checkVendor();
 		$path = is_null(App::$root) ? '../vendor/autoload.php' : App::$root.'../vendor/autoload.php';
 		include_once $path;
+	}
+
+	/**
+	 * check if vendor existe
+	 */
+	public static function checkVendor()
+	{
+		if( ! file_exists('../vendor/autoload.php')) die("You should install fiesta dependencies by composer commande 'composer install' :)");
 	}
 
 	public static function before($fun)
