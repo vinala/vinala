@@ -9,11 +9,7 @@
 | 
 */
 
-
-Route::get("/",function()
-{
-	return View::make('hello.hello');
-});
+Route::call("/","helloController@hello");
 
 Route::get("hello/{step}",function($step)
 {
