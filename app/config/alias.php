@@ -26,7 +26,7 @@
 		**/
 
 		'aliases' => array( 
-
+			
 			'Alias' => 			Fiesta\Core\Config\Alias::class,
 			'App' => 			Fiesta\Core\Glob\App::class,
 			'Auth' => 			Fiesta\Core\Security\Auth::class,
@@ -35,8 +35,7 @@
 			'Config' => 		Fiesta\Core\Config\Config::class,
 			'Cookie' => 		Fiesta\Core\Storage\Cookie::class,
 			'Database' => 		Fiesta\Core\Database\Database::class,
-			'DataCollection' => Fiesta\Core\Objects\DataCollection::class,
-			'Time' => 			Fiesta\Core\Objects\DateTime::class,
+			'DataCollection' =>	Fiesta\Core\Objects\DataCollection::class,
 			'DBTable' => 		Fiesta\Core\Database\DBTable::class,
 			'Debug' => 			Fiesta\Core\Log\Debug::class,
 			'Errors' => 		Fiesta\Core\Http\Errors::class,
@@ -45,7 +44,6 @@
 			'Hash' => 			Fiesta\Core\Security\Hash::class,
 			'Html' => 			Fiesta\Core\HyperText\Html::class,
 			'Input' => 			Fiesta\Core\HyperText\Input::class,
-			'Translator' => 	Fiesta\Core\Translator\Lang::class,
 			'Libs' => 			Fiesta\Core\Resources\Libs::class,
 			'License' => 		Fiesta\Core\Security\License::class,
 			'Links' => 			Fiesta\Core\Http\Links::class,
@@ -59,13 +57,16 @@
 			'Schema' => 		Fiesta\Core\Database\Schema::class,
 			'Security' => 		Fiesta\Core\Security\Security::class,
 			'Session' => 		Fiesta\Core\Storage\Session::class,
+			'Smile' => 			Fiesta\Core\Translator\Smiley::class,
 			'Storage' => 		Fiesta\Core\Storage\Storage::class,
 			'String' => 		Fiesta\Core\Objects\String::class,
 			'Sys' => 			Fiesta\Core\Objects\Sys::class,
 			'Table' => 			Fiesta\Core\Objects\Table::class,
+			'Time' => 			Fiesta\Core\Objects\DateTime::class,
+			'Translator' => 	Fiesta\Core\Translator\Lang::class,
 			'Url' => 			Fiesta\Core\Access\Url::class,
 			'Vars' => 			Fiesta\Core\Objects\Vars::class,
 			'View' => 			Fiesta\Core\MVC\View\View::class,
-			'Smile' => 			Fiesta\Core\Translator\Smiley::class,
+
 		)
 	);
