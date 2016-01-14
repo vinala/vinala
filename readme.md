@@ -75,7 +75,7 @@ Fiesta livré avec fichier `.htaccess` qui utilise URL rewriting, is vous utilis
 
 The Fiesta framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-[![Owner](https://img.shields.io/badge/Owner-Youssef%20Had-blue.svg)](https://github.com/youssefhad)
+[![Owner](https://img.shields.io/badge/created%20by-Youssef%20Had-blue.svg)](https://github.com/youssefhad)
 [![Owner](https://img.shields.io/badge/copyright-2014--2016-red.svg)](https://github.com/fiesta-framework/Fiesta)
 [![Owner](https://img.shields.io/badge/launched-10%2F10%2F2014-ff2f6c.svg)](https://github.com/fiesta-framework/Fiesta)
 
