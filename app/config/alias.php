@@ -4,9 +4,9 @@
 	return array(
 
 		/*
-		|----------------------------------------------
+		|----------------------------------------------------------
 		| Enable Aliases
-		|----------------------------------------------
+		|----------------------------------------------------------
 		| Here to activate classes aliases
 		|
 		**/
@@ -15,9 +15,9 @@
 
 
 		/*
-		|----------------------------------------------
+		|----------------------------------------------------------
 		| Aliases
-		|----------------------------------------------
+		|----------------------------------------------------------
 		| this array is resposible for aliases of class
 		| in the app, feel free to register as many as 
 	    | you wish as the aliases are "lazy" loaded so 
@@ -67,6 +67,5 @@
 			'Url' => 			Fiesta\Core\Access\Url::class,
 			'Vars' => 			Fiesta\Core\Objects\Vars::class,
 			'View' => 			Fiesta\Core\MVC\View\View::class,
-
 		)
 	);

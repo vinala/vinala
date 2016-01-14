@@ -4,9 +4,9 @@
 return array(
 
 	/*
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| CSS File
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| the location of Css file responsible for the 
 	| style of  smileys 
 	*/
@@ -14,9 +14,9 @@ return array(
 	'css'=>"/resources/smileys/Style.css",
 
 	/*
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| Smileys Css Classes
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| the list of all smileys and their css classes,
 	| you can add as many as you like of smileys as
 	| long as their css class is in the smiley css 
