@@ -7,9 +7,10 @@ return array(
 	|----------------------------------------------
 	| Panel Activation
 	|----------------------------------------------
-	|  hna true ila bghiti l panel tb9a kheda
-	|  meni tsali menha redha false...pour 
-	|  votre sécurité
+	|  To define if you wanna give access to the 
+	|  panel or not , for your security if you 
+	|  complete building your app, please turn 
+	|  this off
 	*/
 
 	'enable'=> true,
@@ -19,7 +20,7 @@ return array(
 	|----------------------------------------------
 	| Panel Route
 	|----------------------------------------------
-	|  hna route dial l panel
+	|  Route for panel, for your security please change it
 	*/
 
 	'route'=>'fiesta',
@@ -42,9 +43,7 @@ return array(
 	|----------------------------------------------
 	| Panel Passwords
 	|----------------------------------------------
-	|  hna katktb les mot de passe dial panel bach 
-	|  bihom t9der tdkhol l panel dialk par default
-	|  fihom 1234 o 5678 nta t9der tbdlhom
+	|  Here are the passwords to access to the panel
 	*/
 
 	'password1'=>'1234',
