@@ -7,11 +7,7 @@ return array(
 	|--------------------------------------------------------------------------
 	| SMTP Host Address
 	|--------------------------------------------------------------------------
-	| 
-	| Hena khask t7t l adresse dial server SMTP
-	| li ghadi tsift meno lmail dialk,par defaut derna 
-	| Mailgun
-	|
+	|  SMTP host server where e-mail sends from
 	*/
 
 	'host' => "",
@@ -20,11 +16,8 @@ return array(
 	|--------------------------------------------------------------------------
 	| SMTP Host Port
 	|--------------------------------------------------------------------------
-	|
-	| hna ghadi t7t l port dial SMTP dial serveur
-	| li ghadi tsiftmen l mail
-	| t9der koon 25 ola 465 ola 587
-	|
+	|  Port of SMTP server
+	|  supported 25 or 465 or 587 
 	*/
 
 	'port' => 465,
@@ -33,10 +26,8 @@ return array(
 	|--------------------------------------------------------------------------
 	| Global "From" Address
 	|--------------------------------------------------------------------------
-	|
-	| hna ghadi t7t lmail li tsift meno lmail o
-	| nom dila l utilisateur
-	|
+	|  Here you should put the e-mail adresse where e-mails send
+	|  from and user name to show them in sender e-mail
 	*/
 
 	'from' => array("adresse" => "", 'name' => ""),
@@ -45,10 +36,8 @@ return array(
 	|--------------------------------------------------------------------------
 	| E-Mail Encryption Protocol
 	|--------------------------------------------------------------------------
-	|
-	| hna l cryptage dial l mail.
-	| tatkoonn : tls ola ssl
-	|
+	|  This is the e-mail encryption protocol
+	|  supported tls ola ssl
 	*/
 
 	'encryption' => 'ssl',
@@ -57,10 +46,7 @@ return array(
 	|--------------------------------------------------------------------------
 	| SMTP Server Username
 	|--------------------------------------------------------------------------
-	|
-	| hna smya dial l utilisateur dial serveur
-	| SMTP
-	|
+	|  Username to log into SMTP server
 	*/
 
 	'username' => "",
@@ -69,10 +55,7 @@ return array(
 	|--------------------------------------------------------------------------
 	| SMTP Server Password
 	|--------------------------------------------------------------------------
-	|
-	| hna l mot de pass dial l utilisateur dial serveur
-	| SMTP
-	|
+	|  Password to log into SMTP server
 	*/
 
 	'password' => "",
@@ -81,10 +64,8 @@ return array(
 	|--------------------------------------------------------------------------
 	| E-mail default subject
 	|--------------------------------------------------------------------------
-	|
-	| hna l sujet par default dial les emails t9der tbdlo f l'envoid dial l 
-	| mail
-	|
+	|  The default subject of sended e-mails you can changeit 
+	|  when you want to send e-mail
 	*/
 
 	'subject' => "Fiesta",
