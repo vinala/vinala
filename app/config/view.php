@@ -4,24 +4,21 @@
 return array(
 
 	/*
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| Pagination Get
-	|----------------------------------------------
-	| hda smy dial l paramter li ghadi ytsift f
-	| l get bach l app t3ref smya dial l parametre
-	| 
+	|----------------------------------------------------------
+	|  This parameter will be sent in HTTP Get contains the 
+	|  page number
 	*/
 
 	'pagination_param'=>"page",
 
 	/*
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| Pagination Style
-	|----------------------------------------------
-	| hada style dial l pagination f Fiesta
-	| 
-	| proposé: slider , simple
-	| 
+	|----------------------------------------------------------
+	|  Style of pagination
+	|  supported slider or simple
 	*/
 
 	'pagination_style'=>"slider",
@@ -29,14 +26,11 @@ return array(
 	'paginationSimplePrevious'=>"Précedent",
 
 	/*
-	|----------------------------------------------
+	|----------------------------------------------------------
 	| Pagination class
-	|----------------------------------------------
-	| hadi l class dial l pagination f Fiesta
-	| par default kayn les classes dial bootstrap dial
-	| twitter
-	| 
-	| proposé: slider , simple
+	|----------------------------------------------------------
+	|  The CSS class of the pagination by default we use a 
+	|  Bootstrap button style
 	*/
 
 	'pagination_class'=>"{bootstrap}",
