@@ -6,11 +6,10 @@ return array(
 	|--------------------------------------------------------------------------
 	| Encryption Keys
 	|--------------------------------------------------------------------------
-	| 
-	| Hna cle lwla dial l cryptage dial les donnes.khas tkoon string 32 bit(car)
-	| o cle taniya 7eta hiya dial l cryptage dial les donnes.khas tkoon au minimum string 10 bit(car)
-	| had les cles important pour security dial site dialk
-	|
+	|  These keys are for the security of your app, the first should be string
+	|  contains 32 chars and the second should be string contains at least 10
+	|  chars, in first configuration the framework change automatically these
+	|  keys
 	*/
 
 	'key1' => '8aae522b95242e3618f6ecfc3e98c1b5',
