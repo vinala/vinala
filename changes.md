@@ -28,3 +28,36 @@ New features:
 * New Hello view
 * Edit model class
 * Edit schema class
+
+
+### 1.4.4
+----------------------
+
+New features:
+
+ * Supporting subdomains route
+
+
+### 1.4.2
+----------------------
+
+New features:
+
+ * fixing some bugs in v1.4.1
+
+
+### 1.4.1
+----------------------
+
+New features:
+
+ * Changing PHPMailer To SwiftMailer
+ * Add new Mail setting to handle with SwiftMailer
+
+
+### 1.4
+----------------------
+
+New features:
+
+ * Add Whoops Error Handler
