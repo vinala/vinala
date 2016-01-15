@@ -37,7 +37,7 @@ class App
 
 	public static function version()
 	{
-		return "Fiesta v3 (3.0.*) PHP Framework";
+		return "Fiesta v3 (3.0.0) PHP Framework";
 	}
 
 	public static function run($p=null,$root=null,$routes=true,$session=true)
