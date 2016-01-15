@@ -56,7 +56,7 @@ class helloController extends Controller
 			'character_set' => "Default Character Set"
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
@@ -84,8 +84,8 @@ class helloController extends Controller
 	protected static function langDoc($index)
 	{
 		$doc = array(
-			'default_lang' => "\n\t|  hena kteb la langue par default dila l site \n\t| dialk o t9der tbdelo men be3d", 
-			'lang_cookie' => "\n\t|  hena smyt l cookie dial langue",
+			'default_lang' => "\n\t|  Default framework language ", 
+			'lang_cookie' => "\n\t|  Langue cookie to store framework default language",
 			);
 		//
 		return $doc[$index]."\n\t*/";
@@ -98,7 +98,7 @@ class helloController extends Controller
 			'lang_cookie' => "Lang Cookie name",
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
@@ -124,10 +124,10 @@ class helloController extends Controller
 	protected static function logginDoc($index)
 	{
 		$doc = array(
-			'debug' => "\n\t|  hena bach tkheli l framework i debugger les \n\t|  erreur o les exception dialo ila kan false \n\t|  maghadich i affachier les erreur", 
-			'error_debug_message' => "\n\t|  ila kan l parametre dial debug fih false\n\t|  l framework ghadi y affichier had l msag",
-			'error_log' => "\n\t|  hana ghadi t3tih l fichier li ghadi ydir fih \n\t|  les error_log\n\t|  par defaut kayn fichier f storage",
-			'background' => "\n\t|  hana ghadi t3tih l couleur dial l background\n\t|  dial la page simple dial l erreur ya3ni lpage \n\t|  li katkhroj dial l erreur ila kan debug fiha \n\t|  false"
+			'debug' => "\n\t|  Here to make the framework shows errors and\n\t|  exceptions, false to show friendly messages\n\t|  and true to debug", 
+			'error_debug_message' => "\n\t|  If loggin.debug was false the framework will\n\t|  show this message",
+			'error_log' => "\n\t|  The path of log file where Fiesta store errors\n\t|  by default the framework use this path \n\t|  'app/storage/logs/fiesta.log'",
+			'background' => "\n\t|  The color background of simple page error"
 			);
 		//
 		return $doc[$index]."\n\t*/";
@@ -142,7 +142,7 @@ class helloController extends Controller
 			'background' => "Error simple page background color",
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
@@ -171,10 +171,10 @@ class helloController extends Controller
 	protected static function MaintDoc($index)
 	{
 		$doc = array(
-			'activate' => "\n\t|  ", 
-			'Message' => "\n\t|  ",
-			'background' => "\n\t|  ",
-			'out' => "\n\t|  "
+			'activate' => "", 
+			'Message' => "",
+			'background' => "",
+			'out' => ""
 			);
 		//
 		return $doc[$index]."\n\t*/";
@@ -189,7 +189,7 @@ class helloController extends Controller
 			'out' => "Out Maintenance Routes",
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
@@ -217,7 +217,7 @@ class helloController extends Controller
 	protected static function securityDoc($index)
 	{
 		$doc = array(
-			'keys' => "\n\t|  Hna cle lwla dial l cryptage dial les donnes.khas tkoon string 32 bit(car)\n\t|  o cle taniya 7eta hiya dial l cryptage dial les donnes.khas tkoon au minimum string 10 bit(car)\n\t|  had les cles important pour security dial site dialk"
+			'keys' => "\n\t|  These keys are for the security of your app, the first should be string\n\t|  contains 32 chars and the second should be string contains at least 10\n\t|  chars, in first configuration the framework change automatically these\n\t|  keys"
 			);
 		//
 		return $doc[$index]."\n\t*/";
@@ -229,7 +229,7 @@ class helloController extends Controller
 			'keys' => "Encryption Keys",
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
@@ -255,10 +255,10 @@ class helloController extends Controller
 	protected static function panelDoc($index)
 	{
 		$doc = array(
-			'activation' => "\n\t|  hna true ila bghiti l panel tb9a kheda\n\t|  meni tsali menha redha false...pour \n\t|  votre sécurité",
-			'route' => "\n\t|  hna route dial l panel",
-			'path' => "\n\t|  here the path of the panel index, you can \n\t|  search in the internet to change the panel, \n\t|  for your security you should change the panel\n\t|  folder name",
-			'passwords' => "\n\t|  hna katktb les mot de passe dial panel bach \n\t|  bihom t9der tdkhol l panel dialk par default\n\t|  fihom 1234 o 5678 nta t9der tbdlhom",
+			'activation' => "\n\t|  To define if you wanna give access to the \n\t|  panel or not , for your security if you \n\t|  complete building your app, please turn \n\t|  this off",
+			'route' => "\n\t|  Route for panel, for your security please change it",
+			'path' => "\n\t|  Here the path of the panel index, you can \n\t|  search in the internet to change the panel, \n\t|  for your security you should change the panel\n\t|  folder name",
+			'passwords' => "\n\t|  Here are the passwords to access to the panel",
 			'configuration' => "\n\t|  The framework will set true if you passed \n\t|  the first configuration",
 			'ajax' => "\n\t|  This is links of ajax functions",
 			);
@@ -277,7 +277,7 @@ class helloController extends Controller
 			'ajax' => "Ajax Routes",
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
@@ -327,7 +327,7 @@ class helloController extends Controller
 			'prefixe' => "The prefixe",
 			);
 		//
-		$sep = "\n\t|----------------------------------------------";
+		$sep = "\n\t|----------------------------------------------------------";
 		return "\n\n\t/*".$sep."\n\t| ".$titles[$index].$sep;
 	}
 
