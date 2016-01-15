@@ -40,7 +40,7 @@ Fiesta a quelques exigences du système:
  
  [Fiesta Releases](https://github.com/fiesta-framework/Fiesta/releases)
 
-[Fiesta v 3.0](https://github.com/fiesta-framework/Fiesta/releases/tag/3.0.0) (05/07/2015)
+[Fiesta v 3.0](https://github.com/fiesta-framework/Fiesta/releases/tag/3.0.0) (15/01/2016)
 
  [Fiesta v 2.5](https://github.com/fiesta-framework/Fiesta/releases/tag/2.5.0.236) (05/07/2015)
 
