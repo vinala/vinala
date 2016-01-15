@@ -40,25 +40,27 @@ Fiesta a quelques exigences du système:
  
  [Fiesta Releases](https://github.com/fiesta-framework/Fiesta/releases)
 
- [Fiesta v 2.5 (latest)](https://github.com/fiesta-framework/Fiesta/tree/master) (05/07/2015)
+[Fiesta v 3.0](https://github.com/fiesta-framework/Fiesta/releases/tag/3.0.0) (05/07/2015)
 
- [Fiesta v 2.0](https://github.com/fiesta-framework/Fiesta/tree/2.0.0.1) (27/02/2015)
+ [Fiesta v 2.5](https://github.com/fiesta-framework/Fiesta/releases/tag/2.5.0.236) (05/07/2015)
 
- [Fiesta v 1.5](https://github.com/fiesta-framework/Fiesta/tree/1.5.0) (05/02/2015)
+ [Fiesta v 2.0](https://github.com/fiesta-framework/Fiesta/releases/tag/2.0.0.1) (27/02/2015)
+
+ [Fiesta v 1.5](https://github.com/fiesta-framework/Fiesta/releases/tag/1.5.0) (05/02/2015)
  
- [Fiesta v 1.4.4](https://github.com/fiesta-framework/Fiesta/tree/1.4.4) (01/02/2015)
+ [Fiesta v 1.4.4](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.4) (01/02/2015)
  
- [Fiesta v 1.4.3](https://github.com/fiesta-framework/Fiesta/tree/1.4.3) (28/01/2015)
+ [Fiesta v 1.4.3](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.3) (28/01/2015)
  
- [Fiesta v 1.4.2](https://github.com/fiesta-framework/Fiesta/tree/1.4.2) (16/01/2015)
+ [Fiesta v 1.4.2](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.2) (16/01/2015)
  
- [Fiesta v 1.4.1](https://github.com/fiesta-framework/Fiesta/tree/1.4.1) (15/01/2015)
+ [Fiesta v 1.4.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.1) (15/01/2015)
  
- [Fiesta v 1.4](https://github.com/fiesta-framework/Fiesta/tree/1.4.0) (11/01/2015)
+ [Fiesta v 1.4](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.0) (11/01/2015)
  
- [Fiesta v 1.3.2](https://github.com/fiesta-framework/Fiesta/tree/1.3.2) (10/01/2015)
+ [Fiesta v 1.3.2](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.2) (10/01/2015)
  
- [Fiesta v 1.3.1](https://github.com/fiesta-framework/Fiesta/tree/1.3.1) (09/01/2015)
+ [Fiesta v 1.3.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.1) (09/01/2015)
 
 ### Configuration
 
