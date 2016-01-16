@@ -122,6 +122,7 @@ class App
 		
 		require self::$root.'../core/Objects/Sys.php';
 		require self::$root.'../core/Http/Links.php';
+		require self::$root.'../core/Http/Http.php';
 		require self::$root.'../core/Objects/Base.php';
 		require self::$root.'../core/Resources/Libs.php';
 		require self::$root.'../core/Hypertext/Res.php';
