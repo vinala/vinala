@@ -380,6 +380,23 @@ use Fiesta\Core\MVC\Relations\BelongsTo;
 
 
 	/**
+	 * To count rows by where clause
+	 *
+	 * @param $where (string) : the where clause
+	 **/
+	public static function count($where)
+	{
+		$self=self::instance();
+		$rows = new ModelArray;
+		//
+		$sql="select count(*) as cnt from ".$self->DBtable." where $where ";
+		$data = Database::read($sql,1);
+		//
+		return $data[0]['cnt'];
+	}
+
+
+	/**
 	 * The has one relation for one to one
 	 *
 	 * @param $model : the model wanted to be related to the 
