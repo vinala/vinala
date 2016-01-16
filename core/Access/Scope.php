@@ -45,3 +45,11 @@ function now()
 {
 	return DateTime::now();
 }
+
+/**
+ * Http
+ */
+function abort($arg)
+{
+	return Http::abort($arg);
+}
