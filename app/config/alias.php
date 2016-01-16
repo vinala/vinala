@@ -43,6 +43,7 @@
 			'Filesystem' => 	Fiesta\Core\Filesystem\Filesystem::class,
 			'Hash' => 			Fiesta\Core\Security\Hash::class,
 			'Html' => 			Fiesta\Core\HyperText\Html::class,
+			'Http' => 			Fiesta\Core\Http\Http::class,
 			'Input' => 			Fiesta\Core\HyperText\Input::class,
 			'Libs' => 			Fiesta\Core\Resources\Libs::class,
 			'License' => 		Fiesta\Core\Security\License::class,
