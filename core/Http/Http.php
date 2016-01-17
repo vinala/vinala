@@ -16,6 +16,15 @@ class Http
 	}
 
 	/**
+	 * To start recording the echoed data
+	 */
+	public static function start()
+	{
+		ob_start();
+	}
+
+
+	/**
 	 * To clear screen from echoed data
 	 */
 	public static function clear()
