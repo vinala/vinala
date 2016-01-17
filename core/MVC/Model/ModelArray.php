@@ -2,6 +2,8 @@
 
 namespace Fiesta\Core\MVC\Model;
 
+use Fiesta\Core\Objects\Table;
+
 /**
 * Model array Class
 */
@@ -40,5 +42,18 @@ class ModelArray
 		}
 		//
 		return $data;
+	}
+
+	/**
+	 * Get first row of data selected by where clause 
+	 **/
+	public function first()
+	{
+		if(! empty($this->data))
+		{
+			if(Table::count($this->data)>0) return $this->data[0];
+			else return null;
+		}
+		else return null;
 	}
 }
