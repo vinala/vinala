@@ -46,7 +46,6 @@ class Handler
 		self::$whoops = new Run;
 		self::$page = new PlainTextHandler();
 		//
-		self::$page->bg_color=Config::get('loggin.bg');
 		self::setSimpleParams();
 		self::exec();
 	}
