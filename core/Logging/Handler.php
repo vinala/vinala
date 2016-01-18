@@ -3,39 +3,71 @@
 namespace Fiesta\Core\Logging;
 
 use Fiesta\Core\Config\Config;
+use Fiesta\Core\Glob\App;
+use Whoops\Run;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Handler\PlainTextHandler;
 
 /**
 * Error Handler class
 */
 class Handler
 {
-	public static function ini($root="")
+	/**
+	 * the class whoops
+	 */
+	protected static $whoops;
+
+	/**
+	 * the page of hundler
+	 */
+	protected static $page;
+
+
+
+	public static function run()
 	{
-		// require $root."../core/Associates/Whoops/vendor/autoload.php";
-		//
 		
-		if(Config::get('loggin.debug'))
-		{
-			$whoops = new \Whoops\Run;
-			$errorPage = new \Whoops\Handler\PrettyPageHandler();
-			//
-			$errorPage->setPageTitle(Config::get('loggin.msg')); // Set the page's title
-			$errorPage->setEditor("sublime"); 
-			//
-			$whoops->pushHandler($errorPage);
-			$whoops->register();
-		}
-		else
-		{
-			$whoops = new \Whoops\Run;
-			//
-			$errorPage = new \Whoops\Handler\PlainTextHandler();
-			$errorPage->msg=Config::get('loggin.msg');
-			$errorPage->bg_color=Config::get('loggin.bg');
-			$errorPage->handle();
-			$whoops->pushHandler($errorPage);
-			$whoops->register();
-		}
+		if(Config::get('loggin.debug')) self::PrettyPage();
+		else self::SimplePage();
+	}
+
+	protected static function PrettyPage()
+	{
+		self::$whoops = new Run;
+		self::$page = new PrettyPageHandler();
+		//
+		self::setPrettyParams();
+		self::exec();
+	}
+
+	protected static function SimplePage()
+	{
+		self::$whoops = new Run;
+		self::$page = new PlainTextHandler();
+		//
+		self::$page->bg_color=Config::get('loggin.bg');
+		self::setSimpleParams();
+		self::exec();
+	}
+
+	protected static function setPrettyParams()
+	{
+		self::$page->setPageTitle(Config::get('loggin.msg'));
+		self::$page->setEditor("sublime"); 
+	}
+
+	protected static function setSimpleParams()
+	{
+		self::$page->msg=Config::get('loggin.msg');
+		self::$page->bg_color=Config::get('loggin.bg');
+		self::$page->handle();
+	}
+
+	protected static function exec()
+	{
+		self::$whoops->pushHandler(self::$page);
+		self::$whoops->register();
 	}
 	
 }
