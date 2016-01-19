@@ -156,7 +156,7 @@ class helloController extends Controller
 
 	protected static function logginCont($loggin)
 	{
-		$debug = self::logginRow("debug","'debug'=>'$loggin',");
+		$debug = self::logginRow("debug","'debug'=>$loggin,");
 		$error_debug_message = self::logginRow("error_debug_message","'msg' => \"Ohlala! il semble que quelque chose s'ait mal passé\",");
 		$error_log = self::logginRow("error_log","'log' => 'app/storage/logs/fiesta.log',");
 		$background = self::logginRow("background","'bg' => '#a4003a',");
