@@ -87,4 +87,12 @@ class Connector
 	{
 		require App::$root.'../core/Objects/DateTime.php';
 	}
+
+	/**
+	 * session call
+	 */
+	public static function session()
+	{
+		require App::$root.'../core/Storage/Session.php';
+	}
 }
