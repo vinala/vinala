@@ -16,7 +16,8 @@
 | Calling the fiesta framework
 */
 
-require_once __DIR__.'/../core/Ini.php';
+// require_once __DIR__.'/../core/Ini.php';
+require __DIR__.'/../vendor/autoload.php';
 
 /*
 |----------------------------------------------
