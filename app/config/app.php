@@ -33,7 +33,7 @@ use Fiesta\Kernel\Fondation\Application;
 	| working on localhost
 	*/ 
  
-	'url'=>App::root(), 
+	'url'=>Application::root(), 
  
 	/* 
 	|---------------------------------------------------------- 
