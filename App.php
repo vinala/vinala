@@ -16,7 +16,7 @@
 | Calling the fiesta framework
 */
 
-require_once 'core/Ini.php';
+require __DIR__.'/../vendor/autoload.php';
 
 /*
 |----------------------------------------------
@@ -25,4 +25,4 @@ require_once 'core/Ini.php';
 | launch the Fiesta framework
 */
 
-Fiesta\Core\Glob\App::run();
+Fiesta\Kernel\Foundation\Application::run();
