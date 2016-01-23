@@ -1,6 +1,6 @@
 <?php
 
-use Fiesta\Core\Glob\App;
+use Fiesta\Kernel\Fondation\Application;
  
 	return array(
 
@@ -33,7 +33,7 @@ use Fiesta\Core\Glob\App;
 	| working on localhost
 	*/ 
  
-	'url'=>App::root(), 
+	'url'=>Application::root(), 
  
 	/* 
 	|---------------------------------------------------------- 
