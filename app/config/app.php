@@ -1,6 +1,6 @@
 <?php
 
-use Fiesta\Core\Glob\App;
+use Fiesta\Kernel\Fondation\Application;
  
 	return array(
 
