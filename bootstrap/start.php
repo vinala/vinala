@@ -25,4 +25,4 @@ require __DIR__.'/../vendor/autoload.php';
 | launch the Fiesta framework
 */
 
-Fiesta\Kernel\Fondation\Application::run();
+Fiesta\Kernel\Foundation\Application::run();

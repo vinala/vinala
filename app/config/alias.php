@@ -28,7 +28,7 @@
 		'aliases' => array( 
 			
 			'Alias' => 			Fiesta\Core\Config\Alias::class,
-			'App' => 			Fiesta\Kernel\Fondation\Application::class,
+			'App' => 			Fiesta\Kernel\Foundation\Application::class,
 			'Auth' => 			Fiesta\Core\Security\Auth::class,
 			'Base' => 			Fiesta\Core\Objects\Base::class,
 			'Cache' => 			Fiesta\Core\Caches\Cache::class,
