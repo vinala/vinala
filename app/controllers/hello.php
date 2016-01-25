@@ -78,7 +78,7 @@ class helloController extends Controller
 		$routing_inexists = self::appRow("routing_inexists","'unrouted'=> true,");
 		$character_set = self::appRow("character_set","'charset'=> 'utf-8', ");
 		//
-		return "<?php \nuse Fiesta\Core\Glob\App;\n\nreturn array(\n\t".$project_name.$owner_name.$project_url.$html_title.$timezone.$routing_inexists.$character_set."\n);";
+		return "<?php \nuse Fiesta\Kernel\Foundation\Application;\n\nreturn array(\n\t".$project_name.$owner_name.$project_url.$html_title.$timezone.$routing_inexists.$character_set."\n);";
 	}
 
 	protected static function langDoc($index)
