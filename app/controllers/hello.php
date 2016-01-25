@@ -34,7 +34,7 @@ class helloController extends Controller
 		$doc = array(
 			'project_name' => "\n\t|  Your project name", 
 			'owner_name' => "\n\t|  Your name", 
-			'project_url' => "\n\t|  Your website root link, you should put your \n\t| root link , by default we using App::root \n\t| function to get the root link even if you \n\t| working on localhost", 
+			'project_url' => "\n\t|  Your website root link, you should put your \n\t| root link , by default we using Application::root \n\t| function to get the root link even if you \n\t| working on localhost", 
 			'html_title' => "\n\t|  Default HTML title",
 			'timezone' => "\n\t|  Here you should set your timezone after that \n\t| whenever you wanna get time, Fiesta will give\n\t| you exact time for the timezone.\n\t| To get all of timezones supported in php \n\t| visite here : http://php.net/manual/en/timezones.php",
 			'routing_inexists' => "\n\t|  When HttpNotFoundException trown if unrouted \n\t| parameter was true it will be show to \n\t| exception else the framework will redirect\n\t| user to Error::r_404 route,",
@@ -72,7 +72,7 @@ class helloController extends Controller
 	{
 		$project_name = self::appRow("project_name","'project'=>'fiesta',");
 		$owner_name = self::appRow("owner_name","'owner'=>'".$name."',");
-		$project_url = self::appRow("project_url","'url'=>App::root(),");
+		$project_url = self::appRow("project_url","'url'=>Application::root(),");
 		$html_title = self::appRow("html_title","'title'=> 'Fiesta PHP Framework',");
 		$timezone = self::appRow("timezone","'timezone'=> 'UTC',");
 		$routing_inexists = self::appRow("routing_inexists","'unrouted'=> true,");
