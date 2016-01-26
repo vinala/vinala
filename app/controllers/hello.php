@@ -208,7 +208,7 @@ class helloController extends Controller
 		$background = self::MaintRow("background","'bg' => '#d6003e',");
 		$out = self::MaintRow("out","'outRoutes' => array(\n\t\tConfig::get('panel.route'),\n\t),");
 		//
-		return "<?php \nuse Fiesta\Core\Config\Config;\n\nreturn array(\n\t".$activate.$Message.$background.$out."\n);";
+		return "<?php \nuse Fiesta\Kernel\Config\Config;\n\nreturn array(\n\t".$activate.$Message.$background.$out."\n);";
 	}
 
 	/**

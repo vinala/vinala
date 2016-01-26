@@ -1,9 +1,8 @@
-<?php
-
-use Fiesta\Core\Config\Config;
-
+<?php 
+use Fiesta\Kernel\Config\Config;
 
 return array(
+	
 
 	/*
 	|----------------------------------------------------------
@@ -13,19 +12,24 @@ return array(
 
 	'activate' => false, 
 
+
 	/*
 	|----------------------------------------------------------
 	| Maintenance Message
 	|----------------------------------------------------------
 	*/
-	'msg' => "Le site web est en cours de maintenance...",
+
+	'msg'=>"Le site web est en cours de maintenance...",
+
 
 	/*
 	|----------------------------------------------------------
 	| Maintenance background
 	|----------------------------------------------------------
 	*/
-	'bg' => "#d6003e",
+
+	'bg' => '#d6003e',
+
 
 	/*
 	|----------------------------------------------------------
@@ -36,6 +40,5 @@ return array(
 	'outRoutes' => array(
 		Config::get('panel.route'),
 	),
-
 
 );

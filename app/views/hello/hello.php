@@ -3,7 +3,7 @@
 	use Fiesta\Core\Resources\Libs;
 	use Fiesta\Core\HyperText\Html;
 	use Fiesta\Core\Access\Path;
-	use Fiesta\Core\Config\Config;
+	use Fiesta\Kernel\Config\Config;
 	use Fiesta\Core\Translator\Lang;
 	//
 	Libs::css("app/library/bootstrap-3.3.1.min.css",false);
