@@ -11,7 +11,7 @@ return array(
 	|  and true to debug
 	*/
 
-	'debug' => false,
+	'debug' => ! false,
 
 	/*
 	|----------------------------------------------------------
