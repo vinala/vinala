@@ -54,7 +54,7 @@
 			'Path' => 			Fiesta\Core\Access\Path::class,
 			'Res' => 			Fiesta\Core\HyperText\Res::class,
 			'Root' => 			Fiesta\Core\Http\Root::class,
-			'Route' => 			Fiesta\Core\Router\Route::class,
+			'Route' => 			Fiesta\Kernel\Router\Route::class,
 			'Schema' => 		Fiesta\Core\Database\Schema::class,
 			'Security' => 		Fiesta\Core\Security\Security::class,
 			'Session' => 		Fiesta\Core\Storage\Session::class,
