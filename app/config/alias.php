@@ -29,7 +29,7 @@
 			
 			'Alias' => 			Fiesta\Kernel\Config\Alias::class,
 			'App' => 			Fiesta\Kernel\Foundation\Application::class,
-			'Auth' => 			Fiesta\Core\Security\Auth::class,
+			'Auth' => 			Fiesta\Kernel\Security\Auth::class,
 			'Base' => 			Fiesta\Core\Objects\Base::class,
 			'Cache' => 			Fiesta\Core\Caches\Cache::class,
 			'Config' => 		Fiesta\Kernel\Config\Config::class,
