@@ -2,7 +2,7 @@
 <?php 
 	use Fiesta\Kernel\Resources\Libs;
 	use Fiesta\Kernel\HyperText\Html;
-	use Fiesta\Core\Access\Path;
+	use Fiesta\Kernel\Access\Path;
 	use Fiesta\Kernel\Config\Config;
 	use Fiesta\Core\Translator\Lang;
 	//
