@@ -31,7 +31,7 @@
 			'App' => 			Fiesta\Kernel\Foundation\Application::class,
 			'Auth' => 			Fiesta\Kernel\Security\Auth::class,
 			'Base' => 			Fiesta\Kernel\Objects\Base::class,
-			'Cache' => 			Fiesta\Core\Caches\Cache::class,
+			'Cache' => 			Fiesta\Kernel\Caches\Cache::class,
 			'Config' => 		Fiesta\Kernel\Config\Config::class,
 			'Cookie' => 		Fiesta\Core\Storage\Cookie::class,
 			'Database' => 		Fiesta\Core\Database\Database::class,
