@@ -1,3 +1,12 @@
+### 3.1.0
+----------------------
+
+New features:
+
+ * Supporting PHP7
+ * Make the core of Fiesta dependencies and name it Kernel
+ * Add new function for HTTP ( abort and error)
+
 ### 3.0.0
 ----------------------
 

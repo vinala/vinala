@@ -1,7 +1,7 @@
 ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/alpha/app/resources/images/fiesta_wild.png)
 ## Fiesta
 
-[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=3.0.0)](https://travis-ci.org/fiesta-framework/Fiesta/branches)
+[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=3.1.0)](https://travis-ci.org/fiesta-framework/Fiesta/branches)
 [![Latest Stable Version](https://poser.pugx.org/fiesta/fiesta/v/stable)](https://packagist.org/packages/fiesta/fiesta) 
 [![Total Downloads](https://img.shields.io/badge/downloads-420-yellow.svg)](https://packagist.org/packages/fiesta/fiesta) 
 [![Latest Unstable Version](https://poser.pugx.org/fiesta/fiesta/v/unstable)](https://packagist.org/packages/fiesta/fiesta) 
