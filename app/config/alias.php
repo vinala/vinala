@@ -50,7 +50,7 @@
 			'Links' => 			Fiesta\Kernel\Http\Links::class,
 			'Log' => 			Fiesta\Kernel\Logging\Log::class,
 			'Mail' => 			Fiesta\Kernel\Mailing\Mail::class,
-			'ModelArray' => 	Fiesta\Core\MVC\Model\ModelArray::class,
+			'ModelArray' => 	Fiesta\Kernel\MVC\Model\ModelArray::class,
 			'Path' => 			Fiesta\Core\Access\Path::class,
 			'Res' => 			Fiesta\Kernel\HyperText\Res::class,
 			'Root' => 			Fiesta\Kernel\Http\Root::class,
@@ -67,6 +67,6 @@
 			'Translator' => 	Fiesta\Core\Translator\Lang::class,
 			'Url' => 			Fiesta\Core\Access\Url::class,
 			'Vars' => 			Fiesta\Kernel\Objects\Vars::class,
-			'View' => 			Fiesta\Core\MVC\View\View::class,
+			'View' => 			Fiesta\Kernel\MVC\View\View::class,
 		)
 	);

@@ -1,6 +1,6 @@
 <?php 
 
-use Fiesta\Core\MVC\Model\Model;
+use Fiesta\Kernel\MVC\Model\Model;
 
 
 // Model Class

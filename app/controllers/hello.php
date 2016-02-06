@@ -1,6 +1,6 @@
 <?php
 
- use Fiesta\Core\MVC\Controller\Controller;
+ use Fiesta\Kernel\MVC\Controller\Controller;
 
 /**
 * class de controller helloController
