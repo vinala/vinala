@@ -60,7 +60,7 @@
 			'Session' => 		Fiesta\Kernel\Storage\Session::class,
 			'Smile' => 			Fiesta\Kernel\Translator\Smiley::class,
 			'Storage' => 		Fiesta\Kernel\Storage\Storage::class,
-			'String' => 		Fiesta\Kernel\Objects\String::class,
+			'Strings' => 		Fiesta\Kernel\Objects\Strings::class,
 			'Sys' => 			Fiesta\Kernel\Objects\Sys::class,
 			'Table' => 			Fiesta\Kernel\Objects\Table::class,
 			'Time' => 			Fiesta\Kernel\Objects\DateTime::class,
