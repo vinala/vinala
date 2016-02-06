@@ -1,6 +1,6 @@
 <head>
 <?php 
-	use Fiesta\Core\Resources\Libs;
+	use Fiesta\Kernel\Resources\Libs;
 	use Fiesta\Core\HyperText\Html;
 	use Fiesta\Core\Access\Path;
 	use Fiesta\Kernel\Config\Config;
