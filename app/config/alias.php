@@ -49,7 +49,7 @@
 			'License' => 		Fiesta\Kernel\Security\License::class,
 			'Links' => 			Fiesta\Kernel\Http\Links::class,
 			'Log' => 			Fiesta\Kernel\Logging\Log::class,
-			'Mail' => 			Fiesta\Core\Mailing\Mail::class,
+			'Mail' => 			Fiesta\Kernel\Mailing\Mail::class,
 			'ModelArray' => 	Fiesta\Core\MVC\Model\ModelArray::class,
 			'Path' => 			Fiesta\Core\Access\Path::class,
 			'Res' => 			Fiesta\Kernel\HyperText\Res::class,
