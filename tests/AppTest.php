@@ -1,7 +1,7 @@
 <?php 
 
 
-use Fiesta\Core\Testing\TestCase;
+use Fiesta\Kernel\Testing\TestCase;
 
 /**
 * AppTestClass for testing
