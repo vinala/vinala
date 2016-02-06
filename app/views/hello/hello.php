@@ -1,7 +1,7 @@
 <head>
 <?php 
 	use Fiesta\Kernel\Resources\Libs;
-	use Fiesta\Core\HyperText\Html;
+	use Fiesta\Kernel\HyperText\Html;
 	use Fiesta\Core\Access\Path;
 	use Fiesta\Kernel\Config\Config;
 	use Fiesta\Core\Translator\Lang;
