@@ -40,7 +40,7 @@
 			'Debug' => 			Fiesta\Kernel\Log\Debug::class,
 			'Errors' => 		Fiesta\Kernel\Http\Errors::class,
 			'Faker' => 			Fiesta\Kernel\Resources\Faker::class,
-			'Filesystem' => 	Fiesta\Core\Filesystem\Filesystem::class,
+			'Filesystem' => 	Fiesta\Kernel\Filesystem\Filesystem::class,
 			'Hash' => 			Fiesta\Kernel\Security\Hash::class,
 			'Html' => 			Fiesta\Core\HyperText\Html::class,
 			'Http' => 			Fiesta\Kernel\Http\Http::class,
