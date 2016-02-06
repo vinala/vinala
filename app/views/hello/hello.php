@@ -4,7 +4,7 @@
 	use Fiesta\Kernel\HyperText\Html;
 	use Fiesta\Kernel\Access\Path;
 	use Fiesta\Kernel\Config\Config;
-	use Fiesta\Core\Translator\Lang;
+	use Fiesta\Kernel\Translator\Lang;
 	//
 	Libs::css("app/library/bootstrap-3.3.1.min.css",false);
 	Libs::css("app/library/bootstrap-theme-3.3.1.min.css",false);
