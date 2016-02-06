@@ -1,6 +1,6 @@
 <?php 
 
-use Fiesta\Core\Database\Seeder;
+use Fiesta\Kernel\Database\Seeder;
 
 /**
 * DatabaseSeeder
