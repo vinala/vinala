@@ -1,3 +1,11 @@
+### 3.1.1
+----------------------
+
+New features:
+
+ * Move config folder out of app folder
+
+
 ### 3.1.0
 ----------------------
 
