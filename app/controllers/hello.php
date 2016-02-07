@@ -1,6 +1,7 @@
 <?php
 
- use Fiesta\Kernel\MVC\Controller\Controller;
+use Fiesta\Kernel\MVC\Controller\Controller;
+use Fiesta\Kernel\Foundation\Application;
 
 /**
 * class de controller helloController
@@ -369,10 +370,10 @@ class helloController extends Controller
 		if(isset($_POST['ckeck_maintenance'])) $maintenance="true";
 		else $maintenance="false";
 
-		file_put_contents("../app/config/app.php", self::appCont($name) , 0);
-		file_put_contents("../app/config/lang.php", self::langCont($langue), 0);
-		file_put_contents("../app/config/loggin.php", self::logginCont($loggin), 0);
-		file_put_contents("../app/config/maintenance.php", self::MaintCont($maintenance), 0);
+		file_put_contents(Application::$root."config/app.php", self::appCont($name) , 0);
+		file_put_contents(Application::$root."config/lang.php", self::langCont($langue), 0);
+		file_put_contents(Application::$root."config/loggin.php", self::logginCont($loggin), 0);
+		file_put_contents(Application::$root."config/maintenance.php", self::MaintCont($maintenance), 0);
 		echo "ok";
 	}
 
@@ -387,7 +388,7 @@ class helloController extends Controller
 		if(empty($prefix)) { $prefixing="false"; $prefix="ysf"; }
 		else  { $prefixing="true";  }
 		//
-		file_put_contents("../app/config/database.php", self::dbCont($host,$name,$usr,$pass,$prefixing,$prefix), 0);
+		file_put_contents(Application::$root."config/database.php", self::dbCont($host,$name,$usr,$pass,$prefixing,$prefix), 0);
 		//
 		echo "ok";
 	}
@@ -397,7 +398,7 @@ class helloController extends Controller
 		$sec_1=$_POST['sec_1'];
 		$sec_2=$_POST['sec_2'];
 		//
-		file_put_contents("../app/config/security.php", self::securityCont($sec_1,$sec_2), 0);
+		file_put_contents(Application::$root."config/security.php", self::securityCont($sec_1,$sec_2), 0);
 		//
 		echo "ok";
 	}
@@ -411,7 +412,7 @@ class helloController extends Controller
 		$pass_1=empty($_POST['pass_1']) ? "1234" : $_POST['pass_1'];
 		$pass_2=empty($_POST['pass_2']) ? "5678" : $_POST['pass_2'];
 		//
-		file_put_contents("../app/config/panel.php", self::panelCont($state,$route,$pass_1,$pass_2), 0);
+		file_put_contents(Application::$root."config/panel.php", self::panelCont($state,$route,$pass_1,$pass_2), 0);
 		//
 		echo "ok";
 	}
