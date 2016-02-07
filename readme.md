@@ -13,7 +13,7 @@ Fiesta, a PHP Framework for web developers
 
 -----
 
-![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/alpha/app/resources/images/fiesta_wild.png)
+![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/master/app/resources/images/window.png)
 
 ### Installation
 
