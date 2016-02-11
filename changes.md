@@ -3,7 +3,7 @@
 
 New features:
 
- * require Fiesta kernel v 1.0.*
+ * require Fiesta kernel v 3.1.*
 
 
 ### 3.1.1
