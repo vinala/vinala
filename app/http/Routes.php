@@ -13,5 +13,5 @@ call("/","helloController@hello");
 
 get("hello/{step}",function($step)
 {
-	return helloController::steps($step);
+	return Intro::steps($step);
 });
