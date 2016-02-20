@@ -9,7 +9,7 @@
 | 
 **/
 
-call("/","helloController@hello");
+call("/","Intro@hello");
 
 get("hello/{step}",function($step)
 {
