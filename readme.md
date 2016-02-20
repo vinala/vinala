@@ -3,7 +3,7 @@
 
 Fiesta, a PHP Framework for web developers
 
-[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=3.1.2)](https://travis-ci.org/fiesta-framework/Fiesta/branches)
+[![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=next)](https://travis-ci.org/fiesta-framework/Fiesta)
 [![Latest Stable Version](https://poser.pugx.org/fiesta/fiesta/v/stable)](https://packagist.org/packages/fiesta/fiesta) 
 [![Total Downloads](https://img.shields.io/badge/downloads-420-yellow.svg)](https://packagist.org/packages/fiesta/fiesta) 
 [![Latest Unstable Version](https://poser.pugx.org/fiesta/fiesta/v/unstable)](https://packagist.org/packages/fiesta/fiesta) 
