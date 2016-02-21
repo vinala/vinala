@@ -25,13 +25,9 @@ Tout d'abord, télécharger et installer [Composer Windows installer](https://ge
 
 ####Installer Fiesta
 
-Vous pouvez installer Fiesta via [Composer](https://getcomposer.org/) en utilisent la commande `create-project` dans votre terminal
+Vous pouvez installer Fiesta via [Composer](https://getcomposer.org/) en exécutant la commande Compositeur `create-project` dans votre terminal:
 
-	composer create-project fiesta/fiesta --prefer-dist
-
-vous pouvez aussi includer le nom de projet :
-
-	composer create-project fiesta/fiesta nom-de-votre-projet --prefer-dist
+	composer create-project fiesta/fiesta nom_de_votre_projet --prefer-dist
 	
 
 ### Exigences du Fiesta
