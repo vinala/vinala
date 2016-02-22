@@ -9,9 +9,9 @@
 | 
 **/
 
-Route::call("/","helloController@hello");
+call("/","helloController@hello");
 
-Route::get("hello/{step}",function($step)
+get("hello/{step}",function($step)
 {
 	return helloController::steps($step);
 });
