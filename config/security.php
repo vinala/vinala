@@ -22,6 +22,6 @@ return array(
 	|  The prefix for ajax route of panel
 	*/
 
-	'prefix' => 'fst_',
+	'prefix' => 'f2457d663fb0a2258e1172fd763bd6ad_',
 
 );
