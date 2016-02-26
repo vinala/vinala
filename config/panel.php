@@ -28,19 +28,6 @@ return array(
 
 	/*
 	|----------------------------------------------------------
-	| Panel Path
-	|----------------------------------------------------------
-	|  here the path of the panel index, you can 
-	|  search in the internet to change the panel, 
-	|  for your security you should change the panel
-	|  folder name
-	*/
-
-	'path'=>'vendor/fiesta/panel/index.php',
-
-
-	/*
-	|----------------------------------------------------------
 	| Panel Passwords
 	|----------------------------------------------------------
 	|  Here are the passwords to access to the panel
