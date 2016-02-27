@@ -1,7 +1,5 @@
 <?php 
 
-use Fiesta\Kernel\Config\Config;
-
 return array(
 	
 
@@ -26,6 +24,19 @@ return array(
 	*/
 
 	'route'=>'fiesta',
+
+
+	/*
+	|----------------------------------------------------------
+	| Panel Path
+	|----------------------------------------------------------
+	|  here the path of the panel index, you can 
+	|  search in the internet to change the panel, 
+	|  for your security you should change the panel
+	|  folder name
+	*/
+
+	'path'=>'vendor/fiesta/panel/index.php',
 
 
 	/*
@@ -60,40 +71,40 @@ return array(
 	'ajax' => array(
 
 		// for new seeds
-			'new_seed' => Config::get("security.prefix").'new_seed',
+			'new_seed' => 'new_seed',
 
 		// to exec migrations
-			'exec_migration' => Config::get("security.prefix").'exec_migration',
+			'exec_migration' => 'exec_migration',
 
 		// to rollback migrations
-			'rollback_migration' => Config::get("security.prefix").'rollback_migration', 
+			'rollback_migration' => 'rollback_migration', 
 
 		// for new migrations
-			'new_migration' => Config::get("security.prefix").'new_migration',
+			'new_migration' => 'new_migration',
 
 		// for new controllers
-			'new_controller' => Config::get("security.prefix").'new_controller',
+			'new_controller' => 'new_controller',
 
 		// for new language folder
-			'new_dir_lang' => Config::get("security.prefix").'new_dir_lang',
+			'new_dir_lang' => 'new_dir_lang',
 
 		// for new language file
-			'new_file_lang' => Config::get("security.prefix").'new_file_lang',
+			'new_file_lang' => 'new_file_lang',
 
 		// for new links file
-			'new_link' => Config::get("security.prefix").'new_link',
+			'new_link' => 'new_link',
 
 		// for new models
-			'new_model' => Config::get("security.prefix").'new_model',
+			'new_model' => 'new_model',
 
 		// for new views
-			'new_view' => Config::get("security.prefix").'new_view',
+			'new_view' => 'new_view',
 
 		// to exec costume migrations
-			'exec_cos_migration' => Config::get("security.prefix").'exec_cos_migration',
+			'exec_cos_migration' => 'exec_cos_migration',
 
 		// to rollback costume migrations
-			'rollback_cos_migration' => Config::get("security.prefix").'rollback_cos_migration',
+			'rollback_cos_migration' => 'rollback_cos_migration',
 	),
 
 );
