@@ -10,7 +10,6 @@
 **/
 
 call("/","Home@hello");
-
 get("hello/{step}",function($step)
 {
 	return Intro::steps($step);

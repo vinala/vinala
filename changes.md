@@ -1,3 +1,12 @@
+### 3.1.3
+----------------------
+
+New features:
+
+ * use Scope function Route
+ * fixe other errors
+
+
 ### 3.1.2
 ----------------------
 
