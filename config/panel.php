@@ -1,7 +1,5 @@
 <?php 
 
-use Fiesta\Kernel\Config\Config;
-
 return array(
 	
 
