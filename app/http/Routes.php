@@ -9,8 +9,8 @@
 | 
 **/
 
-call("/","Home@hello");
+call("/","helloController@hello");
 get("hello/{step}",function($step)
 {
-	return Intro::steps($step);
+	return helloController::steps($step);
 });
