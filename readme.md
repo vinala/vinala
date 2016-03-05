@@ -17,24 +17,24 @@ Fiesta, a PHP Framework for web developers
 
 ### Installation
 
-####Installer Composer
+#### Install Composer
 
-Fiesta utilise `Composer`, Vous pouvez utiliser composer pour installer Fiesta et ses dépendances.
+Fiesta uses `Composer`, You can use Composer  to install Fiesta and its dependencies.
 
-Tout d'abord, télécharger et installer [Composer Windows installer](https://getcomposer.org/)
+First, download and install [Composer installer](https://getcomposer.org/)
 
 ####Installer Fiesta
 
-Vous pouvez installer Fiesta via [Composer](https://getcomposer.org/) en exécutant la commande Compositeur `create-project` dans votre terminal:
+You can install Fiesta via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
-	composer create-project fiesta/fiesta nom_de_votre_projet --prefer-dist
+	composer create-project fiesta/fiesta projet_name --prefer-dist
 	
 
 ### Exigences du Fiesta
 
-Fiesta a quelques exigences du système:
+Fiesta has some system requirements:
 * PHP >= 5.5
-* Activation de Extension mod_rewrite dans Apache
+* Enabling The mod_rewrite Apache extension
 
 ### Versions
 
@@ -64,15 +64,10 @@ Fiesta a quelques exigences du système:
  
 [Fiesta v 1.3.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.1) (09/01/2015)
 
-### Configuration
-
-Après l'installation de Fiesta vous devez modifier quelques paramètres de configuration dans `/config`, Mais d'abord vous devez modifier les clés de sécurité de votre projet dans `config/security.php` ,key1 doit consiste d'une chaine aléatoire de 32 caractères et key2 doit être consisté d'une chaine de votre choix. Si la clé d'application n'est pas réglée, vos données chiffrées ne seront pas sécurisées.
-
-Aussi vous devez régler le paramètre de l'URL root `url` de votre projet que ce soit dans un serveur local où à distance dans `config/app.php`
 
 ###  Apache
 
-Fiesta livré avec fichier `.htaccess` qui utilise URL rewriting, is vous utilisez Apache, Soyez sûr que vous avez activé l'extension `mod_rewrite`
+Fiesta comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
 
 
 ### License
