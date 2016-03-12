@@ -1,0 +1,29 @@
+{
+	"system":
+	{
+		"alias": "qr",
+		"name": "Google Embedded QR Code",
+		"keywords": ["Google", "QR"],
+		"license": "MIT",
+		"authors": [
+			{
+				"name": "Youssef Had",
+				"email": "youssefhad2@gmail.com"
+			}
+		],
+		"version": "1.0.0",
+		"autoload": {
+			"file": "ini.php"
+		},
+		"panel": 
+		{
+			"color": "#5b1c79"
+		}
+	},
+
+	"configuration":
+	{
+		"enable": true
+	}
+
+}
