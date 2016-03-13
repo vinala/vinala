@@ -8,6 +8,6 @@ class QR
 {
 	public static function generate($text,$size=100)
 	{
-		return "<img src='https://chart.googleapis.com/chart?chs=".$size."x".$size."&cht=qr&chl=$text&chld=H|0'/>";
+		\View::import("qr","code",array("text" => $text, "size" => $size));
 	}
 }
