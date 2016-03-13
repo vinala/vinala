@@ -29,6 +29,10 @@
 		"panel": 
 		{
 			"color": "#5b1c79"
+		},
+		"core": 
+		{
+			"views": "/views"
 		}
 	}
 
