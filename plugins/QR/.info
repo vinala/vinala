@@ -1,8 +1,19 @@
 {
+
+	"configuration":
+	{
+		"enable": true,
+		"shortcuts": 
+		{
+			"Google_QR": "Fiesta/Plugins/Google/QR"
+		}
+	},
+
 	"system":
 	{
 		"alias": "qr",
 		"name": "Google Embedded QR Code",
+		"description": "QR codes are a popular type of two-dimensional barcode. They are also known as hardlinks or physical world hyperlinks. QR Codes store up to 4,296 alphanumeric characters of arbitrary text. This text can be anything, for example URL, contact information, a telephone number, even a poem! QR codes can be read by an optical device with the appropriate software. Such devices range from dedicated QR code readers to mobile phones.",
 		"keywords": ["Google", "QR"],
 		"license": "MIT",
 		"authors": [
@@ -19,11 +30,8 @@
 		{
 			"color": "#5b1c79"
 		}
-	},
-
-	"configuration":
-	{
-		"enable": true
 	}
+
+	
 
 }
