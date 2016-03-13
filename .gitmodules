@@ -10,3 +10,4 @@
 [submodule "vendor/fiesta/kernel"]
 	path = vendor/fiesta/kernel
 	url = https://github.com/fiesta-framework/Kernel.git
+	branch = 3.2
