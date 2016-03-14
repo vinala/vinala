@@ -20,7 +20,7 @@
 		"nesbot/carbon": "~1.14",
 		"fiesta/error": "dev-master",
 		"fiesta/kernel": "dev-next",
-		"phpunit/phpunit": "~4.0"
+		"phpunit/phpunit": "~4.1"
 	},
 	"extra": {
         "branch-alias": {
