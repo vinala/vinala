@@ -19,7 +19,7 @@
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
 		"fiesta/error": "dev-master",
-		"fiesta/kernel": "3.2.*",
+		"fiesta/kernel": "dev-next",
 		"phpunit/phpunit": "~4.0"
 	},
 	"extra": {
