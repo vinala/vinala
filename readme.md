@@ -23,14 +23,14 @@ Fiesta uses `Composer`, You can use Composer  to install Fiesta and its dependen
 
 First, download and install [Composer installer](https://getcomposer.org/)
 
-####Installer Fiesta
+#### Install next release of Fiesta
 
-You can install Fiesta via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
+You can install next release of Fiesta via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
-	composer create-project fiesta/fiesta projet_name --prefer-dist
+	composer create-project fiesta/fiesta projet_name dev-next --prefer-dist
 	
 
-### Exigences du Fiesta
+### Fiesta Requirements
 
 Fiesta has some system requirements:
 * PHP >= 5.5
@@ -70,7 +70,7 @@ Fiesta has some system requirements:
 Fiesta comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
 
 
-### License
+### Licence
 
 The Fiesta framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
