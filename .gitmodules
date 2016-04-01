@@ -1,6 +1,3 @@
-[submodule "vendor/fiesta/error"]
-	path = vendor/fiesta/error
-	url = https://github.com/fiesta-framework/Error.git
 [submodule "vendor/fiesta/whoops"]
 	path = vendor/fiesta/whoops
 	url = https://github.com/fiesta-framework/whoops.git
