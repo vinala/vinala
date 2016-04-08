@@ -18,8 +18,8 @@
 		"swiftmailer/swiftmailer": "5.3.1",
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
-		"fiesta/error": "dev-master",
 		"fiesta/kernel": "dev-next",
+		"symfony/console": "3.*",
 		"phpunit/phpunit": "~4.1"
 	},
 	"extra": {
