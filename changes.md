@@ -4,6 +4,7 @@
 New features:
 
  * Supporting Plugins 
+ * Supporting Console Command-line
  
 
 ### 3.1.3
