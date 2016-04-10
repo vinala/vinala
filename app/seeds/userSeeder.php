@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
 		for ($i=0; $i < 50; $i++) 
 			Table::push($data , array('nom' => Faker::firstName() , 'mail' => Faker::Email(),'password'=> Faker::hash() ,'token'=> Faker::hash(),'rememberToken' =>  Faker::hash() ));
 		//
-		Schema::table($this->table)->insert($data);
+		return Schema::table($this->table)->insert($data);
 	}
 }
 
