@@ -12,7 +12,11 @@ class SeedsCaller extends Seeder
 	*/
 	public static function run()
 	{
-		// self::call("UserSeeder");
+		$process = null;
+		//
+		// $process = self::call("UserSeeder");
+		//
+		return $process;
 	}
 }
 
