@@ -1,7 +1,7 @@
 <?php 
 
 
-use Fiesta\Kernel\Testing\TestCase;
+use Pikia\Kernel\Testing\TestCase;
 
 /**
 * AppTestClass for testing

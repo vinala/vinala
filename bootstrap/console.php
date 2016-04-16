@@ -8,7 +8,7 @@ require __DIR__.'/../vendor/autoload.php';
 |----------------------------------------------
 | Run the console
 |----------------------------------------------
-| launch the Fiesta console
+| launch the Pikia console
 */
 
-Fiesta\Kernel\Foundation\Application::console();
+Pikia\Kernel\Foundation\Application::console();

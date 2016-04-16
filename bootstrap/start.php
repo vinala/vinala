@@ -2,7 +2,7 @@
 
 /*
 |----------------------------------------
-| Fiesta (http://ipixa.net)
+| Pikia (http://ipixa.net)
 | Copyright 2016 Youssef Had, Inc.
 | Licensed under MIT License
 |----------------------------------------
@@ -13,7 +13,7 @@
 |----------------------------------------------
 | Framework calling
 |----------------------------------------------
-| Calling the fiesta framework
+| Calling the Pikia framework
 */
 
 require __DIR__.'/../vendor/autoload.php';
@@ -22,7 +22,7 @@ require __DIR__.'/../vendor/autoload.php';
 |----------------------------------------------
 | Run the Framework
 |----------------------------------------------
-| launch the Fiesta framework
+| launch the Pikia framework
 */
 
-Fiesta\Kernel\Foundation\Application::run();
+Pikia\Kernel\Foundation\Application::run();
