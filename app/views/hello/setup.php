@@ -1,9 +1,9 @@
 <?php 
 	use Fiesta\Kernel\Translator\Lang;
 ?>
-<img src="<?php echo "app/resources/images/logo_mini.png" ?>" class="img config_logo" id="config_logo">
+	<div style="height:110px"></div>
 	<div id="etap_1">
-	<h1 class="conf_title">Général</h1>
+		<h1 class="conf_title">Général</h1>
 		<div class="progres"><div class="progres_1"></div></div>
 		<form class="config_form" id="form_1">
 			<div class="control_c_row">
@@ -67,8 +67,8 @@
 	
 
 	<div id="etap_2" style="display:none">
-	<h1 class="conf_title">Base de données</h1>
-	<div class="progres"><div class="progres_2"></div></div>
+		<h1 class="conf_title">Base de données</h1>
+		<div class="progres"><div class="progres_2"></div></div>
 		<form class="config_form" id="form_2">
 			<div class="control_c_row">
 				<div class="conf_lab">
@@ -140,7 +140,7 @@
 	</div>
 
 	<div id="etap_3" style="display:none">
-	<h1 class="conf_title">Sécurité</h1>
+		<h1 class="conf_title">Sécurité</h1>
 		<div class="progres"><div class="progres_3"></div></div>
 		<form class="config_form" id="form_3">
 			<div class="control_c_row">
@@ -168,7 +168,7 @@
 	</div>
 
 	<div id="etap_4" style="display:none">
-	<h1 class="conf_title">Panel</h1>
+		<h1 class="conf_title">Panel</h1>
 		<div class="progres"><div class="progres_4"></div></div>
 		<form class="config_form" id="form_4">
 			<div class="control_c_row">
