@@ -7,16 +7,19 @@ body
 {
 	padding:0px;
 	margin:0px;
-	background:#5b1d79;
+	/*background:#5b1d79;*/
 	font-family: "segoe";
+	background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .img
 {
-	width:260px;
+	/*width:260px;*/
 	margin:0pt auto;
 	display:block;
-	margin-top: 30px;
+	margin-top: 150px;
 }
 
 .config_logo
@@ -32,11 +35,11 @@ body
 	text-align: center;
 	/*font-family: 'Lato', sans-serif;*/
 	width:600px;
-	margin: 0px auto;
+	margin: 30px auto;
 }
 .text
 {
-	background: #5b1d79;
+	/*background: #5b1d79;*/
 	display: inline-block;
 	z-index: 3;
 	/*width: 145px;*/
@@ -72,7 +75,7 @@ body
 
 .hello_button:hover
 {
-	background-color: #3e1453;
+	background-color: #022648;
 	color:white;
 }
 
@@ -206,10 +209,10 @@ body
 }
 
 .switch-checkbox:checked + .switch-label-violet {
-    background-color: #270052;
+    background-color: #022648;
 }
 .switch-checkbox:checked + .switch-label-violet, .switch-checkbox:checked + .switch-label-violet:before {
-   border-color: #270052;
+   border-color: #022648;
 }
 
 .switch-checkbox:checked + .switch-label-deeppink {
