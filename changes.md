@@ -5,6 +5,7 @@ New features:
 
  * Supporting Plugins 
  * Supporting Console Command-line
+ * Change the name from Fiesta to Pikia
  
 
 ### 3.1.3
