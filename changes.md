@@ -6,7 +6,7 @@ New features:
  * Supporting Plugins 
  * Supporting Console Command-line
  * Change the name from Fiesta to Pikia
- * New Logo
+ * New Logo (inspired by Davide Giliati - https://dribbble.com/DavideGiliati)
  * New welcome page
  
 
