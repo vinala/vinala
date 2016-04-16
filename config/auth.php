@@ -7,7 +7,7 @@ return array(
 	|----------------------------------------------------------
 	| Authentication Table
 	|----------------------------------------------------------
-	| If you want working with Fiesta authentification,
+	| If you want working with Pikia authentification,
 	| the framework will need to know the Database
 	| table where to get data from
 	*/

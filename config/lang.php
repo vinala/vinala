@@ -19,6 +19,6 @@ return array(
 	| Langue cookie to store framework default language
 	*/
 
-	'cookie'=>'fiesta_lang',
+	'cookie'=>'pikia_lang',
 
 );

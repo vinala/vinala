@@ -27,12 +27,12 @@ return array(
 	|----------------------------------------------------------
 	| Error log
 	|----------------------------------------------------------
-	|  The path of log file where Fiesta store errors
+	|  The path of log file where Pikia store errors
 	|  by default the framework use this path 
-	|  'app/storage/logs/fiesta.log'
+	|  'app/storage/logs/pikia.log'
 	*/
 
-	'log' => 'app/storage/logs/fiesta.log',
+	'log' => 'app/storage/logs/pikia.log',
 
 	/*
 	|----------------------------------------------------------

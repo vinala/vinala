@@ -23,7 +23,7 @@ return array(
 	|  Route for panel, for your security please change it
 	*/
 
-	'route'=>'fiesta',
+	'route'=>'pikia',
 
 
 	/*

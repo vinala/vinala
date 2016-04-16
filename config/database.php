@@ -16,7 +16,7 @@ return array(
 	|----------------------------------------------------------
 	| Database Connections
 	|----------------------------------------------------------
-	| all drivers that Fiesta Work with
+	| all drivers that Pikia Work with
 	*/
 
 	'connections' => array(
@@ -63,13 +63,13 @@ return array(
 	| Database used to store migrations info
 	*/
 
-	'migration' => 'fiesta_migrations',
+	'migration' => 'pikia_migrations',
 
 	/*
 	|----------------------------------------------------------
 	| Prefixing
 	|----------------------------------------------------------
-	| if true, Fiesta will add prefixe for all 
+	| if true, Pikia will add prefixe for all 
 	| Database tables created by the framework
 	*/
 
@@ -80,7 +80,7 @@ return array(
 	| The prefixe
 	|----------------------------------------------------------
 	| This string will be add to all tables names
-	| created by Fiesta if prefixing parameter was true
+	| created by Pikia if prefixing parameter was true
 	*/
 
 	'prefixe' => 'fst_',

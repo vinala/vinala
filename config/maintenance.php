@@ -1,5 +1,6 @@
 <?php 
-use Fiesta\Kernel\Config\Config;
+
+use Pikia\Kernel\Config\Config;
 
 return array(
 	

@@ -30,7 +30,7 @@ return array(
 
 		"database" => [ 
 			"driver" => "database",
-			"table" => "fiestacache",
+			"table" => "pikiacache",
 			"database" => null,
 
 		],

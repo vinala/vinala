@@ -68,6 +68,6 @@ return array(
 	|  when you want to send e-mail
 	*/
 
-	'subject' => "Fiesta",
+	'subject' => "Pikia",
 
 );
