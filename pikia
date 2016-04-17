@@ -6,4 +6,4 @@ echo "\n";
 
 require 'bootstrap/console.php';
 
-Fiesta\Kernel\Console\Console::run();
+Pikia\Kernel\Console\Console::run();
