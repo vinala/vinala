@@ -1,10 +1,10 @@
 <head>
 <?php 
-	use Fiesta\Kernel\Resources\Libs;
-	use Fiesta\Kernel\HyperText\Html;
-	use Fiesta\Kernel\Access\Path;
-	use Fiesta\Kernel\Config\Config;
-	use Fiesta\Kernel\Translator\Lang;
+	use Pikia\Kernel\Resources\Libs;
+	use Pikia\Kernel\HyperText\Html;
+	use Pikia\Kernel\Access\Path;
+	use Pikia\Kernel\Config\Config;
+	use Pikia\Kernel\Translator\Lang;
 	//
 	Libs::css("app/library/bootstrap-3.3.1.min.css",false);
 	Libs::css("app/library/bootstrap-theme-3.3.1.min.css",false);

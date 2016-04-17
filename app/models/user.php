@@ -1,6 +1,6 @@
 <?php 
 
-use Fiesta\Kernel\MVC\Model\Model;
+use Pikia\Kernel\MVC\Model\Model;
 
 
 // Model Class
