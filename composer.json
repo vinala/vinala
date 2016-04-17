@@ -19,6 +19,7 @@
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
 		"fiesta/kernel": "dev-next",
+		"fiesta/panel": "~2.2.*",
 		"symfony/console": "3.*",
 		"phpunit/phpunit": "~4.1"
 	},
