@@ -16,6 +16,7 @@ $( document ).ready(function() {
 	function fade2 () 
 	{
 		$( "#bottom_panel" ).fadeTo( "slow", 1 );
+        $( "bottom_panel_2" ).fadeTo( "slow", 1 );
 		clearInterval(Timer2);
 	}
 

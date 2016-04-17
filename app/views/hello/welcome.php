@@ -31,7 +31,7 @@
 	}
 </script>
 
-<img src="<?php echo "app/resources/images/pikia_logo.png" ?>" class="img" id="hello_logo" style="display:none">
+<img src="<?php echo "app/resources/images/pikia_logo.png" ?>" class="img2" id="hello_logo" style="display:none">
 
 <div id="welcom" style="display:none">
 
