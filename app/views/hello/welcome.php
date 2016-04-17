@@ -1,9 +1,9 @@
 <?php 
-	use Fiesta\Kernel\Resources\Libs;
-	use Fiesta\Kernel\HyperText\Html;
-	use Fiesta\Kernel\Access\Path;
-	use Fiesta\Kernel\Config\Config;
-	use Fiesta\Kernel\Translator\Lang;
+	use Pikia\Kernel\Resources\Libs;
+	use Pikia\Kernel\HyperText\Html;
+	use Pikia\Kernel\Access\Path;
+	use Pikia\Kernel\Config\Config;
+	use Pikia\Kernel\Translator\Lang;
 ?>
 
 <script type="text/javascript">
@@ -31,7 +31,7 @@
 	}
 </script>
 
-<img src="<?php echo "app/resources/images/fiesta_logo.png" ?>" class="img" id="hello_logo" style="display:none">
+<img src="<?php echo "app/resources/images/pikia_logo.png" ?>" class="img" id="hello_logo" style="display:none">
 
 <div id="welcom" style="display:none">
 
@@ -50,5 +50,5 @@
 <?php echo "v ".App::fullVersion(); ?>
 </div>
 <div class="bottom_panel" id="bottom_panel" style="display:none">
-	<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Fiesta Panel</div></a>
+	<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
 </div>
