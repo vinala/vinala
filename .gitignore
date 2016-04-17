@@ -1,3 +1,9 @@
 composer.lock
 .gitignore
 .gitmodules
+vendor/*
+!vendor/fiesta/kernel
+vendor/*
+!vendor/fiesta/whoops
+vendor/*
+!vendor/fiesta/panel
