@@ -9,7 +9,7 @@ return array(
 	| this Command to generate new schema in schema folder
 	**/
 
-	"new_schema" => "schema:new",
+	"new_schema" => "make:schema",
 
 
 	/*
@@ -20,7 +20,7 @@ return array(
 	| database
 	**/
 
-	"exec_schema" => "schema:exec",
+	"exec_schema" => "exec:schema",
 
 	/*
 	|----------------------------------------------------------
@@ -30,7 +30,7 @@ return array(
 	**/
 
 
-	"rollback_schema" => "schema:rollback",
+	"rollback_schema" => "rollback:schema",
 	
 	/*
 	|----------------------------------------------------------
@@ -39,7 +39,7 @@ return array(
 	| this Command to create new folder in lang folder
 	**/
 
-	"dir_lang" => "lang:dir",
+	"dir_lang" => "make:langdir",
 
 
 	/*
@@ -50,7 +50,7 @@ return array(
 	| folder
 	**/
 
-	"file_lang" => "lang:file",
+	"file_lang" => "make:langfile",
 
 
 	/*
@@ -60,7 +60,7 @@ return array(
 	| this Command to create new file inside links folder
 	**/
 
-	"new_link" => "link:new",
+	"new_link" => "make:link",
 
 
 	/*
@@ -70,7 +70,7 @@ return array(
 	| this Command to create new model inside models folder
 	**/
 
-	"new_model" => "model:new",
+	"new_model" => "make:model",
 	
 
 	/*
@@ -80,7 +80,7 @@ return array(
 	| this Command to create new view inside views folder
 	**/
 
-	"new_view" => "view:new",
+	"new_view" => "make:view",
 	
 
 	/*
@@ -91,7 +91,7 @@ return array(
 	| folder
 	**/
 
-	"new_controller" => "controller:new",
+	"new_controller" => "make:controller",
 
 
 	/*
@@ -101,7 +101,7 @@ return array(
 	| this Command to create new seeder inside seeds folder
 	**/
 
-	"new_seed" => "seed:new",
+	"new_seed" => "make:seed",
 
 
 	/*
@@ -111,7 +111,7 @@ return array(
 	| this Command to executethe main seeder
 	**/
 	
-	"exec_seed" => "seed:exec",
+	"exec_seed" => "exec:seed",
 
 
 	/*
@@ -121,5 +121,5 @@ return array(
 	| this Command to add get route ro routes file
 	**/
 	
-	"get_routes" => "routes:get"
+	"get_routes" => "make:get"
 );
