@@ -47,7 +47,7 @@
 </div>
 
 <div class="bottom_panel bottom_panel_2" id="bottom_panel_2" style="display:none">
-<?php echo "v ".App::fullVersion(); ?>
+	<?php echo "v ".App::fullVersion(); ?>
 </div>
 <div class="bottom_panel" id="bottom_panel" style="display:none">
 	<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
