@@ -121,5 +121,15 @@ return array(
 	| this Command to add get route ro routes file
 	**/
 	
-	"get_routes" => "make:get"
+	"get_routes" => "make:get",
+
+
+	/*
+	|----------------------------------------------------------
+	| User Command
+	|----------------------------------------------------------
+	| this Command to create new user console command
+	**/
+	
+	"new_command" => "make:command"
 );
