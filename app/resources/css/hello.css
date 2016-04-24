@@ -148,7 +148,7 @@ body
 .progres
 {
 	background-color: rgba(255,255,255,.5);
-	height:5px;
+	height:2px;
 	width: 100px;
 	margin: 0pt Auto 18px auto;
 }
@@ -156,7 +156,7 @@ body
 .progres_1
 {
 	background-color: white;
-	height:5px;
+	height:2px;
 	width: 25px;
 	margin-left: 0%
 }
@@ -164,7 +164,7 @@ body
 .progres_2
 {
 	background-color: white;
-	height:5px;
+	height:2px;
 	width: 25px;
 	margin-left: 25%
 }
@@ -172,7 +172,7 @@ body
 .progres_3
 {
 	background-color: white;
-	height:5px;
+	height:2px;
 	width: 25px;
 	margin-left: 50%
 }
@@ -180,7 +180,7 @@ body
 .progres_4
 {
 	background-color: white;
-	height:5px;
+	height:2px;
 	width: 25px;
 	margin-left: 75%
 }
