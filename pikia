@@ -1,9 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-// echo chr(27)."[1;36m > working...".chr(27)."[0m \n\n";
-echo "\n";
-
 require 'bootstrap/console.php';
 
 Pikia\Kernel\Console\Console::run();
