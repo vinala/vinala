@@ -7,11 +7,11 @@ use Pikia\Kernel\Console\Command\Commands;
 class Salute extends Commands
 {
     /**
-     * The name and signature of the console command.
+     * The key of the console command.
      *
      * @var string
      */
-    protected $key = 'say:hello {firstName : The first name} {lastName? : The last name} {--yy : anything}';
+    protected $key = 'say:hello {firstName : The first name} {lastName? : The last name} {--option}';
 
     /**
      * The console command description.
