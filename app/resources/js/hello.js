@@ -3,14 +3,30 @@ $( document ).ready(function() {
 
 	var Timer1;
 	var Timer2;
-
-	// var Timer1 = setInterval(function(){ fade1() }, 1000);
-	// var Timer2 = setInterval(function(){ fade2() }, 1500);
+    fade1();
+    //
+	Timer1 = setInterval(function(){ fade_() }, 200);
+    //
+    function fade_ () 
+    {
+        $( "#content" ).fadeTo( "slow", 1 );
+        clearInterval(Timer1);
+    }
 
 	function fade1 () 
-	{
-		$( "#welcom" ).fadeTo( "slow", 1 );
-		clearInterval(Timer1);
+    {
+        $({blurRadius: 0}).animate({blurRadius: 5}, {
+            duration: 600,
+            easing: 'linear', // "swing"
+            //
+            step: function() {
+                console.log(this.blurRadius);
+                $('#bg').css({
+                    "-webkit-filter": "blur("+this.blurRadius+"px)",
+                    "filter": "blur("+this.blurRadius+"px)"
+                });
+            }
+        });
 	}
 
 	function fade2 () 
