@@ -3,9 +3,11 @@ $( document ).ready(function() {
 
 	var Timer1;
 	var Timer2;
-    fade1();
+    var Timer4;
+    
     //
-	Timer1 = setInterval(function(){ fade_() }, 200);
+    Timer0 = setInterval(function(){ fade1() }, 200);
+	Timer1 = setInterval(function(){ fade_() }, 400);
     //
     function fade_ () 
     {
@@ -27,6 +29,7 @@ $( document ).ready(function() {
                 });
             }
         });
+        clearInterval(Timer0);
 	}
 
 	function fade2 () 
@@ -41,6 +44,12 @@ $( document ).ready(function() {
 		$( "#hello_logo" ).fadeTo( "slow", 1 );
 		clearInterval(Timer3);
 	}
+
+    function fade4 () 
+    {
+        $( "#welcom" ).fadeTo( "slow", 1 );
+        clearInterval(Timer4);
+    }
 
 	$('#form_1').submit(function () {
         $.post('hello/1',$('#form_1').serialize(),function(data)
@@ -94,7 +103,7 @@ $( document ).ready(function() {
                 	$( "#config_logo" ).fadeOut( 300);
                 	$( "#etap_4" ).fadeOut( 300, function(){ 
                 		Timer3 = setInterval(function(){ fade3() }, 200);
-						Timer1 = setInterval(function(){ fade1() }, 400);
+						Timer4 = setInterval(function(){ fade4() }, 400);
 						Timer2 = setInterval(function(){ fade2() }, 800);
                 	 } );
                 }
