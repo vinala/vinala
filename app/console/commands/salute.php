@@ -11,7 +11,8 @@ class Salute extends Commands
      *
      * @var string
      */
-    protected $key = 'say:hello {firstName : The first name} {lastName? : The last name} {--option}';
+    // protected $key = 'say:hello {firstName : The first name} {lastName? : The last name} {--option}';
+    protected $key = 'say:hellos {firstName : The first name}';
 
     /**
      * The console command description.
@@ -27,9 +28,28 @@ class Salute extends Commands
      */
     public function handle()
     {
-        $firstName = $this->argument('firstName');
-        $lastName = $this->argument('lastName');
+        // $firstName = $this->argument('firstName');
         //
-        $this->write("Hello ".$firstName." ".$lastName);
+        // $this->info("Hello ".$firstName." ");
+        // $this->comment("Hello ".$firstName." ");
+        // $this->question("Hello ".$firstName." ");
+        // $this->error("Hello ".$firstName." ");
+        // $age = $this->password("how old are you ?");
+        // echo $age;
+        // $this->progress();
+        // $this->info("this info");
+        // $this->comment("this comment");
+        // $this->question("this question");
+        // $this->error("this error");
+        $name = $this-> ask('whats your name ? ');
+        $nickname = $this-> ask('whats your nickname ? ');
+        $age = $this-> ask('whats your age ? ');
+        $sex = $this-> confirm('are you a women ? ');
+
+        $title = ! $sex ? "Mr" : "Ms" ;
+        //
+        $this->info("hello $title $name $nickname you have $age years old");
+
+
     }
 }
