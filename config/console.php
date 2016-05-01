@@ -4,6 +4,16 @@ return array(
 
 	/*
 	|----------------------------------------------------------
+	| Terminal
+	|----------------------------------------------------------
+	| the terminal used in your OS
+	| available : bash / cmd
+	**/
+
+	"terminal" => "bash",
+
+	/*
+	|----------------------------------------------------------
 	| New Schema
 	|----------------------------------------------------------
 	| this Command to generate new schema in schema folder
