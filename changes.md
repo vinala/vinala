@@ -4,7 +4,8 @@
 New features:
 
  * Supporting Plugins 
- * Supporting Console Command-line
+ * Supporting Console Command-line [Documentation](https://github.com/fiesta-framework/Docs/blob/3.2/src/console.md#console)
+ 
  * Change the name from Fiesta to Pikia
  * New Logo (inspired by Davide Giliati - https://dribbble.com/DavideGiliati)
  * New welcome page
