@@ -7,26 +7,26 @@
 
 	<div style="height:110px"></div>
 	<div id="etap_1">
-		<h1 class="conf_title">Général</h1>
+		<h1 class="conf_title">General</h1>
 		<div class="progres"><div class="progres_1"></div></div>
 		<form class="config_form" id="form_1">
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Nom de développeur</label>
+					<label for="">Developer Name</label>
 				</div>
 				<div class="conf_input">
-					<input type="text" class="form-control" id="dev_name" name="dev_name" placeholder="Votre nom">
+					<input type="text" class="form-control" id="dev_name" name="dev_name" placeholder="Your name">
 				</div>
 			</div>
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="sel1">Langue</label>
+					<label for="sel1">Language</label>
 				</div>
 				<div class="conf_input">
 					<select class="form-control" id="sel1" name="langue">
-					    <option value="fr" selected>Français</option>
+					    <option value="fr">Français</option>
 						<option value="ar">العربية</option>
-						<option value="en">English</option>
+						<option value="en" selected>English</option>
 			        </select>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 					    <label class="switch-label switch-label-violet" for="chechBox2"></label>
 					</div>
 					<p class="conf_input_note">
-					Vous pouvez modifier le message d'erreur et de maintenance plus tard dans les fichiers de configuration</p>
+					You can change the error message and maintenance later in the configuration files</p>
 				</div>
 			</div>
 
@@ -61,7 +61,7 @@
 				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
 			</div> -->
 			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button" value="Suivant" name="nxt" id="nxt"   />
+				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
 			</div>
 		
 			
@@ -71,53 +71,53 @@
 	
 
 	<div id="etap_2" style="display:none">
-		<h1 class="conf_title">Base de données</h1>
+		<h1 class="conf_title">Database</h1>
 		<div class="progres"><div class="progres_2"></div></div>
 		<form class="config_form" id="form_2">
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Serveur Database</label>
+					<label for="">Database server</label>
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="migname" name="db_host" placeholder="Server" value="">
-					<p class="conf_input_note">Par défaut : localhost</p>
+					<p class="conf_input_note">By default : localhost</p>
 				</div>
 			</div>
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Nom de Database</label>
+					<label for="">Database Name</label>
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="migname" name="db_name" placeholder="Database" value="">
-					<p class="conf_input_note">Par défaut : test</p>
+					<p class="conf_input_note">By default : test</p>
 				</div>
 			</div>
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Nom de Database User</label>
+					<label for="">Database User</label>
 				</div>
 				<div class="conf_input">
-					<input type="text" class="form-control" id="migname" name="db_usr" placeholder="Database User" value="">
-					<p class="conf_input_note">Par défaut : root</p>
+					<input type="text" class="form-control" id="migname" name="db_usr" placeholder="User" value="">
+					<p class="conf_input_note">By default : root</p>
 				</div>
 			</div>
 
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Mot de passe</label>
+					<label for="">Database password</label>
 				</div>
 				<div class="conf_input">
-					<input type="text" class="form-control" id="migname" name="db_pass" placeholder="Mot de passe" value="">
+					<input type="text" class="form-control" id="migname" name="db_pass" placeholder="Password" value="">
 				</div>
 			</div>
 
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Prefixe de Tables</label>
+					<label for="">Tables prefix</label>
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="migname" name="db_prefix" placeholder="Prefixe" value="<?php $str=str_shuffle("azertyuiopqsdfghjklmwxcvbn");echo substr($str, 0, 3); ?>">
-					<p class="conf_input_note">Si vous gardez ce champ vide , le préfixage sera désactivé</p>
+					<p class="conf_input_note">If you keep it blank, prefixing will be disabled</p>
 				</div>
 			</div>
 			<!-- <div class="control_c_row">
@@ -136,7 +136,7 @@
 				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
 			</div> -->
 			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button" value="Suivant" name="nxt" id="nxt"   />
+				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
 			</div>
 		
 			
@@ -144,12 +144,12 @@
 	</div>
 
 	<div id="etap_3" style="display:none">
-		<h1 class="conf_title">Sécurité</h1>
+		<h1 class="conf_title">Security</h1>
 		<div class="progres"><div class="progres_3"></div></div>
 		<form class="config_form" id="form_3">
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">clé de sécurité 1</label>
+					<label for="">Security key 1</label>
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="migname" name="sec_1" placeholder="Server" value="<?php echo md5(uniqid(rand(), TRUE)) ?>" readonly>
@@ -157,14 +157,14 @@
 			</div>
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">clé de sécurité 2</label>
+					<label for="">Security key 2</label>
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="migname" name="sec_2" placeholder="Database" value="<?php echo md5(uniqid(rand(), TRUE)) ?>" readonly>
 				</div>
 			</div>
 			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button" value="Suivant" name="nxt" id="nxt"   />
+				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
 			</div>
 		
 			
@@ -196,29 +196,29 @@
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="pnl_route" name="route" placeholder="Route" value="" >
-					<p class="conf_input_note">Par défaut : pikia</p>
+					<p class="conf_input_note">By default : pikia</p>
 				</div>
 			</div>
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Mot de passe 1</label>
+					<label for="">Password 1</label>
 				</div>
 				<div class="conf_input">
-					<input type="text" class="form-control" id="migname" name="pass_1" placeholder="Mot de passe 1" value="">
-					<p class="conf_input_note">Par défaut : 1234</p>
+					<input type="text" class="form-control" id="migname" name="pass_1" placeholder="Password 1" value="">
+					<p class="conf_input_note">By default : 1234</p>
 				</div>
 			</div>
 			<div class="control_c_row">
 				<div class="conf_lab">
-					<label for="">Mot de passe 2</label>
+					<label for="">Password 2</label>
 				</div>
 				<div class="conf_input">
-					<input type="text" class="form-control" id="migname" name="pass_2" placeholder="Mot de passe 2" value="">
-					<p class="conf_input_note">Par défaut : 5678</p>
+					<input type="text" class="form-control" id="migname" name="pass_2" placeholder="Password 2" value="">
+					<p class="conf_input_note">By default : 5678</p>
 				</div>
 			</div>
 			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button" value="Terminer"   />
+				<input type="submit" class="btn hello_button" value="Finish"   />
 			</div>
 		
 			
