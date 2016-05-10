@@ -41,7 +41,7 @@ Fiesta has some system requirements:
 
 ### Documentation
 
-We are working on fiesta documentation for every release version, you can take look or update the documentation of 3.1 release [here](https://github.com/fiesta-framework/Docs/tree/3.1)
+We are working on fiesta documentation for every release version, you can take look or update the documentation of next release [here](https://github.com/fiesta-framework/Docs/tree/3.2)
 
 
 ### Development
