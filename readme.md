@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png)
 
-**Fiesta, a PHP Framework for web developers**
+**Lighty, a PHP Framework for web developers**
 
 [![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=next)](https://travis-ci.org/fiesta-framework/Fiesta/branches)
 [![Latest Stable Version](https://poser.pugx.org/fiesta/fiesta/v/stable)](https://packagist.org/packages/fiesta/fiesta) 
@@ -18,19 +18,19 @@
 
 #### Install Composer
 
-Fiesta uses `Composer`, You can use Composer  to install Fiesta and its dependencies.
+Lighty uses `Composer`, You can use Composer  to install Lighty and its dependencies.
 
 First, download and install [Composer installer](https://getcomposer.org/)
 
-#### Install next release of Fiesta
+#### Install next release of Lighty
 
-You can install next release of Fiesta via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
+You can install next release of Lighty via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
 	composer create-project fiesta/fiesta projet_name dev-next --prefer-dist
 
 ###  Apache
 
-Fiesta comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
+Lighty comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
 
 ### Fiesta Requirements
 
@@ -41,40 +41,40 @@ Fiesta has some system requirements:
 
 ### Documentation
 
-We are working on fiesta documentation for every release version, you can take look or update the documentation of next release [here](https://github.com/fiesta-framework/Docs/tree/3.2)
+We are working on Lighty documentation for every release version, you can take look or update the documentation of next release [here](https://github.com/fiesta-framework/Docs/tree/3.2)
 
 
 ### Development
 
-Fiesta is open to the contributions of developers, the current released version of fiesta is `3.1` . However developers may instead opt to use the next beta version in [next](https://github.com/fiesta-framework/Fiesta/tree/next) branch aliased to `3.x-dev`.
+Lighty is open to the contributions of developers, the current released version of Lighty is `3.1` . However developers may instead opt to use the next beta version in [next](https://github.com/fiesta-framework/Fiesta/tree/next) branch aliased to `3.x-dev`.
 
 
 ### Versions
 
 To consult the change log of the framework please visit here [change log](https://github.com/fiesta-framework/Fiesta/blob/next/changes.md)
 
-[Fiesta Releases](https://github.com/fiesta-framework/Fiesta/releases)
+[Lighty Releases](https://github.com/fiesta-framework/Fiesta/releases)
 
 
-[Fiesta v 3.1.3](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.3) (22/02/2016)  
-[Fiesta v 3.1.2](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.2) (11/02/2016)  
-[Fiesta v 3.1.1](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.1) (07/02/2016)  
-[Fiesta v 3.1](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.0) (06/02/2016)  
-[Fiesta v 3.0](https://github.com/fiesta-framework/Fiesta/releases/tag/3.0.0) (15/01/2016)  
-[Fiesta v 2.5](https://github.com/fiesta-framework/Fiesta/releases/tag/2.5.0.236) (05/07/2015)  
-[Fiesta v 2.0](https://github.com/fiesta-framework/Fiesta/releases/tag/2.0.0.1) (27/02/2015)  
-[Fiesta v 1.5](https://github.com/fiesta-framework/Fiesta/releases/tag/1.5.0) (05/02/2015)  
-[Fiesta v 1.4.4](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.4) (01/02/2015)  
-[Fiesta v 1.4.3](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.3) (28/01/2015)  
-[Fiesta v 1.4.2](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.2) (16/01/2015)  
-[Fiesta v 1.4.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.1) (15/01/2015)  
-[Fiesta v 1.4](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.0) (11/01/2015)  
-[Fiesta v 1.3.2](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.2) (10/01/2015)  
-[Fiesta v 1.3.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.1) (09/01/2015)  
+[Lighty v 3.1.3](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.3) (22/02/2016)  
+[Lighty v 3.1.2](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.2) (11/02/2016)  
+[Lighty v 3.1.1](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.1) (07/02/2016)  
+[Lighty v 3.1](https://github.com/fiesta-framework/Fiesta/releases/tag/3.1.0) (06/02/2016)  
+[Lighty v 3.0](https://github.com/fiesta-framework/Fiesta/releases/tag/3.0.0) (15/01/2016)  
+[Lighty v 2.5](https://github.com/fiesta-framework/Fiesta/releases/tag/2.5.0.236) (05/07/2015)  
+[Lighty v 2.0](https://github.com/fiesta-framework/Fiesta/releases/tag/2.0.0.1) (27/02/2015)  
+[Lighty v 1.5](https://github.com/fiesta-framework/Fiesta/releases/tag/1.5.0) (05/02/2015)  
+[Lighty v 1.4.4](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.4) (01/02/2015)  
+[Lighty v 1.4.3](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.3) (28/01/2015)  
+[Lighty v 1.4.2](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.2) (16/01/2015)  
+[Lighty v 1.4.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.1) (15/01/2015)  
+[Lighty v 1.4](https://github.com/fiesta-framework/Fiesta/releases/tag/1.4.0) (11/01/2015)  
+[Lighty v 1.3.2](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.2) (10/01/2015)  
+[Lighty v 1.3.1](https://github.com/fiesta-framework/Fiesta/releases/tag/1.3.1) (09/01/2015)  
 
 ### Licence
 
-The Fiesta framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The Lighty framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 [![Owner](https://img.shields.io/badge/created%20by-Youssef%20Had-blue.svg)](https://github.com/youssefhad)
 [![Owner](https://img.shields.io/badge/copyright-2014--2016-red.svg)](https://github.com/fiesta-framework/Fiesta)
