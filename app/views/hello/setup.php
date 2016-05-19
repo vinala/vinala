@@ -1,5 +1,5 @@
 <?php 
-	use Pikia\Kernel\Translator\Lang;
+	use Lighty\Kernel\Translator\Lang;
 ?>
 
 <div class="bg" id="bg"></div>
