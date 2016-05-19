@@ -1,8 +1,8 @@
 <?php
 
-namespace Pikia\App\Console\Commands;
+namespace Lighty\App\Console\Commands;
 
-use Pikia\Kernel\Console\Command\Commands;
+use Lighty\Kernel\Console\Command\Commands;
 
 class Salute extends Commands
 {
