@@ -74,6 +74,6 @@
 		<?php echo "v ".App::fullVersion(); ?>
 	</div>
 	<div class="bottom_panel" id="bottom_panel" style="display:none">
-		<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
+		<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
 	</div>
 </div>
