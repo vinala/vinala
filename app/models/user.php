@@ -1,6 +1,6 @@
 <?php 
 
-use Pikia\Kernel\MVC\Model\Model;
+use Lighty\Kernel\MVC\Model\Model;
 
 
 // Model Class
