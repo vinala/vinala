@@ -1,6 +1,6 @@
 <?php 
 
-use Pikia\Kernel\Database\Seeder;
+use Lighty\Kernel\Database\Seeder;
 
 /**
 * DatabaseSeeder
