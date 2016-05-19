@@ -8,7 +8,7 @@ require __DIR__.'/../vendor/autoload.php';
 |----------------------------------------------
 | Run the console
 |----------------------------------------------
-| launch the Pikia console
+| launch the Lighty console
 */
 
-Pikia\Kernel\Foundation\Application::console();
+Lighty\Kernel\Foundation\Application::console();
