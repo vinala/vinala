@@ -1,7 +1,7 @@
 {
 	"name": "lighty/lighty",
-	"description": "The Fiesta PHP Framework.",
-	"keywords": ["framework", "fiesta"],
+	"description": "Lighty, a PHP Framework for web developers",
+	"keywords": ["framework", "Lighty"],
 	"license": "MIT",
 	"authors": [
 		{
