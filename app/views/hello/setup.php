@@ -58,7 +58,7 @@
 			</div>
 
 			<!-- <div class="bottom" id="bottom_panel">
-				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
+				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
 			</div> -->
 			<div style="margin-top:20px">
 				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
@@ -133,7 +133,7 @@
 				</div>
 			</div> -->
 			<!-- <div class="bottom" id="bottom_panel">
-				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
+				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
 			</div> -->
 			<div style="margin-top:20px">
 				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
@@ -196,7 +196,7 @@
 				</div>
 				<div class="conf_input">
 					<input type="text" class="form-control" id="pnl_route" name="route" placeholder="Route" value="" >
-					<p class="conf_input_note">By default : pikia</p>
+					<p class="conf_input_note">By default : Lighty</p>
 				</div>
 			</div>
 			<div class="control_c_row">
@@ -225,7 +225,7 @@
 		</form>
 	</div>
 
-	<img src="<?php echo "app/resources/images/pikia_logo.png" ?>" class="img" id="hello_logo" style="display:none">
+	<img src="<?php echo "app/resources/images/lighty_logo.png" ?>" class="img" id="hello_logo" style="display:none">
 
 	<div id="welcom" style="display:none">
 	
@@ -243,6 +243,6 @@
 		<?php echo "v ".App::fullVersion(); ?>
 	</div>
 	<div class="bottom_panel" id="bottom_panel" style="display:none">
-		<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Pikia Panel</div></a>
+		<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
 	</div>
 </div>
