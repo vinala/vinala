@@ -1,5 +1,4 @@
 <?php
-//use Pikia\Route;
 
 
 App::before(function()
