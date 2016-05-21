@@ -29,10 +29,10 @@ return array(
 	|----------------------------------------------------------
 	|  The path of log file where Pikia store errors
 	|  by default the framework use this path 
-	|  'app/storage/logs/pikia.log'
+	|  'app/storage/logs/lighty.log'
 	*/
 
-	'log' => 'app/storage/logs/pikia.log',
+	'log' => 'app/storage/logs/lighty.log',
 
 	/*
 	|----------------------------------------------------------

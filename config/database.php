@@ -63,7 +63,7 @@ return array(
 	| Database used to store migrations info
 	*/
 
-	'migration' => 'pikia_migrations',
+	'migration' => 'lighty_migrations',
 
 	/*
 	|----------------------------------------------------------
