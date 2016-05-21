@@ -1,7 +1,7 @@
 <?php 
 
 
-use Pikia\Kernel\Testing\TestCase;
+use Lighty\Kernel\Testing\TestCase;
 
 /**
 * AppTestClass for testing
