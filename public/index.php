@@ -2,7 +2,7 @@
 
 /*
 |----------------------------------------
-| Fiesta (http://ipixa.net)
+| Lighty (https://gitlab.com/lighty)
 | Copyright 2016 Youssef Had, Inc.
 | Licensed under Open Source
 |----------------------------------------
