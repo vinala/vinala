@@ -1,6 +1,6 @@
 <?php
 
-use Pikia\Kernel\Foundation\Application;
+use Lighty\Kernel\Foundation\Application;
  
 	return array(
 
