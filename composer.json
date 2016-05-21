@@ -18,8 +18,9 @@
 		"swiftmailer/swiftmailer": "5.3.1",
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
-		"fiesta/kernel": "3.2.*",
-		"fiesta/panel": "~2.2.0",
+		"lighty/kernel": "3.2.*",
+		"lighty/panel": "~2.2.0",
+		"lighty/whoops": "~1.2.3",
 		"symfony/console": "3.*",
 		"phpunit/phpunit": "~4.1"
 	},
