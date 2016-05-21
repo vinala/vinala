@@ -115,7 +115,7 @@ body
 
 .hello_button:hover
 {
-	background-color: #022648;
+	background-color: #058cbc;
 	color:white;
 }
 
@@ -242,17 +242,17 @@ body
     transition: all 0.3s ease-in 0s; 
 }
 .switch-checkbox:checked + .switch-label-blue {
-    background-color: #0094a8;
+    background-color: #058cbc;
 }
 .switch-checkbox:checked + .switch-label-blue, .switch-checkbox:checked + .switch-label-blue:before {
-   border-color: #0094a8;
+   border-color: #058cbc;
 }
 
 .switch-checkbox:checked + .switch-label-violet {
-    background-color: #022648;
+    background-color: #058cbc;
 }
 .switch-checkbox:checked + .switch-label-violet, .switch-checkbox:checked + .switch-label-violet:before {
-   border-color: #022648;
+   border-color: #058cbc;
 }
 
 .switch-checkbox:checked + .switch-label-deeppink {
