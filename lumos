@@ -3,4 +3,4 @@
 
 require 'bootstrap/console.php';
 
-Pikia\Kernel\Console\Console::run();
+Lighty\Kernel\Console\Console::run();
