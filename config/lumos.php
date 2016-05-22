@@ -10,7 +10,7 @@ return array(
 	| available : bash / cmd
 	**/
 
-	"terminal" => "bash",
+	"terminal" => "cmd",
 
 	/*
 	|----------------------------------------------------------
