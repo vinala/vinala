@@ -141,5 +141,14 @@ return array(
 	| this Command to create new user console command
 	**/
 	
-	"new_command" => "make:command"
+	"new_command" => "make:command",
+
+	/*
+	|----------------------------------------------------------
+	| Export database
+	|----------------------------------------------------------
+	| this Command to export database
+	**/
+	
+	"export_database" => "save:database",
 );
