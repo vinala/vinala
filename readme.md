@@ -14,6 +14,8 @@
 
 ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Fiesta/master/app/resources/images/window.png)
 
+Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects.
+
 ### Installation
 
 #### Install Composer
