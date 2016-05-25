@@ -32,7 +32,7 @@ You can install next release of Lighty via [Composer](https://getcomposer.org/) 
 
 Lighty comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
 
-### Fiesta Requirements
+### Lighty Requirements
 
 Lighty has some system requirements:
 * PHP >= 5.5
