@@ -11,7 +11,7 @@ class SeedsCaller extends Seeder
 	/**
 	 * All Seeders to call
 	 */
-	public static function refernces()
+	public static function references()
 	{
 		return [
 			// userTableSeeder::class,
