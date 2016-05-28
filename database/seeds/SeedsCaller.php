@@ -3,16 +3,21 @@
 use Lighty\Kernel\Database\Seeder;
 
 /**
-* DatabaseSeeder
+* SeedsCaller
 */
 class SeedsCaller extends Seeder
 {
-	/*
-	* Run the Database Seeder
-	*/
-	public static function run()
+	
+	/**
+	 * All Seeders to call
+	 */
+	public static function refernces()
 	{
-		// return self::call(UserTableSeeder::class);
+		return [
+			// userTableSeeder::class,
+			// carTableSeeder::class,
+		];
 	}
+
 }
 
