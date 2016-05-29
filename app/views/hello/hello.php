@@ -6,9 +6,9 @@
 	use Lighty\Kernel\Config\Config;
 	use Lighty\Kernel\Translator\Lang;
 	//
-	Libs::css("app/library/bootstrap-3.3.1.min.css",false);
-	Libs::css("app/library/bootstrap-theme-3.3.1.min.css",false);
-	Libs::js("app/library/jquery-1.11.3.min.js",false);
+	Libs::css("app/resources/library/bootstrap-3.3.1.min.css",false);
+	Libs::css("app/resources/library/bootstrap-theme-3.3.1.min.css",false);
+	Libs::js("app/resources/library/jquery-1.11.3.min.js",false);
 	Html::charset("utf-8"); 
 	Html::title();
 	Html::favicon(Path::$public."/favicon.ico");
