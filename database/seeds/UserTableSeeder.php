@@ -10,21 +10,25 @@ class UserTableSeeder extends Seeder
 	/*
 	* Name of DataTable
 	*/
-	public $table = "user";
+	public $table = "user" ;
 
 	/*
-	* Run the Database Seeder
+	* Number of rows to insert
 	*/
-	public function run()
+	public $count = 7 ;
+
+	/*
+	* Set the data here to insert
+	*/
+	public function data()
 	{
-		/**
-		 * Exmple for userTable with columns (name,mail,password,token,rememberToken)
-		 */
-		$data = array();
-		for ($i=0; $i < 50; $i++) 
-			Table::push($data , array('name' => Faker::firstName() , 'mail' => Faker::Email(),'password'=> Faker::hash() ,'token'=> Faker::hash(),'rememberToken' =>  Faker::hash() ));
-		//
-		return Schema::table($this->table)->insert($data);
+		return array(
+				'name' 			=> Faker::firstName() ,
+				'mail' 			=> Faker::Email(),
+				'password'		=> Faker::hash() ,
+				'token'			=> Faker::hash(),
+				'rememberToken' => Faker::hash(),
+			);
 	}
 }
 
