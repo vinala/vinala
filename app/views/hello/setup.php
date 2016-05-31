@@ -5,20 +5,24 @@
 <div class="bg" id="bg"></div>
 <div class="content" id="content">
 
-	<div style="height:110px"></div>
+	<div style="height:60px"></div>
 
 	<div id="lang-step">
 		<div class="fst-config-icon"></div>
 		<div class="fst-config-cont">
-			
+			<form class="fst-config-form" id="fst-config-form">
 				<div class="fst-config-lang-combo">
 					<select class="form-control" id="sel1" name="langue">
 					    <option value="fr">Français</option>
-						<option value="ar">العربية</option>
+						<!-- <option value="ar">العربية</option> -->
 						<option value="en" selected>English</option>
 			        </select>
 				</div>
-			
+
+				<div style="margin-top:20px">
+					<input type="submit" class="btn hello_button_hover" value="Next" name="nxt" id="nxt"   />
+				</div>
+			</form>
 		</div>
 	</div>
 	<div id="fr-db-msg-step"   style="display:none">

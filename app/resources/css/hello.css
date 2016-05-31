@@ -119,6 +119,13 @@ body
 	color:white;
 }
 
+.hello_button_hover
+{
+	background-color: #058cbc;
+	color:white;
+}
+
+/* ii */
 .config_form
 {
 	color: white;
@@ -298,5 +305,13 @@ body
 .fst-config-lang-combo
 {
 	width : 200px;
-	margin: 80px auto;
+	margin: 0px auto;
+	margin-top: 80px;
+}
+
+.fst-config-form
+{
+	color: white;
+    text-align: center;
+    margin: 0px auto;
 }
