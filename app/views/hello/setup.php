@@ -8,20 +8,28 @@
 	<div style="height:110px"></div>
 
 	<div id="etap_0">
-		<h1 class="conf_title">General</h1>
-		<div class="progres"><div class="progres_1"></div></div>
-		<div>
-			Bienvenue dans Lighty. Avant de nous lancer, nous avons besoin de certaines informations sur votre base de données. Il va vous falloir réunir les informations suivantes pour continuer.
+		<!-- <h1 class="conf_title">General</h1> -->
+		<!-- <div class="progres"><div class="progres_1"></div></div> -->
+		<img src="https://gitlab.com/uploads/project/avatar/1202141/hey_race_icon2.png" class="fst-config-icon">
+		<div class="welcom_text">
+			<div class="welcom_pargraph">
+				Bienvenue dans Lighty. Avant de nous lancer, nous avons besoin de certaines informations sur votre base de données. Il va vous falloir réunir les informations suivantes pour continuer.
+			</div>
+			<div class="welcom_pargraph">
+				<li>Nom de la base de données</li>
+				<li>Nom d’utilisateur MySQL</li>
+				<li>Mot de passe de l’utilisateur</li>
+				<li>Adresse de la base de données</li>
+				<li>Préfixe de table</li>
+			</div>
+			<div class="welcom_pargraph">
+				Vous devriez normalement avoir reçu ces informations de la part de votre hébergeur. Si vous ne les avez pas, il vous faudra contacter votre hébergeur afin de continuer. Si vous êtes prêt(e)…
+			</div>
+			<div style="margin-top:20px">
+				<input type="submit" class="btn hello_button" value="C'est parti !" name="nxt" id="nxt"   />
+			</div>
 		</div>
-		<div>
-			Nom de la base de données
-			Nom d’utilisateur MySQL
-			Mot de passe de l’utilisateur
-			Adresse de la base de données
-		</div>
-		<div>
-			Vous devriez normalement avoir reçu ces informations de la part de votre hébergeur. Si vous ne les avez pas, il vous faudra contacter votre hébergeur afin de continuer. Si vous êtes prêt(e)…
-		</div>
+
 	</div>
 	<div id="etap_1"  style="display:none">
 		<h1 class="conf_title">General</h1>
