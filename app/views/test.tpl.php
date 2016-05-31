@@ -1,0 +1,3 @@
+{* View file  : test *} 
+
+{$name}

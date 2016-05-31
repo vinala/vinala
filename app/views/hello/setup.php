@@ -6,7 +6,24 @@
 <div class="content" id="content">
 
 	<div style="height:110px"></div>
-	<div id="etap_1">
+
+	<div id="etap_0">
+		<h1 class="conf_title">General</h1>
+		<div class="progres"><div class="progres_1"></div></div>
+		<div>
+			Bienvenue dans Lighty. Avant de nous lancer, nous avons besoin de certaines informations sur votre base de données. Il va vous falloir réunir les informations suivantes pour continuer.
+		</div>
+		<div>
+			Nom de la base de données
+			Nom d’utilisateur MySQL
+			Mot de passe de l’utilisateur
+			Adresse de la base de données
+		</div>
+		<div>
+			Vous devriez normalement avoir reçu ces informations de la part de votre hébergeur. Si vous ne les avez pas, il vous faudra contacter votre hébergeur afin de continuer. Si vous êtes prêt(e)…
+		</div>
+	</div>
+	<div id="etap_1"  style="display:none">
 		<h1 class="conf_title">General</h1>
 		<div class="progres"><div class="progres_1"></div></div>
 		<form class="config_form" id="form_1">
