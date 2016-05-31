@@ -6,12 +6,9 @@
 <div class="content" id="content">
 
 	<div style="height:60px"></div>
-
+	<div class="fst_config_icon"></div>
 	
-	<div id="fr-db-msg-step">
-		<!-- <h1 class="conf_title">General</h1> -->
-		<!-- <div class="progres"><div class="progres_1"></div></div> -->
-		<div class="fst-config-icon"></div>
+	<div id="fst_db_msg_step">
 		<div class="fst-config-text">
 			<div class="fst-config-pargraph">
 				Welcome to Lighty. Before we launch, we need some information about your database. You'll have to fill the following information to proceed.
@@ -26,78 +23,17 @@
 			<div class="fst-config-pargraph">
 				You would normally have received these information from your host. If you do not, you should contact your hosting provider to continue. If you are ready...
 			</div>
-			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button_hover" value="Let's go !" name="nxt" id="nxt"   />
-			</div>
+			<form class="fst-config-form" id="fst-config-msg-form">
+				<div style="margin-top:20px">
+					<input type="submit" class="btn hello_button_hover hello_button_left" value="Let's go !" name="nxt" id="nxt"   />
+				</div>
+			</form>
 		</div>
 	</div>
-	<div id="etap_1"  style="display:none">
-		<h1 class="conf_title">General</h1>
-		<div class="progres"><div class="progres_1"></div></div>
-		<form class="config_form" id="form_1">
-			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="">Developer Name</label>
-				</div>
-				<div class="conf_input">
-					<input type="text" class="form-control" id="dev_name" name="dev_name" placeholder="Your name">
-				</div>
-			</div>
-			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="sel1">Language</label>
-				</div>
-				<div class="conf_input">
-					<select class="form-control" id="sel1" name="langue">
-					    <option value="fr">Français</option>
-						<option value="ar">العربية</option>
-						<option value="en" selected>English</option>
-			        </select>
-				</div>
-			</div>
 
-			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="sel1">Debugging</label>
-				</div>
-				<div class="conf_input">
-			        <div class="switch">
-					    <input type="checkbox" name="ckeck_loggin" class="switch-checkbox" id="chechBox1" >
-					    <label class="switch-label switch-label-violet" for="chechBox1"></label>
-					</div>
-				</div>
-			</div>
-
-			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="sel1">Maintenance</label>
-				</div>
-				<div class="conf_input">
-			        <div class="switch">
-					    <input type="checkbox" name="ckeck_maintenance" class="switch-checkbox" id="chechBox2" >
-					    <label class="switch-label switch-label-violet" for="chechBox2"></label>
-					</div>
-					<p class="conf_input_note">
-					You can change the error message and maintenance later in the configuration files</p>
-				</div>
-			</div>
-
-			<!-- <div class="bottom" id="bottom_panel">
-				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
-			</div> -->
-			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
-			</div>
-		
-			
-		</form>
-	</div>
-
-	
-
-	<div id="etap_2" style="display:none">
-		<h1 class="conf_title">Database</h1>
-		<div class="progres"><div class="progres_2"></div></div>
+	<div id="fst_db_conf_step" style="display:none">
+		<!-- <h1 class="conf_title">Database</h1>
+		<div class="progres"><div class="progres_2"></div></div> -->
 		<form class="config_form" id="form_2">
 			<div class="control_c_row">
 				<div class="conf_lab">
@@ -167,6 +103,72 @@
 			
 		</form>
 	</div>
+
+	<div id="etap_1"  style="display:none">
+		<h1 class="conf_title">General</h1>
+		<div class="progres"><div class="progres_1"></div></div>
+		<form class="config_form" id="form_1">
+			<div class="control_c_row">
+				<div class="conf_lab">
+					<label for="">Developer Name</label>
+				</div>
+				<div class="conf_input">
+					<input type="text" class="form-control" id="dev_name" name="dev_name" placeholder="Your name">
+				</div>
+			</div>
+			<div class="control_c_row">
+				<div class="conf_lab">
+					<label for="sel1">Language</label>
+				</div>
+				<div class="conf_input">
+					<select class="form-control" id="sel1" name="langue">
+					    <option value="fr">Français</option>
+						<option value="ar">العربية</option>
+						<option value="en" selected>English</option>
+			        </select>
+				</div>
+			</div>
+
+			<div class="control_c_row">
+				<div class="conf_lab">
+					<label for="sel1">Debugging</label>
+				</div>
+				<div class="conf_input">
+			        <div class="switch">
+					    <input type="checkbox" name="ckeck_loggin" class="switch-checkbox" id="chechBox1" >
+					    <label class="switch-label switch-label-violet" for="chechBox1"></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="control_c_row">
+				<div class="conf_lab">
+					<label for="sel1">Maintenance</label>
+				</div>
+				<div class="conf_input">
+			        <div class="switch">
+					    <input type="checkbox" name="ckeck_maintenance" class="switch-checkbox" id="chechBox2" >
+					    <label class="switch-label switch-label-violet" for="chechBox2"></label>
+					</div>
+					<p class="conf_input_note">
+					You can change the error message and maintenance later in the configuration files</p>
+				</div>
+			</div>
+
+			<!-- <div class="bottom" id="bottom_panel">
+				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
+			</div> -->
+			<div style="margin-top:20px">
+				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
+			</div>
+		
+			
+		</form>
+	</div>
+
+	
+
+	
 
 	<div id="etap_3" style="display:none">
 		<h1 class="conf_title">Security</h1>

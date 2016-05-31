@@ -22,7 +22,6 @@ $( document ).ready(function() {
             easing: 'linear', // "swing"
             //
             step: function() {
-                console.log(this.blurRadius);
                 $('#bg').css({
                     "-webkit-filter": "blur("+this.blurRadius+"px)",
                     "filter": "blur("+this.blurRadius+"px)"
@@ -50,6 +49,11 @@ $( document ).ready(function() {
         $( "#welcom" ).fadeTo( "slow", 1 );
         clearInterval(Timer4);
     }
+
+    $('#fst-config-msg-form').submit(function () {
+        $( "#fst_db_msg_step" ).fadeOut( 300, function(){ $( "#fst_db_conf_step" ).fadeIn( 300 ); } );
+        return false;
+    });
 
 	$('#form_1').submit(function () {
         $.post('hello/1',$('#form_1').serialize(),function(data)

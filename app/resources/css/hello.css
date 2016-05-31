@@ -125,6 +125,11 @@ body
 	color:white;
 }
 
+.hello_button_left
+{
+	float:left;
+}
+
 /* ii */
 .config_form
 {
@@ -291,7 +296,7 @@ body
 	margin-bottom: 10px;
 }
 
-.fst-config-icon
+.fst_config_icon
 {
 	width:100px;
 	margin:0pt auto;
