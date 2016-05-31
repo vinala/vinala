@@ -266,16 +266,22 @@ body
     right: 0px; 
 }
 
-.welcom_pargraph
+.fst-config-cont
 {
-	color: white;
-	margin-bottom: 10px;
+	width : 400px;
+	margin: 0pt auto;
 }
 
-.welcom_text
+.fst-config-text
 {
 	width : 600px;
 	margin: 0pt auto;
+}
+
+.fst-config-pargraph
+{
+	color: white;
+	margin-bottom: 10px;
 }
 
 .fst-config-icon
@@ -284,4 +290,13 @@ body
 	margin:0pt auto;
 	display: block;
 	margin-bottom: 25px;
+	height: 100px;
+	background : url(https://gitlab.com/uploads/project/avatar/1202141/hey_race_icon2.png);
+	background-size: cover;
+}
+
+.fst-config-lang-combo
+{
+	width : 200px;
+	margin: 80px auto;
 }

@@ -7,29 +7,42 @@
 
 	<div style="height:110px"></div>
 
-	<div id="etap_0">
+	<div id="lang-step">
+		<div class="fst-config-icon"></div>
+		<div class="fst-config-cont">
+			
+				<div class="fst-config-lang-combo">
+					<select class="form-control" id="sel1" name="langue">
+					    <option value="fr">Français</option>
+						<option value="ar">العربية</option>
+						<option value="en" selected>English</option>
+			        </select>
+				</div>
+			
+		</div>
+	</div>
+	<div id="fr-db-msg-step"   style="display:none">
 		<!-- <h1 class="conf_title">General</h1> -->
 		<!-- <div class="progres"><div class="progres_1"></div></div> -->
 		<img src="https://gitlab.com/uploads/project/avatar/1202141/hey_race_icon2.png" class="fst-config-icon">
-		<div class="welcom_text">
-			<div class="welcom_pargraph">
+		<div class="fst-config-text">
+			<div class="fst-config-pargraph">
 				Bienvenue dans Lighty. Avant de nous lancer, nous avons besoin de certaines informations sur votre base de données. Il va vous falloir réunir les informations suivantes pour continuer.
 			</div>
-			<div class="welcom_pargraph">
+			<div class="fst-config-pargraph">
 				<li>Nom de la base de données</li>
 				<li>Nom d’utilisateur MySQL</li>
 				<li>Mot de passe de l’utilisateur</li>
 				<li>Adresse de la base de données</li>
 				<li>Préfixe de table</li>
 			</div>
-			<div class="welcom_pargraph">
+			<div class="fst-config-pargraph">
 				Vous devriez normalement avoir reçu ces informations de la part de votre hébergeur. Si vous ne les avez pas, il vous faudra contacter votre hébergeur afin de continuer. Si vous êtes prêt(e)…
 			</div>
 			<div style="margin-top:20px">
 				<input type="submit" class="btn hello_button" value="C'est parti !" name="nxt" id="nxt"   />
 			</div>
 		</div>
-
 	</div>
 	<div id="etap_1"  style="display:none">
 		<h1 class="conf_title">General</h1>
