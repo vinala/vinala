@@ -320,3 +320,45 @@ body
     text-align: center;
     margin: 0px auto;
 }
+
+.fst-config-db-form
+{
+	margin-top: 30px;
+}
+
+.fst-config-label
+{
+	display: inline-block;
+    vertical-align: top;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.fst-config-input
+{
+	display: inline-block;
+	margin: 0px 10px;
+	vertical-align: top;
+}
+
+.fst-config-input-desc
+{
+	display: inline-block;
+    vertical-align: top;
+	text-align: left;
+}
+
+.db-input-label
+{
+	width: 20%;
+}
+
+.db-input-input
+{
+	width: 30%;
+}
+
+.db-input-input-desc
+{
+	width: 30%;
+}
