@@ -34,74 +34,63 @@
 	<div id="fst_db_conf_step" style="display:none">
 		<!-- <h1 class="conf_title">Database</h1>
 		<div class="progres"><div class="progres_2"></div></div> -->
-		<form class="config_form" id="form_2">
+		<div class="fst-config-text">
+			<div class="fst-config-pargraph">
+				You must enter below the login details to your database. If you do not know them, contact your host.
+			</div>
+		</div>
+
+		<!-- <form class="config_form" id="form_2"> -->
+		<div class="fst-config-cont">
+		<form class="fst-config-form fst-config-db-form" id="fst-config-db-form">
 			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="">Database server</label>
-				</div>
-				<div class="conf_input">
+				<div class="fst-config-label db-input-label">Database server</div>
+				<div class="fst-config-input db-input-input">
 					<input type="text" class="form-control" id="migname" name="db_host" placeholder="Server" value="">
-					<p class="conf_input_note">By default : localhost</p>
 				</div>
-			</div>
-			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="">Database Name</label>
-				</div>
-				<div class="conf_input">
-					<input type="text" class="form-control" id="migname" name="db_name" placeholder="Database" value="">
-					<p class="conf_input_note">By default : test</p>
-				</div>
-			</div>
-			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="">Database User</label>
-				</div>
-				<div class="conf_input">
-					<input type="text" class="form-control" id="migname" name="db_usr" placeholder="User" value="">
-					<p class="conf_input_note">By default : root</p>
-				</div>
+				<div class="fst-config-input-desc db-input-input-desc">The name of server where you host your database</div>
 			</div>
 
 			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="">Database password</label>
+				<div class="fst-config-label db-input-label">Database Name</div>
+				<div class="fst-config-input db-input-input">
+					<input type="text" class="form-control" id="migname" name="db_name" placeholder="Database" value="">
 				</div>
-				<div class="conf_input">
+				<div class="fst-config-input-desc db-input-input-desc">The name of the database that you want to use Lighty.</div>
+			</div>
+
+			<div class="control_c_row">
+				<div class="fst-config-label db-input-label">Database user</div>
+				<div class="fst-config-input db-input-input">
+					<input type="text" class="form-control" id="migname" name="db_usr" placeholder="User" value="">
+				</div>
+				<div class="fst-config-input-desc db-input-input-desc">The database user identifier to login to database.</div>
+			</div>
+
+			<div class="control_c_row">
+				<div class="fst-config-label db-input-label">Database password</div>
+				<div class="fst-config-input db-input-input">
 					<input type="text" class="form-control" id="migname" name="db_pass" placeholder="Password" value="">
 				</div>
+				<div class="fst-config-input-desc db-input-input-desc">The password of database user to login to database.</div>
 			</div>
 
 			<div class="control_c_row">
-				<div class="conf_lab">
-					<label for="">Tables prefix</label>
-				</div>
-				<div class="conf_input">
+				<div class="fst-config-label db-input-label">Tables prefix</div>
+				<div class="fst-config-input db-input-input">
 					<input type="text" class="form-control" id="migname" name="db_prefix" placeholder="Prefixe" value="<?php $str=str_shuffle("azertyuiopqsdfghjklmwxcvbn");echo substr($str, 0, 3); ?>">
 					<p class="conf_input_note">If you keep it blank, prefixing will be disabled</p>
 				</div>
+				<div class="fst-config-input-desc db-input-input-desc">To secure your database and mark all tables of that project .</div>
 			</div>
-			<!-- <div class="control_c_row">
-				<div class="conf_lab">
-					<label for="sel1">Langue</label>
-				</div>
-				<div class="conf_input">
-					<select class="form-control" id="sel1" name="langue">
-					    <option value="fr" selected>Français</option>
-						<option value="ar">العربية</option>
-						<option value="en">English</option>
-			        </select>
-				</div>
-			</div> -->
-			<!-- <div class="bottom" id="bottom_panel">
-				<a href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
-			</div> -->
+			
 			<div style="margin-top:20px">
-				<input type="submit" class="btn hello_button" value="Next" name="nxt" id="nxt"   />
+				<input type="submit" class="btn hello_button" value="Validate" name="nxt" id="nxt"   />
 			</div>
 		
 			
 		</form>
+		</div>
 	</div>
 
 	<div id="etap_1"  style="display:none">
