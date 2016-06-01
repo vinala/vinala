@@ -5,3 +5,4 @@ vendor/*
 !vendor/fiesta/kernel
 !vendor/fiesta/whoops
 !vendor/fiesta/panel
+config/*
