@@ -1,6 +1,5 @@
 <?php 
 
-
 require __DIR__.'/../vendor/autoload.php';
 
 
@@ -11,4 +10,11 @@ require __DIR__.'/../vendor/autoload.php';
 | launch the Lighty console
 */
 
-Lighty\Kernel\Foundation\Application::console();
+try 
+{
+	Lighty\Kernel\Foundation\Application::console();
+} 
+catch (Exception $e) 
+{
+	echo $e->xdebug_message;
+}
