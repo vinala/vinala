@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<?php 
-		use Lighty\Kernel\Resources\Libs;
-		use Lighty\Kernel\HyperText\Html;
-		use Lighty\Kernel\Access\Path;
-		use Lighty\Kernel\Config\Config;
-		use Lighty\Kernel\Translator\Lang;
+		{{{ use Lighty\Kernel\Resources\Libs; }}}
+		{{{ use Lighty\Kernel\HyperText\Html; }}}
+		{{{ use Lighty\Kernel\Access\Path; }}}
+		{{{ use Lighty\Kernel\Config\Config; }}}
+		{{{ use Lighty\Kernel\Translator\Lang; }}}
 		//
-		Libs::css("app/resources/library/bootstrap-3.3.1.min.css",false);
-		Libs::css("app/resources/library/bootstrap-theme-3.3.1.min.css",false);
-		Libs::js("app/resources/library/jquery-1.11.3.min.js",false);
-		Html::charset("utf-8"); 
-		Html::title();
-		Html::favicon(Path::$public."/favicon.ico");
-		Libs::css("hello");
-		Libs::js("hello");
-	?>
+		{{{ Libs::css("app/resources/library/bootstrap-3.3.1.min.css",false); }}}
+		{{{ Libs::css("app/resources/library/bootstrap-theme-3.3.1.min.css",false); }}}
+		{{{ Libs::js("app/resources/library/jquery-1.11.3.min.js",false); }}}
+		{{{ Html::charset("utf-8");  }}}
+		{{{ Html::title(); }}}
+		{{{ Html::favicon(Path::$public."/favicon.ico"); }}}
+		{{{ Libs::css("hello"); }}}
+		{{{ Libs::js("hello"); }}}
 	</head>
 	<body>
 		<div class="bg" id="bg"></div>
@@ -68,28 +66,35 @@
 				}
 			</script>
 
-			<img src="<?php echo "app/resources/images/lighty_logo.png" ?>" class="img2" id="hello_logo" style="display:none">
+			<img src="app/resources/images/lighty_logo.png" class="img2" id="hello_logo" style="display:none">
 
 			<div id="welcom" style="display:none">
 
 				<div class="text">
-					<?php 
-						echo Lang::get('welcome');
+
+						{{ Lang::get('welcome') }}
 						//
-						if(Base::full(Config::get('app.owner'))) 
-							if(Config::get('app.owner') != "user")
-								echo " <span id='dev_nom'>".Config::get('app.owner')."</span>";
-					?>
+						@if(Base::full(Config::get('app.owner')))
+							@if(Config::get('app.owner') != "user")
+								<span id='dev_nom'> {{Config::get('app.owner')}} </span>
+							@endif	
+						@endif
+					
 				</div>
 			</div>
 
 			<div class="bottom_panel bottom_panel_2" id="bottom_panel_2" style="display:none">
-				<?php echo "v ".App::fullVersion(); ?>
+				{{"v ".App::fullVersion()}}
 			</div>
 			<div class="bottom_panel" id="bottom_panel" style="display:none">
-				<a id="fst_panel" href="<?php echo Config::get("panel.route") ?>"><div class="btn hello_button" id="login">Lighty Panel</div></a>
+				<a id="fst_panel" href="{{ Config::get("panel.route") }}">
+					<div class="btn hello_button" id="login">
+						Lighty Panel
+					</div>
+				</a>
 			</div>
 		</div>
 	</body>
 </html>
+
 
