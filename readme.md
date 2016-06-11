@@ -14,7 +14,7 @@
 
 ![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
 
-Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects (Framework - Kernel - Panel - Bridge - Whoops - Logy - Installers - Quandumium - Lumos - Console - Docs) some of the are public and other not.
+Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects (Framework - Kernel - Panel - Bridge - Whoops - Logy - Installers - Atomium - Lumos - Console - Docs) some of the are public and other not.
 
 ### Installation
 

@@ -3,6 +3,7 @@
 
 New features:
 
+ * New Template Engine called Atomium
  * Supporting Plugins 
  * Supporting Console Command-line [Documentation](https://github.com/fiesta-framework/Docs/blob/3.2/src/console.md#console)
  * Change the name from Fiesta to Lighty
