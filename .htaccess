@@ -15,3 +15,13 @@ RewriteRule ^(.+)$ public/index.php?url=$1 [QSA,L]
 # Empty Url
 RewriteCond %{QUERY_STRING} ^$
 RewriteRule ^/?$ public/index.php
+
+<Files  ~ "\.atom.php$">
+  Order allow,deny
+  Deny from all
+</Files>
+
+<Files  ~ "\.atom$">
+  Order allow,deny
+  Deny from all
+</Files>
