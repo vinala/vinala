@@ -41,15 +41,6 @@ return array(
 
 
 	"rollback_schema" => "rollback:schema",
-	
-	/*
-	|----------------------------------------------------------
-	| New Translator Directory
-	|----------------------------------------------------------
-	| this Command to create new folder in lang folder
-	**/
-
-	"dir_lang" => "make:langdir",
 
 
 	/*
@@ -60,7 +51,7 @@ return array(
 	| folder
 	**/
 
-	"file_lang" => "make:langfile",
+	"new_lang" => "make:lang",
 
 
 	/*
