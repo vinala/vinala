@@ -4,4 +4,4 @@
 require 'bootstrap/console.php';
 
 try { Lighty\Kernel\Console\Console::run();	}
-catch (Exception $e) { echo "\n\nError : ".$e->getMessage()."\nin ".$e->getFile()." line ".$e->getLine()."\n\n"; }
+catch (Exception $e) { echo "\n\nError : ".$e->getMessage()."\nin ".$e->getFile()." line ".$e->getLine()."\n\n".$e->getTraceAsString(); }
