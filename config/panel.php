@@ -39,13 +39,13 @@ return array(
 
 	/*
 	|----------------------------------------------------------
-	| First Configuration
+	| Setup
 	|----------------------------------------------------------
 	|  The framework will set true if you passed 
-	|  the first configuration
+	|  the setup
 	*/
 
-	'configured' => false,
+	'setup' => false,
 
 
 	/*
