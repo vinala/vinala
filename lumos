@@ -3,4 +3,5 @@
 
 require 'bootstrap/console.php';
 
-Lighty\Kernel\Console\Console::run();
+try { Lighty\Kernel\Console\Console::run();	} 
+catch (Exception $e) { echo ($e->$xdebug_message); }
