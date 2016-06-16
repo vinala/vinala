@@ -4,7 +4,8 @@
 
 <!-- [![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=next)](https://travis-ci.org/fiesta-framework/Fiesta/branches) -->
 [![Latest Stable Version](https://poser.pugx.org/lighty/lighty/v/stable)](https://packagist.org/packages/lighty/lighty) 
-[![Total Downloads](https://poser.pugx.org/lighty/lighty/downloads)](https://packagist.org/packages/lighty/lighty) 
+<!-- [![Total Downloads](https://poser.pugx.org/lighty/lighty/downloads)](https://packagist.org/packages/lighty/lighty)  -->
+[![Downloads](https://img.shields.io/badge/downloads-637-0375b5.svg)](https://gitlab.com/lighty/framework)
 [![Latest Unstable Version](https://poser.pugx.org/lighty/lighty/v/unstable)](https://packagist.org/packages/lighty/lighty) 
 [![License](https://poser.pugx.org/lighty/lighty/license)](https://packagist.org/packages/lighty/lighty)
 <!--[![Monthly Downloads](https://poser.pugx.org/lighty/lighty/d/monthly)](https://packagist.org/packages/lighty/lighty)-->
