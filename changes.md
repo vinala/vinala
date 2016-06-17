@@ -1,14 +1,14 @@
-### 3.* (Beta)
+### 3.2
 ----------------------
 
 New features:
 
  * New Template Engine called Atomium
  * Supporting Plugins 
- * Supporting Console Command-line [Documentation](https://github.com/fiesta-framework/Docs/blob/3.2/src/console.md#console)
+ * Supporting Console Command-line
  * Change the name from Fiesta to Lighty
- * New Logo (inspired by Davide Giliati - https://dribbble.com/DavideGiliati)
  * New welcome page
+ * New Setup
  
 
 ### 3.1.3
