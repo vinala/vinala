@@ -14,7 +14,9 @@
 
 ![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
 
-Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects (Framework - Kernel - Panel - Bridge - Whoops - Logy - Installers - Atomium - Lumos - Console - Docs) some of the are public and other not.
+Lighty is a PHP framework made for web developers to make the web programing more easyer, faster and wonderful. Created in 10/10/2014 by Youssef Had, provided nice features to help in you in your project such as Lumos, Panel, Atomium.
+
+Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects (Framework - Kernel - Panel - Bridge - Whoops - Logy - Installers - Atomium - Lumos - Console - Docs) some of them are public and free and others not.
 
 ### Installation
 
@@ -48,7 +50,7 @@ We are working on Lighty documentation for every release version, you can take l
 
 ### Development
 
-Lighty is open to the contributions of developers, the current released version of Lighty is `3.1` . However developers may instead opt to use the next beta version in [dev](https://gitlab.com/lighty/framework/tree/dev) branch aliased to `3.x-dev`.
+Lighty is open to the contributions of developers, the current released version of Lighty is `3.2` . However developers may instead opt to use the next beta version in [dev](https://gitlab.com/lighty/framework/tree/dev) branch aliased to `3.x-dev`.
 
 
 ### Versions
@@ -56,23 +58,6 @@ Lighty is open to the contributions of developers, the current released version 
 To consult the change log of the framework please visit here [change log](https://gitlab.com/lighty/framework/blob/dev/changes.md)
 
 [Lighty Releases](https://gitlab.com/lighty/framework/tags)
-
-
-[Lighty v 3.1.3](https://gitlab.com/lighty/framework/tags/3.1.3) (22/02/2016)  
-[Lighty v 3.1.2](https://gitlab.com/lighty/framework/tags/3.1.2) (11/02/2016)  
-[Lighty v 3.1.1](https://gitlab.com/lighty/framework/tags/3.1.1) (07/02/2016)  
-[Lighty v 3.1](https://gitlab.com/lighty/framework/tags/3.1.0) (06/02/2016)  
-[Lighty v 3.0](https://gitlab.com/lighty/framework/tags/3.0.0) (15/01/2016)  
-[Lighty v 2.5](https://gitlab.com/lighty/framework/tags/2.5.0.236) (05/07/2015)  
-[Lighty v 2.0](https://gitlab.com/lighty/framework/tags/2.0.0.1) (27/02/2015)  
-[Lighty v 1.5](https://gitlab.com/lighty/framework/tags/1.5.0) (05/02/2015)  
-[Lighty v 1.4.4](https://gitlab.com/lighty/framework/tags/1.4.4) (01/02/2015)  
-[Lighty v 1.4.3](https://gitlab.com/lighty/framework/tags/1.4.3) (28/01/2015)  
-[Lighty v 1.4.2](https://gitlab.com/lighty/framework/tags/1.4.2) (16/01/2015)  
-[Lighty v 1.4.1](https://gitlab.com/lighty/framework/tags/1.4.1) (15/01/2015)  
-[Lighty v 1.4](https://gitlab.com/lighty/framework/tags/1.4.0) (11/01/2015)  
-[Lighty v 1.3.2](https://gitlab.com/lighty/framework/tags/1.3.2) (10/01/2015)  
-[Lighty v 1.3.1](https://gitlab.com/lighty/framework/tags/1.3.1) (09/01/2015)  
 
 ### Licence
 
