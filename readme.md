@@ -59,7 +59,7 @@ Lighty is open to the contributions of developers, the current released version 
 
 To consult the change log of the framework please visit here [change log](https://gitlab.com/lighty/framework/blob/dev/changes.md)
 
-[Lighty Releases](https://gitlab.com/lighty/framework/tags)
+To get older releases of lighty framework please [Lighty Releases](https://gitlab.com/lighty/framework/tags)
 
 ### Licence
 
