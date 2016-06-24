@@ -7,14 +7,16 @@
 		{{{ use Lighty\Kernel\Config\Config; }}}
 		{{{ use Lighty\Kernel\Translator\Lang; }}}
 		///
-		{{{ Libs::css("app/resources/library/bootstrap-3.3.1.min.css",false); }}}
-		{{{ Libs::css("app/resources/library/bootstrap-theme-3.3.1.min.css",false); }}}
-		{{{ Libs::js("app/resources/library/jquery-1.11.3.min.js",false); }}}
+		@css("app/resources/library/bootstrap-3.3.1.min.css",false);
+		@css("app/resources/library/bootstrap-theme-3.3.1.min.css",false);
+		@js("app/resources/library/jquery-1.11.3.min.js",false);
+		@css("hello");
+		@js("hello");
+		///
 		{{{ Html::charset("utf-8");  }}}
-		{{{ Html::title(); }}}
+		@exec(Html::title());
 		{{{ Html::favicon(Path::$public."/favicon.ico"); }}}
-		{{{ Libs::css("hello"); }}}
-		{{{ Libs::js("hello"); }}}
+
 	</head>
 	<body>
 		<div class="bg" id="bg"></div>
