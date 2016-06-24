@@ -30,9 +30,9 @@ First, download and install [Composer installer](https://getcomposer.org/)
 
 #### Install next release of Lighty
 
-You can install next release of Lighty via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
+You can install **free** release of Lighty via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
-	composer create-project lighty/lighty projet_name dev-next --prefer-dist
+	composer create-project lighty/lighty projet_name --prefer-dist
 
 ###  Apache
 
