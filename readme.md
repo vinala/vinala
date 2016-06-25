@@ -16,7 +16,7 @@
 
 -----
 
-**Lighty** is a PHP framework made for web developers to make the web programing more easyer, faster and wonderful. Created in 10/10/2014 by Youssef Had, provided nice features to help in you in your project such as Lumos, Panel, Atomium.
+**Lighty** is a PHP framework made for web developers to make the web programing more easyer, faster and wonderful. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help in you in your project such as Lumos, Panel, Atomium.
 
 Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects ([Framework](https://gitlab.com/lighty/framework) - [Kernel](https://gitlab.com/lighty/kernel) - [Panel](https://gitlab.com/lighty/panel) - Bridge - [Whoops](https://gitlab.com/lighty/whoops) - Logy - [Installers](https://gitlab.com/lighty/installers) - Atomium - Lumos - Console - [Docs](https://gitlab.com/lighty/docs)) some of them are public and free and others aren't.
 
