@@ -34,16 +34,15 @@ You can install **free** release of Lighty via [Composer](https://getcomposer.or
 
 	composer create-project lighty/lighty projet_name --prefer-dist
 
-###  Apache
-
-Lighty comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
-
 ### Lighty Requirements
 
 Lighty has some system requirements:
 * PHP >= 5.5
 * Enabling The mod_rewrite Apache extension
 
+###  Apache
+
+Lighty comes with `.htaccess` file that uses URL rewriting, if you use Apache, Be sure you have enabled the extension `mod_rewrite`
 
 ### Documentation
 
