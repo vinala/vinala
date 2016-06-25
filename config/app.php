@@ -42,7 +42,7 @@ use Lighty\Kernel\Foundation\Application;
 	| Default HTML title
 	*/ 
  
-	'title'=> 'Pikia PHP Framework',
+	'title'=> 'Lighty PHP Framework',
 
 	/* 	
 	|---------------------------------------------------------- 
