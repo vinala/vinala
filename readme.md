@@ -62,10 +62,10 @@ To get older releases of lighty framework please [Lighty Releases](https://gitla
 
 ### They have trust on us
 
-[![Ipixa](https://gitlab.com/lighty/Art/raw/master/Clients/ipixa.png)](https://www.ipixa.net) 
-[![Touhfa](https://gitlab.com/lighty/Art/raw/master/Clients/touhfa.png)](https://www.touhfat.com) 
-[![Stabel](https://gitlab.com/lighty/Art/raw/master/Clients/stabel.png)](https://www.stabel.com) 
-[![BMe](https://gitlab.com/lighty/Art/raw/master/Clients/bme.png)](https://bureaumercier.com/) 
+[![Ipixa](https://gitlab.com/lighty/Art/raw/master/Clients/ipixa.png)](http://www.ipixa.net) 
+[![Touhfa](https://gitlab.com/lighty/Art/raw/master/Clients/touhfa.png)](http://www.touhfat.com) 
+[![Stabel](https://gitlab.com/lighty/Art/raw/master/Clients/stabel.png)](http://www.stabel.com) 
+[![BMe](https://gitlab.com/lighty/Art/raw/master/Clients/bme.png)](http://bureaumercier.com/) 
 
 ### Licence
 
