@@ -60,6 +60,12 @@ To consult the change log of the framework please visit here [change log](https:
 
 To get older releases of lighty framework please [Lighty Releases](https://gitlab.com/lighty/framework/tags)
 
+### The Trust US
+
+[![Ipixa](https://gitlab.com/lighty/Art/raw/master/Clients/ipixa.png)](https://www.ipixa.net) 
+[![Touhfa](https://gitlab.com/lighty/Art/raw/master/Clients/touhfa.png)](https://www.touhfat.com) 
+[![Touhfa](https://gitlab.com/lighty/Art/raw/master/Clients/touhfa.png)](https://www.touhfat.com) 
+
 ### Licence
 
 The Lighty framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
