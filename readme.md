@@ -60,7 +60,7 @@ To consult the change log of the framework please visit here [change log](https:
 
 To get older releases of lighty framework please [Lighty Releases](https://gitlab.com/lighty/framework/tags)
 
-### They have trust on us
+### They use Lighty
 
 [![Ipixa](https://gitlab.com/lighty/Art/raw/master/Clients/ipixa.png)](http://www.ipixa.net) 
 [![Touhfa](https://gitlab.com/lighty/Art/raw/master/Clients/touhfa.png)](http://www.touhfat.com) 
