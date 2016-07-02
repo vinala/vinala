@@ -1,54 +1,61 @@
-### 3.2
-----------------------
+### Macaron (3.2)
+---
 
-New features:
+##### Features
 
+ * Start naming Lighty released by sweet foods
  * New Template Engine called Atomium
  * Supporting Plugins 
  * Supporting Console Command-line
  * Change the name from Fiesta to Lighty
  * New welcome page
  * New Setup
+
+##### Bug fixed
+
+* fix the problem of Session
+* fix bug of params passed to view.
+* fix bug of version cookie in test state
  
 
 ### 3.1.3
-----------------------
+---
 
-New features:
+##### Features
 
  * use Scope function Route
  * fixe other errors
 
 
 ### 3.1.2
-----------------------
+---
 
-New features:
+##### Features
 
  * require Fiesta kernel v 3.1.*
 
 
 ### 3.1.1
-----------------------
+---
 
-New features:
+##### Features
 
  * Move config folder out of app folder
 
 
 ### 3.1.0
-----------------------
+---
 
-New features:
+##### Features
 
  * Supporting PHP7
  * Make the core of Fiesta dependencies and name it Kernel
  * Add new function for HTTP ( abort and error)
 
 ### 3.0.0
-----------------------
+---
 
-New features:
+##### Features
 
  * Supporting smileys
  * First Configuration
@@ -67,9 +74,9 @@ New features:
 
 
 ### 2.5.0
-----------------------
+---
 
-New features:
+##### Features
 
 * New Panel v2.0
 * New Hello view
@@ -78,33 +85,33 @@ New features:
 
 
 ### 1.4.4
-----------------------
+---
 
-New features:
+##### Features
 
  * Supporting subdomains route
 
 
 ### 1.4.2
-----------------------
+---
 
-New features:
+##### Features
 
  * fixing some bugs in v1.4.1
 
 
 ### 1.4.1
-----------------------
+---
 
-New features:
+##### Features
 
  * Changing PHPMailer To SwiftMailer
  * Add new Mail setting to handle with SwiftMailer
 
 
 ### 1.4
-----------------------
+---
 
-New features:
+##### Features
 
  * Add Whoops Error Handler
