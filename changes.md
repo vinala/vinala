@@ -1,4 +1,4 @@
-### Macaron (3.2)
+### Macaron (3.2.0)
 ---
 
 ##### Features
