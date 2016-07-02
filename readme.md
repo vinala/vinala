@@ -1,5 +1,5 @@
 <!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
-
+# Lighty Macaron (3.2)
 **Lighty, a PHP Framework for web developers**
 
 <!-- [![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=next)](https://travis-ci.org/fiesta-framework/Fiesta/branches) -->
