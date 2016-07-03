@@ -129,10 +129,19 @@ return array(
 	|----------------------------------------------------------
 	| User Command
 	|----------------------------------------------------------
-	| this Command to create new user console command
+	| this Command to create new user Lumos command
 	**/
 	
 	"new_command" => "make:command",
+
+	/*
+	|----------------------------------------------------------
+	| User Atomium Tag
+	|----------------------------------------------------------
+	| this Command to create new user Atomium tag
+	**/
+	
+	"new_tag" => "make:tag",
 
 	/*
 	|----------------------------------------------------------
