@@ -50,7 +50,6 @@
 			'Log' => 			Lighty\Kernel\Logging\Log::class,
 			'Mail' => 			Lighty\Kernel\Mailing\Mail::class,
 			'ModelArray' => 	Lighty\Kernel\MVC\Model\ModelArray::class,
-			'Query' => 			Lighty\Kernel\Database\Query::class,
 			'Path' => 			Lighty\Kernel\Access\Path::class,
 			'Res' => 			Lighty\Kernel\HyperText\Res::class,
 			'Root' => 			Lighty\Kernel\Http\Root::class,
