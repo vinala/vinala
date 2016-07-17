@@ -29,7 +29,7 @@ Lighty uses `Composer`, You can use Composer  to install Lighty and its dependen
 
 First, download and install [Composer installer](https://getcomposer.org/)
 
-#### Install next release of Lighty
+#### Install last stable release of Lighty
 
 You can install **free** release of Lighty via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
@@ -53,6 +53,12 @@ We are working on Lighty documentation for every release version, you can take l
 ### Development
 
 Lighty is open to the contributions of developers, the current released version of Lighty is `3.2` . However developers may instead opt to use the next beta version in [dev](https://gitlab.com/lighty/framework/tree/dev) branch aliased to `3.x-dev`.
+
+###### Install next beta release of Lighty
+
+You can install next release of Lighty in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
+
+	composer create-project lighty/lighty projet_name master-dev --prefer-dist
 
 
 ### Versions
