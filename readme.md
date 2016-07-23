@@ -1,5 +1,5 @@
 <!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
-# Lighty Macaron (v3.2)
+# Lighty v3.2
 
 ---
 
@@ -13,13 +13,11 @@
 
 -----
 
-![alt tag](https://gitlab.com/lighty/Art/raw/master/releases/images/lighty%20macaron.png)
+![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
 
 -----
 
 **Lighty** is a PHP framework made for web developers to make the web programing more easyer, faster and wonderful. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help in you in your project such as Lumos, Panel, Atomium.
-
-**Macaron** is 3.2 release of Lighty Framework
 
 Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects ([Framework](https://gitlab.com/lighty/framework) - [Kernel](https://gitlab.com/lighty/kernel) - [Panel](https://gitlab.com/lighty/panel) - Bridge - [Whoops](https://gitlab.com/lighty/whoops) - Logy - [Installers](https://gitlab.com/lighty/installers) - Atomium - Lumos - Console - [Docs](https://gitlab.com/lighty/docs)) some of them are public and free and others aren't.
 
@@ -31,7 +29,7 @@ Lighty uses `Composer`, You can use Composer  to install Lighty and its dependen
 
 First, download and install [Composer installer](https://getcomposer.org/)
 
-#### Install next release of Lighty
+#### Install last stable release of Lighty
 
 You can install **free** release of Lighty via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
@@ -55,6 +53,12 @@ We are working on Lighty documentation for every release version, you can take l
 ### Development
 
 Lighty is open to the contributions of developers, the current released version of Lighty is `3.2` . However developers may instead opt to use the next beta version in [dev](https://gitlab.com/lighty/framework/tree/dev) branch aliased to `3.x-dev`.
+
+###### Install next beta release of Lighty
+
+You can install next release of Lighty in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
+
+	composer create-project lighty/lighty projet_name master-dev --prefer-dist
 
 
 ### Versions
