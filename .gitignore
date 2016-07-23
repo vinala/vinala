@@ -1,4 +1,5 @@
 composer.lock
+kernel.lnk
 .gitignore
 .gitmodules
 vendor/*
