@@ -14,6 +14,15 @@ return array(
 
 	/*
 	|----------------------------------------------------------
+	| Clear Controllers
+	|----------------------------------------------------------
+	| this Command to clear controllers folder
+	**/
+
+	"clear_controller" => "clear:controller",
+
+	/*
+	|----------------------------------------------------------
 	| New Schema
 	|----------------------------------------------------------
 	| this Command to generate new schema in schema folder
