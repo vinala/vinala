@@ -3,7 +3,6 @@
 
 ##### Features
 
- * Start naming Lighty released by sweet foods
  * New Template Engine called Atomium
  * Supporting Plugins 
  * Supporting Console Command-line
