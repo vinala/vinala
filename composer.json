@@ -1,7 +1,7 @@
 {
-	"name": "lighty/lighty",
-	"description": "Lighty, a PHP Framework for web developers",
-	"keywords": ["framework", "Lighty"],
+	"name": "vinala/vinala",
+	"description": "Vinala, a PHP Framework for web developers",
+	"keywords": ["framework", "Vinala"],
 	"license": "MIT",
 	"authors": [
 		{
@@ -18,9 +18,9 @@
 		"swiftmailer/swiftmailer": "5.3.1",
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
-		"lighty/kernel": "dev-dev",
-		"lighty/panel": "~2.2.0",
-		"lighty/whoops": "~1.2.3",
+		"vinala/kernel": "dev-dev",
+		"vinala/panel": "~2.2.0",
+		"vinala/whoops": "~1.2.3",
 		"symfony/console": "3.*",
 		"phpunit/phpunit": "~4.1"
 	},
