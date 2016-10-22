@@ -19,8 +19,8 @@
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
 		"vinala/kernel": "dev-dev",
-		"vinala/panel": "~2.2.0",
-		"vinala/whoops": "~1.2.3",
+		"vinala/panel": "dev-dev",
+		"vinala/whoops": "dev-dev",
 		"symfony/console": "3.*",
 		"phpunit/phpunit": "~4.1"
 	},
