@@ -24,6 +24,11 @@
 		"symfony/console": "3.*",
 		"phpunit/phpunit": "~4.1"
 	},
+	"scripts": {
+		"post-create-project-cmd": [
+			"php artisan setup"
+		]
+	},
 	"extra": {
         "branch-alias": {
             "dev-master": "3.*-dev",
