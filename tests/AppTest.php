@@ -14,7 +14,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function test()
 	{
-		require_once __DIR__.'/../vendor/lighty/kernel/src/Testing/TestCase.php';
+		require_once __DIR__.'/../vendor/vinala/kernel/src/Testing/TestCase.php';
 		//
 		$app = TestCase::run();
 		
