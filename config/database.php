@@ -10,7 +10,7 @@ return array(
 	| Default used database driver
 	*/
 
-	'default' => 'mysql', 
+	'default' => 'none', 
 
 	/*
 	|----------------------------------------------------------
