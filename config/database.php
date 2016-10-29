@@ -10,7 +10,7 @@ return array(
 	| Default used database driver
 	*/
 
-	'default' => 'mysql', 
+	'default' => 'none', 
 
 	/*
 	|----------------------------------------------------------
@@ -63,7 +63,7 @@ return array(
 	| Database used to store migrations info
 	*/
 
-	'migration' => 'lighty_migrations',
+	'migration' => 'vinala_migrations',
 
 	/*
 	|----------------------------------------------------------
@@ -83,6 +83,6 @@ return array(
 	| created by Pikia if prefixing parameter was true
 	*/
 
-	'prefixe' => 'fst_',
+	'prefixe' => 'vnl_',
 
 );
