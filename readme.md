@@ -3,7 +3,7 @@
 
 ---
 
-<!-- [![Build Status](https://travis-ci.org/fiesta-framework/Fiesta.svg?branch=next)](https://travis-ci.org/fiesta-framework/Fiesta/branches) -->
+[![Build Status](https://travis-ci.org/vinala/vinala.svg?branch=dev)](https://travis-ci.org/vinala/vinala)
 [![Latest Stable Version](https://poser.pugx.org/lighty/lighty/v/stable)](https://packagist.org/packages/lighty/lighty) 
 [![Downloads](https://img.shields.io/badge/downloads-637-0375b5.svg)](https://gitlab.com/lighty/framework)
 [![Latest Unstable Version](https://poser.pugx.org/lighty/lighty/v/unstable)](https://packagist.org/packages/lighty/lighty) 
