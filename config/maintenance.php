@@ -1,6 +1,6 @@
 <?php 
 
-use Lighty\Kernel\Config\Config;
+use Vinala\Kernel\Config\Config;
 
 return array(
 	
