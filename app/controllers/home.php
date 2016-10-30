@@ -1,6 +1,6 @@
 <?php
 
-use Lighty\Kernel\Setup\Setup;
+use Vinala\Kernel\Setup\Setup;
 
 class Home
 {

@@ -1,7 +1,7 @@
 <?php 
 
 
-use Lighty\Kernel\Testing\TestCase;
+use Vinala\Kernel\Testing\TestCase;
 
 /**
 * AppTestClass for testing

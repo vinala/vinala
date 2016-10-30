@@ -12,7 +12,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 try 
 {
-	Lighty\Kernel\Foundation\Application::console();
+	Vinala\Kernel\Foundation\Application::console();
 } 
 catch (Exception $e) 
 {

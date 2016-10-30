@@ -1,6 +1,6 @@
 <?php 
 
-use Lighty\Kernel\Database\Seeder;
+use Vinala\Kernel\Database\Seeder;
 
 /**
 * UserTableSeeder

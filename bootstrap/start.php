@@ -25,4 +25,4 @@ require __DIR__.'/../vendor/autoload.php';
 | launch the Lighty framework
 */
 
-Lighty\Kernel\Foundation\Application::run();
+Vinala\Kernel\Foundation\Application::run();
