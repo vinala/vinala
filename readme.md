@@ -1,21 +1,32 @@
 <p align="center">
 <!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
-# Lighty v3.2
+
+<h2>Lighty v3.3</h2>
+</p>
 
 ---
 
-[![Build Status](https://travis-ci.org/vinala/vinala.svg?branch=dev)](https://travis-ci.org/vinala/vinala)
-[![Latest Stable Version](https://poser.pugx.org/lighty/lighty/v/stable)](https://packagist.org/packages/lighty/lighty) 
-[![Downloads](https://img.shields.io/badge/downloads-637-0375b5.svg)](https://gitlab.com/lighty/framework)
-[![Latest Unstable Version](https://poser.pugx.org/lighty/lighty/v/unstable)](https://packagist.org/packages/lighty/lighty) 
-[![License](https://poser.pugx.org/lighty/lighty/license)](https://packagist.org/packages/lighty/lighty)
-<!--[![Monthly Downloads](https://poser.pugx.org/lighty/lighty/d/monthly)](https://packagist.org/packages/lighty/lighty)-->
-<!-- [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fiesta-framework/Fiesta/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fiesta-framework/Fiesta/?branch=master) -->
-
+<p align="center">
+<a href="https://travis-ci.org/vinala/vinala">
+	<img src="https://travis-ci.org/vinala/vinala.svg?branch=dev" alt="Build Status">
+</a>
+<a href="https://packagist.org/packages/lighty/lighty">
+	<img src="https://poser.pugx.org/lighty/lighty/v/stable" alt="Latest Stable Version">
+</a>
+<a href="https://gitlab.com/lighty/framework">
+	<img src="https://img.shields.io/badge/downloads-637-0375b5.svg" alt="Downloads">
+</a>
+<a href="https://packagist.org/packages/lighty/lighty">
+	<img src="https://poser.pugx.org/lighty/lighty/v/unstable" alt="Latest Unstable Version">
+</a>
+<a href="https://packagist.org/packages/lighty/lighty">
+	<img src="https://poser.pugx.org/lighty/lighty/license" alt="License">
+</a>
+</p>
 -----
 
 ![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
-</p>
+
 
 -----
 
