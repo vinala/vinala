@@ -1,3 +1,4 @@
+<p align="center">
 <!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
 # Lighty v3.2
 
@@ -14,6 +15,7 @@
 -----
 
 ![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
+</p>
 
 -----
 
