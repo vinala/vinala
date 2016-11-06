@@ -29,6 +29,11 @@
 			"php lumos setup"
 		]
 	},
+	"autoload": {
+		"files": [
+			"vendor/vinala/kernel/src/Support/Helpers.php"
+		]
+	},
 	"extra": {
         "branch-alias": {
             "dev-master": "3.*-dev",
