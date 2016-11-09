@@ -136,6 +136,25 @@ return array(
 
 	/*
 	|----------------------------------------------------------
+	| Post Route
+	|----------------------------------------------------------
+	| this Command to add post route ro routes file
+	**/
+	
+	"post_routes" => "make:post",
+
+	/*
+	|----------------------------------------------------------
+	| Call Route
+	|----------------------------------------------------------
+	| this Command to add call route ro routes file
+	**/
+	
+	"call_routes" => "make:call",
+
+
+	/*
+	|----------------------------------------------------------
 	| User Command
 	|----------------------------------------------------------
 	| this Command to create new user Lumos command
@@ -160,4 +179,17 @@ return array(
 	**/
 	
 	"export_database" => "save:database",
+
+	//--------------------------------------------------------
+	// Configuration commands
+	//--------------------------------------------------------
+
+	/*
+	|----------------------------------------------------------
+	| Config database
+	|----------------------------------------------------------
+	| this Command to config database
+	**/
+	
+	"config_database" => "config:database",
 );
