@@ -1,8 +1,8 @@
 <?php
 
-namespace Lighty\App\Console\Commands;
+namespace Vinala\App\Support\Lumos;
 
-use Lighty\Kernel\Console\Command\Commands;
+use Vinala\Kernel\Console\Command\Commands;
 
 class Salute extends Commands
 {
