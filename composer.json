@@ -33,7 +33,7 @@
 	},
 	"autoload": {
 		"files": [
-			"vendor/vinala/kernel/src/Support/Helpers.php",
+			"vendor/vinala/kernel/src/Support/Shortcuts.php",
 			"support/shortcuts.php"
 		]
 	},
