@@ -23,6 +23,7 @@
 		"vinala/whoops": "dev-dev",
 		"symfony/console": "3.*",
 		"youssef/debug": "1.*",
+		"vlucas/valitron": "^1.2",
 		"phpunit/phpunit": "~4.1"
 	},
 	"scripts": {
