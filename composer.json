@@ -34,7 +34,7 @@
 	"autoload": {
 		"files": [
 			"vendor/vinala/kernel/src/Support/Helpers.php",
-			"support/helpers.php"
+			"support/shortcuts.php"
 		]
 	},
 	"extra": {
