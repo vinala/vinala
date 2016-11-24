@@ -173,6 +173,16 @@ return array(
 
 	/*
 	|----------------------------------------------------------
+	| Exception
+	|----------------------------------------------------------
+	| this Command to create new exception
+	**/
+	
+	"new_exception" => "make:exception",
+
+
+	/*
+	|----------------------------------------------------------
 	| Export database
 	|----------------------------------------------------------
 	| this Command to export database
@@ -192,4 +202,17 @@ return array(
 	**/
 	
 	"config_database" => "config:database",
+
+	//--------------------------------------------------------
+	// Config Switches commands
+	//--------------------------------------------------------
+
+	/*
+	|----------------------------------------------------------
+	| Enable or disable debug mode
+	|----------------------------------------------------------
+	| this Command to enable or disable debug mode
+	**/
+	
+	"switch_debug" => "switch:debug",
 );
