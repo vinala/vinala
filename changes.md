@@ -1,3 +1,20 @@
+### 3.3.0 (Alpha)
+---
+
+##### Features
+
+ * Supporting Events
+ * Supporting Data validation
+ * Update Forms component
+ * Supporting PDO structure
+ * Improve ORM component to support kept and preserved data
+ * Improve Lumos
+ * Improve Atomium
+ * Add feature to enable or disable some components (Beta)
+ * Introducing user exceptions
+ * Big improvement for Scope functions and call them Shortcuts
+ * Supporting App Debug
+
 ### 3.2.0
 ---
 
@@ -5,7 +22,7 @@
 
  * New Template Engine called Atomium
  * Supporting Plugins 
- * Supporting Console Command-line
+ * Supporting Console Command-line called Lumos
  * Change the name from Fiesta to Lighty
  * New welcome page
  * New Setup
