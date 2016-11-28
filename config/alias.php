@@ -38,6 +38,7 @@
 			'DBTable' => 		Vinala\Kernel\Database\DBTable::class,
 			'Debug' => 			Vinala\Kernel\Log\Debug::class,
 			'Errors' => 		Vinala\Kernel\Http\Errors::class,
+			'Event' => 			Vinala\Kernel\Events\Event::class,
 			'Faker' => 			Vinala\Kernel\Resources\Faker::class,
 			'Filesystem' => 	Vinala\Kernel\Filesystem\Filesystem::class,
 			'Form' => 			Vinala\Kernel\Html\Form::class,
