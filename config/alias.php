@@ -55,6 +55,7 @@
 			'Query' => 			Vinala\Kernel\Database\Query::class,
 			'Path' => 			Vinala\Kernel\Access\Path::class,
 			'Res' => 			Vinala\Kernel\HyperText\Res::class,
+			'Request' => 		Vinala\Kernel\Http\Request::class,
 			'Root' => 			Vinala\Kernel\Http\Root::class,
 			'Route' => 			Vinala\Kernel\Router\Route::class,
 			'Schema' => 		Vinala\Kernel\Database\Schema::class,
@@ -68,6 +69,7 @@
 			'Time' => 			Vinala\Kernel\Objects\DateTime::class,
 			'Translator' => 	Vinala\Kernel\Translator\Lang::class,
 			'Url' => 			Vinala\Kernel\Access\Url::class,
+			'Validator' => 		Vinala\Kernel\Validation\Validator::class,
 			'Vars' => 			Vinala\Kernel\Objects\Vars::class,
 			'View' => 			Vinala\Kernel\MVC\View\View::class,
 		)
