@@ -14,6 +14,7 @@
  * Introducing user exceptions
  * Big improvement for Scope functions and call them Shortcuts
  * Supporting App Debug
+ * Improve Views
 
 ### 3.2.0
 ---
