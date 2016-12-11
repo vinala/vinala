@@ -6,8 +6,8 @@ class Home
 {
 	public static function hello()
 	{
-		if( ! Config::get('panel.setup')) Setup::launch();
-		else View::make("hello.hello");
+		if( ! Config::get('panel.setup')) return Setup::launch();
+		else return View::make("hello.hello");
 
 	}
 }
