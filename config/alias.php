@@ -13,19 +13,15 @@
 
 		'enable' => true ,
 
-
 		/*
 		|----------------------------------------------------------
-		| Aliases
+		| Kernel Aliases
 		|----------------------------------------------------------
-		| this array is resposible for aliases of class
-		| in the app, feel free to register as many as 
-	    | you wish as the aliases are "lazy" loaded so 
-		| they don't hinder performance.
+		| this array is responsible for aliases of class
+		| in the kernel.
 		|
 		**/
-
-		'aliases' => array( 
+		'kernel' => [
 			'Alias' => 			Vinala\Kernel\Config\Alias::class,
 			'App' => 			Vinala\Kernel\Foundation\Application::class,
 			'Auth' => 			Vinala\Kernel\Security\Auth::class,
@@ -54,6 +50,7 @@
 			'ModelArray' => 	Vinala\Kernel\MVC\Model\ModelArray::class,
 			'Query' => 			Vinala\Kernel\Database\Query::class,
 			'Path' => 			Vinala\Kernel\Access\Path::class,
+			'Redirect' => 		Vinala\Kernel\Http\Redirect\Redirect::class,
 			'Res' => 			Vinala\Kernel\HyperText\Res::class,
 			'Request' => 		Vinala\Kernel\Http\Request::class,
 			'Root' => 			Vinala\Kernel\Http\Root::class,
@@ -72,7 +69,35 @@
 			'Validator' => 		Vinala\Kernel\Validation\Validator::class,
 			'Vars' => 			Vinala\Kernel\Objects\Vars::class,
 			'View' => 			Vinala\Kernel\MVC\View::class,
+		],
+
+		/*
+		|----------------------------------------------------------
+		| User Aliases
+		|----------------------------------------------------------
+		| this array is responsible for your aliases, feel
+		| free to register as many as 
+	    | you wish as the aliases are "lazy" loaded so 
+		| they don't hinder performance.
+		|
+		**/
+		'user' => [
 			//
-			//
-		)
+		],
+
+		/*
+		|----------------------------------------------------------
+		| Exceptions Aliases
+		|----------------------------------------------------------
+		| this array is responsible for aliases of exceptions class
+		| classes
+		|
+		**/
+		'exceptions' => [
+			'dump' => App\Exception\dump::class,
+		],
+
+
+
+
 	);
