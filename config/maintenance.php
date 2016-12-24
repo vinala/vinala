@@ -1,25 +1,28 @@
 <?php 
 
-use Vinala\Kernel\Config\Config;
 
-return array(
-	
+return [
 
 	/*
 	|----------------------------------------------------------
-	| App Maintenance
+	| App maintenance
 	|----------------------------------------------------------
-	*/
+	| To enabled maintenance
+	|
+	**/
 	'enabled' => false, 
 
 
 	/*
 	|----------------------------------------------------------
-	| Out Maintenance Routes
+	| Routes out of maintenance 
 	|----------------------------------------------------------
-	*/
-	'out' => array(
-		Config::get('panel.route'),
-	),
+	| List of routes that will not stopped by maintenance filter
+	| filter
+	| 
+	**/
+	'out' => [
+		//
+	],
 
-);
+];
