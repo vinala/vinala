@@ -10,7 +10,7 @@ return [
 	| error
 	|
 	**/
-	'database' => '', 
+	'database' => 'errors.database', 
 
 
 	/*
@@ -21,7 +21,7 @@ return [
 	| error
 	|
 	**/
-	'404' => '', 
+	'404' => 'errors.404', 
 
 
 	/*
@@ -32,6 +32,6 @@ return [
 	| view parameter in exception constructor
 	|
 	**/
-	'regular' => '', 
+	'regular' => 'errors.regular', 
 
 ];
