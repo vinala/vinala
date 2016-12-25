@@ -32,8 +32,6 @@ return [
 		'Database' => Vinala\Kernel\Database\Database::class , 
 		'DataCollection' => Vinala\Kernel\Objects\DataCollection::class , 
 		'DBTable' => Vinala\Kernel\Database\DBTable::class , 
-		'Debug' => Vinala\Kernel\Log\Debug::class , 
-		'Errors' => Vinala\Kernel\Http\Errors::class , 
 		'Event' => Vinala\Kernel\Events\Event::class , 
 		'Faker' => Vinala\Kernel\Resources\Faker::class , 
 		'File' => Vinala\Kernel\Filesystem\File::class , 
