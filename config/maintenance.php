@@ -32,6 +32,8 @@ return [
 	|----------------------------------------------------------
 	| The view that will be displayed if maintenance
 	| is activated
+	| ATTENTION : the view should not be in atomium and not
+	| be using any of framework cubes or components
 	| 
 	**/
 	'view' => 'errors.maintenance',
