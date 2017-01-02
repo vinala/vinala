@@ -30,7 +30,7 @@
 
 -----
 
-**Vinala** is a PHP framework made for web developers to make the web programing more easyer, faster and wonderful. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help in you in your project such as Lumos, Panel, Atomium.
+**Vinala** is a PHP framework made with love and PHP for for web developers to make the web programing more easyer, faster and wonderful. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help in you in your project such as Lumos, Panel, Atomium.
 
 ### Installation
 
@@ -90,6 +90,6 @@ To get older releases of vinala framework please [Vinala Releases](https://githu
 The Lighty framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 [![Owner](https://img.shields.io/badge/created%20by-Youssef%20Had-blue.svg)](https://gitlab.com/u/youssefhad)
-[![Owner](https://img.shields.io/badge/copyright-2014--2016-red.svg)](https://gitlab.com/lighty/framework)
+[![Owner](https://img.shields.io/badge/copyright-2014--2017-red.svg)](https://gitlab.com/lighty/framework)
 [![Owner](https://img.shields.io/badge/launched-10%2F10%2F2014-ff2f6c.svg)](https://gitlab.com/lighty/framework)
 
