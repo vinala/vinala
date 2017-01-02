@@ -2,12 +2,12 @@
 
 namespace App\Http;
 
-use Vinala\Kernel\Http\Middleware\Filters as kernelFilters;
+use Vinala\Kernel\Http\Middleware\Filters;
 
 /**
 * Filters class
 */
-class Filters extends kernelFilters
+class Filter extends Filters
 {
 	
 	
