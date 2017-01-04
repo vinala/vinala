@@ -1,24 +1,24 @@
 <?php 
 
-
-return array(
+return [
 
 	/*
 	|----------------------------------------------------------
 	| Default lang
 	|----------------------------------------------------------
-	| default framework language 
-	*/
+	| Default framework language 
+	| 
+	**/
+	'default'=>'en',
 
-	'default'=>'fr',
 
 	/*
 	|----------------------------------------------------------
 	| Lang Cookie name
 	|----------------------------------------------------------
 	| Langue cookie to store framework default language
-	*/
+	| 
+	**/
+	'cookie'=>'vinala_lang',
 
-	'cookie'=>'lighty_lang',
-
-);
+];
