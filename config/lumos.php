@@ -224,4 +224,13 @@ return array(
 	**/
 	
 	"switch_debug" => "switch:debug",
+
+	/*
+	|----------------------------------------------------------
+	| Enable or disable maintenance mode
+	|----------------------------------------------------------
+	| this Command to enable or disable maintenance mode
+	**/
+	
+	"switch_maintenance" => "switch:maintenance",
 );
