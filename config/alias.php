@@ -51,7 +51,6 @@ return [
 		'Redirect' => Vinala\Kernel\Http\Redirect\Redirect::class , 
 		'Res' => Vinala\Kernel\HyperText\Res::class , 
 		'Request' => Vinala\Kernel\Http\Request::class , 
-		'Root' => Vinala\Kernel\Http\Root::class , 
 		'Route' => Vinala\Kernel\Router\Route::class , 
 		'Schema' => Vinala\Kernel\Database\Schema::class , 
 		'Security' => Vinala\Kernel\Security\Security::class , 
