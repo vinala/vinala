@@ -2,7 +2,6 @@
 
 return [
 	
-
 	/*
 	|----------------------------------------------------------
 	| Allow Debug
@@ -10,8 +9,8 @@ return [
 	|  Here to make the framework shows errors and
 	|  exceptions, false to show friendly messages
 	|  and true to debug
-	*/
-
+	|  
+	**/
 	'debug' => false ,
 
 
@@ -19,9 +18,9 @@ return [
 	|----------------------------------------------------------
 	| Error log
 	|----------------------------------------------------------
-	|  The path of log file where Vinala store logs errors
-	*/
-
-	'log' => 'storage/log/vinala.log'
+	|  The path of log file where Vinala store errors
+	|  
+	**/
+	'log' => 'storage/log/vinala.log' ,
 
 ];
