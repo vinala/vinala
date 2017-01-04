@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 
 return [
 
 	/*
 	|----------------------------------------------------------
-	| App maintenance
+	| App Maintenance
 	|----------------------------------------------------------
 	| To enabled maintenance
 	|
@@ -15,11 +15,11 @@ return [
 
 	/*
 	|----------------------------------------------------------
-	| Routes out of maintenance 
+	| Routes out of maintenance
 	|----------------------------------------------------------
-	| List of routes that will not stopped by maintenance 
-	| filter
-	| 
+	| List of routes that will not stopped by maintenance
+	| middlware
+	|
 	**/
 	'out' => [
 		//
@@ -34,7 +34,7 @@ return [
 	| is activated
 	| ATTENTION : the view should not be in atomium and not
 	| be using any of framework cubes or components
-	| 
+	|
 	**/
 	'view' => 'errors.maintenance',
 
