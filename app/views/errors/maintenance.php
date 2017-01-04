@@ -13,7 +13,7 @@
 
             body
             {
-                background: #5b1c79;
+                background: #26324f;
                 margin: 0px;
                 padding: 0px;
             }
