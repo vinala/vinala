@@ -19,7 +19,7 @@ class Filter extends Filters
 	* @var array 
 	*/
 	public static $middleware = [
-		'Age' => \App\Http\Middleware\Age::class,
+		//
 	];
 
 
@@ -29,7 +29,7 @@ class Filter extends Filters
 	* @var array 
 	*/
 	public static $groupsMiddleware = [
-		'Age' => \App\Http\Middleware\Age::class,
+		//
 	];
 
 
@@ -41,7 +41,7 @@ class Filter extends Filters
 	* @var array 
 	*/
 	public static $routeMiddleware = [
-		'Age' => \App\Http\Middleware\Age::class,
+		'CsrfToken' => \App\Http\Middleware\CsrfToken::class,
 	];
 	
 }
