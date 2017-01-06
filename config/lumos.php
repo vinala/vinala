@@ -189,6 +189,15 @@ return array(
 	
 	"new_exception" => "make:exception",
 
+	/*
+	|----------------------------------------------------------
+	| Middleware
+	|----------------------------------------------------------
+	| this Command to create new middleware
+	**/
+	
+	"new_middleware" => "make:middleware",
+
 
 	/*
 	|----------------------------------------------------------
