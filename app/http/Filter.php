@@ -9,6 +9,39 @@ use Vinala\Kernel\Http\Middleware\Filters;
 */
 class Filter extends Filters
 {
-	
+
+
+	/**
+	* A list of application's global HTTP middleware stack.
+	*
+    * These middleware are run during every request to your application.
+	*
+	* @var array 
+	*/
+	public static $middleware = [
+		'Age' => \App\Http\Middleware\Age::class,
+	];
+
+
+	/**
+	* The application's route middleware groups.
+	*
+	* @var array 
+	*/
+	public static $groupsMiddleware = [
+		'Age' => \App\Http\Middleware\Age::class,
+	];
+
+
+	/**
+	* The application's route middleware.
+	*
+    * These middleware may be assigned to groups or used individually.
+    *
+	* @var array 
+	*/
+	public static $routeMiddleware = [
+		'Age' => \App\Http\Middleware\Age::class,
+	];
 	
 }
