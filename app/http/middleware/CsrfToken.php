@@ -20,7 +20,7 @@ class CsrfToken
 	**/
 	public function handle(Request $req)
 	{
-		if( ! isset($req->_token))
+		if( ! $this->check($req) )
 		{
 			\Redirect::back();
 		}
@@ -32,5 +32,18 @@ class CsrfToken
 		
 		return pass();
 	}
+
+
+	/**
+	* Check if Token exists in request
+	*
+	* @param Vinala\Kernel\Http\Request $req 
+	* @return bool
+	*/
+	public function check(Request $req)
+	{
+		return ( isset($req->_token) && ! empty($req->_token));
+	}
+	
 
 }
