@@ -40,6 +40,7 @@ return [
 		'Html' => Vinala\Kernel\Html\Html::class , 
 		'Http' => Vinala\Kernel\Http\Http::class , 
 		'Input' => Vinala\Kernel\Http\Input::class , 
+		'Json' => Vinala\Kernel\Collections\JSON::class , 
 		'Libs' => Vinala\Kernel\Resources\Libs::class , 
 		'License' => Vinala\Kernel\Security\License::class , 
 		'Links' => Vinala\Kernel\Http\Links::class , 
