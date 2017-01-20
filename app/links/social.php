@@ -1,9 +1,9 @@
 <?php 
 
-/*
-* links of social networks
+/**
+* A list of social networks links	
+*
 */
-
-return array(
-	'root' => Config::get('app.url'),
-	);
+return [
+	'' => '',
+];
