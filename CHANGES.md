@@ -22,6 +22,7 @@
  * Improve Logging Surface and Whoops to customize view exception in client mode
  * Improve Maintenance Surface
  * Improve Alias Surface
+ * Creating Version Surface
 
 ### 3.2.0
 ---
