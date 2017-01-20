@@ -29,9 +29,9 @@
 				<div class="text">
 					@lang('welcome');
 					///
-					@if(Base::full(Config::get('app.owner'))):
-						@if(Config::get('app.owner') != "user"):
-							<span id='dev_nom'> {{Config::get('app.owner')}} </span>
+					@if(check(config('app.owner'))):
+						@if(config('app.owner') != "user"):
+							<span id='dev_config('app.owner')}} </span>
 						@endif;
 					@endif;
 				</div>
@@ -51,14 +51,14 @@
 				</div>
 				
 				<div class="final_link_version" id="bottom_panel_2" style="display:none">
-					<a id="fst_panel" class="final_link_owner_a" href="https://gitlab.com/lighty/framework/blob/dev/changes.md">
+					<a id="fst_panel" class="final_link_owner_a" href="https://github.com/vinala/vinala/blob/dev/CHANGES.md">
 						{{"v ".App::getVersion()->full()}}
 					</a>
 				</div>
 				<div class="final_link_panel" id="bottom_panel" style="display:none">
-					<a id="fst_panel" href="{{ Config::get("panel.route") }}">
+					<a id="fst_panel" href="{{ config("panel.route") }}">
 						<div class="btn hello_button" id="login">
-							{{"Lighty Panel"}}
+							{{"Vinala Panel"}}
 						</div>
 					</a>
 				</div>
