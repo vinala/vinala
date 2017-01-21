@@ -43,7 +43,7 @@ return [
 		'Json' => Vinala\Kernel\Collections\JSON::class , 
 		'Libs' => Vinala\Kernel\Resources\Libs::class , 
 		'License' => Vinala\Kernel\Security\License::class , 
-		'Links' => Vinala\Kernel\Http\Links::class , 
+		'Link' => Vinala\Kernel\Http\Links\Link::class , 
 		'Log' => Vinala\Kernel\Logging\Log::class , 
 		'Mail' => Vinala\Kernel\Mailing\Mail::class , 
 		'ModelArray' => Vinala\Kernel\MVC\Model\ModelArray::class , 
