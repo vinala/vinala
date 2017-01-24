@@ -7,9 +7,9 @@
 		{{{ use Vinala\Kernel\Config\Config; }}}
 		{{{ use Vinala\Kernel\Translator\Lang; }}}
 		///
-		@css("app/resources/library/bootstrap-3.3.1.min.css",false);
-		@css("app/resources/library/bootstrap-theme-3.3.1.min.css",false);
-		@js("app/resources/library/jquery-1.11.3.min.js",false);
+		@css("bootstrap");
+		@css("bootstrap-theme");
+		@js("jquery");
 		@css("hello");
 		@js("hello");
 		///
