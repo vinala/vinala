@@ -24,6 +24,7 @@ return [
 	'kernel' => [
 		'Alias' => Vinala\Kernel\Config\Alias::class , 
 		'App' => Vinala\Kernel\Foundation\Application::class , 
+		'Assets' => Vinala\Kernel\Resources\Assets::class , 
 		'Auth' => Vinala\Kernel\Security\Auth::class , 
 		'Base' => Vinala\Kernel\Objects\Base::class , 
 		'Cache' => Vinala\Kernel\Caches\Cache::class , 
@@ -41,7 +42,6 @@ return [
 		'Http' => Vinala\Kernel\Http\Http::class , 
 		'Input' => Vinala\Kernel\Http\Input::class , 
 		'Json' => Vinala\Kernel\Collections\JSON::class , 
-		'Libs' => Vinala\Kernel\Resources\Libs::class , 
 		'License' => Vinala\Kernel\Security\License::class , 
 		'Link' => Vinala\Kernel\Http\Links\Link::class , 
 		'Log' => Vinala\Kernel\Logging\Log::class , 
