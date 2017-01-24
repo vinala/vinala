@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		{{{ use Vinala\Kernel\Resources\Libs; }}}
-		{{{ use Vinala\Kernel\HyperText\Html; }}}
-		{{{ use Vinala\Kernel\Access\Path; }}}
-		{{{ use Vinala\Kernel\Config\Config; }}}
-		{{{ use Vinala\Kernel\Translator\Lang; }}}
+		{{{ 
+			use Vinala\Kernel\Resources\Libs; 
+			use Vinala\Kernel\HyperText\Html; 
+			use Vinala\Kernel\Access\Path; 
+			use Vinala\Kernel\Config\Config; 
+			use Vinala\Kernel\Translator\Lang; 
+			///
+			Html::charset("utf-8");  
+			Html::title();
+			Html::favicon(Path::$public."/favicon.ico"); 
+		}}}
 		///
-		@css("bootstrap");
-		@css("bootstrap-theme");
-		@js("jquery");
-		@css("hello");
-		@js("hello");
-		///
-		{{{ Html::charset("utf-8");  }}}
-		@exec(Html::title());
-		{{{ Html::favicon(Path::$public."/favicon.ico"); }}}
-
+		@css(['bootstrap' , 'bootstrap-theme' , 'hello']);
+		@js(['jquery' , 'hello']);
 	</head>
 	<body>
 		<div class="bg" id="bg"></div>
