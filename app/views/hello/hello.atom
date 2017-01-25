@@ -29,7 +29,7 @@
 					///
 					@if(check(config('app.owner'))):
 						@if(config('app.owner') != "user"):
-							<span id='dev_config('app.owner')}} </span>
+							<span id='dev_nom'> {{config('app.owner')}} </span>
 						@endif;
 					@endif;
 				</div>
