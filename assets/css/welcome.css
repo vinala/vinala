@@ -104,17 +104,17 @@ body
     bottom: 0;
     display: block;
     position: absolute;
-    width: 100%;
+    width: 300px;
     padding: 10px;
     padding-right: 25px;
-    font-size: 14px;
+    font-size: 15px;
+    margin-left: auto;
 }
 
 
 .final_link_panel {} 
 
 .final_link_version {
-	color : #fc7e26;
     text-decoration: none;
     width: auto;
     display: inline-block;
@@ -122,7 +122,6 @@ body
 }
 
 .final_link_owner {
-	color : #fc7e26;
     text-decoration: none;
     width: auto;
     display: inline-block;
@@ -130,7 +129,6 @@ body
 }
 
 .final_link_docs {
-	color : #fc7e26;
     text-decoration: none;
     width: auto;
     display: inline-block;
@@ -138,10 +136,9 @@ body
 }
 
 .final_link_owner_a {
-	color : #fc7e26;
+	color : #3c3c3c;
     text-decoration: none;
 }
 .final_link_owner_a:hover {
-    color: #cf5702;
-    text-decoration: none;
+    color: #fa7f28;
 }
