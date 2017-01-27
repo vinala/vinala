@@ -1,0 +1,147 @@
+/*
+* Main Tags
+**/
+@font-face {
+    font-family: 'segoe';
+    src: url(../fonts/segoeuil.ttf) format("truetype")
+}
+body
+{
+	padding : 0px;
+	margin : 0px;
+	font-family: "segoe";
+}
+
+/*
+* Header Parts
+**/
+.header
+{
+	width : 100%;
+	height : 120px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fb0d79+0,fc8720+92&1+0,1+92,0+99 */
+	background: -moz-linear-gradient(top,  rgba(251,13,121,1) 0%, rgba(252,135,32,1) 92%, rgba(252,135,32,0) 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(251,13,121,1) 0%,rgba(252,135,32,1) 92%,rgba(252,135,32,0) 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(251,13,121,1) 0%,rgba(252,135,32,1) 92%,rgba(252,135,32,0) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb0d79', endColorstr='#00fc8720',GradientType=0 ); /* IE6-9 */
+	position: relative;
+	display: block;
+}
+
+.cloud
+{
+	background-image: url('../images/cloud.png');
+	width: 70px;
+    height: 43px;
+    background-size: cover;
+    position: absolute;
+	display: block;
+}
+
+.big_cloud
+{
+	width: 70px;
+    height: 43px;
+}
+
+.small_cloud
+{
+	width: 45px;
+    height: 28px;
+}
+
+.pos_1{margin:12px 20px;}
+.pos_2{margin:49px 152px;}
+.pos_3{margin:37px 352px;}
+.pos_4{margin:21px 260px;}
+.pos_5{margin:21px 450px;}
+.pos_6{margin:21px 562px;}
+
+.left
+{
+	direction: rtl;
+	float: right;
+}
+
+.logo_container
+{
+	margin:200px auto 0px;
+	width:250px;
+}
+
+.logo_container > .logo
+{
+	background-image: url('../images/logo.png');
+	width: 141px;
+    height: 127px;
+	background-size: cover;
+}
+
+.logo_container > .name
+{
+	background-image: url('../images/name.png');
+	width: 250px;
+    height: 94px;
+	background-size: cover;
+}
+
+#welcom {
+    /*opacity: 0;*/
+    color: #212121;
+    text-align: center;
+    width: 600px;
+    margin: 10px auto;
+}
+
+#welcom > .text {
+    display: inline-block;
+    z-index: 3;
+    font-size: 18px;
+}
+
+.final_link {
+    
+    bottom: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    padding-right: 25px;
+    font-size: 14px;
+}
+
+
+.final_link_panel {} 
+
+.final_link_version {
+	color : #fc7e26;
+    text-decoration: none;
+    width: auto;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.final_link_owner {
+	color : #fc7e26;
+    text-decoration: none;
+    width: auto;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.final_link_docs {
+	color : #fc7e26;
+    text-decoration: none;
+    width: auto;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.final_link_owner_a {
+	color : #fc7e26;
+    text-decoration: none;
+}
+.final_link_owner_a:hover {
+    color: #cf5702;
+    text-decoration: none;
+}
