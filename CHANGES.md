@@ -3,6 +3,8 @@
 
 ##### Features
 
+ * Change the name from Lighty to Vinala
+ * New logo concept
  * Use the word Surfaces as framework components
  * Supporting Events
  * Supporting Data validation
