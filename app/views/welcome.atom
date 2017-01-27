@@ -1,0 +1,24 @@
+/// View file  : welcome 
+/// Path : welcome
+<!DOCTYPE html>
+<html>
+<head>
+	{{{ 
+		use Vinala\Kernel\Resources\Libs; 
+		use Vinala\Kernel\HyperText\Html; 
+		use Vinala\Kernel\Access\Path; 
+		use Vinala\Kernel\Config\Config; 
+		use Vinala\Kernel\Translator\Lang; 
+		///
+		Html::charset('utf-8');  
+		Html::title();
+		Html::favicon(Path::$public.'/favicon.ico'); 
+	}}}
+
+	@css(['bootstrap' , 'bootstrap-theme' , 'welcome']);
+	@js(['jquery' , 'welcome']);
+</head>
+<body>
+
+</body>
+</html>
