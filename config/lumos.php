@@ -1,6 +1,6 @@
 <?php 
 
-return array(
+return [
 
 	/*
 	|----------------------------------------------------------
@@ -9,8 +9,7 @@ return array(
 	| the terminal used in your OS
 	| available : bash / cmd
 	**/
-
-	"terminal" => "cmd",
+	'terminal' => 'cmd',
 
 	/*
 	|----------------------------------------------------------
@@ -18,8 +17,7 @@ return array(
 	|----------------------------------------------------------
 	| this Command to clear controllers folder
 	**/
-
-	"clear_controller" => "clear:controller",
+	'clear_controller' => 'clear:controller',
 
 	/*
 	|----------------------------------------------------------
@@ -27,8 +25,7 @@ return array(
 	|----------------------------------------------------------
 	| this Command to generate new schema in schema folder
 	**/
-
-	"new_schema" => "make:schema",
+	'new_schema' => 'make:schema',
 
 
 	/*
@@ -37,19 +34,14 @@ return array(
 	|----------------------------------------------------------
 	| this Command to execute schema and create the data table in 
 	| database
-	**/
-
-	"exec_schema" => "exec:schema",
+	**/	'exec_schema' => 'exec:schema',
 
 	/*
 	|----------------------------------------------------------
 	| Rollback Schema
 	|----------------------------------------------------------
 	| this Command to rollback the execution of the schema 
-	**/
-
-
-	"rollback_schema" => "rollback:schema",
+	**/	'rollback_schema' => 'rollback:schema',
 
 
 	/*
@@ -59,8 +51,7 @@ return array(
 	| this Command to create new file inside folder in lang 
 	| folder
 	**/
-
-	"new_lang" => "make:lang",
+	'new_lang' => 'make:lang',
 
 
 	/*
@@ -69,8 +60,7 @@ return array(
 	|----------------------------------------------------------
 	| this Command to create new file inside links folder
 	**/
-
-	"new_link" => "make:link",
+	'new_link' => 'make:link',
 
 
 	/*
@@ -79,8 +69,7 @@ return array(
 	|----------------------------------------------------------
 	| this Command to create new model inside models folder
 	**/
-
-	"new_model" => "make:model",
+	'new_model' => 'make:model',
 	
 
 	/*
@@ -89,8 +78,7 @@ return array(
 	|----------------------------------------------------------
 	| this Command to create new view inside views folder
 	**/
-
-	"new_view" => "make:view",
+	'new_view' => 'make:view',
 	
 
 	/*
@@ -100,8 +88,7 @@ return array(
 	| this Command to create new controller inside controllers
 	| folder
 	**/
-
-	"new_controller" => "make:controller",
+	'new_controller' => 'make:controller',
 
 
 	/*
@@ -110,8 +97,7 @@ return array(
 	|----------------------------------------------------------
 	| this Command to create new seeder inside seeds folder
 	**/
-
-	"new_seed" => "make:seed",
+	'new_seed' => 'make:seed',
 
 
 	/*
@@ -119,9 +105,8 @@ return array(
 	| Execute Seeder
 	|----------------------------------------------------------
 	| this Command to executethe main seeder
-	**/
-	
-	"exec_seed" => "exec:seed",
+	**/	
+	'exec_seed' => 'exec:seed',
 
 
 	/*
@@ -129,9 +114,8 @@ return array(
 	| Get Route
 	|----------------------------------------------------------
 	| this Command to add get route ro routes file
-	**/
-	
-	"get_routes" => "make:get",
+	**/	
+	'get_routes' => 'make:get',
 
 
 	/*
@@ -139,18 +123,16 @@ return array(
 	| Post Route
 	|----------------------------------------------------------
 	| this Command to add post route ro routes file
-	**/
-	
-	"post_routes" => "make:post",
+	**/	
+	'post_routes' => 'make:post',
 
 	/*
 	|----------------------------------------------------------
 	| Call Route
 	|----------------------------------------------------------
 	| this Command to add call route ro routes file
-	**/
-	
-	"call_routes" => "make:call",
+	**/	
+	'call_routes' => 'make:call',
 
 
 	/*
@@ -158,55 +140,56 @@ return array(
 	| User Command
 	|----------------------------------------------------------
 	| this Command to create new user Lumos command
-	**/
-	
-	"new_command" => "make:command",
+	**/	
+	'new_command' => 'make:command',
 
 	/*
 	|----------------------------------------------------------
 	| User Atomium Tag
 	|----------------------------------------------------------
 	| this Command to create new user Atomium tag
-	**/
-	
-	"new_tag" => "make:tag",
+	**/	
+	'new_tag' => 'make:tag',
 
 	/*
 	|----------------------------------------------------------
 	| User Event
 	|----------------------------------------------------------
 	| this Command to create new user event
-	**/
-	
-	"new_event" => "make:event",
+	**/	
+	'new_event' => 'make:event',
 
 	/*
 	|----------------------------------------------------------
 	| Exception
 	|----------------------------------------------------------
 	| this Command to create new exception
-	**/
-	
-	"new_exception" => "make:exception",
+	**/	
+	'new_exception' => 'make:exception',
 
 	/*
 	|----------------------------------------------------------
 	| Middleware
 	|----------------------------------------------------------
 	| this Command to create new middleware
-	**/
-	
-	"new_middleware" => "make:middleware",
+	**/	
+	'new_middleware' => 'make:middleware',
 
+	/*
+	|----------------------------------------------------------
+	| New Helper
+	|----------------------------------------------------------
+	| this Command to create new helper
+	**/	
+	'new_helper' => 'make:helper',
 
 	/*
 	|----------------------------------------------------------
 	| Export database
 	|----------------------------------------------------------
 	| this Command to export database
-	**/
-	
-	"export_database" => "save:database",
+	**/	
+	'export_database' => 'save:database',
 
 	//--------------------------------------------------------
 	// Configuration commands
@@ -217,9 +200,8 @@ return array(
 	| Config database
 	|----------------------------------------------------------
 	| this Command to config database
-	**/
-	
-	"config_database" => "config:database",
+	**/	
+	'config_database' => 'config:database',
 
 	//--------------------------------------------------------
 	// Config Switches commands
@@ -230,16 +212,14 @@ return array(
 	| Enable or disable debug mode
 	|----------------------------------------------------------
 	| this Command to enable or disable debug mode
-	**/
-	
-	"switch_debug" => "switch:debug",
+	**/	
+	'switch_debug' => 'switch:debug',
 
 	/*
 	|----------------------------------------------------------
 	| Enable or disable maintenance mode
 	|----------------------------------------------------------
 	| this Command to enable or disable maintenance mode
-	**/
-	
-	"switch_maintenance" => "switch:maintenance",
-);
+	**/	
+	'switch_maintenance' => 'switch:maintenance',
+];
