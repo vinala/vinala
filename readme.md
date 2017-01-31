@@ -1,5 +1,5 @@
 <p align="center">
-<!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
+![alt tag](https://raw.githubusercontent.com/vinala/Art/master/Name/Merged.png)
 
 <h2>Vinala v3.3</h2>
 </p>
