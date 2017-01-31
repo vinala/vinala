@@ -25,6 +25,10 @@
  * Improve Maintenance Surface
  * Improve Alias Surface
  * Creating Version Surface
+ * Update Setup and welcome views
+ * Update Assets surface
+ * Update Links surface
+ * Remove The Panel from framework compnents
 
 ### 3.2.0
 ---
