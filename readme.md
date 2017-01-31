@@ -1,5 +1,5 @@
 <p align="center">
-![alt tag](https://raw.githubusercontent.com/vinala/Art/master/Name/Merged.png)
+<img src="https://raw.githubusercontent.com/vinala/Art/master/Name/Merged.png" height="200">
 
 <h2>Vinala v3.3</h2>
 </p>
