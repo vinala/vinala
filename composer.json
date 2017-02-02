@@ -19,7 +19,6 @@
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
 		"vinala/kernel": "dev-dev",
-		"vinala/panel": "dev-dev",
 		"vinala/whoops": "dev-dev",
 		"symfony/console": "3.*",
 		"youssef/debug": "1.*",
@@ -33,8 +32,8 @@
 	},
 	"autoload": {
 		"files": [
-			"vendor/vinala/kernel/src/Support/Shortcuts.php",
-			"support/shortcuts.php"
+			"vendor/vinala/kernel/src/Support/Helpers.php",
+			"vendor/vinala/kernel/src/Support/Helper.php"
 		]
 	},
 	"extra": {
