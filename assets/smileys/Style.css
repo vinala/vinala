@@ -1,0 +1,29 @@
+.fst_sml
+{
+	background-image:url(smilyes.png);
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-top;
+}
+
+.fst_sml_happy				{ background-position: 0px  -8033px; }
+.fst_sml_sad				{ background-position: 0px  -7812px; }
+.fst_sml_wink				{ background-position: 0px  -8135px; }
+.fst_sml_heart				{ background-position: 0px  -7898px; }
+.fst_sml_laugh				{ background-position: 0px  -7863px; }
+.fst_sml_tongue				{ background-position: 0px  -8084px; }
+.fst_sml_shocked			{ background-position: 0px  -7830px; }
+.fst_sml_packman			{ background-position: 0px  -7948px; }
+.fst_sml_angry				{ background-position: 0px  -7881px; }
+.fst_sml_skeptical			{ background-position: 0px  -8101px; }
+.fst_sml_cry				{ background-position: 0px  -7779px; }
+.fst_sml_smile				{ background-position: 0px  -7914px; }
+.fst_sml_white_glasses		{ background-position: 0px  -7848px; }
+.fst_sml_dark_glasses		{ background-position: 0px  -8068px; }
+.fst_sml_ange				{ background-position: 0px  -7710px; }
+.fst_sml_ignoring			{ background-position: 0px  -8050px; }
+.fst_sml_bizarre			{ background-position: 0px  -7744px; }
+.fst_sml_very_angry			{ background-position: 0px  -8118px; }
+.fst_sml_mousat				{ background-position: 0px  -7727px; }
+.fst_sml_kiss				{ background-position: 0px  -7931px; }
