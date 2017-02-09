@@ -1,6 +1,5 @@
 <?php
 
-
 return [
 
 	/*
@@ -10,7 +9,9 @@ return [
 	| Here to activate classes aliases
 	|
 	**/
+
 	'enable' => true ,
+
 
 
 	/*
@@ -21,6 +22,7 @@ return [
 	| in the kernel.
 	|
 	**/
+
 	'kernel' => [
 		'Alias' => Vinala\Kernel\Config\Alias::class , 
 		'App' => Vinala\Kernel\Foundation\Application::class , 
@@ -70,6 +72,7 @@ return [
 	],
 
 
+
 	/*
 	|----------------------------------------------------------
 	| Exceptions Aliases
@@ -78,9 +81,10 @@ return [
 	| classes
 	|
 	**/
+
 	'exceptions' => [
-		//
 	],
+
 
 
 	/*
@@ -91,9 +95,10 @@ return [
 	| classes
 	|
 	**/
+
 	'controllers' => [
-		//
 	],
+
 
 
 	/*
@@ -104,8 +109,8 @@ return [
 	| classes
 	|
 	**/
+
 	'models' => [
-		//
 	],
 
 ];
