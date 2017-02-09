@@ -1,6 +1,6 @@
 <?php
 
-return [
+return [	
 
 	/*
 	|----------------------------------------------------------
@@ -9,6 +9,7 @@ return [
 	|  Your project name
 	|
 	**/
+
 	'project' => '' ,
 
 
@@ -20,6 +21,7 @@ return [
 	|  Your name
 	|
 	**/
+
 	'owner' => '' ,
 
 
@@ -34,6 +36,7 @@ return [
 	| working on localhost
 	|
 	**/
+
 	'url' => root() ,
 
 
@@ -45,6 +48,7 @@ return [
 	|  Default HTML title
 	|
 	**/
+
 	'title' => 'Vinala PHP Framework' , 
 
 
@@ -60,6 +64,7 @@ return [
 	| visite here : http://php.net/manual/en/timezones.php
 	|
 	**/
+
 	'timezone' => 'UTC' ,
 
 
@@ -68,21 +73,23 @@ return [
 	|----------------------------------------------------------
 	| Default Character Set
 	|----------------------------------------------------------
-	|  Default encodage when you using HTML::charset
+	|  The framework will set true if you passed
+	|  the setup
 	|
 	**/
+
 	'charset' => 'utf-8' , 
+
 
 
 	/*
 	|----------------------------------------------------------
 	| Setup
 	|----------------------------------------------------------
-	|  The framework will set true if you passed 
-	|  the setup
-	*/
+	|  Default encodage when you using HTML::charset
+	|
+	**/
 
-	'setup' => true,
-
+	'setup' => false , 
 
 ];
