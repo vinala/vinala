@@ -13,7 +13,6 @@ return [
 	'enable' => true ,
 
 
-
 	/*
 	|----------------------------------------------------------
 	| Kernel Aliases
@@ -27,7 +26,7 @@ return [
 		'Alias' => Vinala\Kernel\Config\Alias::class , 
 		'App' => Vinala\Kernel\Foundation\Application::class , 
 		'Assets' => Vinala\Kernel\Resources\Assets::class , 
-		'Auth' => Vinala\Kernel\Security\Auth::class , 
+		'Auth' => Vinala\Kernel\Authentication\Auth::class , 
 		'Base' => Vinala\Kernel\Objects\Base::class , 
 		'Cache' => Vinala\Kernel\Caches\Cache::class , 
 		'Config' => Vinala\Kernel\Config\Config::class , 
@@ -72,7 +71,6 @@ return [
 	],
 
 
-
 	/*
 	|----------------------------------------------------------
 	| Exceptions Aliases
@@ -84,7 +82,6 @@ return [
 
 	'exceptions' => [
 	],
-
 
 
 	/*
@@ -100,7 +97,6 @@ return [
 	],
 
 
-
 	/*
 	|----------------------------------------------------------
 	| Models Aliases
@@ -109,7 +105,7 @@ return [
 	| classes
 	|
 	**/
-
+	
 	'models' => [
 	],
 
