@@ -29,6 +29,7 @@
  * Update Assets surface
  * Update Links surface
  * Remove The Panel from framework compnents
+ * Improve Authentication surface
 
 ### 3.2.0
 ---
