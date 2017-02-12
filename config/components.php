@@ -1,14 +1,33 @@
 <?php 
 
-
-/**
-* The components permissions
+/*
+|----------------------------------------------------------
+| Surfaces permissions
+|----------------------------------------------------------
+| To allow or revoke some surfaces to be used
+| 
 */
 
-return array(
+return [
 
-	"faker" => false,
-	"panel" => false,
-	"database" => !false,
-	
-	);
+	/*
+	|----------------------------------------------------------
+	| Faker
+	|----------------------------------------------------------
+	| To allow or revoke Faker surface
+	| 
+	*/
+
+	'faker' => false ,
+
+	/*
+	|----------------------------------------------------------
+	| Database
+	|----------------------------------------------------------
+	| To allow or revoke Database surface
+	| 
+	*/
+
+	'database' => false ,
+
+];
