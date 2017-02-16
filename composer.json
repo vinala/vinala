@@ -10,7 +10,8 @@
 		}
 	],
 	"require": {
-		"php": ">=5.5.9"
+		"php": ">=5.5.9",
+		"symfony/cache": "3.*"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "~1.4",
@@ -18,7 +19,7 @@
 		"swiftmailer/swiftmailer": "5.3.1",
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
-		"vinala/kernel": "dev-dev",
+		"vinala/kernel": "3.3.*",
 		"vinala/whoops": "dev-dev",
 		"symfony/console": "3.*",
 		"youssef/debug": "1.*",
