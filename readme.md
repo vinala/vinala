@@ -42,7 +42,7 @@ First, download and install [Composer installer](https://getcomposer.org/)
 
 You can install Vinala via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
-	composer create-project vinala/vinala projet_name --prefer-dist
+	composer create-project vinala/app projet_name --prefer-dist
 
 ### Vinala Requirements
 
