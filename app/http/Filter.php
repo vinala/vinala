@@ -42,6 +42,7 @@ class Filter extends Filters
 	*/
 	public static $routeMiddleware = [
 		'CsrfToken' => \App\Http\Middleware\CsrfToken::class,
+		'Guest' => \App\Http\Middleware\Guest::class,
 	];
 	
 }
