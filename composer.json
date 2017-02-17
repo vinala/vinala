@@ -1,7 +1,7 @@
 {
-	"name": "vinala/vinala",
+	"name": "vinala/app",
 	"description": "Vinala, An elegant and swift PHP Framework For Webmasters",
-	"keywords": ["framework", "Vinala"],
+	"keywords": ["Framework", "Vinala"],
 	"license": "MIT",
 	"authors": [
 		{
@@ -41,6 +41,7 @@
         "branch-alias": {
             "dev-master": "3.2.*-dev",
             "dev-next": "3.3.*-dev",
+            "dev": "3.3.*-dev",
             "dev-dev": "3.3.*-dev"
         }
     }
