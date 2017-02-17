@@ -5,11 +5,15 @@ namespace App\Http\Middleware;
 use Vinala\Kernel\Http\Request;
 use Vinala\Kernel\Authentication\Auth;
 
+
 /**
 * Guest Middleware
 *
-* @author 
-**/
+* @version 1.0
+* @author Youssef Had
+* @package App\Http\Middleware
+* @since v3.3.0
+*/
 class Guest
 {
 
