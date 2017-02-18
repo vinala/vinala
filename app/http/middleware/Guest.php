@@ -24,7 +24,8 @@ class Guest
 	*/
 	private function login()
 	{
-		return '/';
+		// Redirect to the index route
+		return '@/';
 	}
 	
 
@@ -38,7 +39,7 @@ class Guest
 	{
 		if (Auth::guest())
 		{
-			redirect(['route' => $this->login() ]);
+			redirect($this->login());
 		}
 		else return pass();
 	}
