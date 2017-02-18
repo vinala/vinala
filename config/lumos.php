@@ -21,6 +21,15 @@ return [
 
 	/*
 	|----------------------------------------------------------
+	| Clear Exceptions
+	|----------------------------------------------------------
+	| this Command to clear exceptions folder
+	|
+	**/
+	'clear_exception' => 'clear:exception',
+
+	/*
+	|----------------------------------------------------------
 	| New Schema
 	|----------------------------------------------------------
 	| this Command to generate new schema in schema folder
@@ -34,14 +43,16 @@ return [
 	|----------------------------------------------------------
 	| this Command to execute schema and create the data table in 
 	| database
-	**/	'exec_schema' => 'exec:schema',
+	**/	
+	'exec_schema' => 'exec:schema',
 
 	/*
 	|----------------------------------------------------------
 	| Rollback Schema
 	|----------------------------------------------------------
 	| this Command to rollback the execution of the schema 
-	**/	'rollback_schema' => 'rollback:schema',
+	**/	
+	'rollback_schema' => 'rollback:schema',
 
 
 	/*
