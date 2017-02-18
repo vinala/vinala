@@ -7,8 +7,11 @@ use Vinala\Kernel\Http\Request;
 /**
 * VerifyCsrfToken Middleware
 *
-* @author 
-**/
+* @version 1.0
+* @author Youssef Had
+* @package App\Http\Middleware
+* @since v3.3.0
+*/
 class CsrfToken
 {
 
