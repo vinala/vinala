@@ -1,13 +1,13 @@
 <?php 
 
 /*
-|----------------------------------------------------------------------------------
+|------------------------------------------
 | App Routes
-|----------------------------------------------------------------------------------
-| here for framework routes , all http request should put it here with their events
-| put it here with their events
+|------------------------------------------
+| This file contains the framework routes, 
+| all http request should be here with 
+| their respenses
 | 
 **/
 
 call("/","Home@hello");
-
