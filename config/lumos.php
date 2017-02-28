@@ -9,7 +9,7 @@ return [
 	| the terminal used in your OS
 	| available : bash / cmd
 	**/
-	'terminal' => 'cmd',
+	'terminal' => 'bash',
 
 	/*
 	|----------------------------------------------------------
