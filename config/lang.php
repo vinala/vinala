@@ -9,7 +9,7 @@ return [
 	| Default framework language 
 	| 
 	**/
-	'default'=>'en',
+	'default' => 'en',
 
 
 	/*
@@ -19,6 +19,16 @@ return [
 	| Langue cookie to store framework default language
 	| 
 	**/
-	'cookie'=>'vinala_lang',
+	'cookie' => 'vinala_lang',
+
+
+	/*
+	|----------------------------------------------------------
+	| Lang cookie life time
+	|----------------------------------------------------------
+	| The lifetime of the language cookie
+	| 
+	**/
+	'lifetime' => (3600*24*7*30),
 
 ];
