@@ -29,6 +29,6 @@ return [
 	| The lifetime of the language cookie
 	| 
 	**/
-	'lifetime' => (3600*24*7*30),
+	'lifetime' => (60*24*30),
 
 ];
