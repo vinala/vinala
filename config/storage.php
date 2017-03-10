@@ -19,4 +19,13 @@ return [
 	|
 	*/
 	'path' => 'storage/file',
+
+	/*
+	|----------------------------------------------------------
+	| Session lifetime
+	|----------------------------------------------------------
+	| The session default lifetime, 0 means foreaver
+	|
+	*/
+	'session_lifetime' => 0,
 ];
