@@ -7,3 +7,5 @@ vendor/*
 !vendor/fiesta/whoops
 !vendor/fiesta/panel
 config/*
+.idea/*
+.vscode/*
