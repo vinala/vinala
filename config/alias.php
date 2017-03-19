@@ -64,7 +64,6 @@ return [
 		'Translator' => Vinala\Kernel\Translator\Lang::class , 
 		'Url' => Vinala\Kernel\Access\Url::class , 
 		'Validator' => Vinala\Kernel\Validation\Validator::class , 
-		'Vars' => Vinala\Kernel\Objects\Vars::class , 
 		'View' => Vinala\Kernel\MVC\View::class , 
 	],
 
