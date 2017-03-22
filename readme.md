@@ -28,7 +28,7 @@
 
 -----
 
-**Vinala** is a PHP framework made with love and PHP for for web developers to make the web programing more easyer, faster and wonderful. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help in you in your project such as Lumos, Panel, Atomium.
+**Vinala** is a PHP framework made with love and PHP for web developers to make the web programing more easyer, faster and awsome. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help you in your project such as Lumos, Panel, Atomium.
 
 ### Installation
 
