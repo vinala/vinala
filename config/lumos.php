@@ -11,226 +11,234 @@ return [
 	**/
 	'terminal' => 'bash',
 
-	/*
-	|----------------------------------------------------------
-	| Clear Controllers
-	|----------------------------------------------------------
-	| this Command to clear controllers folder
-	**/
-	'clear_controller' => 'clear:controller',
+	/**
+	* List of kernel lumos commands
+	*
+	* @var array
+	*/
+	'commands' => [
 
-	/*
-	|----------------------------------------------------------
-	| Clear Exceptions
-	|----------------------------------------------------------
-	| this Command to clear exceptions folder
-	|
-	**/
-	'clear_exception' => 'clear:exception',
+		/*
+		|----------------------------------------------------------
+		| Clear Controllers
+		|----------------------------------------------------------
+		| this Command to clear controllers folder
+		**/
+		'clear_controller' => 'clear:controller',
 
-	/*
-	|----------------------------------------------------------
-	| New Schema
-	|----------------------------------------------------------
-	| this Command to generate new schema in schema folder
-	**/
-	'new_schema' => 'make:schema',
+		/*
+		|----------------------------------------------------------
+		| Clear Exceptions
+		|----------------------------------------------------------
+		| this Command to clear exceptions folder
+		|
+		**/
+		'clear_exception' => 'clear:exception',
 
-
-	/*
-	|----------------------------------------------------------
-	| Execute Schema
-	|----------------------------------------------------------
-	| this Command to execute schema and create the data table in 
-	| database
-	**/	
-	'exec_schema' => 'exec:schema',
-
-	/*
-	|----------------------------------------------------------
-	| Rollback Schema
-	|----------------------------------------------------------
-	| this Command to rollback the execution of the schema 
-	**/	
-	'rollback_schema' => 'rollback:schema',
+		/*
+		|----------------------------------------------------------
+		| New Schema
+		|----------------------------------------------------------
+		| this Command to generate new schema in schema folder
+		**/
+		'new_schema' => 'make:schema',
 
 
-	/*
-	|----------------------------------------------------------
-	| New Translator File
-	|----------------------------------------------------------
-	| this Command to create new file inside folder in lang 
-	| folder
-	**/
-	'new_lang' => 'make:lang',
+		/*
+		|----------------------------------------------------------
+		| Execute Schema
+		|----------------------------------------------------------
+		| this Command to execute schema and create the data table in 
+		| database
+		**/	
+		'exec_schema' => 'exec:schema',
+
+		/*
+		|----------------------------------------------------------
+		| Rollback Schema
+		|----------------------------------------------------------
+		| this Command to rollback the execution of the schema 
+		**/	
+		'rollback_schema' => 'rollback:schema',
 
 
-	/*
-	|----------------------------------------------------------
-	| New Link File
-	|----------------------------------------------------------
-	| this Command to create new file inside links folder
-	**/
-	'new_link' => 'make:link',
+		/*
+		|----------------------------------------------------------
+		| New Translator File
+		|----------------------------------------------------------
+		| this Command to create new file inside folder in lang 
+		| folder
+		**/
+		'new_lang' => 'make:lang',
 
 
-	/*
-	|----------------------------------------------------------
-	| New Model
-	|----------------------------------------------------------
-	| this Command to create new model inside models folder
-	**/
-	'new_model' => 'make:model',
-	
-
-	/*
-	|----------------------------------------------------------
-	| New View
-	|----------------------------------------------------------
-	| this Command to create new view inside views folder
-	**/
-	'new_view' => 'make:view',
-	
-
-	/*
-	|----------------------------------------------------------
-	| New Controller
-	|----------------------------------------------------------
-	| this Command to create new controller inside controllers
-	| folder
-	**/
-	'new_controller' => 'make:controller',
+		/*
+		|----------------------------------------------------------
+		| New Link File
+		|----------------------------------------------------------
+		| this Command to create new file inside links folder
+		**/
+		'new_link' => 'make:link',
 
 
-	/*
-	|----------------------------------------------------------
-	| New Seeder
-	|----------------------------------------------------------
-	| this Command to create new seeder inside seeds folder
-	**/
-	'new_seed' => 'make:seed',
+		/*
+		|----------------------------------------------------------
+		| New Model
+		|----------------------------------------------------------
+		| this Command to create new model inside models folder
+		**/
+		'new_model' => 'make:model',
+		
+
+		/*
+		|----------------------------------------------------------
+		| New View
+		|----------------------------------------------------------
+		| this Command to create new view inside views folder
+		**/
+		'new_view' => 'make:view',
+		
+
+		/*
+		|----------------------------------------------------------
+		| New Controller
+		|----------------------------------------------------------
+		| this Command to create new controller inside controllers
+		| folder
+		**/
+		'new_controller' => 'make:controller',
 
 
-	/*
-	|----------------------------------------------------------
-	| Execute Seeder
-	|----------------------------------------------------------
-	| this Command to executethe main seeder
-	**/	
-	'exec_seed' => 'exec:seed',
+		/*
+		|----------------------------------------------------------
+		| New Seeder
+		|----------------------------------------------------------
+		| this Command to create new seeder inside seeds folder
+		**/
+		'new_seed' => 'make:seed',
 
 
-	/*
-	|----------------------------------------------------------
-	| Get Route
-	|----------------------------------------------------------
-	| this Command to add get route ro routes file
-	**/	
-	'get_routes' => 'make:get',
+		/*
+		|----------------------------------------------------------
+		| Execute Seeder
+		|----------------------------------------------------------
+		| this Command to executethe main seeder
+		**/	
+		'exec_seed' => 'exec:seed',
 
 
-	/*
-	|----------------------------------------------------------
-	| Post Route
-	|----------------------------------------------------------
-	| this Command to add post route ro routes file
-	**/	
-	'post_routes' => 'make:post',
-
-	/*
-	|----------------------------------------------------------
-	| Call Route
-	|----------------------------------------------------------
-	| this Command to add call route ro routes file
-	**/	
-	'call_routes' => 'make:call',
+		/*
+		|----------------------------------------------------------
+		| Get Route
+		|----------------------------------------------------------
+		| this Command to add get route ro routes file
+		**/	
+		'get_routes' => 'make:get',
 
 
-	/*
-	|----------------------------------------------------------
-	| User Command
-	|----------------------------------------------------------
-	| this Command to create new user Lumos command
-	**/	
-	'new_command' => 'make:command',
+		/*
+		|----------------------------------------------------------
+		| Post Route
+		|----------------------------------------------------------
+		| this Command to add post route ro routes file
+		**/	
+		'post_routes' => 'make:post',
 
-	/*
-	|----------------------------------------------------------
-	| User Atomium Tag
-	|----------------------------------------------------------
-	| this Command to create new user Atomium tag
-	**/	
-	'new_tag' => 'make:tag',
+		/*
+		|----------------------------------------------------------
+		| Call Route
+		|----------------------------------------------------------
+		| this Command to add call route ro routes file
+		**/	
+		'call_routes' => 'make:call',
 
-	/*
-	|----------------------------------------------------------
-	| User Event
-	|----------------------------------------------------------
-	| this Command to create new user event
-	**/	
-	'new_event' => 'make:event',
 
-	/*
-	|----------------------------------------------------------
-	| Exception
-	|----------------------------------------------------------
-	| this Command to create new exception
-	**/	
-	'new_exception' => 'make:exception',
+		/*
+		|----------------------------------------------------------
+		| User Command
+		|----------------------------------------------------------
+		| this Command to create new user Lumos command
+		**/	
+		'new_command' => 'make:command',
 
-	/*
-	|----------------------------------------------------------
-	| Middleware
-	|----------------------------------------------------------
-	| this Command to create new middleware
-	**/	
-	'new_middleware' => 'make:middleware',
+		/*
+		|----------------------------------------------------------
+		| User Atomium Tag
+		|----------------------------------------------------------
+		| this Command to create new user Atomium tag
+		**/	
+		'new_tag' => 'make:tag',
 
-	/*
-	|----------------------------------------------------------
-	| New Helper
-	|----------------------------------------------------------
-	| this Command to create new helper
-	**/	
-	'new_helper' => 'make:helper',
+		/*
+		|----------------------------------------------------------
+		| User Event
+		|----------------------------------------------------------
+		| this Command to create new user event
+		**/	
+		'new_event' => 'make:event',
 
-	/*
-	|----------------------------------------------------------
-	| Export database
-	|----------------------------------------------------------
-	| this Command to export database
-	**/	
-	'export_database' => 'save:database',
+		/*
+		|----------------------------------------------------------
+		| Exception
+		|----------------------------------------------------------
+		| this Command to create new exception
+		**/	
+		'new_exception' => 'make:exception',
 
-	//--------------------------------------------------------
-	// Configuration commands
-	//--------------------------------------------------------
+		/*
+		|----------------------------------------------------------
+		| Middleware
+		|----------------------------------------------------------
+		| this Command to create new middleware
+		**/	
+		'new_middleware' => 'make:middleware',
 
-	/*
-	|----------------------------------------------------------
-	| Config database
-	|----------------------------------------------------------
-	| this Command to config database
-	**/	
-	'config_database' => 'config:database',
+		/*
+		|----------------------------------------------------------
+		| New Helper
+		|----------------------------------------------------------
+		| this Command to create new helper
+		**/	
+		'new_helper' => 'make:helper',
 
-	//--------------------------------------------------------
-	// Config Switches commands
-	//--------------------------------------------------------
+		/*
+		|----------------------------------------------------------
+		| Export database
+		|----------------------------------------------------------
+		| this Command to export database
+		**/	
+		'export_database' => 'save:database',
 
-	/*
-	|----------------------------------------------------------
-	| Enable or disable debug mode
-	|----------------------------------------------------------
-	| this Command to enable or disable debug mode
-	**/	
-	'switch_debug' => 'switch:debug',
+		//--------------------------------------------------------
+		// Configuration commands
+		//--------------------------------------------------------
 
-	/*
-	|----------------------------------------------------------
-	| Enable or disable maintenance mode
-	|----------------------------------------------------------
-	| this Command to enable or disable maintenance mode
-	**/	
-	'switch_maintenance' => 'switch:maintenance',
+		/*
+		|----------------------------------------------------------
+		| Config database
+		|----------------------------------------------------------
+		| this Command to config database
+		**/	
+		'config_database' => 'config:database',
+
+		//--------------------------------------------------------
+		// Config Switches commands
+		//--------------------------------------------------------
+
+		/*
+		|----------------------------------------------------------
+		| Enable or disable debug mode
+		|----------------------------------------------------------
+		| this Command to enable or disable debug mode
+		**/	
+		'switch_debug' => 'switch:debug',
+
+		/*
+		|----------------------------------------------------------
+		| Enable or disable maintenance mode
+		|----------------------------------------------------------
+		| this Command to enable or disable maintenance mode
+		**/	
+		'switch_maintenance' => 'switch:maintenance',
+	],
 ];
