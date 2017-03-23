@@ -1,7 +1,7 @@
 {
-	"name": "lighty/lighty",
-	"description": "Lighty, a PHP Framework for web developers",
-	"keywords": ["framework", "Lighty"],
+	"name": "vinala/vinala",
+	"description": "Vinala, a PHP Framework for web developers",
+	"keywords": ["framework", "Vinala"],
 	"license": "MIT",
 	"authors": [
 		{
@@ -26,8 +26,8 @@
 	},
 	"extra": {
         "branch-alias": {
-            "dev-master": "3.*-dev",
-            "dev-next": "3.2.*-dev"
+            "dev-master": "3.2.*-dev",
+            "dev-dev": "3.3.*-dev"
         }
     }
 }
