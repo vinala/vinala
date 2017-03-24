@@ -21,10 +21,10 @@
 	<img src="https://poser.pugx.org/vinala/vinala/license" alt="License">
 </a>
 </p>
+
 -----
 
 ![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
-
 
 -----
 
