@@ -46,14 +46,29 @@ return [
 	|----------------------------------------------------------
 	| Saved fields
 	|----------------------------------------------------------
-	| Name of cookie andd session where storing 
+	| Name of cookie and session where storing 
 	| the authentication data, the cookie will 
 	| be used to make remember me
 	| 
 	*/
 
 	'cookie' => config('security.key1') ,
+
 	'session' => config('security.key1') ,
+
+	/*
+	|----------------------------------------------------------
+	| Saved fields lifetime
+	|----------------------------------------------------------
+	| The life time of cookie and session in minitues where  
+	| storing the authentication data, if the session lifetime 
+	| was 0 it means forever
+	| 
+	*/
+
+	'cookie_lifetime' => 3600*24*7 ,
+
+	'session_lifetime' => 0 ,
 
 
 	/*
