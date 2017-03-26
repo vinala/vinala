@@ -24,7 +24,9 @@
 		"youssef/debug": "1.*",
 		"vlucas/valitron": "^1.2",
 		"phpunit/phpunit": "~4.1",
-		"symfony/cache": "3.*"
+		"symfony/cache": "3.*",
+		"symfony/process": "3.2.*",
+		"tedivm/stash": "^0.14.1"
 	},
 	"scripts": {
 		"post-create-project-cmd": [
