@@ -7,7 +7,6 @@ return [
 	| Default Cache Store
 	|---------------------------------------------
 	| Name of cache storage mode
-	| available : file - database
 	*/
 
 	'default' => 'file',
@@ -35,11 +34,7 @@ return [
 
 		"database" => [ 
 			"driver" => "database",
-			"table" => "table_cache",
-			"database" => null,
-
+			"table" => "cache_table",
 		],
 	],
-
-
 ];
