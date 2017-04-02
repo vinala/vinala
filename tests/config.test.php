@@ -13,10 +13,8 @@ class ConfigTest extends BaseTestCase
 	* @return bool
 	* @test
 	*/
-	public function owner()
+	public function sampleTest()
 	{
-		$owner = config('app.owner');
-
-		return $this->true( ($owner != '') , 'Owner name in app config file is empty' );
+		//
 	}
 }
