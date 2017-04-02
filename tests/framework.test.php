@@ -18,6 +18,6 @@ class FrameworkTest extends BaseTestCase
 	{
 		$result = Application::getTestResult();
 
-		return $this->assertFalse( !$result , 'The Framework can\'t run' );
+		return $this->assertFalse( $result , 'The Framework can\'t run' );
 	}
 }
