@@ -8,18 +8,17 @@
 <div class="container">	
 <?php 
 
-
-	foreach ($users->all() as  $user) 
-	{
-		?>
+    foreach ($users->all() as  $user) {
+        ?>
 		<div>
 			<h1><?php echo $user->nom; ?></h1>
 			<p><?php echo $user->mail; ?></p>
 		</div>
 		<?php
-	}
 
-	$users->links(5,true);
+    }
+
+    $users->links(5, true);
 
  ?>
 </div>

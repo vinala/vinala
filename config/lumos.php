@@ -1,154 +1,144 @@
-<?php 
-
-return array(
-
-	/*
-	|----------------------------------------------------------
-	| Terminal
-	|----------------------------------------------------------
-	| the terminal used in your OS
-	| available : bash / cmd
-	**/
-
-	"terminal" => "cmd",
-
-	/*
-	|----------------------------------------------------------
-	| New Schema
-	|----------------------------------------------------------
-	| this Command to generate new schema in schema folder
-	**/
-
-	"new_schema" => "make:schema",
+<?php
 
 
-	/*
-	|----------------------------------------------------------
-	| Execute Schema
-	|----------------------------------------------------------
-	| this Command to execute schema and create the data table in 
-	| database
-	**/
+return [
 
-	"exec_schema" => "exec:schema",
+    /*
+    |----------------------------------------------------------
+    | Terminal
+    |----------------------------------------------------------
+    | the terminal used in your OS
+    | available : bash / cmd
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| Rollback Schema
-	|----------------------------------------------------------
-	| this Command to rollback the execution of the schema 
-	**/
+    'terminal' => 'cmd',
 
+    /*
+    |----------------------------------------------------------
+    | New Schema
+    |----------------------------------------------------------
+    | this Command to generate new schema in schema folder
+    **/
 
-	"rollback_schema" => "rollback:schema",
+    'new_schema' => 'make:schema',
 
+    /*
+    |----------------------------------------------------------
+    | Execute Schema
+    |----------------------------------------------------------
+    | this Command to execute schema and create the data table in
+    | database
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| New Translator File
-	|----------------------------------------------------------
-	| this Command to create new file inside folder in lang 
-	| folder
-	**/
+    'exec_schema' => 'exec:schema',
 
-	"new_lang" => "make:lang",
+    /*
+    |----------------------------------------------------------
+    | Rollback Schema
+    |----------------------------------------------------------
+    | this Command to rollback the execution of the schema
+    **/
 
+    'rollback_schema' => 'rollback:schema',
 
-	/*
-	|----------------------------------------------------------
-	| New Link File
-	|----------------------------------------------------------
-	| this Command to create new file inside links folder
-	**/
+    /*
+    |----------------------------------------------------------
+    | New Translator File
+    |----------------------------------------------------------
+    | this Command to create new file inside folder in lang
+    | folder
+    **/
 
-	"new_link" => "make:link",
+    'new_lang' => 'make:lang',
 
+    /*
+    |----------------------------------------------------------
+    | New Link File
+    |----------------------------------------------------------
+    | this Command to create new file inside links folder
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| New Model
-	|----------------------------------------------------------
-	| this Command to create new model inside models folder
-	**/
+    'new_link' => 'make:link',
 
-	"new_model" => "make:model",
-	
+    /*
+    |----------------------------------------------------------
+    | New Model
+    |----------------------------------------------------------
+    | this Command to create new model inside models folder
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| New View
-	|----------------------------------------------------------
-	| this Command to create new view inside views folder
-	**/
+    'new_model' => 'make:model',
 
-	"new_view" => "make:view",
-	
+    /*
+    |----------------------------------------------------------
+    | New View
+    |----------------------------------------------------------
+    | this Command to create new view inside views folder
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| New Controller
-	|----------------------------------------------------------
-	| this Command to create new controller inside controllers
-	| folder
-	**/
+    'new_view' => 'make:view',
 
-	"new_controller" => "make:controller",
+    /*
+    |----------------------------------------------------------
+    | New Controller
+    |----------------------------------------------------------
+    | this Command to create new controller inside controllers
+    | folder
+    **/
 
+    'new_controller' => 'make:controller',
 
-	/*
-	|----------------------------------------------------------
-	| New Seeder
-	|----------------------------------------------------------
-	| this Command to create new seeder inside seeds folder
-	**/
+    /*
+    |----------------------------------------------------------
+    | New Seeder
+    |----------------------------------------------------------
+    | this Command to create new seeder inside seeds folder
+    **/
 
-	"new_seed" => "make:seed",
+    'new_seed' => 'make:seed',
 
+    /*
+    |----------------------------------------------------------
+    | Execute Seeder
+    |----------------------------------------------------------
+    | this Command to executethe main seeder
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| Execute Seeder
-	|----------------------------------------------------------
-	| this Command to executethe main seeder
-	**/
-	
-	"exec_seed" => "exec:seed",
+    'exec_seed' => 'exec:seed',
 
+    /*
+    |----------------------------------------------------------
+    | Get Route
+    |----------------------------------------------------------
+    | this Command to add get route ro routes file
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| Get Route
-	|----------------------------------------------------------
-	| this Command to add get route ro routes file
-	**/
-	
-	"get_routes" => "make:get",
+    'get_routes' => 'make:get',
 
+    /*
+    |----------------------------------------------------------
+    | User Command
+    |----------------------------------------------------------
+    | this Command to create new user Lumos command
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| User Command
-	|----------------------------------------------------------
-	| this Command to create new user Lumos command
-	**/
-	
-	"new_command" => "make:command",
+    'new_command' => 'make:command',
 
-	/*
-	|----------------------------------------------------------
-	| User Atomium Tag
-	|----------------------------------------------------------
-	| this Command to create new user Atomium tag
-	**/
-	
-	"new_tag" => "make:tag",
+    /*
+    |----------------------------------------------------------
+    | User Atomium Tag
+    |----------------------------------------------------------
+    | this Command to create new user Atomium tag
+    **/
 
-	/*
-	|----------------------------------------------------------
-	| Export database
-	|----------------------------------------------------------
-	| this Command to export database
-	**/
-	
-	"export_database" => "save:database",
-);
+    'new_tag' => 'make:tag',
+
+    /*
+    |----------------------------------------------------------
+    | Export database
+    |----------------------------------------------------------
+    | this Command to export database
+    **/
+
+    'export_database' => 'save:database',
+];

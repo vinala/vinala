@@ -4,7 +4,7 @@ namespace Lighty\App\Console\Commands;
 
 use Lighty\Kernel\Console\Command\Commands;
 
-class Salute extends Commands
+class salute extends Commands
 {
     /**
      * The key of the console command.
@@ -30,6 +30,6 @@ class Salute extends Commands
         $firstName = $this->argument('firstName');
         $lastName = $this->argument('lastName');
         //
-        $this->write("Hello ".$firstName." ".$lastName);
+        $this->write('Hello '.$firstName.' '.$lastName);
     }
 }

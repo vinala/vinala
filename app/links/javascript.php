@@ -1,9 +1,10 @@
-<?php 
+<?php
+
 
 /*
 * links of javascript files
 */
 
-return array(
-	'root' => Config::get('app.url'),
-	);
+return [
+    'root' => Config::get('app.url'),
+    ];

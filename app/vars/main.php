@@ -1,8 +1,9 @@
-<?php 
+<?php
+
 
 /*
 *  Custom variables
 */
-return array(
-	'name' => "Youssef Had",
-	);
+return [
+    'name' => 'Youssef Had',
+    ];

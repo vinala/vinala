@@ -1,40 +1,37 @@
-<?php 
+<?php
 
 
+return [
 
-return array(
+    /*
+    |---------------------------------------------
+    | Default Cache Store
+    |---------------------------------------------
+    | Name of cache storage mode
+    | available : file - database
+    */
 
-	/*
-	|---------------------------------------------
-	| Default Cache Store
-	|---------------------------------------------
-	| Name of cache storage mode
-	| available : file - database
-	*/
+    'default' => 'file',
 
-	'default' => "file",
+    /*
+    |----------------------------------------------------------
+    | Cache options
+    |----------------------------------------------------------
+    */
 
+    'options' => [
 
-	/*
-	|----------------------------------------------------------
-	| Cache options
-	|----------------------------------------------------------
-	*/
+        'file' => [
+            'driver'   => 'file',
+            'location' => 'storage/cache',
+        ],
 
-	"options" => [ 
+        'database' => [
+            'driver'   => 'database',
+            'table'    => 'lighty_cache',
+            'database' => null,
 
-		"file" => [ 
-			"driver" => "file",
-			'location' => "storage/cache"
-		],
+        ],
+    ],
 
-		"database" => [ 
-			"driver" => "database",
-			"table" => "lighty_cache",
-			"database" => null,
-
-		],
-	],
-
-
-);
+];

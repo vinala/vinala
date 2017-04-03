@@ -1,13 +1,11 @@
-<?php 
+<?php
 
 namespace Fiesta\Plugins\Google;
-/**
-* 
-*/
-class Youtube
+
+class ini
 {
-	public static function embed($id,$width=560,$height=315)
-	{
-		\View::import("ytb","player",array("id" => $id, "width" => $width, "height" => $height));
-	}
+    public static function embed($id, $width = 560, $height = 315)
+    {
+        \View::import('ytb', 'player', ['id' => $id, 'width' => $width, 'height' => $height]);
+    }
 }
