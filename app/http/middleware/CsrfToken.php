@@ -5,48 +5,45 @@ namespace App\Http\Middleware;
 use Vinala\Kernel\Http\Request;
 
 /**
-* VerifyCsrfToken Middleware
-*
-* @version 1.0
-* @author Youssef Had
-* @package App\Http\Middleware
-* @since v3.3.0
-*/
+ * VerifyCsrfToken Middleware.
+ *
+ * @version 1.0
+ *
+ * @author Youssef Had
+ *
+ * @since v3.3.0
+ */
 class CsrfToken
 {
+    /**
+     * Handle the middleware.
+     *
+     * @param Vinala\Kernel\Http\Request $req
+     *
+     * @return bool|string
+     **/
+    public function handle(Request $req)
+    {
+        if (!$this->check($req)) {
+            \Redirect::back();
+        }
 
-	/**
-	* Handle the middleware
-	*
-	* @param Vinala\Kernel\Http\Request $req
-	* @return bool|string
-	**/
-	public function handle(Request $req)
-	{
-		if( ! $this->check($req) )
-		{
-			\Redirect::back();
-		}
+        if (\Session::token() != $req->_token) {
+            exception(\LogicException::class, 'Csrf Token is not allowed');
+        }
 
-		if (\Session::token() != $req->_token) 
-		{ 
-			exception(\LogicException::class , 'Csrf Token is not allowed');
-		}
-		
-		return pass();
-	}
+        return pass();
+    }
 
-
-	/**
-	* Check if Token exists in request
-	*
-	* @param Vinala\Kernel\Http\Request $req 
-	* @return bool
-	*/
-	public function check(Request $req)
-	{
-		return ( isset($req->_token) && ! empty($req->_token));
-	}
-	
-
+    /**
+     * Check if Token exists in request.
+     *
+     * @param Vinala\Kernel\Http\Request $req
+     *
+     * @return bool
+     */
+    public function check(Request $req)
+    {
+        return  isset($req->_token) && !empty($req->_token);
+    }
 }

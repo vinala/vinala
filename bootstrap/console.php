@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -8,11 +9,8 @@ require __DIR__.'/../vendor/autoload.php';
 |----------------------------------------------
 | launch the Lighty console
 */
-try 
-{
-	Vinala\Kernel\Foundation\Application::console();
-} 
-catch (Exception $e) 
-{
-	echo $e->xdebug_message;
+try {
+    Vinala\Kernel\Foundation\Application::console();
+} catch (Exception $e) {
+    echo $e->xdebug_message;
 }

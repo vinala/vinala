@@ -1,10 +1,11 @@
-<?php 
+<?php
+
 
 /**
-* A list of social networks links	
-*
-* @var array
-*/
+ * A list of social networks links.
+ *
+ * @var array
+ */
 return [
-	//
+    //
 ];
