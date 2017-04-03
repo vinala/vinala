@@ -1,41 +1,38 @@
-<?php 
+<?php
 
 
-return array(
+return [
 
-	/*
-	|----------------------------------------------------------
-	| Pagination Get
-	|----------------------------------------------------------
-	|  This parameter will be sent in HTTP Get contains the 
-	|  page number
-	*/
+    /*
+    |----------------------------------------------------------
+    | Pagination Get
+    |----------------------------------------------------------
+    |  This parameter will be sent in HTTP Get contains the
+    |  page number
+    */
 
-	'pagination_param'=>"page",
+    'pagination_param'=> 'page',
 
-	/*
-	|----------------------------------------------------------
-	| Pagination Style
-	|----------------------------------------------------------
-	|  Style of pagination
-	|  supported slider or simple
-	*/
+    /*
+    |----------------------------------------------------------
+    | Pagination Style
+    |----------------------------------------------------------
+    |  Style of pagination
+    |  supported slider or simple
+    */
 
-	'pagination_style'=>"slider",
-	'paginationSimpleNext'=>"Suivant",
-	'paginationSimplePrevious'=>"Précedent",
+    'pagination_style'        => 'slider',
+    'paginationSimpleNext'    => 'Suivant',
+    'paginationSimplePrevious'=> 'Précedent',
 
-	/*
-	|----------------------------------------------------------
-	| Pagination class
-	|----------------------------------------------------------
-	|  The CSS class of the pagination by default we use a 
-	|  Bootstrap button style
-	*/
+    /*
+    |----------------------------------------------------------
+    | Pagination class
+    |----------------------------------------------------------
+    |  The CSS class of the pagination by default we use a
+    |  Bootstrap button style
+    */
 
-	'pagination_class'=>"{bootstrap}",
+    'pagination_class'=> '{bootstrap}',
 
-
-);
-
-?>
+];

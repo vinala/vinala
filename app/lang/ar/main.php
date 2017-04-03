@@ -1,5 +1,6 @@
-<?php 
+<?php
 
-return array(
-	'welcome' =>  "مرحبا",
-	);
+
+return [
+    'welcome' => 'مرحبا',
+    ];

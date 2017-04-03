@@ -1,13 +1,11 @@
-<?php 
+<?php
 
 namespace Fiesta\Plugins\Google;
-/**
-* 
-*/
-class QR
+
+class ini
 {
-	public static function generate($text,$size=100)
-	{
-		\View::import("qr","code",array("text" => $text, "size" => $size));
-	}
+    public static function generate($text, $size = 100)
+    {
+        \View::import('qr', 'code', ['text' => $text, 'size' => $size]);
+    }
 }

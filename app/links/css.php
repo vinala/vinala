@@ -1,9 +1,10 @@
-<?php 
+<?php
+
 
 /*
 * links of css files
 */
 
-return array(
-	'root' => Config::get('app.url'),
-	);
+return [
+    'root' => Config::get('app.url'),
+    ];
