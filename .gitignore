@@ -1,6 +1,7 @@
 composer.lock
 kernel.lnk
 .gitmodules
+.gitattributes
 vendor/*
 !vendor/vinala/kernel
 !vendor/vinala/whoops
