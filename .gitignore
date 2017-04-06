@@ -3,9 +3,7 @@ kernel.lnk
 .gitignore
 .gitmodules
 vendor/*
-!vendor/fiesta/kernel
-!vendor/fiesta/whoops
-!vendor/fiesta/panel
+!vendor/vinala/kernel
+!vendor/vinala/whoops
 config/*
 .idea/*
-.vscode/*
