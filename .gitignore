@@ -1,9 +1,11 @@
 composer.lock
 kernel.lnk
-.gitignore
 .gitmodules
+.gitattributes
 vendor/*
 !vendor/vinala/kernel
 !vendor/vinala/whoops
 config/*
-.idea/*
+.vscode/*
+storage/view/*
+storage/log/*

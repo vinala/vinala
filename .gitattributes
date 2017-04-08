@@ -2,4 +2,4 @@ readme.md export-ignore
 CHANGES.md export-ignore
 contributing.md export-ignore
 license.md export-ignore
-.vscode/* export-ignore
+.gitignore export-ignore
