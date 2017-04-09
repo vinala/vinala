@@ -20,6 +20,15 @@ class Filter extends Filters
     public static $middleware = [
         //
     ];
+    
+    /**		
+ -	* The application's route middleware groups.		
+ -	*		
+ -	* @var array 		
+ -	*/		
+ -	public static $groupsMiddleware = [		
+ -		//		
+ -	];
 
 
     /**
