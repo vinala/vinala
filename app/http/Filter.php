@@ -22,13 +22,13 @@ class Filter extends Filters
     ];
     
     /**		
- -	* The application's route middleware groups.		
- -	*		
- -	* @var array 		
- -	*/		
- -	public static $groupsMiddleware = [		
- -		//		
- -	];
+ 	* The application's route middleware groups.		
+ 	*		
+ 	* @var array 		
+ 	*/		
+ 	public static $groupsMiddleware = [		
+ 		//		
+ 	];
 
 
     /**
