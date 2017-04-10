@@ -9,7 +9,7 @@
 	    @css("error");
 	</head>
 	<body>
-gjhgjh
+
 	    <div>
 	    	@lang("error.regular_message");
 	    </div>

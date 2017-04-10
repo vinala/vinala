@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 /*
 |----------------------------------------------
 | Framework calling
 |----------------------------------------------
-| Calling the Lighty framework
+| Calling the Vinala framework
 */
 require __DIR__.'/../vendor/autoload.php';
 
@@ -13,6 +13,6 @@ require __DIR__.'/../vendor/autoload.php';
 |----------------------------------------------
 | Run the Framework
 |----------------------------------------------
-| launch the Lighty framework
+| launch the Vinala framework
 */
 Vinala\Kernel\Foundation\Application::run();

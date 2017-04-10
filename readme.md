@@ -11,7 +11,7 @@
 <a href="https://packagist.org/packages/vinala/vinala">
 	<img src="https://poser.pugx.org/vinala/vinala/v/stable" alt="Latest Stable Version">
 </a>
-<a href="https://gitlab.com/lighty/framework">
+<a href="https://github.com/vinala/vinala">
 	<img src="https://img.shields.io/badge/downloads-637-0375b5.svg" alt="Downloads">
 </a>
 <a href="https://packagist.org/packages/vinala/vinala">
@@ -88,6 +88,6 @@ To get older releases of vinala framework please [Vinala Releases](https://githu
 The Vinala framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 [![Owner](https://img.shields.io/badge/created%20by-Youssef%20Had-blue.svg)](https://gitlab.com/u/youssefhad)
-[![Owner](https://img.shields.io/badge/copyright-2014--2017-red.svg)](https://gitlab.com/lighty/framework)
-[![Owner](https://img.shields.io/badge/launched-10%2F10%2F2014-ff2f6c.svg)](https://gitlab.com/lighty/framework)
+[![Owner](https://img.shields.io/badge/copyright-2014--2017-red.svg)](https://github.com/vinala/vinala)
+[![Owner](https://img.shields.io/badge/launched-10%2F10%2F2014-ff2f6c.svg)](https://github.com/vinala/vinala)
 
