@@ -133,7 +133,7 @@ return [
 		|----------------------------------------------------------
 		| this Command to add get route ro routes file
 		**/	
-		'get_routes' => 'make:get',
+		'get_route' => 'make:get',
 
 
 		/*
@@ -142,15 +142,15 @@ return [
 		|----------------------------------------------------------
 		| this Command to add post route ro routes file
 		**/	
-		'post_routes' => 'make:post',
+		'post_route' => 'make:post',
 
 		/*
 		|----------------------------------------------------------
-		| Call Route
+		| Target Route
 		|----------------------------------------------------------
-		| this Command to add call route ro routes file
+		| this Command to add target route to routes file
 		**/	
-		'call_routes' => 'make:call',
+		'target_route' => 'make:target',
 
 
 		/*
