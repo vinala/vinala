@@ -8,7 +8,7 @@
 	    <style type="text/css">
             @font-face {
               font-family: 'segoe';
-              src: url('app/resources/fonts/segoeuil.ttf') format('truetype');
+              src: url('assets/fonts/segoeuil.ttf') format('truetype');
             }
 
             body
