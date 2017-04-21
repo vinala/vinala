@@ -30,6 +30,7 @@
  * Update Links surface
  * Remove The Panel from framework compnents
  * Improve Authentication surface
+ * Improve Routes surface
 
 ### 3.2.0
 ---

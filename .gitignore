@@ -1,5 +1,7 @@
 composer.lock
 kernel.lnk
+doc.lnk
+.idea
 .gitmodules
 .gitattributes
 vendor/*

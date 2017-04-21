@@ -11,11 +11,22 @@ return [
 	**/
 	'terminal' => 'bash',
 
-	/**
-	* List of kernel lumos commands
-	*
-	* @var array
-	*/
+	/*
+	|----------------------------------------------------------
+	| Lumos tracking
+	|----------------------------------------------------------
+	| if true Lumos will set in any file the user and creation
+	| date
+	**/
+	'tracking' => true,
+
+	
+	/*
+	|----------------------------------------------------------
+	| Commands
+	|----------------------------------------------------------
+	| List of kernel lumos commands
+	**/
 	'commands' => [
 
 		/*
