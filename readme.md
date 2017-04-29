@@ -77,7 +77,7 @@ You can install next release of Lighty in beta via [Composer](https://getcompose
 
 ### Versions
 
-To consult the change log of the framework please visit here [change log](https://github.com/vinala/vinala/blob/master/changes.md)
+To consult the change log of the framework please visit here [change log](https://github.com/vinala/vinala/blob/master/CHANGES.md)
 
 To get older releases of vinala framework please [Vinala Releases](https://github.com/vinala/vinala/releases)
 
