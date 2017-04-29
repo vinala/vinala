@@ -22,7 +22,7 @@
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
 		"vinala/kernel": "3.3.*",
-		"vinala/whoops": "dev-dev",
+		"vinala/whoops": "1.2.*",
 		"symfony/console": "3.*",
 		"youssef/debug": "1.*",
 		"vlucas/valitron": "^1.2",
@@ -44,9 +44,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "3.2.*-dev",
-			"dev-next": "3.3.*-dev",
-			"dev": "3.3.*-dev",
+			"dev-master": "3.3.*-dev",
 			"dev-dev": "3.3.*-dev"
 		}
 	}
