@@ -27,7 +27,7 @@
 
 	<div id="welcom" >
 		<div class="text">
-			@lang('welcome');
+			@lang('framework.welcome');
 			///
 			@if(check(config('app.owner'))):
 				@if(config('app.owner') != "user"):
