@@ -43,7 +43,7 @@
 		]
 	},
 	"extra": {
-		"branch-alias": {
+<<<<<<< HEAD"branch-alias": {
 			"dev-master": "3.2.*-dev",
 			"dev-next": "3.3.*-dev",
 			"dev": "3.3.*-dev",
@@ -51,3 +51,10 @@
 		}
 	}
 }
+======="branch-alias": {
+	"dev-master": "3.2.*-dev",
+	"dev-dev": "3.3.*-dev"
+}
+}
+}
+>>>>>>>095bad4a2ea8245742a35ebefc001f768e976316

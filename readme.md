@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 <p align="center">
 <img src="https://raw.githubusercontent.com/vinala/Art/master/Name/Merged.png" height="150">
 </p>
+=======
+<!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
+# Lighty v3.2
+>>>>>>> 095bad4a2ea8245742a35ebefc001f768e976316
 
 ---
 
@@ -24,7 +29,17 @@
 
 -----
 
+<<<<<<< HEAD
 **Vinala** is a PHP framework made with love and PHP for web developers to make the web programing more easyer, faster and awsome. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help you in your project such as Lumos, Panel, Atomium.
+=======
+![alt tag](https://gitlab.com/lighty/framework/raw/dev/app/resources/images/window.png)
+
+-----
+
+**Lighty** is a PHP framework made for web developers to make the web programing more easyer, faster and wonderful. Created and developed since 10/10/2014 by [Youssef Had](https://www.facebook.com/yussef.had), provided nice features to help in you in your project such as Lumos, Panel, Atomium.
+
+Lighty Framework is one of [Lighty Group](https://gitlab.com/groups/lighty) projects ([Framework](https://gitlab.com/lighty/framework) - [Kernel](https://gitlab.com/lighty/kernel) - [Panel](https://gitlab.com/lighty/panel) - Bridge - [Whoops](https://gitlab.com/lighty/whoops) - Logy - [Installers](https://gitlab.com/lighty/installers) - Atomium - Lumos - Console - [Docs](https://gitlab.com/lighty/docs)) some of them are public and free and others aren't.
+>>>>>>> 095bad4a2ea8245742a35ebefc001f768e976316
 
 ### Installation
 
@@ -34,7 +49,11 @@ Vinala uses `Composer`, You can use Composer  to install Vinala and its dependen
 
 First, download and install [Composer installer](https://getcomposer.org/)
 
+<<<<<<< HEAD
 #### Install last stable release of Vinala
+=======
+#### Install last stable release of Lighty
+>>>>>>> 095bad4a2ea8245742a35ebefc001f768e976316
 
 You can install Vinala via [Composer](https://getcomposer.org/) by running the command of Composer `create-project` in your terminal:
 
@@ -64,6 +83,12 @@ Vinala is open to the contributions of developers, the current released version 
 You can install next release of Vinala in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
 
 	composer create-project vinala/vinala projet_name master-dev --prefer-dist
+
+###### Install next beta release of Lighty
+
+You can install next release of Lighty in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
+
+	composer create-project lighty/lighty projet_name dev-dev --prefer-dist
 
 
 ### Versions

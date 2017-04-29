@@ -2,6 +2,7 @@ composer.lock
 kernel.lnk
 doc.lnk
 .idea
+.gitignore
 .gitmodules
 .gitattributes
 vendor/*
