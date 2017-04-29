@@ -1,0 +1,6 @@
+readme.md export-ignore
+CHANGES.md export-ignore
+contributing.md export-ignore
+license.md export-ignore
+.gitignore export-ignore
+.vscode/* export-ignore

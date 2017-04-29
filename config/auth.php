@@ -1,51 +1,85 @@
 <?php 
 
 
-return array(
+return [
 
 	/*
 	|----------------------------------------------------------
 	| Authentication Table
 	|----------------------------------------------------------
-	| If you want working with Pikia authentification,
+	| If you want working with Vinala authentication,
 	| the framework will need to know the Database
 	| table where to get data from
+	| 
 	*/
 
-	'table' => 'tbl_user',
+	'table' => 'user',
+
 
 	/*
 	|----------------------------------------------------------
-	| Password fields
+	| Hashed fields
 	|----------------------------------------------------------
-	| Here are the hashed columns
+	| the secure columns that will be used hashed
+	| 
 	*/
 
-	'hashed_fields' => array( 
+	'hashed_fields' => [
 		'password',
-		'token',
-	),
+	],
+
 
 	/*
 	|----------------------------------------------------------
 	| Saved fields
 	|----------------------------------------------------------
-	| Columns to store in $_SESSION
+	| Columns that will be stored in session
+	| 
 	*/
 
-	'saved_fields' => array( 
-		'pk',
-	),
+	'saved_fields' => [
+		'user_id',
+	],
+
 
 	/*
 	|----------------------------------------------------------
 	| Saved fields
 	|----------------------------------------------------------
-	| Name of cookie where storing the authentification
-	| data, to make remember me
+	| Name of cookie and session where storing 
+	| the authentication data, the cookie will 
+	| be used to make remember me
+	| 
 	*/
 
-	'rememeber_cookie' => 'rPuqyyAOg',
+	'cookie' => config('security.key1') ,
+
+	'session' => config('security.key1') ,
+
+	/*
+	|----------------------------------------------------------
+	| Saved fields lifetime
+	|----------------------------------------------------------
+	| The life time of cookie and session in minitues where  
+	| storing the authentication data, if the session lifetime 
+	| was 0 it means forever
+	| 
+	*/
+
+	'cookie_lifetime' => 3600*24*7 ,
+
+	'session_lifetime' => 0 ,
+
+
+	/*
+	|----------------------------------------------------------
+	| The ORM model 
+	|----------------------------------------------------------
+	| Name of ORM model class used in authentication
+	| 
+	*/
+
+	'model' => UserM::class ,
 
 
 	/*
@@ -54,9 +88,9 @@ return array(
 	|----------------------------------------------------------
 	| Name of input hidden of CSRF 
 	| (cross-site request forgery attacks)
+	| 
 	*/
 
 	'csrf_token' => '_token',
 
-
-);
+];

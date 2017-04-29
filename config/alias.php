@@ -1,72 +1,104 @@
-<?php 
+<?php
+
+return [
+
+    /*
+	|----------------------------------------------------------
+	| Enable Aliases
+	|----------------------------------------------------------
+	| Here to activate classes aliases
+	|
+	**/
+    'enable' => true ,
 
 
-	return array(
+    /*
+	|----------------------------------------------------------
+	| Kernel Aliases
+	|----------------------------------------------------------
+	| this array is responsible for aliases of class
+	| in the kernel.
+	|
+	**/
+    'kernel' => [
+        'Alias' => Vinala\Kernel\Config\Alias::class ,
+        'App' => Vinala\Kernel\Foundation\Application::class ,
+        'Assets' => Vinala\Kernel\Resources\Assets::class ,
+        'Auth' => Vinala\Kernel\Authentication\Auth::class ,
+        'Cache' => Vinala\Kernel\Caches\Cache::class ,
+        'Collection' => Vinala\Kernel\Collections\Collection::class ,
+        'Config' => Vinala\Kernel\Config\Config::class ,
+        'Cookie' => Vinala\Kernel\Storage\Cookie::class ,
+        'Database' => Vinala\Kernel\Database\Database::class ,
+        'DataCollection' => Vinala\Kernel\Objects\DataCollection::class ,
+        'DBTable' => Vinala\Kernel\Database\DBTable::class ,
+        'Event' => Vinala\Kernel\Events\Event::class ,
+        'Faker' => Vinala\Kernel\Resources\Faker::class ,
+        'File' => Vinala\Kernel\Filesystem\File::class ,
+        'Form' => Vinala\Kernel\Html\Form::class ,
+        'Hash' => Vinala\Kernel\Security\Hash::class ,
+        'Html' => Vinala\Kernel\Html\Html::class ,
+        'Http' => Vinala\Kernel\Http\Http::class ,
+        'Input' => Vinala\Kernel\Http\Input::class ,
+        'Json' => Vinala\Kernel\Collections\JSON::class ,
+        'Link' => Vinala\Kernel\Http\Links\Link::class ,
+        'Log' => Vinala\Kernel\Logging\Log::class ,
+        'Mail' => Vinala\Kernel\Mailing\Mail::class ,
+        'ModelArray' => Vinala\Kernel\MVC\Model\ModelArray::class ,
+        'Query' => Vinala\Kernel\Database\Query::class ,
+        'Path' => Vinala\Kernel\Access\Path::class ,
+        'Redirect' => Vinala\Kernel\Http\Redirect\Redirect::class ,
+        'Res' => Vinala\Kernel\HyperText\Res::class ,
+        'Request' => Vinala\Kernel\Http\Request::class ,
+        'Route' => Vinala\Kernel\Http\Router\Route::class ,
+        'Schema' => Vinala\Kernel\Database\Schema::class ,
+        'Session' => Vinala\Kernel\Storage\Session::class ,
+        'Smile' => Vinala\Kernel\Translator\Smiley::class ,
+        'Storage' => Vinala\Kernel\Storage\Storage::class ,
+        'Strings' => Vinala\Kernel\String\Strings::class ,
+        'Time' => Vinala\Kernel\Objects\DateTime::class ,
+        'Translator' => Vinala\Kernel\Translator\Lang::class ,
+        'Url' => Vinala\Kernel\Access\Url::class ,
+        'Validator' => Vinala\Kernel\Validation\Validator::class ,
+        'View' => Vinala\Kernel\MVC\View::class ,
+    ],
 
-		/*
-		|----------------------------------------------------------
-		| Enable Aliases
-		|----------------------------------------------------------
-		| Here to activate classes aliases
-		|
-		**/
 
-		'enable' => true ,
+    /*
+	|----------------------------------------------------------
+	| Exceptions Aliases
+	|----------------------------------------------------------
+	| this array is responsible for aliases of exceptions class
+	| classes
+	|
+	**/
+    'exceptions' => [
+        //
+    ],
 
 
-		/*
-		|----------------------------------------------------------
-		| Aliases
-		|----------------------------------------------------------
-		| this array is resposible for aliases of class
-		| in the app, feel free to register as many as 
-	    | you wish as the aliases are "lazy" loaded so 
-		| they don't hinder performance.
-		|
-		**/
+    /*
+	|----------------------------------------------------------
+	| Controllers Aliases
+	|----------------------------------------------------------
+	| this array is responsible for aliases of controllers class
+	| classes
+	|
+	**/
+    'controllers' => [
+        //
+    ],
 
-		'aliases' => array( 
-			'Alias' => 			Lighty\Kernel\Config\Alias::class,
-			'App' => 			Lighty\Kernel\Foundation\Application::class,
-			'Auth' => 			Lighty\Kernel\Security\Auth::class,
-			'Base' => 			Lighty\Kernel\Objects\Base::class,
-			'Cache' => 			Lighty\Kernel\Caches\Cache::class,
-			'Config' => 		Lighty\Kernel\Config\Config::class,
-			'Cookie' => 		Lighty\Kernel\Storage\Cookie::class,
-			'Database' => 		Lighty\Kernel\Database\Database::class,
-			'DataCollection' =>	Lighty\Kernel\Objects\DataCollection::class,
-			'DBTable' => 		Lighty\Kernel\Database\DBTable::class,
-			'Debug' => 			Lighty\Kernel\Log\Debug::class,
-			'Errors' => 		Lighty\Kernel\Http\Errors::class,
-			'Faker' => 			Lighty\Kernel\Resources\Faker::class,
-			'Filesystem' => 	Lighty\Kernel\Filesystem\Filesystem::class,
-			'Hash' => 			Lighty\Kernel\Security\Hash::class,
-			'Html' => 			Lighty\Kernel\HyperText\Html::class,
-			'Http' => 			Lighty\Kernel\Http\Http::class,
-			'Input' => 			Lighty\Kernel\HyperText\Input::class,
-			'Libs' => 			Lighty\Kernel\Resources\Libs::class,
-			'License' => 		Lighty\Kernel\Security\License::class,
-			'Links' => 			Lighty\Kernel\Http\Links::class,
-			'Log' => 			Lighty\Kernel\Logging\Log::class,
-			'Mail' => 			Lighty\Kernel\Mailing\Mail::class,
-			'ModelArray' => 	Lighty\Kernel\MVC\Model\ModelArray::class,
-			'Query' => 			Lighty\Kernel\Database\Query::class,
-			'Path' => 			Lighty\Kernel\Access\Path::class,
-			'Res' => 			Lighty\Kernel\HyperText\Res::class,
-			'Root' => 			Lighty\Kernel\Http\Root::class,
-			'Route' => 			Lighty\Kernel\Router\Route::class,
-			'Schema' => 		Lighty\Kernel\Database\Schema::class,
-			'Security' => 		Lighty\Kernel\Security\Security::class,
-			'Session' => 		Lighty\Kernel\Storage\Session::class,
-			'Smile' => 			Lighty\Kernel\Translator\Smiley::class,
-			'Storage' => 		Lighty\Kernel\Storage\Storage::class,
-			'Strings' => 		Lighty\Kernel\Objects\Strings::class,
-			'Sys' => 			Lighty\Kernel\Objects\Sys::class,
-			'Table' => 			Lighty\Kernel\Objects\Table::class,
-			'Time' => 			Lighty\Kernel\Objects\DateTime::class,
-			'Translator' => 	Lighty\Kernel\Translator\Lang::class,
-			'Url' => 			Lighty\Kernel\Access\Url::class,
-			'Vars' => 			Lighty\Kernel\Objects\Vars::class,
-			'View' => 			Lighty\Kernel\MVC\View\View::class,
-		)
-	);
+
+    /*
+	|----------------------------------------------------------
+	| Models Aliases
+	|----------------------------------------------------------
+	| this array is responsible for aliases of models class
+	| classes
+	|
+	**/
+    'models' => [
+        //
+    ],
+];

@@ -1,9 +1,13 @@
 composer.lock
 kernel.lnk
-.gitignore
+doc.lnk
+.idea
 .gitmodules
+.gitattributes
 vendor/*
-!vendor/fiesta/kernel
-!vendor/fiesta/whoops
-!vendor/fiesta/panel
+!vendor/vinala/kernel
+!vendor/vinala/whoops
 config/*
+.vscode/*
+storage/view/*
+storage/log/*

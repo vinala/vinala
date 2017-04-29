@@ -2,11 +2,10 @@
 
 /*
 |----------------------------------------
-| Lighty (https://gitlab.com/lighty)
-| Copyright 2016 Youssef Had, Inc.
+| Vinala (www.github.com/vinala)
+| Copyright 2017 Youssef Had, Inc.
 | Licensed under Open Source
 |----------------------------------------
 */
-
 
 require __DIR__.'/../bootstrap/start.php';

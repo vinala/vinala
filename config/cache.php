@@ -1,18 +1,17 @@
 <?php 
 
-
-
-return array(
+return [
 
 	/*
 	|---------------------------------------------
 	| Default Cache Store
 	|---------------------------------------------
 	| Name of cache storage mode
-	| available : file - database
 	*/
 
-	'default' => "file",
+	'default' => 'file',
+
+	'lifetime' => 0,
 
 
 	/*
@@ -28,13 +27,14 @@ return array(
 			'location' => "storage/cache"
 		],
 
+		"array" => [ 
+			"driver" => "array",
+			'serialize' => true,
+		],
+
 		"database" => [ 
 			"driver" => "database",
-			"table" => "lighty_cache",
-			"database" => null,
-
+			"table" => "cache_table",
 		],
 	],
-
-
-);
+];

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php" color="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stopOnFailures="false" syntaxCheck="false"
+<phpunit 
+	bootstrap="bootstrap/console.php" 
+	colors="true" 
+	convertErrorsToExceptions="true" 
+	convertNoticesToExceptions="true" 
+	convertWarningsToExceptions="true" 
+	stopOnFailures="false" 
+	syntaxCheck="false"
 	>
     <testsuites>
-	    <testsuite name="Fiesta Unit Test">
-	    	<directory>./tests/</directory>
+	    <testsuite name="Vinala Test">
+	    	<directory suffix=".test.php">./tests/</directory>
 	    </testsuite>
 	</testsuites>
 	<php>

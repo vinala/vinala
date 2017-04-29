@@ -1,7 +1,6 @@
 <?php 
 
-
-return array(
+return  [
 
 	/*
 	|----------------------------------------------------------
@@ -10,8 +9,8 @@ return array(
 	| the location of Css file responsible for the 
 	| style of  smileys 
 	*/
+	'css' => 'assets/smileys/Style.css',
 
-	'css'=>"/resources/smileys/Style.css",
 
 	/*
 	|----------------------------------------------------------
@@ -22,8 +21,7 @@ return array(
 	| long as their css class is in the smiley css 
 	| file
 	*/
-
-	"smileys" => array(
+	"smileys" => [
 			"O:)"   => "fst_sml_ange",
 			">:("   => "fst_sml_angry",
 			">:o"   => "fst_sml_very_angry",
@@ -44,9 +42,9 @@ return array(
 			"o.O"   => "fst_sml_bizarre",
 			":3"    => "fst_sml_mousat",
 			":*"    => "fst_sml_kiss",
-		),
+		],
 
-	"codes" => array(
+	"codes" => [
 			"O:)"   => "[{ange}]",
 			">:("   => "[{angry}]",
 			">:o"   => "[{very_angry}]",
@@ -67,9 +65,9 @@ return array(
 			"o.O"   => "[{bizarre}]",
 			":3"    => "[{mousat}]",
 			":*"    => "[{kiss}]",
-		),
+		],
 
-	"db_smileys" => array(
+	"db_smileys" => [
 			"[{nge}]"		 	=> "fst_sml_ange",
 			"[{angry}]" 		=> "fst_sml_angry",
 			"[{very_angry}]" 	=> "fst_sml_very_angry",
@@ -90,6 +88,5 @@ return array(
 			"[{bizarre}]" 		=> "fst_sml_bizarre",
 			"[{mousat}]" 		=> "fst_sml_mousat",
 			"[{kiss}]" 			=> "fst_sml_kiss",
-		),
-
-);
+		],
+];

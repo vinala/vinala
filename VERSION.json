@@ -1,0 +1,31 @@
+{
+	"version" : "3.3.0",
+	"tag" : "",
+	"stat" : "beta",
+	"features" : [
+		"Use the word Surfaces as framework components",
+		"Supporting Events",
+		"Supporting Data validation",
+		"Update Forms Surface",
+		"Supporting PDO structure",
+		"Improve ORM Surface to support kept and preserved data",
+		"Improve Lumos Surface",
+		"Improve Atomium Surface",
+		"Add feature to enable or disable some components (Beta)",
+		"Introducing user exceptions",
+		"Big improvement for Scope functions and call them Shortcuts",
+		"Supporting App Debug",
+		"Improve Views Surface",
+		"Improve Translator Surface",
+		"Introducing Middlewares and use the with filters",
+		"Improve Redirection Surface",
+		"Improve Logging Surface and Whoops to customize view exception in client mode",
+		"Improve Maintenance Surface",
+		"Improve Alias Surface",
+		"Creating Version Surface"
+	],
+	"fixes" : [
+
+	],
+	"sha" : "7f7416406a9a3e725b6afa5fef6340f76f11cf07"
+}

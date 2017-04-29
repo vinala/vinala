@@ -1,7 +1,10 @@
 {
-	"name": "vinala/vinala",
-	"description": "Vinala, a PHP Framework for web developers",
-	"keywords": ["framework", "Vinala"],
+	"name": "vinala/app",
+	"description": "Vinala, An elegant and swift PHP Framework For Webmasters",
+	"keywords": [
+		"Framework",
+		"Vinala"
+	],
 	"license": "MIT",
 	"authors": [
 		{
@@ -18,21 +21,33 @@
 		"swiftmailer/swiftmailer": "5.3.1",
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
-		"vinala/kernel": "dev-dev",
-		"vinala/panel": "dev-dev",
+		"vinala/kernel": "3.3.*",
 		"vinala/whoops": "dev-dev",
 		"symfony/console": "3.*",
-		"phpunit/phpunit": "~4.1"
+		"youssef/debug": "1.*",
+		"vlucas/valitron": "^1.2",
+		"phpunit/phpunit": "~4.1",
+		"symfony/cache": "3.*",
+		"symfony/process": "3.2.*",
+		"tedivm/stash": "^0.14.1"
 	},
 	"scripts": {
 		"post-create-project-cmd": [
 			"php lumos setup"
 		]
 	},
+	"autoload": {
+		"files": [
+			"vendor/vinala/kernel/src/Support/Helpers.php",
+			"vendor/vinala/kernel/src/Support/Helper.php"
+		]
+	},
 	"extra": {
-        "branch-alias": {
-            "dev-master": "3.*-dev",
-            "dev-next": "3.2.*-dev"
-        }
-    }
+		"branch-alias": {
+			"dev-master": "3.2.*-dev",
+			"dev-next": "3.3.*-dev",
+			"dev": "3.3.*-dev",
+			"dev-dev": "3.3.*-dev"
+		}
+	}
 }
