@@ -66,14 +66,7 @@ Vinala is open to the contributions of developers, the current released version 
 
 You can install next release of Vinala in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
 
-	composer create-project vinala/vinala projet_name master-dev --prefer-dist
-
-###### Install next beta release of Lighty
-
-You can install next release of Lighty in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
-
-	composer create-project lighty/lighty projet_name dev-dev --prefer-dist
-
+	composer create-project vinala/app projet_name dev-master-dev --prefer-dist
 
 ### Versions
 
