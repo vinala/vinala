@@ -1,11 +1,9 @@
-<<<<<<< HEAD
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/vinala/Art/master/Name/Merged.png" height="150">
 </p>
-=======
+
 <!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
-# Lighty v3.2
->>>>>>> 095bad4a2ea8245742a35ebefc001f768e976316
 
 ---
 
