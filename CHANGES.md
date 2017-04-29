@@ -15,7 +15,7 @@
  * Improve Atomium Surface
  * Add feature to enable or disable some components (Beta)
  * Introducing user exceptions
- * Big improvement for Scope functions and call them Shortcuts
+ * Big improvement for Scope functions and call them Helpers
  * Supporting App Debug
  * Improve Views Surface
  * Improve Translator Surface
