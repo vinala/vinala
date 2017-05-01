@@ -56,7 +56,7 @@ return [
         'Smile' => Vinala\Kernel\Translator\Smiley::class ,
         'Storage' => Vinala\Kernel\Storage\Storage::class ,
         'Strings' => Vinala\Kernel\String\Strings::class ,
-        'Time' => Vinala\Kernel\Objects\DateTime::class ,
+        'Time' => Vinala\Kernel\Time\DateTime::class ,
         'Translator' => Vinala\Kernel\Translator\Lang::class ,
         'Url' => Vinala\Kernel\Access\Url::class ,
         'Validator' => Vinala\Kernel\Validation\Validator::class ,
