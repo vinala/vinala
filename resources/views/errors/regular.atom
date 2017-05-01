@@ -5,13 +5,13 @@
 <html>
 	<head>
 	    <meta charset="utf-8"/>
-	    <title>@lang("error.regular_message");</title>
+	    <title>@lang("framework.error.regular_message");</title>
 	    @css("error");
 	</head>
 	<body>
 
 	    <div>
-	    	@lang("error.regular_message");
+	    	@lang("framework.error.regular_message");
 	    </div>
 	    
 	</body>

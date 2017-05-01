@@ -5,13 +5,13 @@
 <html>
 	<head>
 	    <meta charset="utf-8"/>
-	    <title>@lang("error.database_message");</title>
+	    <title>@lang("framework.error.database_message");</title>
 	    @css("error");
 	</head>
 	<body>
 
 	    <div>
-	    	@lang("error.database_message");
+	    	@lang("framework.error.database_message");
 	    </div>
 	    
 	</body>
