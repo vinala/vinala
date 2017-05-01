@@ -1,6 +1,6 @@
 <?php 
 
-namespace Fiesta\Plugins\Google;
+namespace Vinala\Plugins\Google;
 /**
 * 
 */
