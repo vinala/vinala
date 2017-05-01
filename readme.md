@@ -66,7 +66,7 @@ Vinala is open to the contributions of developers, the current released version 
 
 You can install next release of Vinala in beta via [Composer](https://getcomposer.org/) by running this command in your terminal:
 
-	composer create-project vinala/app projet_name dev-master-dev --prefer-dist
+	composer create-project vinala/app projet_name dev-master --prefer-dist
 
 ### Versions
 
