@@ -32,6 +32,10 @@
  * Improve Authentication surface
  * Improve Routes surface
 
+##### Bug fixed
+
+ * Fixing some bugs in Mail surface
+
 ### 3.2.0
 ---
 
