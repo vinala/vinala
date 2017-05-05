@@ -8,7 +8,6 @@
 */
 require __DIR__.'/../vendor/autoload.php';
 
-
 /*
 |----------------------------------------------
 | Run the Framework
