@@ -1,8 +1,10 @@
 {
-	"version" : "3.3.0",
-	"tag" : "",
-	"stat" : "beta",
-	"features" : [
+	"version": "3.3.0",
+	"tag": "",
+	"stat": "final",
+	"features": [
+		"Change the name from Lighty to Vinala",
+		"New logo concept",
 		"Use the word Surfaces as framework components",
 		"Supporting Events",
 		"Supporting Data validation",
@@ -13,7 +15,7 @@
 		"Improve Atomium Surface",
 		"Add feature to enable or disable some components (Beta)",
 		"Introducing user exceptions",
-		"Big improvement for Scope functions and call them Shortcuts",
+		"Big improvement for Scope functions and call them Helpers",
 		"Supporting App Debug",
 		"Improve Views Surface",
 		"Improve Translator Surface",
@@ -22,10 +24,16 @@
 		"Improve Logging Surface and Whoops to customize view exception in client mode",
 		"Improve Maintenance Surface",
 		"Improve Alias Surface",
-		"Creating Version Surface"
+		"Creating Version Surface",
+		"Update Setup and welcome views",
+		"Update Assets surface",
+		"Update Links surface",
+		"Remove The Panel from framework compnents",
+		"Improve Authentication surface",
+		"Improve Routes surface"
 	],
-	"fixes" : [
-
+	"fixes": [
+		"Fixing some bugs in Mail surface"
 	],
-	"sha" : "7f7416406a9a3e725b6afa5fef6340f76f11cf07"
+	"sha": "2f4cbfcf9a8521ec991a060d80bc1c2e6bce35e7"
 }
