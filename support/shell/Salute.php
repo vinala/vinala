@@ -30,6 +30,6 @@ class Salute extends Commands
         $firstName = $this->argument('firstName');
         $lastName = $this->argument('lastName');
         //
-        $this->write("Hello ".$firstName." ".$lastName);
+        $this->write('Hello '.$firstName.' '.$lastName);
     }
 }

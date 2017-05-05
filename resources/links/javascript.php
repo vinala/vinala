@@ -1,10 +1,11 @@
-<?php 
+<?php
+
 
 /**
-* A list of javascript files links	
-*
-* @var array
-*/
+ * A list of javascript files links.
+ *
+ * @var array
+ */
 return [
-	//
+    //
 ];

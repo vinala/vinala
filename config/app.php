@@ -1,95 +1,83 @@
 <?php
 
-return [	
+return [
 
-	/*
-	|----------------------------------------------------------
-	| Project name
-	|----------------------------------------------------------
-	|  Your project name
-	|
-	**/
+    /*
+    |----------------------------------------------------------
+    | Project name
+    |----------------------------------------------------------
+    |  Your project name
+    |
+    **/
 
-	'project' => '' ,
+    'project' => '',
 
+    /*
+    |----------------------------------------------------------
+    | Owner name
+    |----------------------------------------------------------
+    |  Your name
+    |
+    **/
 
+    'owner' => '',
 
-	/*
-	|----------------------------------------------------------
-	| Owner name
-	|----------------------------------------------------------
-	|  Your name
-	|
-	**/
+    /*
+    |----------------------------------------------------------
+    | Project url
+    |----------------------------------------------------------
+    |  Your website root link, you should put your
+    | root link , by default we using Application::root
+    | function to get the root link even if you
+    | working on localhost
+    |
+    **/
 
-	'owner' => '' ,
+    'url' => root(),
 
+    /*
+    |----------------------------------------------------------
+    | HTML Default title
+    |----------------------------------------------------------
+    |  Default HTML title
+    |
+    **/
 
+    'title' => 'Vinala PHP Framework',
 
-	/*
-	|----------------------------------------------------------
-	| Project url
-	|----------------------------------------------------------
-	|  Your website root link, you should put your 
-	| root link , by default we using Application::root 
-	| function to get the root link even if you 
-	| working on localhost
-	|
-	**/
+    /*
+    |----------------------------------------------------------
+    | Timezone
+    |----------------------------------------------------------
+    |  Here you should set your timezone after that
+    | whenever you wanna get time, Vinala will give
+    | you exact time for the timezone.
+    | To get all of timezones supported in php
+    | visite here : http://php.net/manual/en/timezones.php
+    |
+    **/
 
-	'url' => root() ,
+    'timezone' => 'UTC',
 
+    /*
+    |----------------------------------------------------------
+    | Default Character Set
+    |----------------------------------------------------------
+    |  The framework will set true if you passed
+    |  the setup
+    |
+    **/
 
+    'charset' => 'utf-8',
 
-	/*
-	|----------------------------------------------------------
-	| HTML Default title
-	|----------------------------------------------------------
-	|  Default HTML title
-	|
-	**/
+    /*
+    |----------------------------------------------------------
+    | Setup
+    |----------------------------------------------------------
+    |  Default encodage when you using HTML::charset
+    |
+    **/
 
-	'title' => 'Vinala PHP Framework' , 
-
-
-
-	/*
-	|----------------------------------------------------------
-	| Timezone
-	|----------------------------------------------------------
-	|  Here you should set your timezone after that 
-	| whenever you wanna get time, Vinala will give
-	| you exact time for the timezone.
-	| To get all of timezones supported in php 
-	| visite here : http://php.net/manual/en/timezones.php
-	|
-	**/
-
-	'timezone' => 'UTC' ,
-
-
-
-	/*
-	|----------------------------------------------------------
-	| Default Character Set
-	|----------------------------------------------------------
-	|  The framework will set true if you passed
-	|  the setup
-	|
-	**/
-
-	'charset' => 'utf-8' , 
-
-
-
-	/*
-	|----------------------------------------------------------
-	| Setup
-	|----------------------------------------------------------
-	|  Default encodage when you using HTML::charset
-	|
-	**/
-
-	'setup' => false , 
+    'setup' => false,
 
 ];

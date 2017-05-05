@@ -1,88 +1,88 @@
-<?php 
+<?php
 
 
-return array(
+return [
 
-	/*
-	|----------------------------------------------------------
-	| Default Database Connection
-	|----------------------------------------------------------
-	| Default used database driver
-	*/
+    /*
+    |----------------------------------------------------------
+    | Default Database Connection
+    |----------------------------------------------------------
+    | Default used database driver
+    */
 
-	'default' => 'none', 
+    'default' => 'none',
 
-	/*
-	|----------------------------------------------------------
-	| Database Connections
-	|----------------------------------------------------------
-	| all drivers that Pikia Work with
-	*/
+    /*
+    |----------------------------------------------------------
+    | Database Connections
+    |----------------------------------------------------------
+    | all drivers that Pikia Work with
+    */
 
-	'connections' => array(
+    'connections' => [
 
-		'sqlite' => array(
-			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
-		),
+        'sqlite' => [
+            'driver'   => 'sqlite',
+            'database' => __DIR__.'/../database/production.sqlite',
+        ],
 
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'test',
-			'username'  => 'root',
-			'password'  => '',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-		),
+        'mysql' => [
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'test',
+            'username'  => 'root',
+            'password'  => '',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+        ],
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
-			'charset'  => 'utf8',
-			'schema'   => 'public',
-		),
+        'pgsql' => [
+            'driver'   => 'pgsql',
+            'host'     => 'localhost',
+            'database' => 'forge',
+            'username' => 'forge',
+            'password' => '',
+            'charset'  => 'utf8',
+            'schema'   => 'public',
+        ],
 
-		'sqlsrv' => array(
-			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-		),
+        'sqlsrv' => [
+            'driver'   => 'sqlsrv',
+            'host'     => 'localhost',
+            'database' => 'database',
+            'username' => 'root',
+            'password' => '',
+        ],
 
-	),
+    ],
 
-	/*
-	|----------------------------------------------------------
-	| Schemas Table
-	|----------------------------------------------------------
-	| Database used to store migrations info
-	*/
+    /*
+    |----------------------------------------------------------
+    | Schemas Table
+    |----------------------------------------------------------
+    | Database used to store migrations info
+    */
 
-	'migration' => 'vinala_migrations',
+    'migration' => 'vinala_migrations',
 
-	/*
-	|----------------------------------------------------------
-	| Prefixing
-	|----------------------------------------------------------
-	| if true, Pikia will add prefixe for all 
-	| Database tables created by the framework
-	*/
+    /*
+    |----------------------------------------------------------
+    | Prefixing
+    |----------------------------------------------------------
+    | if true, Pikia will add prefixe for all
+    | Database tables created by the framework
+    */
 
-	'prefixing' => true,
+    'prefixing' => true,
 
-	/*
-	|----------------------------------------------------------
-	| The prefixe
-	|----------------------------------------------------------
-	| This string will be add to all tables names
-	| created by Pikia if prefixing parameter was true
-	*/
+    /*
+    |----------------------------------------------------------
+    | The prefixe
+    |----------------------------------------------------------
+    | This string will be add to all tables names
+    | created by Pikia if prefixing parameter was true
+    */
 
-	'prefixe' => 'vnl_',
+    'prefixe' => 'vnl_',
 
-);
+];
