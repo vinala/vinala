@@ -8,21 +8,24 @@
 ---
 
 <p align="center">
-<a href="https://travis-ci.org/vinala/vinala">
-	<img src="https://travis-ci.org/vinala/vinala.svg?branch=dev" alt="Build Status">
-</a>
-<a href="https://packagist.org/packages/vinala/vinala">
-	<img src="https://poser.pugx.org/vinala/vinala/v/stable" alt="Latest Stable Version">
-</a>
-<a href="https://github.com/vinala/vinala">
-	<img src="https://img.shields.io/badge/downloads-637-0375b5.svg" alt="Downloads">
-</a>
-<a href="https://packagist.org/packages/vinala/vinala">
-	<img src="https://poser.pugx.org/vinala/vinala/v/unstable" alt="Latest Unstable Version">
-</a>
-<a href="https://packagist.org/packages/vinala/vinala">
-	<img src="https://poser.pugx.org/vinala/vinala/license" alt="License">
-</a>
+	<a href="https://travis-ci.org/vinala/vinala">
+		<img src="https://travis-ci.org/vinala/vinala.svg?branch=dev" alt="Build Status">
+	</a>
+	<a href="https://styleci.io/repos/71662570">
+		<img src="https://styleci.io/repos/71662570/shield?branch=master" alt="StyleCI">
+	</a>
+	<a href="https://packagist.org/packages/vinala/vinala">
+		<img src="https://poser.pugx.org/vinala/vinala/v/stable" alt="Latest Stable Version">
+	</a>
+	<a href="https://github.com/vinala/vinala">
+		<img src="https://img.shields.io/badge/downloads-637-0375b5.svg" alt="Downloads">
+	</a>
+	<a href="https://packagist.org/packages/vinala/vinala">
+		<img src="https://poser.pugx.org/vinala/vinala/v/unstable" alt="Latest Unstable Version">
+	</a>
+	<a href="https://packagist.org/packages/vinala/vinala">
+		<img src="https://poser.pugx.org/vinala/vinala/license" alt="License">
+	</a>
 </p>
 
 -----
