@@ -2,7 +2,7 @@
 
 namespace Vinala\Plugins\Google;
 
-class ini
+class QR
 {
     public static function generate($text, $size = 100)
     {

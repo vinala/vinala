@@ -2,7 +2,7 @@
 
 namespace Vinala\Plugins\Google;
 
-class ini
+class Youtube
 {
     public static function embed($id, $width = 560, $height = 315)
     {
