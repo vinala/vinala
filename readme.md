@@ -9,7 +9,7 @@
 
 <p align="center">
 	<a href="https://travis-ci.org/vinala/vinala">
-		<img src="https://travis-ci.org/vinala/vinala.svg?branch=dev" alt="Build Status">
+		<img src="https://travis-ci.org/vinala/vinala.svg?branch=master" alt="Build Status">
 	</a>
 	<a href="https://styleci.io/repos/71662570">
 		<img src="https://styleci.io/repos/71662570/shield?branch=master" alt="StyleCI">
