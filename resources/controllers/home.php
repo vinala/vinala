@@ -2,7 +2,7 @@
 
 use Vinala\Kernel\Setup\Setup;
 
-class home
+class Home
 {
     public static function hello()
     {
