@@ -22,7 +22,7 @@
 		],
 		"version": "1.0.0",
 		"autoload": {
-			"file": "ini.php"
+			"file": "Youtube.php"
 		},
 		"panel": {
 			"color": "#5b1c79"
