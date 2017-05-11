@@ -4,12 +4,10 @@ use Vinala\Kernel\Config\Config;
 use Vinala\Kernel\Testing\TestCase as BaseTestCase;
 
 /**
-* config test case
-*
-**/
+ * config test case.
+ **/
 class configTest extends BaseTestCase
 {
-
     /**
      * Check Config params existenece.
      *
