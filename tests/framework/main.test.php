@@ -4,12 +4,10 @@ use Vinala\Kernel\Foundation\Application;
 use Vinala\Kernel\Testing\TestCase as BaseTestCase;
 
 /**
-* MainFrameworkTest case to test if the frameworkcan run it self.
-*
-**/
+ * MainFrameworkTest case to test if the frameworkcan run it self.
+ **/
 class mainTest extends BaseTestCase
 {
-
     /**
      * Check if owner name not empty.
      *
