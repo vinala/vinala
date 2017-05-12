@@ -18,7 +18,7 @@
 		<img src="https://poser.pugx.org/vinala/vinala/v/stable" alt="Latest Stable Version">
 	</a>
 	<a href="https://github.com/vinala/vinala">
-		<img src="https://img.shields.io/badge/downloads-637-0375b5.svg" alt="Downloads">
+		<img src="https://poser.pugx.org/vinala/kernel/downloads" alt="Downloads">
 	</a>
 	<a href="https://packagist.org/packages/vinala/vinala">
 		<img src="https://poser.pugx.org/vinala/vinala/v/unstable" alt="Latest Unstable Version">
