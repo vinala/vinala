@@ -3,7 +3,6 @@
 <img src="https://raw.githubusercontent.com/vinala/Art/master/Name/Merged.png" height="150">
 </p>
 
-<!-- ![alt tag](https://raw.githubusercontent.com/fiesta-framework/Art/master/Resources/Pikia%20Github.png) -->
 
 ---
 
