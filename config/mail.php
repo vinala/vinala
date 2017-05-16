@@ -67,6 +67,6 @@ return [
     |  when you want to send e-mail
     */
 
-    'subject' => 'Pikia',
+    'subject' => 'Vinala',
 
 ];
