@@ -66,8 +66,7 @@ return [
     |----------------------------------------------------------
     | Exceptions Aliases
     |----------------------------------------------------------
-    | this array is responsible for aliases of exceptions class
-    | classes
+    | this array is responsible for aliases of exceptions classes
     |
     **/
     'exceptions' => [
@@ -78,8 +77,7 @@ return [
     |----------------------------------------------------------
     | Controllers Aliases
     |----------------------------------------------------------
-    | this array is responsible for aliases of controllers class
-    | classes
+    | this array is responsible for aliases of controllers classes
     |
     **/
     'controllers' => [
@@ -90,11 +88,21 @@ return [
     |----------------------------------------------------------
     | Models Aliases
     |----------------------------------------------------------
-    | this array is responsible for aliases of models class
-    | classes
+    | this array is responsible for aliases of models classes
     |
     **/
     'models' => [
+        //
+    ],
+
+    /*
+    |----------------------------------------------------------
+    | Mailables Aliases
+    |----------------------------------------------------------
+    | this array is responsible for aliases of Mailable classes
+    |
+    **/
+    'mailables' => [
         //
     ],
 ];
