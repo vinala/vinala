@@ -10,4 +10,4 @@ for more lumos commands execute :
 
     php lumos list
 
- > **Note** : you can at any time remove this file, it just for help
+ > **Note** : you can at any time remove this file, its just for help
