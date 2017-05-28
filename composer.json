@@ -33,7 +33,8 @@
 	},
 	"scripts": {
 		"post-create-project-cmd": [
-			"php lumos setup"
+			"php lumos setup",
+			"php lumos i --start"
 		]
 	},
 	"autoload": {
