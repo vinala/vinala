@@ -1,5 +1,5 @@
 {
-	"version": "3.3.0",
+	"version": "3.3.1",
 	"tag": "",
 	"stat": "final",
 	"features": [
@@ -30,10 +30,11 @@
 		"Update Links surface",
 		"Remove The Panel from framework compnents",
 		"Improve Authentication surface",
-		"Improve Routes surface"
+		"Improve Routes surface",
+		"Improve Mail Surface"
 	],
 	"fixes": [
 		"Fixing some bugs in Mail surface"
 	],
-	"sha": "2f4cbfcf9a8521ec991a060d80bc1c2e6bce35e7"
+	"sha": "79da6a1a2c1324b327816a066eb606403238c760"
 }
