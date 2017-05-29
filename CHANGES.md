@@ -1,3 +1,11 @@
+### 3.3.1
+---
+
+##### Features
+
+ * Improve Mail Surface
+ 
+
 ### 3.3.0
 ---
 
@@ -35,6 +43,7 @@
 ##### Bug fixed
 
  * Fixing some bugs in Mail surface
+
 
 ### 3.2.0
 ---
