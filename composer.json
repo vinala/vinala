@@ -33,7 +33,7 @@
 	},
 	"scripts": {
 		"post-create-project-cmd": [
-			"php lms i --start",
+			"php lms info --start",
 			"php lms setup"
 		]
 	},
