@@ -1,41 +1,11 @@
 {
-	"version": "3.3.2",
+	"version": "3.4",
 	"tag": "",
-	"stat": "final",
+	"stat": "alpha",
 	"features": [
-		"Change the name from Lighty to Vinala",
-		"New logo concept",
-		"Use the word Surfaces as framework components",
-		"Supporting Events",
-		"Supporting Data validation",
-		"Update Forms Surface",
-		"Supporting PDO structure",
-		"Improve ORM Surface to support kept and preserved data",
-		"Improve Lumos Surface",
-		"Improve Atomium Surface",
-		"Add feature to enable or disable some components (Beta)",
-		"Introducing user exceptions",
-		"Big improvement for Scope functions and call them Helpers",
-		"Supporting App Debug",
-		"Improve Views Surface",
-		"Improve Translator Surface",
-		"Introducing Middlewares and use the with filters",
-		"Improve Redirection Surface",
-		"Improve Logging Surface and Whoops to customize view exception in client mode",
-		"Improve Maintenance Surface",
-		"Improve Alias Surface",
-		"Creating Version Surface",
-		"Update Setup and welcome views",
-		"Update Assets surface",
-		"Update Links surface",
-		"Remove The Panel from framework compnents",
-		"Improve Authentication surface",
-		"Improve Routes surface",
-		"Improve Mail Surface"
+		"add function to show views from routes file"
 	],
 	"fixes": [
-		"Fixing some bugs in Mail surface",
-		"Fix a bug in Lumos"
 	],
-	"sha": "79da6a27816a06321a2c6eb606401324b338c760"
+	"sha": ""
 }
