@@ -223,7 +223,15 @@ return [
         |----------------------------------------------------------
         | this Command to export database
         **/
-        'export_database' => 'save:database',
+        'export_database' => 'export:database',
+
+        /*
+        |----------------------------------------------------------
+        | Import database
+        |----------------------------------------------------------
+        | this Command to import database
+        **/
+        'import_database' => 'import:database',
 
         //--------------------------------------------------------
         // Configuration commands

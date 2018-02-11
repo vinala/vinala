@@ -1,5 +1,5 @@
 {
-	"version": "3.3.1",
+	"version": "3.3.2",
 	"tag": "",
 	"stat": "final",
 	"features": [
@@ -34,7 +34,8 @@
 		"Improve Mail Surface"
 	],
 	"fixes": [
-		"Fixing some bugs in Mail surface"
+		"Fixing some bugs in Mail surface",
+		"Fix a bug in Lumos"
 	],
-	"sha": "79da6a1a2c1324b327816a066eb606403238c760"
+	"sha": "79da6a27816a06321a2c6eb606401324b338c760"
 }
