@@ -21,7 +21,7 @@
 		"swiftmailer/swiftmailer": "5.3.1",
 		"monolog/monolog": "~1.17.2",
 		"nesbot/carbon": "~1.14",
-		"vinala/kernel": "3.*",
+		"vinala/kernel": "3.4.x-dev",
 		"vinala/whoops": "1.2.*",
 		"symfony/console": "3.*",
 		"youssef/debug": "1.*",
