@@ -57,7 +57,7 @@ Vinala comes with `.htaccess` file that uses URL rewriting, if you use Apache, B
 
 ### Documentation
 
-We are working on Vinala documentation for every release version, you can take look or update the documentation of 3.3 release [here](https://gitlab.com/lighty/Docs/tree/3.3)
+We are working on Vinala documentation for every release version, you can take look or update the documentation of 3.3 release [here](https://github.com/vinala/docs/tree/3.3)
 
 
 ### Development
