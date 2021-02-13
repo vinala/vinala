@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * A list of css files links.
  *

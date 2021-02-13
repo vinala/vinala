@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Environment file in which you can define
  * the global variables of your application.

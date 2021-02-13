@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * A list of application links.
  *
