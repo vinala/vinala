@@ -1,6 +1,5 @@
 <?php
 
-
 if (!function_exists('welcome')) {
     /**
      * return the welcome.

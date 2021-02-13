@@ -1,6 +1,5 @@
 <?php
 
-
 use Vinala\Kernel\Testing\TestCase as BaseTestCase;
 
 /**

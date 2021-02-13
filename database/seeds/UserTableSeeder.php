@@ -1,6 +1,5 @@
 <?php
 
-
 use Vinala\Kernel\Database\Seeder;
 
 /**
@@ -24,11 +23,11 @@ class UserTableSeeder extends Seeder
     public function data()
     {
         return [
-                'name'             => Faker::firstName(),
-                'mail'             => Faker::Email(),
-                'password'         => Faker::hash(),
-                'token'            => Faker::hash(),
-                'rememberToken'    => Faker::hash(),
-            ];
+            'name'             => Faker::firstName(),
+            'mail'             => Faker::Email(),
+            'password'         => Faker::hash(),
+            'token'            => Faker::hash(),
+            'rememberToken'    => Faker::hash(),
+        ];
     }
 }
